@@ -1,0 +1,38 @@
+name: Daily Exhibition Crawler & Sourcing Update
+
+on:
+  schedule:
+    # 毎朝 日本時間 04:00 (UTC 19:00) に自動実行
+    - cron: '0 19 * * *'
+  workflow_dispatch: # GitHub上のボタンから手動即時実行も可能
+
+jobs:
+  crawl-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Crawler & Classifier
+        run: |
+          python3 crawler/main.py
+
+      - name: Commit and Push if Changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "DHV Sourcer Bot"
+          git add public/data/
+          if git diff --staged --quiet; then
+            echo "No changes in exhibition data."
+          else
+            git commit -m "chore(data): auto-update exhibition & startup database [skip ci]"
+            git push
+          fi

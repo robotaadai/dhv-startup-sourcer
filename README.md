@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DHV Startup Sourcer | 大和ハウスベンチャーズ 展示会スタートアップ発掘
 
-## Getting Started
+大和ハウスベンチャーズ（DHV）投資部メンバー向けに、**幕張メッセ**や**東京ビッグサイト**で開催される産業展示会から、有望なシード・アーリー期のスタートアップを網羅的・継続的にソーシングするためのWebアプリケーションです。
 
-First, run the development server:
+---
+
+## 🌟 主な機能と特徴
+
+### 1. 展示会カレンダーの日次自動クローリング
+- **幕張メッセ** および **東京ビッグサイト** の公式イベントカレンダーを毎日自動巡回。
+- 「スケジュール確定 → 出展社一覧公表 → ブースレイアウト公表」の進行状況を追跡し、スタートアップ親和性の高いB2B展示会を自動抽出。
+
+### 2. 独自の多軸タグ付け・高度な検索フィルター
+- **① 産業別分類**: 建設・不動産テック、製造DX、物流・倉庫ロボット、モビリティ、ヘルスケア、IT・SaaS 等
+- **② 大和ハウス「アスフカケツノ」7領域**:
+  - **ア**: 安全・安心（防犯、防災、作業安全、サイバー防護）
+  - **ス**: スピード・ストック（省施工、プレハブ、空き家再生、物流自動化）
+  - **フ**: 福祉（介護テック、ユニバーサルデザイン、シニアライフ）
+  - **カ**: 環境（脱炭素、省エネ、ZEB/ZEH、ペロブスカイト、サーキュラー）
+  - **ケ**: 健康（ウェルネス、予防医療、室内環境改善）
+  - **ツ**: 通信（IoT、スマートビル、遠隔制御、5G/LPWA）
+  - **ノ**: 農業（アグリテック、植物工場、スマート農業）
+- **③ 高市政権「17の戦略分野」**: AI・半導体（フィジカルAI）、量子、宇宙、サイバー、GX、防災・国土強靭化、港湾ロジスティクス 等の国策投資テーマ
+- **④ ステージ分類**: 設立年数（創業3年以内・5年以内等）、調達フェーズ（シード、シリーズA等）、スタートアップ度判定（大企業を自動除外）
+
+### 3. ワンクリック INITIAL / Kepple 連携
+- 直接スクレイピングによるアカウント停止やBot対策（Cloudflare/CAPTCHA）のリスクを回避し、**各社カードから契約中の INITIAL / Kepple の当該企業詳細画面へワンクリックで直行**できるスマートリンクを自動生成。
+- 企業公式サイト、Google資金調達ニュース検索、国税庁法人番号公表サイトへのリンクも完備。
+
+### 4. 社内ステータス管理 ＆ CSVエクスポート
+- 「注目・Watch」「面談設定」「投資検討中」「アプローチ済」「見送り」のステータス管理と社内検討メモをブラウザに自動保存。
+- 絞り込んだ企業一覧をワンクリックで **UTF-8 BOM付きCSV** として出力可能（投資検討会議・週次ミーティング用）。
+
+---
+
+## 🚀 ローカルでの動作確認方法
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで `http://localhost:3000` を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 無料サーバー（Vercel）へのデプロイ＆URL共有手順
 
-## Learn More
+本アプリは **Vercelの無料枠（Hobby Plan）** で永続的に無料運用でき、投資部メンバーに共有可能な公開URLを発行できます。
 
-To learn more about Next.js, take a look at the following resources:
+1. **GitHubにリポジトリを作成してプッシュ**:
+   ```bash
+   git init
+   git add .
+   git commit -m "feat: initial commit of dhv-startup-sourcer"
+   git branch -M main
+   git remote add origin https://github.com/<YOUR_ORGANIZATION>/dhv-startup-sourcer.git
+   git push -u origin main
+   ```
+2. **Vercelにサインイン**:
+   - [vercel.com](https://vercel.com/) にアクセスし、GitHubアカウントでログイン。
+3. **プロジェクトをインポート**:
+   - 「Add New Project」から `dhv-startup-sourcer` を選択し、「Deploy」をクリック。
+4. **URLの発行と共有**:
+   - 数十秒で `https://dhv-startup-sourcer.vercel.app` のようなURLが発行されます。
+   - このURLを社内Slackや投資部メンバーに共有すれば、誰でもPC・スマホからアクセスして利用可能です。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⏰ 日次自動更新の仕組み（完全無料・サーバーレス）
 
-## Deploy on Vercel
+- `.github/workflows/daily-crawler.yml` にて、**毎朝 日本時間 04:00 (UTC 19:00)** にGitHub Actionsが自動起動します。
+- 幕張メッセ・ビッグサイトの最新情報を巡回し、新規イベント・出展社を差分コミットします。
+- GitHubにコミットされると、Vercelが自動検知して本番Webアプリを数秒で再デプロイするため、**サーバー管理コストゼロで常に最新データが維持**されます。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 手動での即時クローラー実行:
+```bash
+python3 crawler/main.py
+```
