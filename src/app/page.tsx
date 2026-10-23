@@ -40,7 +40,11 @@ const INITIAL_FILTERS: FilterOptions = {
   },
 };
 
+// デフォルト基準日（ビルド時の静的プレレンダリングでも安定）
+const DEFAULT_BASE_DATE = '2026-10-23';
+
 export default function HomePage() {
+  const [todayStr, setTodayStr] = useState<string>(DEFAULT_BASE_DATE);
   const [events, setEvents] = useState<ExhibitionEvent[]>(INITIAL_EVENTS);
   const [exhibitors, setExhibitors] = useState<StartupExhibitor[]>(INITIAL_EXHIBITORS);
   const [filters, setFilters] = useState<FilterOptions>(INITIAL_FILTERS);
@@ -50,6 +54,28 @@ export default function HomePage() {
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<string>('本日 04:30');
   const [sortBy, setSortBy] = useState<'score' | 'established' | 'name'>('score');
+
+  // クライアントマウント後に最新日付へ安全に同期
+  useEffect(() => {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const current = `${yyyy}-${mm}-${dd}`;
+    if (current > DEFAULT_BASE_DATE) {
+      setTodayStr(current);
+    }
+  }, []);
+
+  // ★ これから開催される展示会・サミットのみに限定（終了したイベントは完全除外）
+  const upcomingEvents = useMemo(() => {
+    return events.filter((e) => !e.endDate || e.endDate >= todayStr);
+  }, [events, todayStr]);
+
+  // ★ これから開催される展示会に出展する企業のみに限定（終了した展示会の出展社は完全除外）
+  const upcomingExhibitors = useMemo(() => {
+    return exhibitors.filter((e) => !e.eventEndDate || e.eventEndDate >= todayStr);
+  }, [exhibitors, todayStr]);
 
   // Load persisted statuses & memos from localStorage
   useEffect(() => {
@@ -121,11 +147,16 @@ export default function HomePage() {
 
   // Filter Logic
   const filteredExhibitors = useMemo(() => {
-    return exhibitors.filter((item) => {
+    return upcomingExhibitors.filter((item) => {
+      // 終了したイベントの出展企業は確実に除外（安全チェック）
+      if (item.eventEndDate && item.eventEndDate < todayStr) {
+        return false;
+      }
+
       // Event filter
       if (selectedEventId) {
-        const ev = events.find((e) => e.id === selectedEventId);
-        if (ev && item.eventName !== ev.title) return false;
+        const ev = upcomingEvents.find((e) => e.id === selectedEventId);
+        if (!ev || item.eventName !== ev.title) return false;
       }
 
       // Startup Only
@@ -224,7 +255,7 @@ export default function HomePage() {
 
       return true;
     });
-  }, [exhibitors, filters, selectedEventId, events]);
+  }, [upcomingExhibitors, filters, selectedEventId, upcomingEvents, todayStr]);
 
   // Sorted exhibitors
   const sortedExhibitors = useMemo(() => {
@@ -331,17 +362,17 @@ export default function HomePage() {
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
         onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
         filteredCount={sortedExhibitors.length}
-        totalCount={exhibitors.length}
+        totalCount={upcomingExhibitors.length}
         lastUpdated={lastUpdated}
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         {/* Top Metric Cards */}
-        <StatsSummary events={events} exhibitors={exhibitors} />
+        <StatsSummary events={upcomingEvents} exhibitors={upcomingExhibitors} />
 
-        {/* Big Sight & Makuhari Messe Event Timeline */}
+        {/* Upcoming Event Timeline */}
         <EventTimeline
-          events={events}
+          events={upcomingEvents}
           selectedEventId={selectedEventId}
           onSelectEvent={setSelectedEventId}
         />

@@ -79,14 +79,14 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
           <div>
             <div className="flex items-center space-x-2">
               <h2 className="text-sm font-bold text-slate-900 tracking-tight">
-                全国の監視イベント＆サミット タイムライン
+                これから開催される展示会＆サミット タイムライン
               </h2>
-              <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
-                全国 {events.length} イベント
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+                次回開催・未来予定 {events.length} 件（終了済は除外）
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
-              IVS・SusHi Tech・B Dash・ICCサミット ＆ 東京・横浜・大阪・名古屋・福岡の大型展示会
+              終了イベントを除外し、次回開催予定のサミット（IVS・SusHi Tech・B Dash・ICC等）＆ 全国の大型産業展示会に限定中
             </p>
           </div>
         </div>

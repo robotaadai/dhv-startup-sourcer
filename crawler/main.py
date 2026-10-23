@@ -39,10 +39,16 @@ def run_crawler():
 
     all_events = makuhari_events + bigsight_events + conference_events + venue_events
 
-    # スタートアップ親和性スコアが高い展示会・サミットを優先
-    all_events.sort(key=lambda x: (x.get('startupRelevanceScore', 1), x.get('startDate', '')), reverse=True)
+    # これから開催される展示会・サミットのみに限定（終了したイベントは完全除外）
+    today = datetime.date.today().isoformat()
+    if today < "2026-10-23":
+        today = "2026-10-23"
+    upcoming_events = [e for e in all_events if e.get('endDate', '') >= today]
 
-    print(f" -> Total events monitored: {len(all_events)} (Nationwide Coverage)")
+    # スタートアップ親和性スコアが高い展示会・サミットを優先
+    upcoming_events.sort(key=lambda x: (x.get('startupRelevanceScore', 1), x.get('startDate', '')), reverse=True)
+
+    print(f" -> Upcoming events monitored: {len(upcoming_events)} (Nationwide Coverage, ended events filtered out)")
 
     # 3. 出展社データの蓄積・更新
     # プロジェクト内の既存データを取り込み、新着イベントから生成した出展社をマージ
@@ -51,7 +57,7 @@ def run_crawler():
 
     events_json_path = os.path.join(output_dir, 'events.json')
     with open(events_json_path, 'w', encoding='utf-8') as f:
-        json.dump(all_events, f, ensure_ascii=False, indent=2)
+        json.dump(upcoming_events, f, ensure_ascii=False, indent=2)
 
     print(f" -> Saved events to {events_json_path}")
     print("[SUCCESS] Daily crawling and database update completed.")

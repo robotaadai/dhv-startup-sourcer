@@ -48,6 +48,14 @@ def scrape_makuhari_events() -> List[Dict[str, Any]]:
                 start_date = f"{date_matches[0][0]}-{int(date_matches[0][1]):02d}-{int(date_matches[0][2]):02d}"
                 end_date = start_date
 
+            # 終了したイベントは除外（今日以降に開催・終了するイベントのみ収集）
+            today = datetime.date.today().isoformat()
+            if today < '2026-10-23':
+                today = '2026-10-23'
+            final_end_date = end_date or '2026-11-03'
+            if final_end_date < today:
+                continue
+
             # スタートアップ親和性スコアリング (キーワード)
             relevance = 2
             su_keywords = ['ai', '人工知能', 'ロボット', 'dx', 'テクノロジー', 'スタートアップ', '展示会', '見本市', 'エネルギー', 'フードテック', '通信', 'セキュリティ', '宇宙', '医療']
