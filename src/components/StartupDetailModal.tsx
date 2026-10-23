@@ -16,6 +16,8 @@ import {
   Flag,
   Save,
   CheckCircle2,
+  Copy,
+  Check,
 } from 'lucide-react';
 
 interface StartupDetailModalProps {
@@ -34,11 +36,18 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
   const [memo, setMemo] = useState<string>(exhibitor.memo || '');
   const [status, setStatus] = useState<DHVStatus>(exhibitor.dhvStatus);
   const [savedSuccess, setSavedSuccess] = useState<boolean>(false);
+  const [copied, setCopied] = useState<boolean>(false);
 
   const handleSave = () => {
     onSaveMemo(exhibitor.id, memo, status);
     setSavedSuccess(true);
     setTimeout(() => setSavedSuccess(false), 2000);
+  };
+
+  const handleCopyName = () => {
+    navigator.clipboard.writeText(exhibitor.companyName);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -60,9 +69,26 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
                 </span>
               )}
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-              {exhibitor.companyName}
-            </h2>
+            <div className="flex items-center space-x-2 mt-1">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900">
+                {exhibitor.companyName}
+              </h2>
+              <button
+                onClick={handleCopyName}
+                className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center text-xs font-medium"
+                title="社名をコピー"
+              >
+                {copied ? (
+                  <span className="text-emerald-600 font-bold flex items-center">
+                    <Check className="w-3.5 h-3.5 mr-1" /> コピー済
+                  </span>
+                ) : (
+                  <span className="flex items-center text-slate-500">
+                    <Copy className="w-3.5 h-3.5 mr-1" /> 社名コピー
+                  </span>
+                )}
+              </button>
+            </div>
             {exhibitor.companyNameEn && (
               <p className="text-xs text-slate-500">{exhibitor.companyNameEn}</p>
             )}
@@ -195,16 +221,16 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
                   DEEP LINK INTEGRATION
                 </span>
                 <h4 className="text-sm font-bold text-white">
-                  スタートアップ情報データベース連携
+                  スタートアップ情報データベース直行
                 </h4>
               </div>
-              <span className="text-[11px] text-slate-400 bg-slate-800 px-2 py-1 rounded">
-                契約アカウントで即座に閲覧
+              <span className="text-[11px] text-emerald-400 font-bold bg-slate-800 px-2.5 py-1 rounded">
+                {copied ? '✓ 社名をクリップボードにコピーしました' : '※ クリック時に社名も自動コピー'}
               </span>
             </div>
 
             <p className="text-xs text-slate-300 mb-4 leading-relaxed">
-              契約中のINITIALまたはKeppleの企業検索画面に1クリックで直行します。ログイン中のブラウザ環境から、資本政策・登記情報・最新ラウンドの引受先VCなどを素早く確認できます。
+              契約中のINITIALまたはKeppleの企業詳細に直行します。社名が自動コピーされるため、ログイン後の検索窓で <kbd className="px-1.5 py-0.5 bg-slate-800 rounded border border-slate-700 text-white font-mono text-[10px]">Cmd+V</kbd> を押せば即座に資本政策・株主一覧・直近評価額を確認できます。
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -212,7 +238,8 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
                 href={exhibitor.links.initialUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-sm"
+                onClick={handleCopyName}
+                className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-sm"
               >
                 <div className="flex items-center space-x-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
@@ -225,7 +252,8 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
                 href={exhibitor.links.keppleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-colors shadow-sm"
+                onClick={handleCopyName}
+                className="flex items-center justify-between p-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-colors shadow-sm"
               >
                 <div className="flex items-center space-x-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-white"></div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { StartupExhibitor, ASUFUKAKETSU_CONFIG, DHVStatus } from '@/types';
 import {
   ExternalLink,
@@ -15,6 +15,8 @@ import {
   ShieldCheck,
   Flag,
   CheckCircle2,
+  Copy,
+  Check,
 } from 'lucide-react';
 
 interface StartupCardProps {
@@ -28,6 +30,8 @@ export const StartupCard: React.FC<StartupCardProps> = ({
   onOpenDetail,
   onChangeStatus,
 }) => {
+  const [copied, setCopied] = useState<boolean>(false);
+
   const getStatusColor = (status: DHVStatus) => {
     switch (status) {
       case '注目・Watch':
@@ -45,6 +49,13 @@ export const StartupCard: React.FC<StartupCardProps> = ({
     }
   };
 
+  const handleCopyName = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(exhibitor.companyName);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="bg-white rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all p-5 flex flex-col justify-between group relative">
       {/* Top Header: Company Name & Stage */}
@@ -58,6 +69,13 @@ export const StartupCard: React.FC<StartupCardProps> = ({
               >
                 {exhibitor.companyName}
               </h3>
+              <button
+                onClick={handleCopyName}
+                className="p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors"
+                title="社名をコピー"
+              >
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              </button>
               {exhibitor.isStartup && (
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-600 border border-red-200">
                   SU候補
@@ -167,7 +185,9 @@ export const StartupCard: React.FC<StartupCardProps> = ({
         {/* Deep Links Header */}
         <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
           <span>スタートアップ詳細情報リンク</span>
-          <span className="text-slate-400 normal-case font-normal">※ 契約アカウントへ直行</span>
+          <span className="text-emerald-700 font-bold normal-case">
+            {copied ? '✓ 社名をコピーしました' : '※ クリックで社名自動コピー＆直行'}
+          </span>
         </div>
 
         {/* Action Link Buttons */}
@@ -177,8 +197,13 @@ export const StartupCard: React.FC<StartupCardProps> = ({
             href={exhibitor.links.initialUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              navigator.clipboard.writeText(exhibitor.companyName);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }}
             className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-colors shadow-2xs group/link"
-            title="INITIALで企業情報・株主・調達履歴を開く"
+            title="INITIAL掲載ページへ直行（社名も自動コピーされます）"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 mr-0.5"></span>
             <span>INITIAL</span>
@@ -190,8 +215,13 @@ export const StartupCard: React.FC<StartupCardProps> = ({
             href={exhibitor.links.keppleUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              navigator.clipboard.writeText(exhibitor.companyName);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }}
             className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-bold text-blue-800 bg-blue-50 hover:bg-blue-100 border border-blue-300 transition-colors shadow-2xs group/link"
-            title="Keppleで株主構成・登記情報を開く"
+            title="Kepple掲載ページへ直行（社名も自動コピーされます）"
           >
             <span className="w-2 h-2 rounded-full bg-blue-500 mr-0.5"></span>
             <span>Kepple</span>
@@ -219,7 +249,7 @@ export const StartupCard: React.FC<StartupCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors"
-            title="Google検索を開く"
+            title="Google資金調達検索を開く"
           >
             <Search className="w-3 h-3" />
             <span>Google</span>
