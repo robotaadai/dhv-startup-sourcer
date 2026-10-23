@@ -203,6 +203,15 @@ export interface StartupExhibitor {
   region?: EventRegion;
   eventType?: EventType;
   pitchInfo?: string; // 例: "IVS LaunchPad 2026 入賞", "ICCリアルテックカタパルト登壇"
+  logoUrl?: string; // 会社ロゴ画像URL (任意)
+  latestNews?: StartupNewsItem; // 最新ニュースリリース
+}
+
+export interface StartupNewsItem {
+  title: string;
+  date: string; // 例: "2026/04/10"
+  source?: string; // 例: "PR TIMES", "日経クロステック" 等
+  url?: string;
 }
 
 export type EventRegion = '関東' | '関西' | '中部' | '九州' | '北海道';
@@ -244,6 +253,17 @@ export interface ExhibitionEvent {
   lastCrawledAt: string;
 }
 
+export interface EnabledFilterSections {
+  regions: boolean;
+  eventTypes: boolean;
+  asufukaketsu: boolean;
+  takaichi17: boolean;
+  industries: boolean;
+  maxYearsSinceEst: boolean;
+  venues: boolean;
+  dhvStatus: boolean;
+}
+
 export interface FilterOptions {
   searchQuery: string;
   venues: string[];
@@ -259,5 +279,7 @@ export interface FilterOptions {
   maxYearsSinceEst: number | null;
   fundingStages: FundingStage[];
   dhvStatus: DHVStatus[];
+  enabledSections: EnabledFilterSections; // ★ 各検索項目を検索条件に入れるかのトグル（デフォルト全ON）
 }
+
 

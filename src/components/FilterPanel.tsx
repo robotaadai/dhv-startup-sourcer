@@ -96,19 +96,29 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     onChangeFilters({ ...filters, dhvStatus: next });
   };
 
+  const toggleSectionEnabled = (section: keyof typeof filters.enabledSections) => {
+    onChangeFilters({
+      ...filters,
+      enabledSections: {
+        ...filters.enabledSections,
+        [section]: !filters.enabledSections[section],
+      },
+    });
+  };
+
   const activeFilterCount =
     (filters.searchQuery ? 1 : 0) +
-    filters.venues.length +
-    filters.regions.length +
-    filters.eventTypes.length +
-    filters.asufukaketsu.length +
-    filters.takaichi17.length +
-    filters.industries.length +
+    (filters.enabledSections?.venues ? filters.venues.length : 0) +
+    (filters.enabledSections?.regions ? filters.regions.length : 0) +
+    (filters.enabledSections?.eventTypes ? filters.eventTypes.length : 0) +
+    (filters.enabledSections?.asufukaketsu ? filters.asufukaketsu.length : 0) +
+    (filters.enabledSections?.takaichi17 ? filters.takaichi17.length : 0) +
+    (filters.enabledSections?.industries ? filters.industries.length : 0) +
     (filters.excludeDHVPortfolio ? 1 : 0) +
     (filters.portfolioFilter !== 'all' ? 1 : 0) +
     (filters.startupOnly ? 1 : 0) +
-    (filters.maxYearsSinceEst ? 1 : 0) +
-    filters.dhvStatus.length;
+    (filters.enabledSections?.maxYearsSinceEst && filters.maxYearsSinceEst ? 1 : 0) +
+    (filters.enabledSections?.dhvStatus ? filters.dhvStatus.length : 0);
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-xs mb-6 overflow-hidden">
@@ -213,19 +223,37 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                   <div className="flex items-center space-x-1.5">
                     <MapPin className="w-4 h-4 text-blue-600" />
                     <span className="text-xs font-bold text-slate-900">
-                      全国エリア（関東・関西・中部・九州・北海道）
+                      全国エリア
                     </span>
                   </div>
-                  {filters.regions.length > 0 && (
-                    <button
-                      onClick={() => onChangeFilters({ ...filters, regions: [] })}
-                      className="text-[11px] text-blue-600 hover:text-blue-800 font-semibold"
-                    >
-                      すべて選択解除
-                    </button>
-                  )}
+                  <div className="flex items-center space-x-2">
+                    {/* チェックボックス */}
+                    <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                      <input
+                        type="checkbox"
+                        checked={filters.enabledSections?.regions ?? true}
+                        onChange={() => toggleSectionEnabled('regions')}
+                        className="w-3 h-3 text-blue-600 rounded border-slate-300 focus:ring-blue-500 cursor-pointer"
+                      />
+                      <span className={filters.enabledSections?.regions ? 'text-blue-900' : 'text-slate-400'}>
+                        {filters.enabledSections?.regions ? '検索に適用' : '除外中'}
+                      </span>
+                    </label>
+                    {filters.regions.length > 0 && (
+                      <button
+                        onClick={() => onChangeFilters({ ...filters, regions: [] })}
+                        className="text-[11px] text-blue-600 hover:text-blue-800 font-semibold"
+                      >
+                        クリア
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div
+                  className={`flex flex-wrap gap-1.5 transition-opacity ${
+                    filters.enabledSections?.regions ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                  }`}
+                >
                   {EVENT_REGIONS.map((region) => {
                     const isActive = filters.regions.includes(region);
                     return (
@@ -252,19 +280,37 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                   <div className="flex items-center space-x-1.5">
                     <Flame className="w-4 h-4 text-orange-600" />
                     <span className="text-xs font-bold text-slate-900">
-                      イベント種別（サミット・ピッチ・展示会）
+                      イベント種別
                     </span>
                   </div>
-                  {filters.eventTypes.length > 0 && (
-                    <button
-                      onClick={() => onChangeFilters({ ...filters, eventTypes: [] })}
-                      className="text-[11px] text-orange-600 hover:text-orange-800 font-semibold"
-                    >
-                      すべて選択解除
-                    </button>
-                  )}
+                  <div className="flex items-center space-x-2">
+                    {/* チェックボックス */}
+                    <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                      <input
+                        type="checkbox"
+                        checked={filters.enabledSections?.eventTypes ?? true}
+                        onChange={() => toggleSectionEnabled('eventTypes')}
+                        className="w-3 h-3 text-orange-600 rounded border-slate-300 focus:ring-orange-500 cursor-pointer"
+                      />
+                      <span className={filters.enabledSections?.eventTypes ? 'text-orange-900' : 'text-slate-400'}>
+                        {filters.enabledSections?.eventTypes ? '検索に適用' : '除外中'}
+                      </span>
+                    </label>
+                    {filters.eventTypes.length > 0 && (
+                      <button
+                        onClick={() => onChangeFilters({ ...filters, eventTypes: [] })}
+                        className="text-[11px] text-orange-600 hover:text-orange-800 font-semibold"
+                      >
+                        クリア
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div
+                  className={`flex flex-wrap gap-1.5 transition-opacity ${
+                    filters.enabledSections?.eventTypes ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                  }`}
+                >
                   {EVENT_TYPES.map((type) => {
                     const isActive = filters.eventTypes.includes(type);
                     const isSummit = type.includes('サミット') || type.includes('ピッチ');
@@ -306,17 +352,35 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                   (CVCファンド公式ポートフォリオ分類)
                 </span>
               </div>
-              {filters.asufukaketsu.length > 0 && (
-                <button
-                  onClick={() => onChangeFilters({ ...filters, asufukaketsu: [] })}
-                  className="text-[11px] text-slate-400 hover:text-slate-600"
-                >
-                  選択解除
-                </button>
-              )}
+              <div className="flex items-center space-x-2">
+                {/* チェックボックス */}
+                <label className="flex items-center space-x-1.5 cursor-pointer select-none text-[11px] font-bold text-slate-700 bg-white hover:bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200 shadow-2xs">
+                  <input
+                    type="checkbox"
+                    checked={filters.enabledSections?.asufukaketsu ?? true}
+                    onChange={() => toggleSectionEnabled('asufukaketsu')}
+                    className="w-3.5 h-3.5 text-amber-600 rounded border-slate-300 focus:ring-amber-500 cursor-pointer"
+                  />
+                  <span className={filters.enabledSections?.asufukaketsu ? 'text-amber-900 font-extrabold' : 'text-slate-400'}>
+                    {filters.enabledSections?.asufukaketsu ? '検索に適用' : '除外中'}
+                  </span>
+                </label>
+                {filters.asufukaketsu.length > 0 && (
+                  <button
+                    onClick={() => onChangeFilters({ ...filters, asufukaketsu: [] })}
+                    className="text-[11px] text-slate-400 hover:text-slate-600"
+                  >
+                    選択解除
+                  </button>
+                )}
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+            <div
+              className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2 transition-opacity ${
+                filters.enabledSections?.asufukaketsu ? 'opacity-100' : 'opacity-40 pointer-events-none'
+              }`}
+            >
               {(Object.keys(ASUFUKAKETSU_CONFIG) as AsufukaketsuKey[]).map((key) => {
                 const conf = ASUFUKAKETSU_CONFIG[key];
                 const isActive = filters.asufukaketsu.includes(key);
@@ -352,20 +416,38 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               <div className="flex items-center space-x-1.5">
                 <Flag className="w-4 h-4 text-purple-600" />
                 <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  ③ 高市政権 17戦略分野（国家危機管理投資・経済安保）
+                  高市政権 17戦略分野（国家危機管理投資・経済安保）
                 </span>
               </div>
-              {filters.takaichi17.length > 0 && (
-                <button
-                  onClick={() => onChangeFilters({ ...filters, takaichi17: [] })}
-                  className="text-[11px] text-slate-400 hover:text-slate-600"
-                >
-                  選択解除
-                </button>
-              )}
+              <div className="flex items-center space-x-2">
+                {/* チェックボックス */}
+                <label className="flex items-center space-x-1.5 cursor-pointer select-none text-[11px] font-bold text-slate-700 bg-white hover:bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200 shadow-2xs">
+                  <input
+                    type="checkbox"
+                    checked={filters.enabledSections?.takaichi17 ?? true}
+                    onChange={() => toggleSectionEnabled('takaichi17')}
+                    className="w-3.5 h-3.5 text-purple-600 rounded border-slate-300 focus:ring-purple-500 cursor-pointer"
+                  />
+                  <span className={filters.enabledSections?.takaichi17 ? 'text-purple-900 font-extrabold' : 'text-slate-400'}>
+                    {filters.enabledSections?.takaichi17 ? '検索に適用' : '除外中'}
+                  </span>
+                </label>
+                {filters.takaichi17.length > 0 && (
+                  <button
+                    onClick={() => onChangeFilters({ ...filters, takaichi17: [] })}
+                    className="text-[11px] text-slate-400 hover:text-slate-600"
+                  >
+                    選択解除
+                  </button>
+                )}
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-1.5">
+            <div
+              className={`flex flex-wrap gap-1.5 transition-opacity ${
+                filters.enabledSections?.takaichi17 ? 'opacity-100' : 'opacity-40 pointer-events-none'
+              }`}
+            >
               {TAKAICHI_17_FIELDS.map((field) => {
                 const isActive = filters.takaichi17.includes(field);
                 return (
@@ -390,10 +472,27 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3 border-t border-slate-100">
             {/* ① 産業別 */}
             <div>
-              <span className="text-xs font-bold text-slate-900 block mb-2">
-                ① 産業カテゴリ
-              </span>
-              <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-slate-900 block">
+                  産業カテゴリ
+                </span>
+                <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                  <input
+                    type="checkbox"
+                    checked={filters.enabledSections?.industries ?? true}
+                    onChange={() => toggleSectionEnabled('industries')}
+                    className="w-3 h-3 text-slate-800 rounded border-slate-300 focus:ring-slate-500 cursor-pointer"
+                  />
+                  <span className={filters.enabledSections?.industries ? 'text-slate-900 font-bold' : 'text-slate-400'}>
+                    {filters.enabledSections?.industries ? '検索に適用' : '除外中'}
+                  </span>
+                </label>
+              </div>
+              <div
+                className={`flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1 transition-opacity ${
+                  filters.enabledSections?.industries ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                }`}
+              >
                 {INDUSTRY_CATEGORIES.map((cat) => {
                   const isActive = filters.industries.includes(cat);
                   return (
@@ -416,14 +515,31 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
             {/* ステージ・設立年数 */}
             <div>
-              <span className="text-xs font-bold text-slate-900 block mb-2">
-                ④ 設立からの経過年数
-              </span>
-              <div className="grid grid-cols-3 gap-1.5">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-slate-900 block">
+                  設立からの経過年数
+                </span>
+                <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                  <input
+                    type="checkbox"
+                    checked={filters.enabledSections?.maxYearsSinceEst ?? true}
+                    onChange={() => toggleSectionEnabled('maxYearsSinceEst')}
+                    className="w-3 h-3 text-red-600 rounded border-slate-300 focus:ring-red-500 cursor-pointer"
+                  />
+                  <span className={filters.enabledSections?.maxYearsSinceEst ? 'text-red-900 font-bold' : 'text-slate-400'}>
+                    {filters.enabledSections?.maxYearsSinceEst ? '検索に適用' : '除外中'}
+                  </span>
+                </label>
+              </div>
+              <div
+                className={`grid grid-cols-3 gap-1.5 transition-opacity ${
+                  filters.enabledSections?.maxYearsSinceEst ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                }`}
+              >
                 {[
                   { label: '指定なし', value: null },
-                  { label: '3年以内 (シード帯)', value: 3 },
-                  { label: '5年以内 (アーリー帯)', value: 5 },
+                  { label: '3年以内 (シード)', value: 3 },
+                  { label: '5年以内 (アーリー)', value: 5 },
                   { label: '10年以内', value: 10 },
                 ].map((item) => (
                   <button
@@ -446,16 +562,33 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                 <span className="text-xs font-bold text-slate-900 block">
                   主要会場
                 </span>
-                {filters.venues.length > 0 && (
-                  <button
-                    onClick={() => onChangeFilters({ ...filters, venues: [] })}
-                    className="text-[11px] text-sky-600 hover:text-sky-800"
-                  >
-                    解除
-                  </button>
-                )}
+                <div className="flex items-center space-x-2">
+                  <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                    <input
+                      type="checkbox"
+                      checked={filters.enabledSections?.venues ?? true}
+                      onChange={() => toggleSectionEnabled('venues')}
+                      className="w-3 h-3 text-sky-600 rounded border-slate-300 focus:ring-sky-500 cursor-pointer"
+                    />
+                    <span className={filters.enabledSections?.venues ? 'text-sky-900 font-bold' : 'text-slate-400'}>
+                      {filters.enabledSections?.venues ? '検索に適用' : '除外中'}
+                    </span>
+                  </label>
+                  {filters.venues.length > 0 && (
+                    <button
+                      onClick={() => onChangeFilters({ ...filters, venues: [] })}
+                      className="text-[11px] text-sky-600 hover:text-sky-800"
+                    >
+                      解除
+                    </button>
+                  )}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-1.5">
+              <div
+                className={`flex flex-wrap gap-1.5 transition-opacity ${
+                  filters.enabledSections?.venues ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                }`}
+              >
                 {[
                   '東京ビッグサイト',
                   '幕張メッセ',
@@ -486,10 +619,27 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
             {/* 社内検討ステータス */}
             <div>
-              <span className="text-xs font-bold text-slate-900 block mb-2">
-                社内検討ステータス (DHV)
-              </span>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-slate-900 block">
+                  社内検討ステータス (DHV)
+                </span>
+                <label className="flex items-center space-x-1 cursor-pointer select-none text-[10px] font-bold text-slate-700 bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                  <input
+                    type="checkbox"
+                    checked={filters.enabledSections?.dhvStatus ?? true}
+                    onChange={() => toggleSectionEnabled('dhvStatus')}
+                    className="w-3 h-3 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer"
+                  />
+                  <span className={filters.enabledSections?.dhvStatus ? 'text-emerald-900 font-bold' : 'text-slate-400'}>
+                    {filters.enabledSections?.dhvStatus ? '検索に適用' : '除外中'}
+                  </span>
+                </label>
+              </div>
+              <div
+                className={`flex flex-wrap gap-1.5 transition-opacity ${
+                  filters.enabledSections?.dhvStatus ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                }`}
+              >
                 {(['未対応', 'DHV投資済', '注目・Watch', 'アプローチ済', '面談設定', '投資検討中', '見送り'] as DHVStatus[]).map((st) => {
                   const isActive = filters.dhvStatus.includes(st);
                   return (

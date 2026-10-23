@@ -28,6 +28,16 @@ const INITIAL_FILTERS: FilterOptions = {
   maxYearsSinceEst: null,
   fundingStages: [],
   dhvStatus: [],
+  enabledSections: {
+    regions: true,
+    eventTypes: true,
+    asufukaketsu: true,
+    takaichi17: true,
+    industries: true,
+    maxYearsSinceEst: true,
+    venues: true,
+    dhvStatus: true,
+  },
 };
 
 export default function HomePage() {
@@ -148,12 +158,16 @@ export default function HomePage() {
       }
 
       // Venue
-      if (filters.venues.length > 0 && !filters.venues.includes(item.eventVenue)) {
+      if (
+        (filters.enabledSections?.venues ?? true) &&
+        filters.venues.length > 0 &&
+        !filters.venues.includes(item.eventVenue)
+      ) {
         return false;
       }
 
       // Region
-      if (filters.regions.length > 0) {
+      if ((filters.enabledSections?.regions ?? true) && filters.regions.length > 0) {
         const itemRegion = item.region || events.find((e) => e.title === item.eventName)?.region;
         if (!itemRegion || !filters.regions.includes(itemRegion)) {
           return false;
@@ -161,7 +175,7 @@ export default function HomePage() {
       }
 
       // Event Type
-      if (filters.eventTypes.length > 0) {
+      if ((filters.enabledSections?.eventTypes ?? true) && filters.eventTypes.length > 0) {
         const itemEventType = item.eventType || events.find((e) => e.title === item.eventName)?.eventType;
         if (!itemEventType || !filters.eventTypes.includes(itemEventType)) {
           return false;
@@ -169,7 +183,7 @@ export default function HomePage() {
       }
 
       // Asufukaketsu
-      if (filters.asufukaketsu.length > 0) {
+      if ((filters.enabledSections?.asufukaketsu ?? true) && filters.asufukaketsu.length > 0) {
         const hasAnyAsufukaketsu = filters.asufukaketsu.some((k) =>
           item.asufukaketsu.includes(k)
         );
@@ -177,7 +191,7 @@ export default function HomePage() {
       }
 
       // Takaichi 17
-      if (filters.takaichi17.length > 0) {
+      if ((filters.enabledSections?.takaichi17 ?? true) && filters.takaichi17.length > 0) {
         const hasAnyTakaichi = filters.takaichi17.some((f) =>
           item.takaichi17.includes(f)
         );
@@ -185,7 +199,7 @@ export default function HomePage() {
       }
 
       // Industries
-      if (filters.industries.length > 0) {
+      if ((filters.enabledSections?.industries ?? true) && filters.industries.length > 0) {
         const hasAnyIndustry = filters.industries.some((ind) =>
           item.industries.includes(ind)
         );
@@ -193,14 +207,18 @@ export default function HomePage() {
       }
 
       // Max years since est
-      if (filters.maxYearsSinceEst !== null) {
+      if ((filters.enabledSections?.maxYearsSinceEst ?? true) && filters.maxYearsSinceEst !== null) {
         if (!item.yearsSinceEst || item.yearsSinceEst > filters.maxYearsSinceEst) {
           return false;
         }
       }
 
       // DHV Status
-      if (filters.dhvStatus.length > 0 && !filters.dhvStatus.includes(item.dhvStatus)) {
+      if (
+        (filters.enabledSections?.dhvStatus ?? true) &&
+        filters.dhvStatus.length > 0 &&
+        !filters.dhvStatus.includes(item.dhvStatus)
+      ) {
         return false;
       }
 

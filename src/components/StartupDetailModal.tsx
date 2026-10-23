@@ -19,7 +19,9 @@ import {
   Copy,
   Check,
   Crown,
+  Newspaper,
 } from 'lucide-react';
+import { CompanyLogo } from '@/components/CompanyLogo';
 
 interface StartupDetailModalProps {
   exhibitor: StartupExhibitor | null;
@@ -59,46 +61,68 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
       >
         {/* Header */}
         <div className="p-5 sm:p-6 border-b border-slate-200 bg-gradient-to-r from-slate-50 via-white to-red-50/30 flex items-start justify-between">
-          <div>
-            <div className="flex items-center space-x-2">
-              {exhibitor.isDHVPortfolio && (
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-gradient-to-r from-amber-500 to-red-600 text-white flex items-center shadow-xs">
-                  <Crown className="w-3.5 h-3.5 mr-1 text-amber-200 fill-current" />
-                  DHV 投資先 (Portfolio)
-                </span>
-              )}
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
-                {exhibitor.fundingStage}
-              </span>
-              {exhibitor.establishedYear && (
-                <span className="text-xs text-slate-500 font-medium">
-                  {exhibitor.establishedYear}年設立（設立{exhibitor.yearsSinceEst}年目）
-                </span>
-              )}
-            </div>
-            <div className="flex items-center space-x-2 mt-1">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900">
-                {exhibitor.companyName}
-              </h2>
-              <button
-                onClick={handleCopyName}
-                className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center text-xs font-medium"
-                title="社名をコピー"
-              >
-                {copied ? (
-                  <span className="text-emerald-600 font-bold flex items-center">
-                    <Check className="w-3.5 h-3.5 mr-1" /> コピー済
-                  </span>
-                ) : (
-                  <span className="flex items-center text-slate-500">
-                    <Copy className="w-3.5 h-3.5 mr-1" /> 社名コピー
+          <div className="flex items-start space-x-3.5 flex-1 min-w-0">
+            <CompanyLogo
+              companyName={exhibitor.companyName}
+              officialUrl={exhibitor.officialUrl}
+              logoUrl={exhibitor.logoUrl}
+              size="lg"
+              className="mt-1"
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center space-x-2 flex-wrap gap-y-1">
+                {exhibitor.isDHVPortfolio && (
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-gradient-to-r from-amber-500 to-red-600 text-white flex items-center shadow-xs">
+                    <Crown className="w-3.5 h-3.5 mr-1 text-amber-200 fill-current" />
+                    DHV 投資先 (Portfolio)
                   </span>
                 )}
-              </button>
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                  {exhibitor.fundingStage}
+                </span>
+                {exhibitor.establishedYear && (
+                  <span className="text-xs text-slate-500 font-medium">
+                    {exhibitor.establishedYear}年設立（設立{exhibitor.yearsSinceEst}年目）
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center space-x-2 mt-1.5 flex-wrap gap-y-1">
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900">
+                  {exhibitor.companyName}
+                </h2>
+                {exhibitor.officialUrl && (
+                  <a
+                    href={exhibitor.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1 px-2.5 py-1 text-xs font-bold text-slate-700 hover:text-blue-700 bg-slate-100 hover:bg-blue-50 border border-slate-300 hover:border-blue-300 rounded-md transition-colors shadow-2xs"
+                    title={`${exhibitor.companyName} 公式HPを開く`}
+                  >
+                    <Globe className="w-3.5 h-3.5 text-slate-500" />
+                    <span>HP</span>
+                    <ExternalLink className="w-3 h-3 opacity-60" />
+                  </a>
+                )}
+                <button
+                  onClick={handleCopyName}
+                  className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center text-xs font-medium"
+                  title="社名をコピー"
+                >
+                  {copied ? (
+                    <span className="text-emerald-600 font-bold flex items-center">
+                      <Check className="w-3.5 h-3.5 mr-1" /> コピー済
+                    </span>
+                  ) : (
+                    <span className="flex items-center text-slate-500">
+                      <Copy className="w-3.5 h-3.5 mr-1" /> 社名コピー
+                    </span>
+                  )}
+                </button>
+              </div>
+              {exhibitor.companyNameEn && (
+                <p className="text-xs text-slate-500 mt-0.5">{exhibitor.companyNameEn}</p>
+              )}
             </div>
-            {exhibitor.companyNameEn && (
-              <p className="text-xs text-slate-500">{exhibitor.companyNameEn}</p>
-            )}
           </div>
 
           <button
@@ -190,6 +214,37 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
               <div>
                 <span className="text-[11px] text-amber-800 font-bold block">ピッチコンテスト・サミット実績</span>
                 <span className="text-xs font-black text-amber-950">{exhibitor.pitchInfo}</span>
+              </div>
+            </div>
+          )}
+
+          {/* 最新ニュースリリース */}
+          {exhibitor.latestNews && (
+            <div className="p-3.5 bg-gradient-to-r from-blue-50/60 via-slate-50 to-slate-50 rounded-xl border border-blue-200/70">
+              <div className="flex items-center justify-between mb-1.5">
+                <div className="flex items-center space-x-1.5 text-blue-900 font-bold text-xs">
+                  <Newspaper className="w-4 h-4 text-blue-600" />
+                  <span>最新ニュースリリース</span>
+                  {exhibitor.latestNews.source && (
+                    <span className="text-slate-500 font-normal">({exhibitor.latestNews.source})</span>
+                  )}
+                </div>
+                <span className="text-xs text-slate-500 font-medium">{exhibitor.latestNews.date}</span>
+              </div>
+              <div className="text-slate-800 text-sm font-semibold">
+                {exhibitor.latestNews.url ? (
+                  <a
+                    href={exhibitor.latestNews.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-600 hover:underline flex items-start gap-1.5"
+                  >
+                    <span>{exhibitor.latestNews.title}</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
+                  </a>
+                ) : (
+                  <span>{exhibitor.latestNews.title}</span>
+                )}
               </div>
             </div>
           )}

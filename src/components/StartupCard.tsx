@@ -7,9 +7,7 @@ import {
   MapPin,
   Calendar,
   Sparkles,
-  Building2,
   FileText,
-  Search,
   Globe,
   Tag,
   ShieldCheck,
@@ -18,7 +16,9 @@ import {
   Copy,
   Check,
   Crown,
+  Newspaper,
 } from 'lucide-react';
+import { CompanyLogo } from '@/components/CompanyLogo';
 
 interface StartupCardProps {
   exhibitor: StartupExhibitor;
@@ -89,35 +89,66 @@ export const StartupCard: React.FC<StartupCardProps> = ({
 
       {/* Top Header: Company Name & Stage */}
       <div>
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <div>
-            <div className="flex items-center space-x-2">
-              <h3
-                onClick={() => onOpenDetail(exhibitor)}
-                className={`text-base font-bold transition-colors cursor-pointer ${
-                  exhibitor.isDHVPortfolio
-                    ? 'text-slate-900 group-hover:text-amber-700'
-                    : 'text-slate-900 group-hover:text-red-600'
-                }`}
-              >
-                {exhibitor.companyName}
-              </h3>
-              <button
-                onClick={handleCopyName}
-                className="p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors"
-                title="社名をコピー"
-              >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-              </button>
-              {exhibitor.isStartup && !exhibitor.isDHVPortfolio && (
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-600 border border-red-200">
-                  SU候補
-                </span>
+        <div className="flex items-start justify-between gap-3 mb-2.5">
+          <div className="flex items-start space-x-2.5 min-w-0 flex-1">
+            {/* 社名の左に会社ロゴ */}
+            <CompanyLogo
+              companyName={exhibitor.companyName}
+              officialUrl={exhibitor.officialUrl}
+              logoUrl={exhibitor.logoUrl}
+              size="md"
+              className="mt-0.5"
+            />
+
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
+                <h3
+                  onClick={() => onOpenDetail(exhibitor)}
+                  className={`text-base font-bold transition-colors cursor-pointer truncate max-w-[220px] sm:max-w-[260px] ${
+                    exhibitor.isDHVPortfolio
+                      ? 'text-slate-900 group-hover:text-amber-700'
+                      : 'text-slate-900 group-hover:text-red-600'
+                  }`}
+                  title={exhibitor.companyName}
+                >
+                  {exhibitor.companyName}
+                </h3>
+
+                {/* ★ 社名表示の右に「HP」ボタンを配置 */}
+                {exhibitor.officialUrl && (
+                  <a
+                    href={exhibitor.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center space-x-1 px-2 py-0.5 text-xs font-bold text-slate-700 hover:text-blue-700 bg-slate-100 hover:bg-blue-50 border border-slate-300 hover:border-blue-300 rounded-md transition-colors shrink-0 shadow-2xs"
+                    title={`${exhibitor.companyName} 公式HPを開く`}
+                  >
+                    <Globe className="w-3 h-3 text-slate-500" />
+                    <span>HP</span>
+                    <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+                  </a>
+                )}
+
+                {/* 社名コピーボタン */}
+                <button
+                  onClick={handleCopyName}
+                  className="p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors"
+                  title="社名をコピー"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                </button>
+
+                {exhibitor.isStartup && !exhibitor.isDHVPortfolio && (
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-600 border border-red-200 shrink-0">
+                    SU候補
+                  </span>
+                )}
+              </div>
+              {exhibitor.companyNameEn && (
+                <span className="text-[11px] text-slate-400 block truncate mt-0.5">{exhibitor.companyNameEn}</span>
               )}
             </div>
-            {exhibitor.companyNameEn && (
-              <span className="text-[11px] text-slate-400 block">{exhibitor.companyNameEn}</span>
-            )}
           </div>
 
           {/* Funding Stage & Est Year */}
@@ -164,7 +195,7 @@ export const StartupCard: React.FC<StartupCardProps> = ({
 
         {/* AI Summary / Synergies */}
         <div
-          className={`mb-4 p-3 rounded-xl border text-xs ${
+          className={`mb-3 p-3 rounded-xl border text-xs ${
             exhibitor.isDHVPortfolio
               ? 'bg-amber-50/70 border-amber-200/80 text-amber-950'
               : 'bg-gradient-to-r from-red-50/50 to-orange-50/30 border-red-100/70 text-slate-700'
@@ -187,26 +218,62 @@ export const StartupCard: React.FC<StartupCardProps> = ({
           </p>
         </div>
 
+        {/* ★ 最新ニュースリリース */}
+        {exhibitor.latestNews && (
+          <div className="mb-3.5 p-2.5 bg-gradient-to-r from-blue-50/50 via-slate-50/70 to-slate-50/50 rounded-xl border border-blue-100/80 text-xs">
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center space-x-1.5 text-blue-900 font-bold text-[10px]">
+                <Newspaper className="w-3.5 h-3.5 text-blue-600" />
+                <span>最新ニュースリリース</span>
+                {exhibitor.latestNews.source && (
+                  <span className="text-slate-400 font-normal">({exhibitor.latestNews.source})</span>
+                )}
+              </div>
+              <span className="text-[10px] text-slate-400 font-medium">{exhibitor.latestNews.date}</span>
+            </div>
+            <div className="text-slate-800 font-medium line-clamp-2 leading-snug">
+              {exhibitor.latestNews.url ? (
+                <a
+                  href={exhibitor.latestNews.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="hover:text-blue-600 hover:underline flex items-start gap-1"
+                >
+                  <span className="line-clamp-2 font-semibold text-slate-900 hover:text-blue-600">
+                    {exhibitor.latestNews.title}
+                  </span>
+                  <ExternalLink className="w-3 h-3 text-slate-400 shrink-0 mt-0.5" />
+                </a>
+              ) : (
+                <span className="font-semibold text-slate-900">{exhibitor.latestNews.title}</span>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Badges Section: アスフカケツノ ＆ 高市17分野 */}
-        <div className="space-y-2 mb-4">
-          {/* アスフカケツノ バッジ */}
+        <div className="space-y-2 mb-3">
+          {/* ★ アスフカケツノ バッジ（安心安全等の単語は削除し、ア、フ、ツのみ表示） */}
           {exhibitor.asufukaketsu.length > 0 && (
-            <div className="flex items-center flex-wrap gap-1">
-              <span className="text-[10px] font-bold text-slate-400 mr-1 flex items-center">
+            <div className="flex items-center flex-wrap gap-1.5">
+              <span className="text-[10px] font-bold text-slate-400 mr-0.5 flex items-center">
                 <ShieldCheck className="w-3 h-3 mr-0.5 text-amber-500" /> アスフカケツノ:
               </span>
-              {exhibitor.asufukaketsu.map((key) => {
-                const conf = ASUFUKAKETSU_CONFIG[key];
-                return (
-                  <span
-                    key={key}
-                    className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold ${conf.bgColor} ${conf.color} border ${conf.borderColor}`}
-                    title={`${key}: ${conf.name} - ${conf.description}`}
-                  >
-                    {key}: {conf.name}
-                  </span>
-                );
-              })}
+              <div className="flex items-center gap-1 flex-wrap">
+                {exhibitor.asufukaketsu.map((key) => {
+                  const conf = ASUFUKAKETSU_CONFIG[key];
+                  return (
+                    <span
+                      key={key}
+                      className={`inline-flex items-center justify-center w-5 h-5 rounded text-[11px] font-black ${conf.bgColor} ${conf.color} border ${conf.borderColor} shadow-2xs`}
+                      title={`【${key}】${conf.name} - ${conf.description}`}
+                    >
+                      {key}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           )}
 
@@ -242,62 +309,8 @@ export const StartupCard: React.FC<StartupCardProps> = ({
         </div>
       </div>
 
-      {/* Bottom Section: Action Links & Status */}
-      <div className="pt-3 border-t border-slate-100 mt-2">
-        {/* Action Link Buttons */}
-        <div className="grid grid-cols-3 gap-2 mb-3">
-          {/* Official HP */}
-          {exhibitor.officialUrl ? (
-            <a
-              href={exhibitor.officialUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
-              title="公式HPを開く"
-            >
-              <Globe className="w-3.5 h-3.5 text-slate-600" />
-              <span>公式HP</span>
-              <ExternalLink className="w-3 h-3 opacity-60" />
-            </a>
-          ) : (
-            <button
-              onClick={handleCopyName}
-              className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-medium text-slate-500 bg-slate-50 border border-slate-200"
-            >
-              <Copy className="w-3 h-3" />
-              <span>{copied ? 'コピー済' : '社名コピー'}</span>
-            </button>
-          )}
-
-          {/* Google 資金調達検索 */}
-          <a
-            href={exhibitor.links.googleSearchUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-bold text-sky-800 bg-sky-50 hover:bg-sky-100 border border-sky-300 transition-colors"
-            title="Google資金調達ニュース検索を開く"
-          >
-            <Search className="w-3.5 h-3.5 text-sky-600" />
-            <span>資金調達検索</span>
-            <ExternalLink className="w-3 h-3 opacity-60" />
-          </a>
-
-          {/* 国税庁 法人番号公表 */}
-          <a
-            href={exhibitor.links.corporateNumberUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors"
-            title="国税庁 法人番号公表サイトを開く"
-          >
-            <Building2 className="w-3.5 h-3.5 text-slate-500" />
-            <span>法人番号</span>
-            <ExternalLink className="w-2.5 h-2.5 opacity-60" />
-          </a>
-        </div>
-
-        {/* DHV Status Selector & Detail Modal Trigger */}
-        <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+      {/* Bottom Section: Status & Details (※資金調達検索・法人番号ボタンは削除済) */}
+      <div className="pt-3 border-t border-slate-100 mt-1 flex items-center justify-between">
           <div className="flex items-center space-x-1.5">
             <span className="text-[11px] text-slate-400 font-medium">ステータス:</span>
             <select
@@ -323,7 +336,6 @@ export const StartupCard: React.FC<StartupCardProps> = ({
           >
             詳細を見る →
           </button>
-        </div>
       </div>
     </div>
   );
