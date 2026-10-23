@@ -154,11 +154,19 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
               <span className="text-xs font-bold text-slate-800 line-clamp-1" title={exhibitor.eventName}>
                 {exhibitor.eventName}
               </span>
+              {exhibitor.eventType && (
+                <span className="text-[10px] text-orange-600 font-bold block mt-0.5">
+                  {exhibitor.eventType}
+                </span>
+              )}
             </div>
             <div>
-              <span className="text-[11px] text-slate-400 font-medium block">会場・ブース</span>
+              <span className="text-[11px] text-slate-400 font-medium block">地域・会場・ブース</span>
               <span className="text-xs font-bold text-slate-800">
-                {exhibitor.eventVenue} / {exhibitor.boothNumber}
+                {exhibitor.region ? `[${exhibitor.region}] ` : ''}{exhibitor.eventVenue}
+              </span>
+              <span className="text-[11px] text-slate-500 block">
+                {exhibitor.boothNumber}
               </span>
             </div>
             <div>
@@ -174,6 +182,17 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
               </span>
             </div>
           </div>
+
+          {/* ピッチ登壇・受賞実績 */}
+          {exhibitor.pitchInfo && (
+            <div className="flex items-center space-x-2 p-3 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-transparent border border-amber-200 rounded-xl">
+              <span className="text-base">🏆</span>
+              <div>
+                <span className="text-[11px] text-amber-800 font-bold block">ピッチコンテスト・サミット実績</span>
+                <span className="text-xs font-black text-amber-950">{exhibitor.pitchInfo}</span>
+              </div>
+            </div>
+          )}
 
           {/* AI Synergy & Summary */}
           <div className="bg-gradient-to-br from-red-50/70 via-orange-50/40 to-white p-4 sm:p-5 rounded-2xl border border-red-200">

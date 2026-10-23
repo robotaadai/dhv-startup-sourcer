@@ -10,6 +10,10 @@ import {
   IndustryCategory,
   DHVStatus,
   FilterOptions,
+  EVENT_REGIONS,
+  EventRegion,
+  EVENT_TYPES,
+  EventType,
 } from '@/types';
 import {
   Search,
@@ -23,6 +27,8 @@ import {
   ChevronUp,
   Crown,
   EyeOff,
+  MapPin,
+  Flame,
 } from 'lucide-react';
 
 interface FilterPanelProps {
@@ -69,6 +75,20 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     onChangeFilters({ ...filters, venues: next });
   };
 
+  const toggleRegion = (region: EventRegion) => {
+    const next = filters.regions.includes(region)
+      ? filters.regions.filter((r) => r !== region)
+      : [...filters.regions, region];
+    onChangeFilters({ ...filters, regions: next });
+  };
+
+  const toggleEventType = (evtType: EventType) => {
+    const next = filters.eventTypes.includes(evtType)
+      ? filters.eventTypes.filter((t) => t !== evtType)
+      : [...filters.eventTypes, evtType];
+    onChangeFilters({ ...filters, eventTypes: next });
+  };
+
   const toggleStatus = (st: DHVStatus) => {
     const next = filters.dhvStatus.includes(st)
       ? filters.dhvStatus.filter((s) => s !== st)
@@ -79,6 +99,8 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   const activeFilterCount =
     (filters.searchQuery ? 1 : 0) +
     filters.venues.length +
+    filters.regions.length +
+    filters.eventTypes.length +
     filters.asufukaketsu.length +
     filters.takaichi17.length +
     filters.industries.length +
@@ -182,13 +204,103 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
       {/* Expanded Filter Sections */}
       {isExpanded && (
         <div className="p-4 sm:p-5 space-y-5 bg-white">
+          {/* Section 0: 全国開催地域 ＆ イベント種別 (サミット・ピッチ・展示会) */}
+          <div className="p-3.5 bg-gradient-to-r from-blue-50/70 via-indigo-50/50 to-slate-50/70 rounded-xl border border-blue-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* ① 開催地域エリア */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center space-x-1.5">
+                    <MapPin className="w-4 h-4 text-blue-600" />
+                    <span className="text-xs font-bold text-slate-900">
+                      全国エリア（関東・関西・中部・九州・北海道）
+                    </span>
+                  </div>
+                  {filters.regions.length > 0 && (
+                    <button
+                      onClick={() => onChangeFilters({ ...filters, regions: [] })}
+                      className="text-[11px] text-blue-600 hover:text-blue-800 font-semibold"
+                    >
+                      すべて選択解除
+                    </button>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {EVENT_REGIONS.map((region) => {
+                    const isActive = filters.regions.includes(region);
+                    return (
+                      <button
+                        key={region}
+                        type="button"
+                        onClick={() => toggleRegion(region)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                          isActive
+                            ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                            : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
+                        }`}
+                      >
+                        📍 {region}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* ② イベント種別 */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center space-x-1.5">
+                    <Flame className="w-4 h-4 text-orange-600" />
+                    <span className="text-xs font-bold text-slate-900">
+                      イベント種別（サミット・ピッチ・展示会）
+                    </span>
+                  </div>
+                  {filters.eventTypes.length > 0 && (
+                    <button
+                      onClick={() => onChangeFilters({ ...filters, eventTypes: [] })}
+                      className="text-[11px] text-orange-600 hover:text-orange-800 font-semibold"
+                    >
+                      すべて選択解除
+                    </button>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {EVENT_TYPES.map((type) => {
+                    const isActive = filters.eventTypes.includes(type);
+                    const isSummit = type.includes('サミット') || type.includes('ピッチ');
+                    return (
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() => toggleEventType(type)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                          isActive
+                            ? isSummit
+                              ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white border-transparent shadow-xs'
+                              : 'bg-slate-800 text-white border-slate-800 shadow-xs'
+                            : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
+                        }`}
+                      >
+                        {type === 'スタートアップ特化サミット'
+                          ? '🔥 サミット (IVS/ICC/SusHi等)'
+                          : type === 'ピッチコンテスト・アクセラレーター'
+                          ? '🏆 ピッチ登壇企業'
+                          : '🏢 大型産業展示会'}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Section 1: アスフカケツノ 7領域 ＋ キ・ロ (大和ハウスグループ重点) */}
           <div>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-1.5">
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  ② 大和ハウス重点投資テーマ（アスフカケツノ ＋ キ・ロ）
+                  大和ハウス重点投資テーマ（アスフカケツノ ＋ キ・ロ）
                 </span>
                 <span className="text-[11px] text-slate-400 hidden sm:inline">
                   (CVCファンド公式ポートフォリオ分類)
@@ -330,20 +442,38 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               </div>
 
               {/* 会場フィルター */}
-              <span className="text-xs font-bold text-slate-900 block mt-3 mb-1.5">
-                会場
-              </span>
-              <div className="flex gap-2">
-                {['東京ビッグサイト', '幕張メッセ'].map((venue) => {
+              <div className="flex items-center justify-between mt-3 mb-1.5">
+                <span className="text-xs font-bold text-slate-900 block">
+                  主要会場
+                </span>
+                {filters.venues.length > 0 && (
+                  <button
+                    onClick={() => onChangeFilters({ ...filters, venues: [] })}
+                    className="text-[11px] text-sky-600 hover:text-sky-800"
+                  >
+                    解除
+                  </button>
+                )}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  '東京ビッグサイト',
+                  '幕張メッセ',
+                  'パシフィコ横浜',
+                  'インテックス大阪',
+                  'みやこめっせ京都',
+                  'ポートメッセなごや',
+                  '福岡国際会議場',
+                ].map((venue) => {
                   const isActive = filters.venues.includes(venue);
                   return (
                     <button
                       key={venue}
                       type="button"
                       onClick={() => toggleVenue(venue)}
-                      className={`px-3 py-1 rounded-md text-xs font-medium border transition-all ${
+                      className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-all ${
                         isActive
-                          ? 'bg-sky-700 text-white border-sky-700'
+                          ? 'bg-sky-700 text-white border-sky-700 shadow-xs'
                           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                       }`}
                     >

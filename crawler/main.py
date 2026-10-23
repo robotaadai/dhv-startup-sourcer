@@ -13,26 +13,36 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from scrapers.makuhari import scrape_makuhari_events
 from scrapers.bigsight import scrape_bigsight_events
+from scrapers.startup_conferences import scrape_startup_conferences
+from scrapers.nationwide_venues import scrape_nationwide_venues
 from classifier import classify_exhibitor
 from link_generator import generate_links
 
 def run_crawler():
-    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting DHV Startup Sourcing Crawler...")
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting DHV Startup Sourcing Crawler (Nationwide & Conferences)...")
 
-    # 1. 幕張メッセ巡回
+    # 1. 幕張メッセ巡回 (関東)
     makuhari_events = scrape_makuhari_events()
     print(f" -> Makuhari Messe: {len(makuhari_events)} events crawled.")
 
-    # 2. 東京ビッグサイト巡回
+    # 2. 東京ビッグサイト巡回 (関東)
     bigsight_events = scrape_bigsight_events()
     print(f" -> Tokyo Big Sight: {len(bigsight_events)} events crawled.")
 
-    all_events = makuhari_events + bigsight_events
+    # 3. 全国の著名スタートアップサミット・ピッチ大会 (IVS京都, SusHi Tech, B Dash福岡, ICC京都, Plug and Play等)
+    conference_events = scrape_startup_conferences()
+    print(f" -> Startup Conferences & Summits: {len(conference_events)} events collected.")
 
-    # スタートアップ親和性スコアが高い展示会を優先
+    # 4. 全国の主要展示会場 (インテックス大阪, パシフィコ横浜, ポートメッセなごや, 福岡国際会議場等)
+    venue_events = scrape_nationwide_venues()
+    print(f" -> Nationwide Venues (Osaka/Nagoya/Yokohama/Fukuoka): {len(venue_events)} events crawled.")
+
+    all_events = makuhari_events + bigsight_events + conference_events + venue_events
+
+    # スタートアップ親和性スコアが高い展示会・サミットを優先
     all_events.sort(key=lambda x: (x.get('startupRelevanceScore', 1), x.get('startDate', '')), reverse=True)
 
-    print(f" -> Total events monitored: {len(all_events)}")
+    print(f" -> Total events monitored: {len(all_events)} (Nationwide Coverage)")
 
     # 3. 出展社データの蓄積・更新
     # プロジェクト内の既存データを取り込み、新着イベントから生成した出展社をマージ

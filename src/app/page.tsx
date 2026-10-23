@@ -16,6 +16,8 @@ import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown, EyeOff } fro
 const INITIAL_FILTERS: FilterOptions = {
   searchQuery: '',
   venues: [],
+  regions: [],
+  eventTypes: [],
   selectedEvents: [],
   asufukaketsu: [],
   takaichi17: [],
@@ -150,6 +152,22 @@ export default function HomePage() {
         return false;
       }
 
+      // Region
+      if (filters.regions.length > 0) {
+        const itemRegion = item.region || events.find((e) => e.title === item.eventName)?.region;
+        if (!itemRegion || !filters.regions.includes(itemRegion)) {
+          return false;
+        }
+      }
+
+      // Event Type
+      if (filters.eventTypes.length > 0) {
+        const itemEventType = item.eventType || events.find((e) => e.title === item.eventName)?.eventType;
+        if (!itemEventType || !filters.eventTypes.includes(itemEventType)) {
+          return false;
+        }
+      }
+
       // Asufukaketsu
       if (filters.asufukaketsu.length > 0) {
         const hasAnyAsufukaketsu = filters.asufukaketsu.some((k) =>
@@ -222,8 +240,11 @@ export default function HomePage() {
       '投資完了日',
       '大和ハウス協業検討概要',
       '出展イベント名',
+      '開催地域',
+      'イベント種別',
       '会場',
-      'ブース番号',
+      'ブース番号/登壇枠',
+      'ピッチ・登壇実績',
       '開催期間',
       'スタートアップ判定',
       'スコア',
@@ -250,8 +271,11 @@ export default function HomePage() {
       `"${e.dhvInvestmentDate || ''}"`,
       `"${(e.dhvCollaborationNote || '').replace(/"/g, '""')}"`,
       `"${e.eventName.replace(/"/g, '""')}"`,
+      `"${e.region || ''}"`,
+      `"${e.eventType || ''}"`,
       `"${e.eventVenue.replace(/"/g, '""')}"`,
       `"${e.boothNumber.replace(/"/g, '""')}"`,
+      `"${(e.pitchInfo || '').replace(/"/g, '""')}"`,
       `"${e.eventStartDate}〜${e.eventEndDate}"`,
       e.isStartup ? 'スタートアップ' : '大企業・その他',
       e.startupScore,

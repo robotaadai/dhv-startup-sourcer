@@ -13,7 +13,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-10-23T00:47:54.945546+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:01.297951+00:00"
   },
   {
     "id": "tbs-robot-week",
@@ -29,7 +29,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-10-23T00:47:54.945542+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:01.297943+00:00"
   },
   {
     "id": "tbs-smart-factory",
@@ -45,7 +45,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 64,
-    "lastCrawledAt": "2026-10-23T00:47:54.945527+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:01.297907+00:00"
   },
   {
     "id": "tbs-logis-tech",
@@ -61,7 +61,159 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 72,
-    "lastCrawledAt": "2026-10-23T00:47:54.945548+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:01.297956+00:00"
+  },
+  {
+    "id": "conf-icc-kyoto-2026",
+    "title": "Industry Co-Creation (ICC) サミット KYOTO 2026",
+    "venue": "ウェスティン都ホテル京都 / みやこめっせ",
+    "city": "京都",
+    "region": "関西",
+    "eventType": "スタートアップ特化サミット",
+    "hall": "メイン会場・カタパルト特設ステージ",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-10",
+    "officialUrl": "https://industry-co-creation.com/",
+    "description": "『ともに学び、ともに産業を創る』を掲げる最高峰のカンファレンス。「スタートアップ・カタパルト」「リアルテック・カタパルト」でディープテック・ものづくりSUが競い合う。",
+    "organizer": "ICCパートナーズ株式会社",
+    "startupRelevanceScore": 5,
+    "status": "スケジュール確定",
+    "exhibitorCount": 150,
+    "startupCount": 140,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "conf-nagoya-startup-day-2026",
+    "title": "Central Japan Startup Ecosystem Summit 2026 (名大・ポートメッセ)",
+    "venue": "ポートメッセなごや / STATION Ai",
+    "city": "名古屋",
+    "region": "中部",
+    "eventType": "スタートアップ特化サミット",
+    "hall": "第1展示館・STATION Aiイベントホール",
+    "startDate": "2026-07-16",
+    "endDate": "2026-07-17",
+    "officialUrl": "https://stationai.co.jp/",
+    "description": "日本最大のインキュベーション施設STATION Aiと連携した中部圏最大のテック祭典。トヨタ系・中部電力系製造業サプライチェーンの変革を目指すモビリティ・ロボティクスSUが多数登壇。",
+    "organizer": "中部経済産業局 / 愛知県 / STATION Ai",
+    "startupRelevanceScore": 5,
+    "status": "スケジュール確定",
+    "exhibitorCount": 180,
+    "startupCount": 160,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "conf-ivs-kyoto-2026",
+    "title": "IVS 2026 KYOTO / IVS Crypto",
+    "venue": "みやこめっせ京都 / ロームシアター京都",
+    "city": "京都",
+    "region": "関西",
+    "eventType": "スタートアップ特化サミット",
+    "hall": "全館・特設ピッチアリーナ",
+    "startDate": "2026-07-02",
+    "endDate": "2026-07-04",
+    "officialUrl": "https://www.ivs.events/",
+    "description": "国内最大級のスタートアップカンファレンス。歴史ある名物ピッチコンテスト『IVS LAUNCHPAD』をはじめ、国内外のVC・エンジェル・CVC・起業家1万人以上が集結。",
+    "organizer": "IVS KYOTO実行委員会 / Headline Japan",
+    "startupRelevanceScore": 5,
+    "status": "出展社公表済",
+    "exhibitorCount": 350,
+    "startupCount": 320,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "conf-plug-and-play-japan-2026",
+    "title": "Plug and Play Japan Summit 2026",
+    "venue": "虎ノ門ヒルズフォーラム / パシフィコ横浜",
+    "city": "東京・横浜",
+    "region": "関東",
+    "eventType": "ピッチコンテスト・アクセラレーター",
+    "hall": "ホールA/B",
+    "startDate": "2026-06-18",
+    "endDate": "2026-06-19",
+    "officialUrl": "https://japan.plugandplaytechcenter.com/",
+    "description": "シリコンバレー発の世界最大級アクセラレーターの成果発表会。Smart Cities, Energy, Mobility, IoT等のバーティカルで選抜された日米欧の精鋭スタートアップが登壇。",
+    "organizer": "Plug and Play Japan 株式会社",
+    "startupRelevanceScore": 5,
+    "status": "スケジュール確定",
+    "exhibitorCount": 100,
+    "startupCount": 95,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "conf-bdash-camp-fukuoka-2026",
+    "title": "B Dash Camp 2026 Spring in Fukuoka",
+    "venue": "福岡国際会議場 / マリンメッセ福岡",
+    "city": "福岡",
+    "region": "九州",
+    "eventType": "ピッチコンテスト・アクセラレーター",
+    "hall": "メインホール・展示エリア",
+    "startDate": "2026-06-03",
+    "endDate": "2026-06-05",
+    "officialUrl": "https://camp.bdashventures.com/",
+    "description": "招待制・国内屈指のエグゼクティブ向けスタートアップサミット。次世代ユニコーン輩出の登竜門『Pitch Arena』を開催し、九州・アジア展開を見据える有望企業が集結。",
+    "organizer": "B Dash Ventures 株式会社",
+    "startupRelevanceScore": 5,
+    "status": "スケジュール確定",
+    "exhibitorCount": 120,
+    "startupCount": 110,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "conf-sushi-tech-2026",
+    "title": "SusHi Tech Tokyo 2026 Global Startup Program",
+    "venue": "東京ビッグサイト",
+    "city": "東京",
+    "region": "関東",
+    "eventType": "スタートアップ特化サミット",
+    "hall": "東展示棟 4-6ホール",
+    "startDate": "2026-05-13",
+    "endDate": "2026-05-15",
+    "officialUrl": "https://sushitech-startup.metro.tokyo.lg.jp/",
+    "description": "東京都主催のアジア最大級イノベーションカンファレンス。都市課題解決（スマートシティ・気候変動・クリーンテック）を軸に世界中のディープテック・インパクトSUが集う。",
+    "organizer": "SusHi Tech Tokyo 実行委員会（東京都）",
+    "startupRelevanceScore": 5,
+    "status": "出展社公表済",
+    "exhibitorCount": 500,
+    "startupCount": 460,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "venue-fukuoka-kyushu-dx-2026",
+    "title": "九州 次世代産業・地域創生DX展 2026",
+    "venue": "福岡国際会議場 / マリンメッセ福岡",
+    "city": "福岡",
+    "region": "九州",
+    "eventType": "大型産業展示会",
+    "hall": "イベントホール",
+    "startDate": "2026-11-18",
+    "endDate": "2026-11-19",
+    "officialUrl": "https://www.innovators-fukuoka.jp/",
+    "description": "半導体産業（TSMC熊本等）で沸く九州全域のスマートインフラ、物流・港湾サプライチェーン効率化、農業・一次産業スマート化のスタートアップが多数出展。",
+    "organizer": "九州経済産業局 / 九州イノベーション協議会",
+    "startupRelevanceScore": 4,
+    "status": "スケジュール確定",
+    "exhibitorCount": 320,
+    "startupCount": 75,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "venue-portmesse-auto-nagoya-2026",
+    "title": "第9回 名古屋 オートモーティブ ワールド / モビリティDX展",
+    "venue": "ポートメッセなごや",
+    "city": "名古屋",
+    "region": "中部",
+    "eventType": "大型産業展示会",
+    "hall": "第1展示館・第3展示館",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-30",
+    "officialUrl": "https://www.automotiveworld.jp/nagoya/ja-jp.html",
+    "description": "中部・東海のものづくり中枢で開催される次世代自動車・自動運転技術展。自動運転OS、車載LiDAR/レーダー、物流自動化EVトラック、フィジカルAIが集結。",
+    "organizer": "RX Japan株式会社",
+    "startupRelevanceScore": 4,
+    "status": "スケジュール確定",
+    "exhibitorCount": 680,
+    "startupCount": 90,
+    "lastCrawledAt": "2026-10-23 12:49:01"
   },
   {
     "id": "mkm-8862",
@@ -76,7 +228,45 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 25,
-    "lastCrawledAt": "2026-10-23T00:47:54.528763+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823132+00:00"
+  },
+  {
+    "id": "venue-intex-monodukuri-2026",
+    "title": "第29回 ものづくり ワールド [大阪] / 工場・ロボット自動化展",
+    "venue": "インテックス大阪",
+    "city": "大阪",
+    "region": "関西",
+    "eventType": "大型産業展示会",
+    "hall": "1-5号館",
+    "startDate": "2026-10-07",
+    "endDate": "2026-10-09",
+    "officialUrl": "https://www.manufacturing-world.jp/osaka/ja-jp.html",
+    "description": "西日本最大級の製造業・ファクトリーDX展示会。産業ロボット、協働ロボット、AI品質検査、自動搬送AGV/AMR、3Dプリンティング等の最新鋭ハード・ソフトが集結。",
+    "organizer": "RX Japan株式会社",
+    "startupRelevanceScore": 4,
+    "status": "スケジュール確定",
+    "exhibitorCount": 1100,
+    "startupCount": 140,
+    "lastCrawledAt": "2026-10-23 12:49:01"
+  },
+  {
+    "id": "venue-pacifico-smart-energy-2026",
+    "title": "スマートエネルギーWeek [春] / 脱炭素イノベーション展",
+    "venue": "パシフィコ横浜",
+    "city": "横浜",
+    "region": "関東",
+    "eventType": "大型産業展示会",
+    "hall": "展示ホール A-D",
+    "startDate": "2026-05-20",
+    "endDate": "2026-05-22",
+    "officialUrl": "https://www.wsew.jp/hub/ja-jp.html",
+    "description": "水素・アンモニア発電、次世代ペロブスカイト太陽電池、系統用蓄電池、核融合炉要素技術、ビル・データセンター省エネZEB技術が展示。",
+    "organizer": "RX Japan株式会社",
+    "startupRelevanceScore": 4,
+    "status": "出展社公表済",
+    "exhibitorCount": 850,
+    "startupCount": 125,
+    "lastCrawledAt": "2026-10-23 12:49:01"
   },
   {
     "id": "mkm-8584",
@@ -91,7 +281,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528588+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822870+00:00"
   },
   {
     "id": "mkm-8860",
@@ -106,7 +296,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528606+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822895+00:00"
   },
   {
     "id": "mkm-8587",
@@ -121,7 +311,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528658+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822966+00:00"
   },
   {
     "id": "mkm-8582",
@@ -136,7 +326,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528669+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822984+00:00"
   },
   {
     "id": "mkm-8581",
@@ -151,7 +341,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528716+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823055+00:00"
   },
   {
     "id": "mkm-8574",
@@ -166,7 +356,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528727+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823071+00:00"
   },
   {
     "id": "mkm-8583",
@@ -181,7 +371,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528786+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823169+00:00"
   },
   {
     "id": "mkm-8864",
@@ -196,7 +386,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528839+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823186+00:00"
   },
   {
     "id": "mkm-8577",
@@ -211,7 +401,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528864+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823204+00:00"
   },
   {
     "id": "mkm-8585",
@@ -226,7 +416,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528554+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822820+00:00"
   },
   {
     "id": "mkm-8588",
@@ -241,7 +431,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528621+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822913+00:00"
   },
   {
     "id": "mkm-8572",
@@ -256,7 +446,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528633+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822932+00:00"
   },
   {
     "id": "mkm-8589",
@@ -271,7 +461,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528646+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.822949+00:00"
   },
   {
     "id": "mkm-8576",
@@ -286,7 +476,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528681+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823001+00:00"
   },
   {
     "id": "mkm-8590",
@@ -301,7 +491,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528693+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823018+00:00"
   },
   {
     "id": "mkm-8586",
@@ -316,7 +506,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528705+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823036+00:00"
   },
   {
     "id": "mkm-8591",
@@ -331,7 +521,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528738+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823089+00:00"
   },
   {
     "id": "mkm-8575",
@@ -346,7 +536,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528749+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823112+00:00"
   },
   {
     "id": "mkm-8592",
@@ -361,6 +551,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T00:47:54.528775+00:00"
+    "lastCrawledAt": "2026-10-23T03:49:00.823150+00:00"
   }
 ]

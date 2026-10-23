@@ -19,10 +19,10 @@ export const StatsSummary: React.FC<StatsSummaryProps> = ({ events, exhibitors }
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
-      {/* 監視中展示会 */}
+      {/* 監視中展示会 & サミット */}
       <div className="bg-white rounded-xl p-3.5 border border-slate-200/80 shadow-xs">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-slate-500">監視中展示会</span>
+          <span className="text-xs font-medium text-slate-500">監視中イベント</span>
           <div className="p-1.5 rounded-lg bg-indigo-50 text-indigo-600">
             <Calendar className="w-4 h-4" />
           </div>
@@ -31,8 +31,8 @@ export const StatsSummary: React.FC<StatsSummaryProps> = ({ events, exhibitors }
           <span className="text-2xl font-bold text-slate-900">{totalEvents}</span>
           <span className="ml-1 text-xs text-slate-500">件</span>
         </div>
-        <div className="mt-1 text-[11px] text-slate-500 truncate">
-          ビッグサイト / 幕張メッセ
+        <div className="mt-1 text-[11px] text-slate-500 truncate" title="関東・関西・中部・九州・北海道の主要サミット＆展示場">
+          全国5大地域 / サミット＆展示会
         </div>
       </div>
 

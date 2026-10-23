@@ -133,18 +133,33 @@ export const StartupCard: React.FC<StartupCardProps> = ({
           </div>
         </div>
 
-        {/* Booth & Event Info */}
-        <div className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs text-slate-500 mb-3 bg-slate-50 p-2 rounded-lg border border-slate-100">
-          <span className="font-semibold text-slate-800 flex items-center">
-            <MapPin className="w-3.5 h-3.5 mr-1 text-red-500" />
-            {exhibitor.boothNumber}
-          </span>
-          <span className="text-slate-300">|</span>
-          <span className="truncate max-w-[220px]" title={exhibitor.eventName}>
-            {exhibitor.eventName}
-          </span>
-          <span className="text-slate-300">|</span>
-          <span>{exhibitor.eventVenue}</span>
+        {/* Booth, Region, Event Info & Pitch Info */}
+        <div className="mb-3 space-y-1.5">
+          <div className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs text-slate-500 bg-slate-50 p-2 rounded-lg border border-slate-100">
+            {exhibitor.region && (
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
+                {exhibitor.region}
+              </span>
+            )}
+            <span className="font-semibold text-slate-800 flex items-center">
+              <MapPin className="w-3.5 h-3.5 mr-1 text-red-500" />
+              {exhibitor.boothNumber}
+            </span>
+            <span className="text-slate-300">|</span>
+            <span className="truncate max-w-[180px] font-medium text-slate-700" title={exhibitor.eventName}>
+              {exhibitor.eventName}
+            </span>
+            <span className="text-slate-300">|</span>
+            <span>{exhibitor.eventVenue}</span>
+          </div>
+
+          {/* ピッチ登壇・受賞実績ハイライト */}
+          {exhibitor.pitchInfo && (
+            <div className="flex items-center space-x-1.5 px-2.5 py-1 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-lg text-[11px] font-bold text-amber-900">
+              <span>🏆</span>
+              <span>{exhibitor.pitchInfo}</span>
+            </div>
+          )}
         </div>
 
         {/* AI Summary / Synergies */}

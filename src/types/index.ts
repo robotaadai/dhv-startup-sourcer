@@ -200,7 +200,22 @@ export interface StartupExhibitor {
   dhvStatus: DHVStatus;
   memo?: string;
   updatedAt: string;
+  region?: EventRegion;
+  eventType?: EventType;
+  pitchInfo?: string; // 例: "IVS LaunchPad 2026 入賞", "ICCリアルテックカタパルト登壇"
 }
+
+export type EventRegion = '関東' | '関西' | '中部' | '九州' | '北海道';
+
+export const EVENT_REGIONS: EventRegion[] = ['関東', '関西', '中部', '九州', '北海道'];
+
+export type EventType = '大型産業展示会' | 'スタートアップ特化サミット' | 'ピッチコンテスト・アクセラレーター';
+
+export const EVENT_TYPES: EventType[] = [
+  '大型産業展示会',
+  'スタートアップ特化サミット',
+  'ピッチコンテスト・アクセラレーター',
+];
 
 export type EventStatus =
   | 'スケジュール確定'
@@ -212,8 +227,11 @@ export type EventStatus =
 export interface ExhibitionEvent {
   id: string;
   title: string;
-  venue: '東京ビッグサイト' | '幕張メッセ' | string;
+  venue: string; // 東京ビッグサイト, 幕張メッセ, パシフィコ横浜, インテックス大阪, みやこめっせ京都, ポートメッセなごや, 福岡国際会議場 等
   hall?: string;
+  city: string; // 例: "東京", "千葉", "横浜", "大阪", "京都", "名古屋", "福岡", "札幌"
+  region: EventRegion;
+  eventType: EventType;
   startDate: string;
   endDate: string;
   officialUrl: string;
@@ -229,6 +247,8 @@ export interface ExhibitionEvent {
 export interface FilterOptions {
   searchQuery: string;
   venues: string[];
+  regions: EventRegion[];
+  eventTypes: EventType[];
   selectedEvents: string[];
   asufukaketsu: AsufukaketsuKey[];
   takaichi17: TakaichiField[];
@@ -240,3 +260,4 @@ export interface FilterOptions {
   fundingStages: FundingStage[];
   dhvStatus: DHVStatus[];
 }
+
