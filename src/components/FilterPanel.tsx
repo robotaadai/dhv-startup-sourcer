@@ -22,6 +22,7 @@ import {
   ChevronDown,
   ChevronUp,
   Crown,
+  EyeOff,
 } from 'lucide-react';
 
 interface FilterPanelProps {
@@ -81,6 +82,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     filters.asufukaketsu.length +
     filters.takaichi17.length +
     filters.industries.length +
+    (filters.excludeDHVPortfolio ? 1 : 0) +
     (filters.portfolioFilter !== 'all' ? 1 : 0) +
     (filters.startupOnly ? 1 : 0) +
     (filters.maxYearsSinceEst ? 1 : 0) +
@@ -96,7 +98,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder="社名、出展品目、先端技術（例: ugo、核融合、SAR衛星、自律トラック、インフラ保全...）"
+              placeholder="社名、出展品目、先端技術（例: 核融合、SAR衛星、自律トラック、インフラ保全...）"
               value={filters.searchQuery}
               onChange={(e) => onChangeFilters({ ...filters, searchQuery: e.target.value })}
               className="w-full pl-10 pr-10 py-2.5 bg-white rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all shadow-xs"
@@ -113,43 +115,26 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
           {/* Quick Filters */}
           <div className="flex items-center flex-wrap gap-2">
-            {/* DHV Portfolio Filter Selector */}
-            <div className="flex items-center p-0.5 bg-slate-100 rounded-xl border border-slate-200 text-xs font-semibold">
-              <button
-                type="button"
-                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'all' })}
-                className={`px-2.5 py-1.5 rounded-lg transition-all ${
-                  filters.portfolioFilter === 'all'
-                    ? 'bg-white text-slate-900 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                すべて
-              </button>
-              <button
-                type="button"
-                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'portfolio_only' })}
-                className={`flex items-center space-x-1 px-2.5 py-1.5 rounded-lg transition-all ${
-                  filters.portfolioFilter === 'portfolio_only'
-                    ? 'bg-gradient-to-r from-amber-500 to-red-600 text-white shadow-xs font-bold'
-                    : 'text-amber-800 hover:text-amber-950'
-                }`}
-              >
-                <Crown className="w-3.5 h-3.5 fill-current" />
-                <span>DHV投資先のみ</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'uninvested_only' })}
-                className={`px-2.5 py-1.5 rounded-lg transition-all ${
-                  filters.portfolioFilter === 'uninvested_only'
-                    ? 'bg-white text-slate-900 shadow-xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                未投資のみ (新規)
-              </button>
-            </div>
+            {/* ★ 「DHV投資先は非表示」専用ボタン */}
+            <button
+              type="button"
+              onClick={() =>
+                onChangeFilters({
+                  ...filters,
+                  excludeDHVPortfolio: !filters.excludeDHVPortfolio,
+                  // もし投資先のみを選んでいた場合は解除
+                  portfolioFilter: !filters.excludeDHVPortfolio ? 'uninvested_only' : 'all',
+                })
+              }
+              className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all shadow-xs border select-none ${
+                filters.excludeDHVPortfolio
+                  ? 'bg-amber-600 hover:bg-amber-700 text-white border-amber-600 ring-2 ring-amber-500/30'
+                  : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-300'
+              }`}
+            >
+              <EyeOff className="w-3.5 h-3.5" />
+              <span>{filters.excludeDHVPortfolio ? 'DHV投資先は非表示中' : 'DHV投資先は非表示'}</span>
+            </button>
 
             {/* Startup Only Toggle */}
             <label className="flex items-center space-x-2 px-3 py-2 bg-red-50 hover:bg-red-100 rounded-xl border border-red-200 cursor-pointer select-none transition-colors">

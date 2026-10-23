@@ -197,7 +197,8 @@ export interface FilterOptions {
   takaichi17: TakaichiField[];
   industries: IndustryCategory[];
   startupOnly: boolean;
-  portfolioFilter: 'all' | 'portfolio_only' | 'uninvested_only'; // ★ DHV投資先フィルター
+  excludeDHVPortfolio: boolean; // ★ 「DHV投資先は非表示」ボタン用フラグ
+  portfolioFilter: 'all' | 'portfolio_only' | 'uninvested_only';
   maxYearsSinceEst: number | null;
   fundingStages: FundingStage[];
   dhvStatus: DHVStatus[];

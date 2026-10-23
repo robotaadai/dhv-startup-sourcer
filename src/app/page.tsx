@@ -10,7 +10,7 @@ import { FilterPanel } from '@/components/FilterPanel';
 import { StartupCard } from '@/components/StartupCard';
 import { StartupDetailModal } from '@/components/StartupDetailModal';
 import { CrawlerStatusModal } from '@/components/CrawlerStatusModal';
-import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown } from 'lucide-react';
+import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown, EyeOff } from 'lucide-react';
 
 const INITIAL_FILTERS: FilterOptions = {
   searchQuery: '',
@@ -20,7 +20,8 @@ const INITIAL_FILTERS: FilterOptions = {
   takaichi17: [],
   industries: [],
   startupOnly: true, // デフォルトでスタートアップのみ表示
-  portfolioFilter: 'all', // ★ 'all' | 'portfolio_only' | 'uninvested_only'
+  excludeDHVPortfolio: false, // ★ DHV投資先は非表示フラグ
+  portfolioFilter: 'all', // 'all' | 'portfolio_only' | 'uninvested_only'
   maxYearsSinceEst: null,
   fundingStages: [],
   dhvStatus: [],
@@ -116,7 +117,12 @@ export default function HomePage() {
       // Startup Only
       if (filters.startupOnly && !item.isStartup) return false;
 
-      // ★ DHV Portfolio Filter
+      // ★ DHV投資先は非表示トグルがONの場合
+      if (filters.excludeDHVPortfolio && item.isDHVPortfolio) {
+        return false;
+      }
+
+      // DHV Portfolio Filter
       if (filters.portfolioFilter === 'portfolio_only' && !item.isDHVPortfolio) {
         return false;
       }
@@ -185,9 +191,11 @@ export default function HomePage() {
   // Sorted exhibitors
   const sortedExhibitors = useMemo(() => {
     return [...filteredExhibitors].sort((a, b) => {
-      // 投資先を優先ソート
-      if (a.isDHVPortfolio && !b.isDHVPortfolio) return -1;
-      if (!a.isDHVPortfolio && b.isDHVPortfolio) return 1;
+      // 投資先優先ソート（非表示フラグがOFFのとき）
+      if (!filters.excludeDHVPortfolio) {
+        if (a.isDHVPortfolio && !b.isDHVPortfolio) return -1;
+        if (!a.isDHVPortfolio && b.isDHVPortfolio) return 1;
+      }
 
       if (sortBy === 'score') {
         return b.startupScore - a.startupScore;
@@ -200,7 +208,7 @@ export default function HomePage() {
       }
       return 0;
     });
-  }, [filteredExhibitors, sortBy]);
+  }, [filteredExhibitors, sortBy, filters.excludeDHVPortfolio]);
 
   // CSV Export Handler
   const handleExportCsv = () => {
@@ -224,8 +232,6 @@ export default function HomePage() {
       '産業カテゴリ',
       'DHV注目・共創ポイント(AI要約)',
       '出展品目・技術概要',
-      'INITIAL URL',
-      'Kepple URL',
       '企業HP',
       'DHV検討ステータス',
       '社内メモ',
@@ -251,8 +257,6 @@ export default function HomePage() {
       `"${e.industries.join(',')}"`,
       `"${e.aiSummary.replace(/"/g, '""')}"`,
       `"${e.description.replace(/"/g, '""')}"`,
-      `"${e.links.initialUrl}"`,
-      `"${e.links.keppleUrl}"`,
       `"${e.officialUrl || ''}"`,
       `"${e.dhvStatus}"`,
       `"${(e.memo || '').replace(/"/g, '""')}"`,
@@ -301,23 +305,27 @@ export default function HomePage() {
 
         {/* Results Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center flex-wrap gap-2">
             <h2 className="text-sm font-bold text-slate-800">
               抽出スタートアップ一覧
             </h2>
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold">
               {sortedExhibitors.length}件
             </span>
-            {filters.portfolioFilter === 'portfolio_only' && (
-              <span className="text-xs text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md font-black flex items-center">
-                <Crown className="w-3 h-3 mr-1 text-amber-600 fill-current" /> DHV投資先のみ表示中
-              </span>
+
+            {/* DHV投資先非表示中バッジ */}
+            {filters.excludeDHVPortfolio && (
+              <button
+                type="button"
+                onClick={() => setFilters({ ...filters, excludeDHVPortfolio: false })}
+                className="text-xs text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-2 py-0.5 rounded-md font-bold flex items-center transition-colors shadow-2xs"
+                title="クリックで解除して全件表示"
+              >
+                <EyeOff className="w-3 h-3 mr-1" />
+                <span>DHV投資先は非表示中 (解除✕)</span>
+              </button>
             )}
-            {filters.portfolioFilter === 'uninvested_only' && (
-              <span className="text-xs text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-md font-bold">
-                未投資（新規候補）のみ
-              </span>
-            )}
+
             {selectedEventId && (
               <span className="text-xs text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md font-medium">
                 展示会絞り込み中
@@ -334,7 +342,7 @@ export default function HomePage() {
               onChange={(e) => setSortBy(e.target.value as any)}
               className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-medium outline-none cursor-pointer"
             >
-              <option value="score">スタートアップ注目度順 (投資先優先)</option>
+              <option value="score">スタートアップ注目度順</option>
               <option value="established">設立年の新しい順</option>
               <option value="name">社名五十音順</option>
             </select>
