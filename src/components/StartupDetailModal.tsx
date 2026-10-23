@@ -117,17 +117,31 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
               <div className="p-2 rounded-lg bg-amber-500 text-white shrink-0 mt-0.5 shadow-xs">
                 <Crown className="w-5 h-5 fill-current" />
               </div>
-              <div>
-                <span className="text-xs font-black text-amber-900 block">
-                  大和ハウスグループ「将来の夢」ファンド出資先企業
-                </span>
-                <p className="text-xs text-amber-800 mt-0.5 leading-relaxed font-medium">
-                  {exhibitor.dhvInvestmentNote || '大和ハウスグループとの共創・出資先スタートアップです。'}
-                </p>
-                {exhibitor.dhvInvestmentRound && (
-                  <span className="inline-block mt-2 px-2 py-0.5 bg-amber-200/80 text-amber-900 rounded text-[11px] font-bold">
-                    投資ステータス: {exhibitor.dhvInvestmentRound}
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <span className="text-xs font-black text-amber-900">
+                    大和ハウスグループ CVC出資先（公式ポートフォリオ）
                   </span>
+                  {exhibitor.dhvFundName && (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-black bg-amber-200 text-amber-900 border border-amber-300">
+                      {exhibitor.dhvFundName}
+                    </span>
+                  )}
+                  {exhibitor.dhvInvestmentDate && (
+                    <span className="text-[11px] text-amber-800 font-bold bg-amber-100/80 px-2 py-0.5 rounded">
+                      投資完了日: {exhibitor.dhvInvestmentDate}
+                    </span>
+                  )}
+                </div>
+                {exhibitor.dhvCollaborationNote ? (
+                  <div className="mt-2 p-2.5 bg-white/80 rounded-lg border border-amber-200 text-xs text-amber-950 font-medium">
+                    <span className="font-bold text-amber-900 block mb-0.5">【大和ハウスグループとの狙い・協業検討概要（公式資料）】</span>
+                    {exhibitor.dhvCollaborationNote}
+                  </div>
+                ) : (
+                  <p className="text-xs text-amber-800 mt-0.5 leading-relaxed font-medium">
+                    {exhibitor.dhvInvestmentNote || '大和ハウスグループとの共創・出資先スタートアップです。'}
+                  </p>
                 )}
               </div>
             </div>

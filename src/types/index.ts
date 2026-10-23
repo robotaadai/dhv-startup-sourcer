@@ -1,4 +1,4 @@
-export type AsufukaketsuKey = 'ア' | 'ス' | 'フ' | 'カ' | 'ケ' | 'ツ' | 'ノ';
+export type AsufukaketsuKey = 'ア' | 'ス' | 'フ' | 'カ' | 'ケ' | 'ツ' | 'ノ' | 'キ' | 'ロ';
 
 export interface AsufukaketsuCategory {
   key: AsufukaketsuKey;
@@ -13,7 +13,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   ア: {
     key: 'ア',
     name: '安全・安心',
-    description: '防犯、防災、作業安全、サイバー防護、構造健全性',
+    description: '防犯、防災、作業安全、サイバー防護、構造健全性、小型SAR衛星、位置情報',
     color: 'text-amber-800 dark:text-amber-300',
     bgColor: 'bg-amber-100 dark:bg-amber-950/60',
     borderColor: 'border-amber-400 dark:border-amber-700',
@@ -21,7 +21,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   ス: {
     key: 'ス',
     name: 'スピード・ストック',
-    description: '省施工、プレハブ、空き家再生、リノベーション、物流高速化',
+    description: '省施工、プレハブ、空き家再生、リノベーション、物流高速化、空間VR、解体DX',
     color: 'text-blue-800 dark:text-blue-300',
     bgColor: 'bg-blue-100 dark:bg-blue-950/60',
     borderColor: 'border-blue-400 dark:border-blue-700',
@@ -29,7 +29,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   フ: {
     key: 'フ',
     name: '福祉',
-    description: '介護テック、シニアライフ、ユニバーサルデザイン、リハビリ支援',
+    description: '介護テック、シニアライフ、ユニバーサルデザイン、訪問介護DX、産後ケア、マイクロファイナンス',
     color: 'text-rose-800 dark:text-rose-300',
     bgColor: 'bg-rose-100 dark:bg-rose-950/60',
     borderColor: 'border-rose-400 dark:border-rose-700',
@@ -37,7 +37,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   カ: {
     key: 'カ',
     name: '環境',
-    description: '脱炭素、省エネ、ZEB/ZEH、再エネ、循環型社会(サーキュラー)',
+    description: '脱炭素、省エネ、ZEB/ZEH、再エネ、循環型社会、CO2見える化、定常核融合炉',
     color: 'text-emerald-800 dark:text-emerald-300',
     bgColor: 'bg-emerald-100 dark:bg-emerald-950/60',
     borderColor: 'border-emerald-400 dark:border-emerald-700',
@@ -45,7 +45,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   ケ: {
     key: 'ケ',
     name: '健康',
-    description: 'ウェルネス、室内空気質、予防医療、スマートヘルス',
+    description: 'ウェルネス、室内空気質、予防医療、スマートヘルス、尿中がんリスク検査、エアモビリティ',
     color: 'text-teal-800 dark:text-teal-300',
     bgColor: 'bg-teal-100 dark:bg-teal-950/60',
     borderColor: 'border-teal-400 dark:border-teal-700',
@@ -53,7 +53,7 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   ツ: {
     key: 'ツ',
     name: '通信',
-    description: 'IoT、スマートビル、遠隔監視・制御、5G/LPWA、エッジAI',
+    description: 'IoT、スマートビル、遠隔監視・制御、5G、エッジAI、生成AI向けDC、AI半導体、地中探査SAR',
     color: 'text-indigo-800 dark:text-indigo-300',
     bgColor: 'bg-indigo-100 dark:bg-indigo-950/60',
     borderColor: 'border-indigo-400 dark:border-indigo-700',
@@ -61,10 +61,26 @@ export const ASUFUKAKETSU_CONFIG: Record<AsufukaketsuKey, AsufukaketsuCategory> 
   ノ: {
     key: 'ノ',
     name: '農業',
-    description: 'アグリテック、植物工場、スマート農業、地域活性化',
+    description: 'アグリテック、植物工場、スマート農業、地域活性化、ゲノム編集スマート陸上養殖',
     color: 'text-lime-800 dark:text-lime-300',
     bgColor: 'bg-lime-100 dark:bg-lime-950/60',
     borderColor: 'border-lime-400 dark:border-lime-700',
+  },
+  キ: {
+    key: 'キ',
+    name: '教育・人財',
+    description: '労働生産性向上、一時保育マッチング、ドライバー人材採用支援、外国人材採用管理',
+    color: 'text-violet-800 dark:text-violet-300',
+    bgColor: 'bg-violet-100 dark:bg-violet-950/60',
+    borderColor: 'border-violet-400 dark:border-violet-700',
+  },
+  ロ: {
+    key: 'ロ',
+    name: 'ロボティクス',
+    description: 'スマートロボットワーカー、業務DXロボット、幹線輸送自動運転トラック、フィジカルAI',
+    color: 'text-cyan-800 dark:text-cyan-300',
+    bgColor: 'bg-cyan-100 dark:bg-cyan-950/60',
+    borderColor: 'border-cyan-400 dark:border-cyan-700',
   },
 };
 
@@ -126,6 +142,24 @@ export type DHVStatus =
   | '投資検討中'
   | '見送り';
 
+export interface DHVPortfolioCompany {
+  no: number;
+  companyName: string;
+  companyNameEn?: string;
+  fundName: 'FUTURE FUND' | 'SYNERGY FUND' | 'GROWTH FUND' | '本体BS投資';
+  investmentDate: string; // 例: 2024/4/12
+  asufukaketsuKey: AsufukaketsuKey | 'その他';
+  categoryName: string; // 例: 安心・安全な街・施設づくり
+  businessSummary: string; // 主な事業概要
+  collaborationSummary: string; // 大和ハウスグループとの狙い・協業検討概要
+  location: string;
+  representative: string;
+  capital: string;
+  established: string;
+  isIpo?: boolean;
+  officialUrl?: string;
+}
+
 export interface StartupExhibitor {
   id: string;
   companyName: string;
@@ -144,8 +178,11 @@ export interface StartupExhibitor {
   isStartup: boolean;
   startupScore: number; // 0-100
   isDHVPortfolio: boolean; // ★ DHV既存投資先フラグ
+  dhvFundName?: 'FUTURE FUND' | 'SYNERGY FUND' | 'GROWTH FUND' | '本体BS投資' | string;
+  dhvInvestmentDate?: string;
   dhvInvestmentRound?: string; // 例: "Series A 出資済"
   dhvInvestmentNote?: string; // 例: "大和ハウスグループ「将来の夢」ファンド"
+  dhvCollaborationNote?: string; // 公式資料記載の協業検討内容
   establishedYear: number | null;
   yearsSinceEst?: number | null;
   fundingStage: FundingStage;

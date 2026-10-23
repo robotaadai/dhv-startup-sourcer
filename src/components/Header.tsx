@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Download, RefreshCw, Sparkles, Building2, ExternalLink } from 'lucide-react';
+import { Download, RefreshCw, Sparkles, Building2, ExternalLink, Crown } from 'lucide-react';
 import { StartupExhibitor } from '@/types';
 
 interface HeaderProps {
   onExportCsv: () => void;
   onOpenCrawlerModal: () => void;
+  onOpenPortfolioModal: () => void;
   filteredCount: number;
   totalCount: number;
   lastUpdated: string;
@@ -15,6 +16,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   onExportCsv,
   onOpenCrawlerModal,
+  onOpenPortfolioModal,
   filteredCount,
   totalCount,
   lastUpdated,
@@ -43,7 +45,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Action Buttons & Status */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* DHV Official Portfolio Modal Button */}
+            <button
+              onClick={onOpenPortfolioModal}
+              className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-black text-amber-900 bg-gradient-to-r from-amber-100 to-orange-100 hover:from-amber-200 hover:to-orange-200 rounded-lg border border-amber-300 shadow-xs transition-all active:scale-95"
+              title="大和ハウスベンチャーズ公式出資先32社の一覧を表示"
+            >
+              <Crown className="w-3.5 h-3.5 text-amber-600 fill-current" />
+              <span>DHV出資先 (32社)</span>
+            </button>
+
             {/* Crawler Status Pill */}
             <button
               onClick={onOpenCrawlerModal}

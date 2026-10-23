@@ -10,6 +10,7 @@ import { FilterPanel } from '@/components/FilterPanel';
 import { StartupCard } from '@/components/StartupCard';
 import { StartupDetailModal } from '@/components/StartupDetailModal';
 import { CrawlerStatusModal } from '@/components/CrawlerStatusModal';
+import { PortfolioModal } from '@/components/PortfolioModal';
 import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown, EyeOff } from 'lucide-react';
 
 const INITIAL_FILTERS: FilterOptions = {
@@ -34,6 +35,7 @@ export default function HomePage() {
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [selectedExhibitor, setSelectedExhibitor] = useState<StartupExhibitor | null>(null);
   const [isCrawlerModalOpen, setIsCrawlerModalOpen] = useState<boolean>(false);
+  const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<string>('本日 04:30');
   const [sortBy, setSortBy] = useState<'score' | 'established' | 'name'>('score');
 
@@ -216,6 +218,9 @@ export default function HomePage() {
       '企業名',
       '英語表記',
       'DHV投資先',
+      '担当ファンド',
+      '投資完了日',
+      '大和ハウス協業検討概要',
       '出展イベント名',
       '会場',
       'ブース番号',
@@ -241,6 +246,9 @@ export default function HomePage() {
       `"${e.companyName.replace(/"/g, '""')}"`,
       `"${(e.companyNameEn || '').replace(/"/g, '""')}"`,
       e.isDHVPortfolio ? 'DHV投資済 (Portfolio)' : '未投資',
+      `"${e.dhvFundName || ''}"`,
+      `"${e.dhvInvestmentDate || ''}"`,
+      `"${(e.dhvCollaborationNote || '').replace(/"/g, '""')}"`,
       `"${e.eventName.replace(/"/g, '""')}"`,
       `"${e.eventVenue.replace(/"/g, '""')}"`,
       `"${e.boothNumber.replace(/"/g, '""')}"`,
@@ -279,6 +287,7 @@ export default function HomePage() {
       <Header
         onExportCsv={handleExportCsv}
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
+        onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
         filteredCount={sortedExhibitors.length}
         totalCount={exhibitors.length}
         lastUpdated={lastUpdated}
@@ -395,6 +404,12 @@ export default function HomePage() {
         isOpen={isCrawlerModalOpen}
         onClose={() => setIsCrawlerModalOpen(false)}
         lastUpdated={lastUpdated}
+      />
+
+      {/* Official Portfolio (32 Companies) Modal */}
+      <PortfolioModal
+        isOpen={isPortfolioModalOpen}
+        onClose={() => setIsPortfolioModalOpen(false)}
       />
     </div>
   );

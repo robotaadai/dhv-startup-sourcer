@@ -70,12 +70,19 @@ export const StartupCard: React.FC<StartupCardProps> = ({
       {/* Portfolio Highlight Ribbon */}
       {exhibitor.isDHVPortfolio && (
         <div className="flex items-center justify-between mb-2.5 pb-2 border-b border-amber-200/80">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-black bg-gradient-to-r from-amber-500 to-red-600 text-white shadow-xs">
-            <Crown className="w-3.5 h-3.5 mr-1 text-amber-200 fill-current" />
-            DHV 投資先 (Portfolio)
-          </span>
+          <div className="flex items-center space-x-1.5">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-lg text-xs font-black bg-gradient-to-r from-amber-500 to-red-600 text-white shadow-xs">
+              <Crown className="w-3.5 h-3.5 mr-1 text-amber-200 fill-current" />
+              DHV 投資先
+            </span>
+            {exhibitor.dhvFundName && (
+              <span className="text-[10px] font-bold text-amber-900 bg-amber-200/80 px-1.5 py-0.5 rounded">
+                {exhibitor.dhvFundName}
+              </span>
+            )}
+          </div>
           <span className="text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md">
-            {exhibitor.dhvInvestmentRound || '出資済'}
+            {exhibitor.dhvInvestmentDate ? `${exhibitor.dhvInvestmentDate} 投資` : (exhibitor.dhvInvestmentRound || '出資済')}
           </span>
         </div>
       )}

@@ -182,16 +182,16 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
       {/* Expanded Filter Sections */}
       {isExpanded && (
         <div className="p-4 sm:p-5 space-y-5 bg-white">
-          {/* Section 1: アスフカケツノ 7領域 (大和ハウスグループ重点) */}
+          {/* Section 1: アスフカケツノ 7領域 ＋ キ・ロ (大和ハウスグループ重点) */}
           <div>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-1.5">
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  ② 大和ハウス「アスフカケツノ」7領域
+                  ② 大和ハウス重点投資テーマ（アスフカケツノ ＋ キ・ロ）
                 </span>
                 <span className="text-[11px] text-slate-400 hidden sm:inline">
-                  (大和ハウスグループとの共創・出資重点テーマ)
+                  (CVCファンド公式ポートフォリオ分類)
                 </span>
               </div>
               {filters.asufukaketsu.length > 0 && (
@@ -204,7 +204,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               )}
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
               {(Object.keys(ASUFUKAKETSU_CONFIG) as AsufukaketsuKey[]).map((key) => {
                 const conf = ASUFUKAKETSU_CONFIG[key];
                 const isActive = filters.asufukaketsu.includes(key);
@@ -214,17 +214,17 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                     key={key}
                     type="button"
                     onClick={() => toggleAsufukaketsu(key)}
-                    className={`flex flex-col items-start p-2.5 rounded-xl border text-left transition-all ${
+                    className={`flex flex-col items-start p-2 rounded-xl border text-left transition-all ${
                       isActive
                         ? `${conf.bgColor} ${conf.borderColor} ring-2 ring-amber-500/30 shadow-xs`
                         : 'bg-slate-50/70 border-slate-200 hover:bg-slate-100/80'
                     }`}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className={`text-sm font-extrabold px-1.5 py-0.5 rounded ${conf.bgColor} ${conf.color}`}>
+                      <span className={`text-xs font-extrabold px-1.5 py-0.5 rounded ${conf.bgColor} ${conf.color}`}>
                         {key}
                       </span>
-                      {isActive && <span className="text-[10px] font-bold text-amber-600">選択中</span>}
+                      {isActive && <span className="text-[9px] font-bold text-amber-600">選択中</span>}
                     </div>
                     <span className="text-xs font-bold text-slate-800 mt-1 line-clamp-1">{conf.name}</span>
                     <span className="text-[10px] text-slate-500 line-clamp-1 mt-0.5">{conf.description}</span>

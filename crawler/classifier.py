@@ -12,12 +12,29 @@ from typing import List, Dict, Any, Tuple
 ASUFUKAKETSU_KEYWORDS = {
     'ア': ['安全', '安心', '防犯', '防災', '減災', '作業安全', 'サイバー', 'セキュア', '点検', '耐震', '監視', '警備', '事故防止', '足場安全', 'ヘルメット'],
     'ス': ['スピード', 'ストック', '省施工', 'プレハブ', '工期短縮', 'モジュール', 'BIM', 'CIM', '空き家', 'リノベーション', '既存建築', '物流', '搬送', '自動化', 'AGV', 'AMR', '高速', '無人'],
-    'フ': ['福祉', '介護', 'シニア', '高齢者', 'ユニバーサルデザイン', 'リハビリ', 'バリアフリー', '見守り', '在宅ケア', '車椅子', '排泄予知', '認知症'],
-    'カ': ['環境', '脱炭素', 'カーボンニュートラル', '省エネ', 'ZEB', 'ZEH', '太陽光', 'ペロブスカイト', '蓄電池', '再エネ', 'EV', '循環', 'リサイクル', 'サーキュラー', '省電力', 'グリーン'],
-    'ケ': ['健康', 'ウェルネス', '空気質', '換気', '予防医療', 'ヘルスケア', '睡眠', 'バイタル', 'メンタル', '疲労', 'バイオマーカー', '室内環境'],
-    'ツ': ['通信', 'IoT', 'スマートビル', 'BEMS', '5G', 'ローカル5G', 'LPWA', 'エッジAI', '遠隔', 'センサ', 'クラウド', 'ネットワーク', 'Wi-Fi', '無線', 'テレマティクス'],
-    'ノ': ['農業', 'アグリ', '植物工場', 'スマート農業', '収穫', '栽培', '営農', 'LED', '水耕栽培', '土壌', 'ドローン散布', '温室', '農家'],
+    'フ': ['福祉', '介護', 'シニア', '高齢者', 'ユニバーサルデザイン', 'リハビリ', 'バリアフリー', '見守り', '在宅ケア', '車椅子', '排泄予知', '認知症', '助産師', '産後ケア'],
+    'カ': ['環境', '脱炭素', 'カーボンニュートラル', '省エネ', 'ZEB', 'ZEH', '太陽光', 'ペロブスカイト', '蓄電池', '再エネ', 'EV', '循環', 'リサイクル', 'サーキュラー', '省電力', 'グリーン', '核融合'],
+    'ケ': ['健康', 'ウェルネス', '空気質', '換気', '予防医療', 'ヘルスケア', '睡眠', 'バイタル', 'メンタル', '疲労', 'バイオマーカー', '室内環境', 'がん検査', 'マイクロrna'],
+    'ツ': ['通信', 'IoT', 'スマートビル', 'BEMS', '5G', 'ローカル5G', 'LPWA', 'エッジAI', '遠隔', 'センサ', 'クラウド', 'ネットワーク', 'Wi-Fi', '無線', 'テレマティクス', 'GPU', 'データセンター', '半導体'],
+    'ノ': ['農業', 'アグリ', '植物工場', 'スマート農業', '収穫', '栽培', '営農', 'LED', '水耕栽培', '土壌', 'ドローン散布', '温室', '農家', '養殖', 'ゲノム編集'],
+    'キ': ['人財', '人材', '採用', '教育', '育成', 'リスキリング', 'ドライバー採用', '外国人材', '保育', '一時保育', '労働生産性'],
+    'ロ': ['ロボット', 'フィジカルAI', 'マニピュレータ', 'ワーカロイド', '自動運転トラック', 'ugo', '幹線輸送', 'アバターロボット'],
 }
+
+# 大和ハウスグループ CVC公式出資先（全32社＋本体BS9社）
+DHV_PORTFOLIO_NAMES = [
+    'Synspective', 'スペースリー', 'spacely', 'クラッソーネ', 'crassone', 'Oishii', 'oishii farm',
+    'アスエネ', 'asuene', 'トヨコー', 'toyokoh', 'RUTILEA', 'rutilea', 'LocationMind', 'locationmind',
+    '五常・アンド・カンパニー', 'gojo', 'リージョナルフィッシュ', 'regional fish', 'Ultimatrust', 'ultimatrust',
+    'CareMaker', 'caremaker', 'ミツモア', 'meetsmore', 'Anyplace', 'anyplace', 'Craif', 'craif',
+    'あすいく', 'asuiku', 'Helical Fusion', 'helical fusion', 'Lunasonde', 'lunasonde', 'Linc', 'linc',
+    'GOジョブ', 'go job', 'DEA', 'digital entertainment asset', 'ピクトレ', 'エクスペリサス', 'xperisus',
+    'Polyuse', 'polyuse', 'Rebellions', 'rebellions', 'SORA Technology', 'sora technology',
+    'BALLAS', 'ballas', 'Muso Action', 'muso action', 'ugo', 'JPYC', 'jpyc', 'Qubitcore', 'qubitcore',
+    'T2', 't2', 'Josan-she', "josan-she's",
+    # 本体BS
+    'CYBERDYNE', 'cyberdyne', 'Frameworkx', 'acca', 'nangok', 'truss', 'ELIIY Power', 'Hacobu', 'GROUND', 'EVERING',
+]
 
 TAKAICHI_17_KEYWORDS = {
     'AI・半導体': ['AI', '人工知能', 'フィジカルAI', '半導体', 'LLM', '機械学習', '画像認識', 'チップ', 'GPU', '推論', '自律制御'],
@@ -147,6 +164,15 @@ def classify_exhibitor(company_name: str, description: str, raw_text: str = '') 
     elif is_startup:
         funding_stage = 'シード' if (years_since and years_since <= 3) else 'シリーズA'
 
+    # 7. 大和ハウスグループ出資先判定
+    is_dhv_portfolio = any(
+        pname.lower() in company_name.lower() or f"{pname}株式会社".lower() in company_name.lower()
+        for pname in DHV_PORTFOLIO_NAMES
+    )
+    if is_dhv_portfolio:
+        is_startup = True
+        startup_score = 98
+
     return {
         'asufukaketsu': asufukaketsu,
         'takaichi17': takaichi17,
@@ -156,6 +182,7 @@ def classify_exhibitor(company_name: str, description: str, raw_text: str = '') 
         'isStartup': is_startup,
         'startupScore': startup_score,
         'fundingStage': funding_stage,
+        'isDHVPortfolio': is_dhv_portfolio,
     }
 
 if __name__ == '__main__':
