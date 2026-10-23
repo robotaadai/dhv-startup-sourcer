@@ -220,79 +220,56 @@ export const StartupCard: React.FC<StartupCardProps> = ({
         </div>
       </div>
 
-      {/* Bottom Section: INITIAL / Kepple Deep Links & Status */}
+      {/* Bottom Section: Action Links & Status */}
       <div className="pt-3 border-t border-slate-100 mt-2">
-        {/* Deep Links Header */}
-        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
-          <span>スタートアップ詳細情報リンク</span>
-          <span className="text-emerald-700 font-bold normal-case">
-            {copied ? '✓ 社名をコピーしました' : '※ クリックで社名自動コピー＆直行'}
-          </span>
-        </div>
-
         {/* Action Link Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
-          {/* INITIAL Link */}
-          <a
-            href={exhibitor.links.initialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              navigator.clipboard.writeText(exhibitor.companyName);
-              setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
-            }}
-            className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-colors shadow-2xs group/link"
-            title="INITIAL掲載ページへ直行（社名も自動コピーされます）"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 mr-0.5"></span>
-            <span>INITIAL</span>
-            <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100" />
-          </a>
-
-          {/* Kepple Link */}
-          <a
-            href={exhibitor.links.keppleUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              navigator.clipboard.writeText(exhibitor.companyName);
-              setCopied(true);
-              setTimeout(() => setCopied(false), 2000);
-            }}
-            className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-bold text-blue-800 bg-blue-50 hover:bg-blue-100 border border-blue-300 transition-colors shadow-2xs group/link"
-            title="Kepple掲載ページへ直行（社名も自動コピーされます）"
-          >
-            <span className="w-2 h-2 rounded-full bg-blue-500 mr-0.5"></span>
-            <span>Kepple</span>
-            <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100" />
-          </a>
-
+        <div className="grid grid-cols-3 gap-2 mb-3">
           {/* Official HP */}
-          {exhibitor.officialUrl && (
+          {exhibitor.officialUrl ? (
             <a
               href={exhibitor.officialUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors"
+              className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
               title="公式HPを開く"
             >
-              <Globe className="w-3 h-3" />
-              <span>HP</span>
-              <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+              <Globe className="w-3.5 h-3.5 text-slate-600" />
+              <span>公式HP</span>
+              <ExternalLink className="w-3 h-3 opacity-60" />
             </a>
+          ) : (
+            <button
+              onClick={handleCopyName}
+              className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-medium text-slate-500 bg-slate-50 border border-slate-200"
+            >
+              <Copy className="w-3 h-3" />
+              <span>{copied ? 'コピー済' : '社名コピー'}</span>
+            </button>
           )}
 
-          {/* Google Search / News */}
+          {/* Google 資金調達検索 */}
           <a
             href={exhibitor.links.googleSearchUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-1 px-2 py-1.5 rounded-lg text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors"
-            title="Google資金調達検索を開く"
+            className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-bold text-sky-800 bg-sky-50 hover:bg-sky-100 border border-sky-300 transition-colors"
+            title="Google資金調達ニュース検索を開く"
           >
-            <Search className="w-3 h-3" />
-            <span>Google</span>
+            <Search className="w-3.5 h-3.5 text-sky-600" />
+            <span>資金調達検索</span>
+            <ExternalLink className="w-3 h-3 opacity-60" />
+          </a>
+
+          {/* 国税庁 法人番号公表 */}
+          <a
+            href={exhibitor.links.corporateNumberUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center space-x-1 py-1.5 px-2 rounded-lg text-xs font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors"
+            title="国税庁 法人番号公表サイトを開く"
+          >
+            <Building2 className="w-3.5 h-3.5 text-slate-500" />
+            <span>法人番号</span>
             <ExternalLink className="w-2.5 h-2.5 opacity-60" />
           </a>
         </div>
