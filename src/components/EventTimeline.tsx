@@ -69,12 +69,15 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
     }
   };
 
-  const [activeRegionTab, setActiveRegionTab] = React.useState<'ALL' | '関東' | '関西' | '中部' | '九州' | 'SUMMIT'>('ALL');
+  const [activeRegionTab, setActiveRegionTab] = React.useState<'ALL' | '関東' | '関西' | '中部' | '九州' | 'SUMMIT' | 'PITCH'>('ALL');
 
   const filteredEvents = events.filter((evt) => {
     if (activeRegionTab === 'ALL') return true;
     if (activeRegionTab === 'SUMMIT') {
       return evt.eventType === 'スタートアップ特化サミット' || evt.eventType === 'ピッチコンテスト・アクセラレーター';
+    }
+    if (activeRegionTab === 'PITCH') {
+      return evt.eventType === '小規模ピッチ・デモデイ' || evt.isSmallPitch || evt.sourceType === 'スタートアップカレンダー';
     }
     return evt.region === activeRegionTab;
   });
@@ -104,14 +107,14 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
           <div>
             <div className="flex items-center space-x-2">
               <h2 className="text-sm font-bold text-slate-900 tracking-tight">
-                これから開催される展示会＆サミット タイムライン
+                これから開催される展示会＆サミット＆ピッチ タイムライン
               </h2>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
                 次回開催・未来予定 {events.length} 件（終了済は除外）
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
-              終了イベントを除外し、次回開催予定のサミット（IVS・SusHi Tech・B Dash・ICC等）＆ 全国の大型産業展示会に限定中
+              終了イベントを除外し、次回開催予定のサミット（IVS等）＆ 産業展示会 ＆ スタートアップカレンダーの小規模ピッチに限定中
             </p>
           </div>
         </div>
@@ -130,7 +133,8 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
       <div className="flex flex-wrap items-center gap-1.5 mb-4 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
         {[
           { id: 'ALL', label: '全国すべて', count: events.length },
-          { id: 'SUMMIT', label: '🔥 スタートアップサミット・ピッチ', count: events.filter((e) => e.eventType !== '大型産業展示会').length },
+          { id: 'SUMMIT', label: '🔥 大型サミット', count: events.filter((e) => e.eventType === 'スタートアップ特化サミット' || e.eventType === 'ピッチコンテスト・アクセラレーター').length },
+          { id: 'PITCH', label: '🎤 小規模ピッチ (カレンダー連携)', count: events.filter((e) => e.eventType === '小規模ピッチ・デモデイ' || e.isSmallPitch || e.sourceType === 'スタートアップカレンダー').length },
           { id: '関東', label: '関東 (東京・横浜・幕張)', count: events.filter((e) => e.region === '関東').length },
           { id: '関西', label: '関西 (京都・大阪)', count: events.filter((e) => e.region === '関西').length },
           { id: '中部', label: '中部 (名古屋)', count: events.filter((e) => e.region === '中部').length },
@@ -156,7 +160,8 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filteredEvents.map((evt) => {
           const isSelected = selectedEventId === evt.id;
-          const isSummit = evt.eventType !== '大型産業展示会';
+          const isSmallPitch = evt.eventType === '小規模ピッチ・デモデイ' || evt.isSmallPitch || evt.sourceType === 'スタートアップカレンダー';
+          const isSummit = !isSmallPitch && evt.eventType !== '大型産業展示会';
 
           return (
             <div
@@ -165,6 +170,8 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
               className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer relative overflow-hidden group ${
                 isSelected
                   ? 'border-red-500 bg-red-50/40 shadow-sm ring-2 ring-red-500/20'
+                  : isSmallPitch
+                  ? 'border-indigo-200/90 bg-gradient-to-b from-indigo-50/30 to-white hover:border-indigo-400'
                   : isSummit
                   ? 'border-red-200/90 bg-gradient-to-b from-red-50/20 to-white hover:border-red-300'
                   : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/70 bg-white'
@@ -181,6 +188,11 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
                     <MapPin className="w-3 h-3 mr-0.5" />
                     {evt.region} / {evt.city}
                   </span>
+                  {isSmallPitch && (
+                    <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 border border-indigo-200" title="スタートアップカレンダー掲載・定期ピッチ">
+                      🎤 カレンダーピッチ
+                    </span>
+                  )}
                   {isSummit && (
                     <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-red-100 text-red-700">
                       サミット

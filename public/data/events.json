@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "tbs-japan-build",
@@ -89,7 +89,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-10-23T04:53:42.420478+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:12.287001+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -108,7 +108,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "tbs-robot-week",
@@ -124,7 +124,29 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-10-23T04:53:42.420472+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:12.286997+00:00"
+  },
+  {
+    "id": "cal-tib-sandbox-pitch-vol14",
+    "title": "Tokyo Innovation Base (TIB) SANDBOX PITCH NIGHT vol.14",
+    "venue": "Tokyo Innovation Base (有楽町)",
+    "city": "東京",
+    "region": "関東",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "TIB 2F イベントスペース",
+    "startDate": "2026-11-26",
+    "endDate": "2026-11-26",
+    "officialUrl": "https://tib.metro.tokyo.lg.jp/",
+    "floorMapUrl": "https://tib.metro.tokyo.lg.jp/",
+    "description": "東京都が運営する国際スタートアップハブ「TIB」の月例ピッチ。創業初期・大学発シードスタートアップが、事業会社・エンジェル投資家に向けて共創アイデアをプレゼン。",
+    "organizer": "東京都スタートアップ・国際金融都市戦略室 / TIB",
+    "startupRelevanceScore": 5,
+    "status": "出展社公表済",
+    "exhibitorCount": 8,
+    "startupCount": 8,
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "tbs-smart-factory",
@@ -140,7 +162,29 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 64,
-    "lastCrawledAt": "2026-10-23T04:53:42.420430+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:12.286977+00:00"
+  },
+  {
+    "id": "cal-venture-cafe-rocket-pitch-2026",
+    "title": "Venture Café Tokyo: ROCKET PITCH NIGHT AUTUMN 2026",
+    "venue": "虎ノ門ヒルズビジネスタワー / CIC Tokyo",
+    "city": "東京",
+    "region": "関東",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "CIC Tokyo ベンチャーカフェ特設アリーナ",
+    "startDate": "2026-11-12",
+    "endDate": "2026-11-12",
+    "officialUrl": "https://venturecafetokyo.org/",
+    "floorMapUrl": "https://forum.academyhills.com/toranomon/floor/",
+    "description": "バブソン大学発祥の高速ピッチナイト。ピッチ時間3分・スライド3枚の厳格ルールで、ディープテック・クライメート・モビリティ領域の精鋭シード起業家30組が連続登壇。",
+    "organizer": "Venture Café Tokyo / CIC Japan",
+    "startupRelevanceScore": 5,
+    "status": "出展社公表済",
+    "exhibitorCount": 30,
+    "startupCount": 30,
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "tbs-logis-tech",
@@ -156,7 +200,29 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 72,
-    "lastCrawledAt": "2026-10-23T04:53:42.420482+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:12.287005+00:00"
+  },
+  {
+    "id": "cal-morning-pitch-smartcity-2026",
+    "title": "Morning Pitch 第512回 建設・スマートシティ・スマートホーム特集",
+    "venue": "パレスホテル東京 / オンライン配信",
+    "city": "東京",
+    "region": "関東",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "オンライン / カンファレンスルーム",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-05",
+    "officialUrl": "https://morningpitch.com/",
+    "floorMapUrl": "https://morningpitch.com/theme/",
+    "description": "デロイト トーマツ ベンチャーサポート・野村證券が毎週木曜朝7時に開催する国内随一の早朝ピッチ。大企業の事業開発・CVC責任者・VCのみが参加。シード〜アーリーの選抜5社が登壇。",
+    "organizer": "デロイト トーマツ ベンチャーサポート / 野村證券",
+    "startupRelevanceScore": 5,
+    "status": "出展社公表済",
+    "exhibitorCount": 5,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "conf-bdash-camp-fukuoka-2026-fall",
@@ -175,7 +241,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 130,
     "startupCount": 120,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -194,7 +260,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -213,7 +279,73 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
+  },
+  {
+    "id": "cal-station-ai-monthly-pitch-2027",
+    "title": "STATION Ai Monthly Seed & Early Pitch vol.8",
+    "venue": "STATION Ai (名古屋・鶴舞)",
+    "city": "名古屋",
+    "region": "中部",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "イベントホール",
+    "startDate": "2027-01-21",
+    "endDate": "2027-01-21",
+    "officialUrl": "https://stationai.co.jp/",
+    "floorMapUrl": "https://stationai.co.jp/",
+    "description": "ソフトバンク・愛知県が手がける国内最大級インキュベーション施設STATION Aiのシードピッチ。中部製造業サプライチェーンや次世代モビリティ、AIスタートアップが登壇。",
+    "organizer": "STATION Ai 株式会社 / 愛知県",
+    "startupRelevanceScore": 4,
+    "status": "出展社公表済",
+    "exhibitorCount": 6,
+    "startupCount": 6,
+    "lastCrawledAt": "2026-10-23 14:28:12"
+  },
+  {
+    "id": "cal-quintbridge-kansai-demo-2026",
+    "title": "QUINTBRIDGE Demo Day 関西オープンイノベーションピッチ",
+    "venue": "QUINTBRIDGE (大阪・京橋) / オンライン",
+    "city": "大阪",
+    "region": "関西",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "1F オープンステージ",
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-10",
+    "officialUrl": "https://www.quintbridge.jp/",
+    "floorMapUrl": "https://www.quintbridge.jp/",
+    "description": "NTT西日本が運営するオープンイノベーション施設QUINTBRIDGEにて、関西発の製造業DX・地域創生・ロボティクス特化シード企業がピッチを行う月例デモデイ。",
+    "organizer": "NTT西日本 / QUINTBRIDGE運営事務局",
+    "startupRelevanceScore": 4,
+    "status": "出展社公表済",
+    "exhibitorCount": 7,
+    "startupCount": 7,
+    "lastCrawledAt": "2026-10-23 14:28:12"
+  },
+  {
+    "id": "cal-shibuya-qws-pitch-2026",
+    "title": "SHIBUYA QWS PITCH - Next Urban & Living Tech",
+    "venue": "渋谷スクランブルスクエア (SHIBUYA QWS)",
+    "city": "東京",
+    "region": "関東",
+    "eventType": "小規模ピッチ・デモデイ",
+    "sourceType": "スタートアップカレンダー",
+    "isSmallPitch": true,
+    "hall": "15F スクランブルホール",
+    "startDate": "2026-12-03",
+    "endDate": "2026-12-03",
+    "officialUrl": "https://shibuya-qws.com/",
+    "floorMapUrl": "https://shibuya-qws.com/",
+    "description": "渋谷直結の共創施設QWSで開催される、都市生活・空間体験・次世代ウェルネスをテーマにしたマンスリーピッチ。大学研究室発のスピンオフベンチャーが多数登壇。",
+    "organizer": "東急株式会社 / 渋谷キューズ実行委員会",
+    "startupRelevanceScore": 4,
+    "status": "出展社公表済",
+    "exhibitorCount": 6,
+    "startupCount": 6,
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "venue-fukuoka-kyushu-dx-2026",
@@ -232,7 +364,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 320,
     "startupCount": 75,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "venue-portmesse-auto-nagoya-2026",
@@ -251,7 +383,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 680,
     "startupCount": 90,
-    "lastCrawledAt": "2026-10-23 13:53:42"
+    "lastCrawledAt": "2026-10-23 14:28:12"
   },
   {
     "id": "mkm-8862",
@@ -266,7 +398,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 25,
-    "lastCrawledAt": "2026-10-23T04:53:42.007363+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886523+00:00"
   },
   {
     "id": "mkm-8584",
@@ -281,7 +413,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007129+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886114+00:00"
   },
   {
     "id": "mkm-8860",
@@ -296,7 +428,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007151+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886156+00:00"
   },
   {
     "id": "mkm-8587",
@@ -311,7 +443,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007221+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886278+00:00"
   },
   {
     "id": "mkm-8582",
@@ -326,7 +458,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007237+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886317+00:00"
   },
   {
     "id": "mkm-8581",
@@ -341,7 +473,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007299+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886434+00:00"
   },
   {
     "id": "mkm-8574",
@@ -356,7 +488,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007315+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886455+00:00"
   },
   {
     "id": "mkm-8583",
@@ -371,7 +503,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007395+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886568+00:00"
   },
   {
     "id": "mkm-8864",
@@ -386,7 +518,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007413+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886589+00:00"
   },
   {
     "id": "mkm-8577",
@@ -401,7 +533,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007430+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886612+00:00"
   },
   {
     "id": "mkm-8585",
@@ -416,7 +548,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007077+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886033+00:00"
   },
   {
     "id": "mkm-8588",
@@ -431,7 +563,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007172+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886189+00:00"
   },
   {
     "id": "mkm-8572",
@@ -446,7 +578,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007189+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886221+00:00"
   },
   {
     "id": "mkm-8589",
@@ -461,7 +593,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007205+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886251+00:00"
   },
   {
     "id": "mkm-8576",
@@ -476,7 +608,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007253+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886346+00:00"
   },
   {
     "id": "mkm-8590",
@@ -491,7 +623,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007268+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886375+00:00"
   },
   {
     "id": "mkm-8586",
@@ -506,7 +638,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007284+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886403+00:00"
   },
   {
     "id": "mkm-8591",
@@ -521,7 +653,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007330+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886474+00:00"
   },
   {
     "id": "mkm-8575",
@@ -536,7 +668,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007346+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886495+00:00"
   },
   {
     "id": "mkm-8592",
@@ -551,6 +683,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-10-23T04:53:42.007379+00:00"
+    "lastCrawledAt": "2026-10-23T05:28:11.886546+00:00"
   }
 ]

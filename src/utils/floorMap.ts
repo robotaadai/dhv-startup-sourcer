@@ -46,8 +46,29 @@ export function getEventFloorMapUrl(event: ExhibitionEvent): string {
   if (title.includes('Plug and Play')) {
     return 'https://japan.plugandplaytechcenter.com/';
   }
+  if (title.includes('Morning Pitch')) {
+    return 'https://morningpitch.com/';
+  }
+  if (title.includes('Rocket Pitch') || title.includes('Venture Café')) {
+    return 'https://venturecafetokyo.org/';
+  }
 
   // 会場公式のフロアマップ・施設案内ガイド
+  if (venue.includes('Tokyo Innovation Base') || venue.includes('TIB')) {
+    return 'https://tib.metro.tokyo.lg.jp/';
+  }
+  if (venue.includes('SHIBUYA QWS') || venue.includes('渋谷キューズ')) {
+    return 'https://shibuya-qws.com/about/floor';
+  }
+  if (venue.includes('QUINTBRIDGE')) {
+    return 'https://www.quintbridge.jp/about/';
+  }
+  if (venue.includes('STATION Ai')) {
+    return 'https://stationai.co.jp/';
+  }
+  if (venue.includes('パレスホテル')) {
+    return 'https://www.palacehoteltokyo.com/banquet/floor-map/';
+  }
   if (venue.includes('ビッグサイト')) {
     return 'https://www.bigsight.jp/visitor/floormap/';
   }

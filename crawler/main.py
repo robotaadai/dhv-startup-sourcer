@@ -15,11 +15,12 @@ from scrapers.makuhari import scrape_makuhari_events
 from scrapers.bigsight import scrape_bigsight_events
 from scrapers.startup_conferences import scrape_startup_conferences
 from scrapers.nationwide_venues import scrape_nationwide_venues
+from scrapers.startup_calendar import scrape_startup_calendar
 from classifier import classify_exhibitor
 from link_generator import generate_links
 
 def run_crawler():
-    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting DHV Startup Sourcing Crawler (Nationwide & Conferences)...")
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting DHV Startup Sourcing Crawler (Nationwide, Summits & Startup Calendar)...")
 
     # 1. 幕張メッセ巡回 (関東)
     makuhari_events = scrape_makuhari_events()
@@ -37,7 +38,11 @@ def run_crawler():
     venue_events = scrape_nationwide_venues()
     print(f" -> Nationwide Venues (Osaka/Nagoya/Yokohama/Fukuoka): {len(venue_events)} events crawled.")
 
-    all_events = makuhari_events + bigsight_events + conference_events + venue_events
+    # 5. スタートアップカレンダー (Morning Pitch, Venture Café, TIB, SHIBUYA QWS, STATION Ai等)
+    calendar_events = scrape_startup_calendar()
+    print(f" -> Startup Calendar (Small Pitches & Demo Days): {len(calendar_events)} events collected.")
+
+    all_events = makuhari_events + bigsight_events + conference_events + venue_events + calendar_events
 
     # これから開催される展示会・サミットのみに限定（終了したイベントは完全除外）
     today = datetime.date.today().isoformat()

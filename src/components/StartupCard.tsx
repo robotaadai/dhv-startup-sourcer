@@ -172,6 +172,11 @@ export const StartupCard: React.FC<StartupCardProps> = ({
                 {exhibitor.region}
               </span>
             )}
+            {exhibitor.eventType === '小規模ピッチ・デモデイ' && (
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200">
+                🎤 カレンダーピッチ
+              </span>
+            )}
             <span className="font-semibold text-slate-800 flex items-center">
               <MapPin className="w-3.5 h-3.5 mr-1 text-red-500" />
               {exhibitor.boothNumber}

@@ -218,12 +218,17 @@ export type EventRegion = '関東' | '関西' | '中部' | '九州' | '北海道
 
 export const EVENT_REGIONS: EventRegion[] = ['関東', '関西', '中部', '九州', '北海道'];
 
-export type EventType = '大型産業展示会' | 'スタートアップ特化サミット' | 'ピッチコンテスト・アクセラレーター';
+export type EventType =
+  | '大型産業展示会'
+  | 'スタートアップ特化サミット'
+  | 'ピッチコンテスト・アクセラレーター'
+  | '小規模ピッチ・デモデイ';
 
 export const EVENT_TYPES: EventType[] = [
   '大型産業展示会',
   'スタートアップ特化サミット',
   'ピッチコンテスト・アクセラレーター',
+  '小規模ピッチ・デモデイ',
 ];
 
 export type EventStatus =
@@ -236,11 +241,13 @@ export type EventStatus =
 export interface ExhibitionEvent {
   id: string;
   title: string;
-  venue: string; // 東京ビッグサイト, 幕張メッセ, パシフィコ横浜, インテックス大阪, みやこめっせ京都, ポートメッセなごや, 福岡国際会議場 等
+  venue: string; // 東京ビッグサイト, 幕張メッセ, パシフィコ横浜, 虎ノ門ヒルズ, 有楽町TIB, 渋谷QWS, オンライン 等
   hall?: string;
-  city: string; // 例: "東京", "千葉", "横浜", "大阪", "京都", "名古屋", "福岡", "札幌"
+  city: string; // 例: "東京", "千葉", "横浜", "大阪", "京都", "名古屋", "福岡", "札幌", "オンライン"
   region: EventRegion;
   eventType: EventType;
+  sourceType?: 'スタートアップカレンダー' | '展示会場公式' | 'サミット公式'; // 情報ソース元
+  isSmallPitch?: boolean; // 小規模ピッチフラグ
   startDate: string;
   endDate: string;
   officialUrl: string;
