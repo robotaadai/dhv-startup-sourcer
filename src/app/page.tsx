@@ -10,7 +10,7 @@ import { FilterPanel } from '@/components/FilterPanel';
 import { StartupCard } from '@/components/StartupCard';
 import { StartupDetailModal } from '@/components/StartupDetailModal';
 import { CrawlerStatusModal } from '@/components/CrawlerStatusModal';
-import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown } from 'lucide-react';
+import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown } from 'lucide-react';
 
 const INITIAL_FILTERS: FilterOptions = {
   searchQuery: '',
@@ -20,6 +20,7 @@ const INITIAL_FILTERS: FilterOptions = {
   takaichi17: [],
   industries: [],
   startupOnly: true, // デフォルトでスタートアップのみ表示
+  portfolioFilter: 'all', // ★ 'all' | 'portfolio_only' | 'uninvested_only'
   maxYearsSinceEst: null,
   fundingStages: [],
   dhvStatus: [],
@@ -115,6 +116,14 @@ export default function HomePage() {
       // Startup Only
       if (filters.startupOnly && !item.isStartup) return false;
 
+      // ★ DHV Portfolio Filter
+      if (filters.portfolioFilter === 'portfolio_only' && !item.isDHVPortfolio) {
+        return false;
+      }
+      if (filters.portfolioFilter === 'uninvested_only' && item.isDHVPortfolio) {
+        return false;
+      }
+
       // Free text search
       if (filters.searchQuery.trim()) {
         const q = filters.searchQuery.toLowerCase();
@@ -176,6 +185,10 @@ export default function HomePage() {
   // Sorted exhibitors
   const sortedExhibitors = useMemo(() => {
     return [...filteredExhibitors].sort((a, b) => {
+      // 投資先を優先ソート
+      if (a.isDHVPortfolio && !b.isDHVPortfolio) return -1;
+      if (!a.isDHVPortfolio && b.isDHVPortfolio) return 1;
+
       if (sortBy === 'score') {
         return b.startupScore - a.startupScore;
       }
@@ -194,6 +207,7 @@ export default function HomePage() {
     const headers = [
       '企業名',
       '英語表記',
+      'DHV投資先',
       '出展イベント名',
       '会場',
       'ブース番号',
@@ -208,7 +222,7 @@ export default function HomePage() {
       'アスフカケツノ該当',
       '高市17戦略分野',
       '産業カテゴリ',
-      'DHV注目ポイント(AI要約)',
+      'DHV注目・共創ポイント(AI要約)',
       '出展品目・技術概要',
       'INITIAL URL',
       'Kepple URL',
@@ -220,6 +234,7 @@ export default function HomePage() {
     const rows = sortedExhibitors.map((e) => [
       `"${e.companyName.replace(/"/g, '""')}"`,
       `"${(e.companyNameEn || '').replace(/"/g, '""')}"`,
+      e.isDHVPortfolio ? 'DHV投資済 (Portfolio)' : '未投資',
       `"${e.eventName.replace(/"/g, '""')}"`,
       `"${e.eventVenue.replace(/"/g, '""')}"`,
       `"${e.boothNumber.replace(/"/g, '""')}"`,
@@ -293,6 +308,16 @@ export default function HomePage() {
             <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold">
               {sortedExhibitors.length}件
             </span>
+            {filters.portfolioFilter === 'portfolio_only' && (
+              <span className="text-xs text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md font-black flex items-center">
+                <Crown className="w-3 h-3 mr-1 text-amber-600 fill-current" /> DHV投資先のみ表示中
+              </span>
+            )}
+            {filters.portfolioFilter === 'uninvested_only' && (
+              <span className="text-xs text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-md font-bold">
+                未投資（新規候補）のみ
+              </span>
+            )}
             {selectedEventId && (
               <span className="text-xs text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md font-medium">
                 展示会絞り込み中
@@ -309,7 +334,7 @@ export default function HomePage() {
               onChange={(e) => setSortBy(e.target.value as any)}
               className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-medium outline-none cursor-pointer"
             >
-              <option value="score">スタートアップ注目度順</option>
+              <option value="score">スタートアップ注目度順 (投資先優先)</option>
               <option value="established">設立年の新しい順</option>
               <option value="name">社名五十音順</option>
             </select>

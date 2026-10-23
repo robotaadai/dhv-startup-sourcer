@@ -6,7 +6,6 @@ export function cleanCompanyName(name: string): string {
 
 export function generateInitialUrl(companyName: string): string {
   const clean = cleanCompanyName(companyName);
-  // site:initial.inc でGoogle検索することで、initial.inc/companies/A-XXXXX の実在個別ページが1位にヒット
   return `https://www.google.com/search?q=${encodeURIComponent(`site:initial.inc "${clean}"`)}`;
 }
 
@@ -27,6 +26,24 @@ export function generateCorporateNumberUrl(companyName: string): string {
   const clean = cleanCompanyName(companyName);
   return `https://www.houjin-bangou.nta.go.jp/kensaku-kekka.html?nm=${encodeURIComponent(clean)}`;
 }
+
+// 大和ハウスベンチャーズ (DHV) 公開ポートフォリオ企業マスター
+export const DHV_PORTFOLIO_MASTER = [
+  { name: 'ugo', round: '出資済', fund: '大和ハウスグループ「将来の夢」ファンド' },
+  { name: 'Synspective', round: '出資済 (東証グロース上場)', fund: '将来の夢ファンド' },
+  { name: 'Helical Fusion', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'T2', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'Josan-she', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'RUTILEA', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'Ultimatrust', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'Oishii Farm', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'リージョナルフィッシュ', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'トヨコー', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'LocationMind', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'BALLAS', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'Craif', round: '出資済', fund: '将来の夢ファンド' },
+  { name: 'Qubitcore', round: '出資済', fund: '将来の夢ファンド' },
+];
 
 export const INITIAL_EVENTS: ExhibitionEvent[] = [
   {
@@ -128,6 +145,7 @@ export const INITIAL_EVENTS: ExhibitionEvent[] = [
 ];
 
 export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
+  // 1. ugo株式会社 (★ DHV出資先)
   {
     id: 'ex-ugo',
     companyName: 'ugo株式会社',
@@ -139,12 +157,15 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     eventEndDate: '2026-12-04',
     eventUrl: 'https://biz.nikkan.co.jp/eve/s-robot/',
     description: '遠隔操作とAI自律走行のハイブリッド型警備・点検アバターロボット「ugo」およびロボット統合管理基盤「ugo Platform」を提供。ビル設備巡回・物流倉庫点検の完全無人化を実現。',
-    aiSummary: '大和ハウスの物流施設（DPL）や大型商業施設、オフィスビルにおける夜間点検・警備省人化の最有力パートナー。高市政権の重要インフラ防護・フィジカルAI領域に合致。',
+    aiSummary: '【DHV投資先ポートフォリオ】大和ハウスの物流施設（DPL）や大型商業施設、オフィスビルにおける夜間点検・警備省人化でグループ連携推進中。高市政権の重要インフラ防護・フィジカルAI領域。',
     industries: ['ロボティクス・自動化', 'セキュリティ・防犯・防災', '物流・SCM・倉庫ロボット'],
     asufukaketsu: ['ア', 'ツ', 'ス'],
     takaichi17: ['AI・半導体', 'デジタル・サイバーセキュリティ'],
     isStartup: true,
-    startupScore: 96,
+    startupScore: 98,
+    isDHVPortfolio: true,
+    dhvInvestmentRound: 'シリーズB 出資済',
+    dhvInvestmentNote: '大和ハウスグループ「将来の夢」ファンドより出資 / 施設管理省人化で事業共創中',
     establishedYear: 2018,
     yearsSinceEst: 8,
     fundingStage: 'シリーズB',
@@ -158,10 +179,168 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
       googleNewsUrl: generateGoogleNewsUrl('ugo株式会社'),
       corporateNumberUrl: generateCorporateNumberUrl('ugo株式会社'),
     },
-    dhvStatus: '注目・Watch',
-    memo: '施設管理部門とのPoC実施を協議。ビルメンテナンス自動化枠。',
+    dhvStatus: 'DHV投資済',
+    memo: '【既存投資先】展示会ブース訪問予定。新モデル「ugo Pro」の稼働デモ視察。',
     updatedAt: '2026-10-23T04:30:00Z',
   },
+
+  // 2. 株式会社Helical Fusion (★ DHV出資先)
+  {
+    id: 'ex-helical-fusion',
+    companyName: '株式会社Helical Fusion',
+    companyNameEn: 'Helical Fusion Co., Ltd.',
+    boothNumber: '展示ホール5 H-09',
+    eventName: '脱炭素経営 EXPO 2026 / スマートエネルギーWeek',
+    eventVenue: '幕張メッセ',
+    eventStartDate: '2026-12-16',
+    eventEndDate: '2026-12-18',
+    eventUrl: 'https://www.decarbonization-expo.jp/',
+    description: '日本発の独自ヘリカル型磁場閉じ込め方式による定常運転核融合炉の開発を進めるフュージョンエネルギースタートアップ。高温超伝導マグネット技術を核とする。',
+    aiSummary: '【DHV投資先ポートフォリオ】大和ハウスベンチャーズが次世代クリーンエネルギー投資として出資。高市政権の最重要投資テーマ「フュージョンエネルギー」中核銘柄。',
+    industries: ['エネルギー・環境・GX', '宇宙・ディープテック'],
+    asufukaketsu: ['カ'],
+    takaichi17: ['フュージョンエネルギー（核融合）', '資源・エネルギー安全保障・GX'],
+    isStartup: true,
+    startupScore: 99,
+    isDHVPortfolio: true,
+    dhvInvestmentRound: 'シード/シリーズA 出資済',
+    dhvInvestmentNote: '大和ハウスグループ「将来の夢」ファンドより出資 / 次世代GX',
+    establishedYear: 2021,
+    yearsSinceEst: 5,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '100億円',
+    totalFunding: '28億円',
+    officialUrl: 'https://www.helicalfusion.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Helical Fusion'),
+      keppleUrl: generateKeppleUrl('株式会社Helical Fusion'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Helical Fusion'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Helical Fusion'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Helical Fusion'),
+    },
+    dhvStatus: 'DHV投資済',
+    memo: '【既存投資先】12/17ブース視察。CEOと次世代マグネット開発進捗ヒアリング。',
+    updatedAt: '2026-10-23T04:30:00Z',
+  },
+
+  // 3. 株式会社Synspective (★ DHV出資先)
+  {
+    id: 'ex-synspective',
+    companyName: '株式会社Synspective',
+    companyNameEn: 'Synspective Inc.',
+    boothNumber: '東5ホール S-01',
+    eventName: 'Japan Robot Week 2026',
+    eventVenue: '東京ビッグサイト',
+    eventStartDate: '2026-12-02',
+    eventEndDate: '2026-12-04',
+    eventUrl: 'https://biz.nikkan.co.jp/eve/s-robot/',
+    description: '超小型SAR衛星コンステレーションによる地球観測データと、ミリ単位の地盤沈下・インフラ変状を解析するソリューション「Land Displacement Monitoring (LDM)」を提供。',
+    aiSummary: '【DHV投資先ポートフォリオ】大和ハウスベンチャーズ投資先（東証グロース上場）。大和ハウスの造成地診断、インフラ維持管理、水害防災モニタリングでの実証展開。',
+    industries: ['宇宙・ディープテック', '建設・不動産テック', 'セキュリティ・防犯・防災'],
+    asufukaketsu: ['ア', 'ス'],
+    takaichi17: ['航空・宇宙', '防災・国土強靭化'],
+    isStartup: true,
+    startupScore: 98,
+    isDHVPortfolio: true,
+    dhvInvestmentRound: '出資済 (東証グロース上場)',
+    dhvInvestmentNote: '大和ハウスグループ「将来の夢」ファンド出資先 / 地盤診断連携',
+    establishedYear: 2018,
+    yearsSinceEst: 8,
+    fundingStage: 'プレIPO',
+    estimatedValuation: '450億円',
+    totalFunding: '280億円',
+    officialUrl: 'https://synspective.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Synspective'),
+      keppleUrl: generateKeppleUrl('株式会社Synspective'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Synspective'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Synspective'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Synspective'),
+    },
+    dhvStatus: 'DHV投資済',
+    memo: '【既存投資先】造成地診断ソリューションのグループ内展開進捗確認。',
+    updatedAt: '2026-10-23T04:30:00Z',
+  },
+
+  // 4. 株式会社T2 (★ DHV出資先)
+  {
+    id: 'ex-t2',
+    companyName: '株式会社T2',
+    companyNameEn: 'T2 Inc.',
+    boothNumber: '東1ホール T-08',
+    eventName: 'スマートファクトリー Japan 2026 / ロボット開発展',
+    eventVenue: '東京ビッグサイト',
+    eventStartDate: '2026-11-18',
+    eventEndDate: '2026-11-20',
+    eventUrl: 'https://biz.nikkan.co.jp/eve/smart-factory/',
+    description: '高速道路における自動運転トラック（レベル4幹線輸送）サービスの事業化を推進。日本の物流「2024年問題」解決に向けた幹線輸送プラットフォームを構築。',
+    aiSummary: '【DHV投資先ポートフォリオ】大和ハウスの物流施設「DPL」と高速道路IC直結拠点との連携幹線輸送基盤。大和ハウスベンチャーズ出資先。港湾ロジ・物流SCM。',
+    industries: ['物流・SCM・倉庫ロボット', 'モビリティ・自動運転'],
+    asufukaketsu: ['ス', 'ツ', 'ア'],
+    takaichi17: ['港湾ロジスティクス', 'AI・半導体'],
+    isStartup: true,
+    startupScore: 97,
+    isDHVPortfolio: true,
+    dhvInvestmentRound: 'シリーズA 出資済',
+    dhvInvestmentNote: '大和ハウスグループ「将来の夢」ファンドより出資 / 自動運転トラック幹線輸送',
+    establishedYear: 2022,
+    yearsSinceEst: 4,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '180億円',
+    totalFunding: '47億円',
+    officialUrl: 'https://t2.auto/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社T2'),
+      keppleUrl: generateKeppleUrl('株式会社T2'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社T2'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社T2'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社T2'),
+    },
+    dhvStatus: 'DHV投資済',
+    memo: '【既存投資先】自動運転トラック走行デモ視察。物流施設開発担当同席。',
+    updatedAt: '2026-10-23T04:30:00Z',
+  },
+
+  // 5. 株式会社トヨコー (★ DHV出資先)
+  {
+    id: 'ex-toyokoh',
+    companyName: '株式会社トヨコー',
+    companyNameEn: 'TOYOKOH INC.',
+    boothNumber: '南2ホール C-15',
+    eventName: 'JAPAN BUILD - 建設DX展 / スマートビルディングEXPO',
+    eventVenue: '東京ビッグサイト',
+    eventStartDate: '2026-12-09',
+    eventEndDate: '2026-12-11',
+    eventUrl: 'https://www.japan-build.jp/tokyo/ja-jp.html',
+    description: 'レーザー光による樹脂塗膜・サビ除去技術「CoolLaser（クーレーザー）」を展開。橋梁やプラント、鉄骨建造物の保全・長寿命化工事を劇的に省力化。',
+    aiSummary: '【DHV投資先ポートフォリオ】大和ハウスの鉄骨建築・大型インフラ老朽化対策・維持保全の強力パートナー。国土強靭化・マテリアル保全。',
+    industries: ['建設・不動産テック', '製造・ファクトリーDX'],
+    asufukaketsu: ['ス', 'ア'],
+    takaichi17: ['防災・国土強靭化', 'マテリアル（重要鉱物・部素材）'],
+    isStartup: true,
+    startupScore: 94,
+    isDHVPortfolio: true,
+    dhvInvestmentRound: '出資済',
+    dhvInvestmentNote: '大和ハウスグループ「将来の夢」ファンド出資先 / インフラ保全',
+    establishedYear: 2017,
+    yearsSinceEst: 9,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '60億円',
+    totalFunding: '22億円',
+    officialUrl: 'https://toyokoh.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社トヨコー'),
+      keppleUrl: generateKeppleUrl('株式会社トヨコー'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社トヨコー'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社トヨコー'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社トヨコー'),
+    },
+    dhvStatus: 'DHV投資済',
+    memo: '【既存投資先】建設事業部向け実演デモ日程調整。',
+    updatedAt: '2026-10-23T04:30:00Z',
+  },
+
+  // 6. エレファンテック株式会社 (未投資・新規ソーシング候補)
   {
     id: 'ex-elephantech',
     companyName: 'エレファンテック株式会社',
@@ -179,6 +358,7 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     takaichi17: ['マテリアル（重要鉱物・部素材）', '資源・エネルギー安全保障・GX'],
     isStartup: true,
     startupScore: 94,
+    isDHVPortfolio: false,
     establishedYear: 2014,
     yearsSinceEst: 12,
     fundingStage: 'シリーズC以降',
@@ -196,6 +376,8 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     memo: 'スマート建材・センサ組み込み基板での協業可能性を模索。',
     updatedAt: '2026-10-23T04:30:00Z',
   },
+
+  // 7. サグリ株式会社 (未投資・新規ソーシング候補)
   {
     id: 'ex-sagri',
     companyName: 'サグリ株式会社',
@@ -213,6 +395,7 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     takaichi17: ['航空・宇宙', 'フードテック', '資源・エネルギー安全保障・GX'],
     isStartup: true,
     startupScore: 92,
+    isDHVPortfolio: false,
     establishedYear: 2018,
     yearsSinceEst: 8,
     fundingStage: 'シリーズA',
@@ -229,40 +412,8 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     dhvStatus: '注目・Watch',
     updatedAt: '2026-10-23T04:30:00Z',
   },
-  {
-    id: 'ex-kyoto-fusioneering',
-    companyName: '京都フュージョニアリング株式会社',
-    companyNameEn: 'Kyoto Fusioneering Ltd.',
-    boothNumber: '展示ホール4 E-18',
-    eventName: '脱炭素経営 EXPO 2026 / スマートエネルギーWeek',
-    eventVenue: '幕張メッセ',
-    eventStartDate: '2026-12-16',
-    eventEndDate: '2026-12-18',
-    eventUrl: 'https://www.decarbonization-expo.jp/',
-    description: '核融合炉向けの特殊加熱装置ジャイロトロンや熱取出ブランケットシステム等の先端エンジニアリングを提供する京都大学発ベンチャー。',
-    aiSummary: '高市政権の最重要成長投資テーマ「フュージョンエネルギー（核融合）」の世界的筆頭。究極の次世代クリーンエネルギー基盤。',
-    industries: ['エネルギー・環境・GX', '宇宙・ディープテック'],
-    asufukaketsu: ['カ'],
-    takaichi17: ['フュージョンエネルギー（核融合）', '資源・エネルギー安全保障・GX'],
-    isStartup: true,
-    startupScore: 95,
-    establishedYear: 2019,
-    yearsSinceEst: 7,
-    fundingStage: 'シリーズC以降',
-    estimatedValuation: '350億円',
-    totalFunding: '130億円',
-    officialUrl: 'https://kyotofusioneering.com/',
-    links: {
-      initialUrl: generateInitialUrl('京都フュージョニアリング株式会社'),
-      keppleUrl: generateKeppleUrl('京都フュージョニアリング株式会社'),
-      googleSearchUrl: generateGoogleSearchUrl('京都フュージョニアリング株式会社'),
-      googleNewsUrl: generateGoogleNewsUrl('京都フュージョニアリング株式会社'),
-      corporateNumberUrl: generateCorporateNumberUrl('京都フュージョニアリング株式会社'),
-    },
-    dhvStatus: '投資検討中',
-    memo: 'エネルギー政策関連の国家プロジェクト動向と合わせてフォロー。',
-    updatedAt: '2026-10-23T04:30:00Z',
-  },
+
+  // 8. 株式会社アンドパッド (未投資・新規ソーシング候補)
   {
     id: 'ex-andpad',
     companyName: '株式会社アンドパッド',
@@ -280,6 +431,7 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     takaichi17: ['防災・国土強靭化', 'デジタル・サイバーセキュリティ'],
     isStartup: true,
     startupScore: 91,
+    isDHVPortfolio: false,
     establishedYear: 2016,
     yearsSinceEst: 10,
     fundingStage: 'プレIPO',
@@ -296,6 +448,8 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     dhvStatus: 'アプローチ済',
     updatedAt: '2026-10-23T04:30:00Z',
   },
+
+  // 9. Telexistence株式会社 (未投資・新規ソーシング候補)
   {
     id: 'ex-telexistence',
     companyName: 'Telexistence株式会社',
@@ -313,6 +467,7 @@ export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
     takaichi17: ['AI・半導体'],
     isStartup: true,
     startupScore: 96,
+    isDHVPortfolio: false,
     establishedYear: 2017,
     yearsSinceEst: 9,
     fundingStage: 'シリーズB',

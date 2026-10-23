@@ -119,6 +119,7 @@ export type FundingStage =
 
 export type DHVStatus =
   | '未対応'
+  | 'DHV投資済'
   | '注目・Watch'
   | 'アプローチ済'
   | '面談設定'
@@ -131,7 +132,7 @@ export interface StartupExhibitor {
   companyNameEn?: string;
   boothNumber: string;
   eventName: string;
-  eventVenue: '東京ビッグサイト' | '幕黄メッセ' | string;
+  eventVenue: '東京ビッグサイト' | '幕張メッセ' | string;
   eventStartDate: string;
   eventEndDate: string;
   eventUrl: string;
@@ -142,6 +143,9 @@ export interface StartupExhibitor {
   takaichi17: TakaichiField[];
   isStartup: boolean;
   startupScore: number; // 0-100
+  isDHVPortfolio: boolean; // ★ DHV既存投資先フラグ
+  dhvInvestmentRound?: string; // 例: "Series A 出資済"
+  dhvInvestmentNote?: string; // 例: "大和ハウスグループ「将来の夢」ファンド"
   establishedYear: number | null;
   yearsSinceEst?: number | null;
   fundingStage: FundingStage;
@@ -193,6 +197,7 @@ export interface FilterOptions {
   takaichi17: TakaichiField[];
   industries: IndustryCategory[];
   startupOnly: boolean;
+  portfolioFilter: 'all' | 'portfolio_only' | 'uninvested_only'; // ★ DHV投資先フィルター
   maxYearsSinceEst: number | null;
   fundingStages: FundingStage[];
   dhvStatus: DHVStatus[];

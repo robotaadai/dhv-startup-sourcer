@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ExhibitionEvent, StartupExhibitor } from '@/types';
-import { Calendar, Building, Sparkles, ShieldCheck, Flag, CheckCircle2 } from 'lucide-react';
+import { Calendar, Building, Sparkles, ShieldCheck, Flag, CheckCircle2, Crown } from 'lucide-react';
 
 interface StatsSummaryProps {
   events: ExhibitionEvent[];
@@ -13,9 +13,9 @@ export const StatsSummary: React.FC<StatsSummaryProps> = ({ events, exhibitors }
   const totalEvents = events.length;
   const totalExhibitors = exhibitors.length;
   const startupCount = exhibitors.filter((e) => e.isStartup).length;
+  const portfolioCount = exhibitors.filter((e) => e.isDHVPortfolio).length;
   const asufukaketsuCount = exhibitors.filter((e) => e.isStartup && e.asufukaketsu.length > 0).length;
   const takaichi17Count = exhibitors.filter((e) => e.isStartup && e.takaichi17.length > 0).length;
-  const watchingCount = exhibitors.filter((e) => e.dhvStatus === '注目・Watch' || e.dhvStatus === '面談設定' || e.dhvStatus === '投資検討中').length;
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
@@ -54,6 +54,23 @@ export const StatsSummary: React.FC<StatsSummaryProps> = ({ events, exhibitors }
         </div>
       </div>
 
+      {/* ★ DHV投資先出展 */}
+      <div className="bg-gradient-to-br from-amber-500/10 via-white to-amber-500/5 rounded-xl p-3.5 border border-amber-300 shadow-xs">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-black text-amber-900">DHV 投資先出展</span>
+          <div className="p-1.5 rounded-lg bg-amber-500 text-white shadow-2xs">
+            <Crown className="w-4 h-4 fill-current" />
+          </div>
+        </div>
+        <div className="mt-2 flex items-baseline">
+          <span className="text-2xl font-black text-amber-700">{portfolioCount}</span>
+          <span className="ml-1 text-xs font-bold text-amber-900">社</span>
+        </div>
+        <div className="mt-1 text-[11px] text-amber-800 font-bold">
+          ポートフォリオ出展支援
+        </div>
+      </div>
+
       {/* アスフカケツノ該当 */}
       <div className="bg-white rounded-xl p-3.5 border border-amber-200/80 shadow-xs">
         <div className="flex items-center justify-between">
@@ -85,23 +102,6 @@ export const StatsSummary: React.FC<StatsSummaryProps> = ({ events, exhibitors }
         </div>
         <div className="mt-1 text-[11px] text-purple-800">
           国家危機管理・成長投資
-        </div>
-      </div>
-
-      {/* 社内注目/面談中 */}
-      <div className="bg-white rounded-xl p-3.5 border border-emerald-200/80 shadow-xs">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-emerald-900">DHV注目/検討中</span>
-          <div className="p-1.5 rounded-lg bg-emerald-50 text-emerald-600">
-            <CheckCircle2 className="w-4 h-4" />
-          </div>
-        </div>
-        <div className="mt-2 flex items-baseline">
-          <span className="text-2xl font-bold text-emerald-700">{watchingCount}</span>
-          <span className="ml-1 text-xs text-slate-500">社</span>
-        </div>
-        <div className="mt-1 text-[11px] text-emerald-800">
-          ソーシング中アクション
         </div>
       </div>
 

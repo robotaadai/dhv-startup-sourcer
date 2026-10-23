@@ -18,6 +18,7 @@ import {
   CheckCircle2,
   Copy,
   Check,
+  Crown,
 } from 'lucide-react';
 
 interface StartupDetailModalProps {
@@ -60,6 +61,12 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
         <div className="p-5 sm:p-6 border-b border-slate-200 bg-gradient-to-r from-slate-50 via-white to-red-50/30 flex items-start justify-between">
           <div>
             <div className="flex items-center space-x-2">
+              {exhibitor.isDHVPortfolio && (
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-gradient-to-r from-amber-500 to-red-600 text-white flex items-center shadow-xs">
+                  <Crown className="w-3.5 h-3.5 mr-1 text-amber-200 fill-current" />
+                  DHV 投資先 (Portfolio)
+                </span>
+              )}
               <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
                 {exhibitor.fundingStage}
               </span>
@@ -104,6 +111,28 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
 
         {/* Scrollable Content */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-6">
+          {/* DHV Portfolio Special Banner */}
+          {exhibitor.isDHVPortfolio && (
+            <div className="bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-red-500/10 p-4 rounded-xl border border-amber-300 flex items-start space-x-3">
+              <div className="p-2 rounded-lg bg-amber-500 text-white shrink-0 mt-0.5 shadow-xs">
+                <Crown className="w-5 h-5 fill-current" />
+              </div>
+              <div>
+                <span className="text-xs font-black text-amber-900 block">
+                  大和ハウスグループ「将来の夢」ファンド出資先企業
+                </span>
+                <p className="text-xs text-amber-800 mt-0.5 leading-relaxed font-medium">
+                  {exhibitor.dhvInvestmentNote || '大和ハウスグループとの共創・出資先スタートアップです。'}
+                </p>
+                {exhibitor.dhvInvestmentRound && (
+                  <span className="inline-block mt-2 px-2 py-0.5 bg-amber-200/80 text-amber-900 rounded text-[11px] font-bold">
+                    投資ステータス: {exhibitor.dhvInvestmentRound}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Quick Info Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200/80">
             <div>
@@ -310,6 +339,7 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
                   className="text-xs font-bold px-2.5 py-1 bg-white border border-slate-300 rounded-lg outline-none"
                 >
                   <option value="未対応">未対応</option>
+                  <option value="DHV投資済">👑 DHV投資済</option>
                   <option value="注目・Watch">注目・Watch</option>
                   <option value="アプローチ済">アプローチ済</option>
                   <option value="面談設定">面談設定</option>

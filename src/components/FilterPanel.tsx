@@ -21,6 +21,7 @@ import {
   RotateCcw,
   ChevronDown,
   ChevronUp,
+  Crown,
 } from 'lucide-react';
 
 interface FilterPanelProps {
@@ -80,6 +81,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     filters.asufukaketsu.length +
     filters.takaichi17.length +
     filters.industries.length +
+    (filters.portfolioFilter !== 'all' ? 1 : 0) +
     (filters.startupOnly ? 1 : 0) +
     (filters.maxYearsSinceEst ? 1 : 0) +
     filters.dhvStatus.length;
@@ -94,7 +96,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder="社名、出展品目、先端技術（例: フィジカルAI、建機自動化、ペロブスカイト、SAR衛星...）"
+              placeholder="社名、出展品目、先端技術（例: ugo、核融合、SAR衛星、自律トラック、インフラ保全...）"
               value={filters.searchQuery}
               onChange={(e) => onChangeFilters({ ...filters, searchQuery: e.target.value })}
               className="w-full pl-10 pr-10 py-2.5 bg-white rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all shadow-xs"
@@ -110,7 +112,45 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           </div>
 
           {/* Quick Filters */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center flex-wrap gap-2">
+            {/* DHV Portfolio Filter Selector */}
+            <div className="flex items-center p-0.5 bg-slate-100 rounded-xl border border-slate-200 text-xs font-semibold">
+              <button
+                type="button"
+                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'all' })}
+                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                  filters.portfolioFilter === 'all'
+                    ? 'bg-white text-slate-900 shadow-xs font-bold'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                すべて
+              </button>
+              <button
+                type="button"
+                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'portfolio_only' })}
+                className={`flex items-center space-x-1 px-2.5 py-1.5 rounded-lg transition-all ${
+                  filters.portfolioFilter === 'portfolio_only'
+                    ? 'bg-gradient-to-r from-amber-500 to-red-600 text-white shadow-xs font-bold'
+                    : 'text-amber-800 hover:text-amber-950'
+                }`}
+              >
+                <Crown className="w-3.5 h-3.5 fill-current" />
+                <span>DHV投資先のみ</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => onChangeFilters({ ...filters, portfolioFilter: 'uninvested_only' })}
+                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                  filters.portfolioFilter === 'uninvested_only'
+                    ? 'bg-white text-slate-900 shadow-xs font-bold'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                未投資のみ (新規)
+              </button>
+            </div>
+
             {/* Startup Only Toggle */}
             <label className="flex items-center space-x-2 px-3 py-2 bg-red-50 hover:bg-red-100 rounded-xl border border-red-200 cursor-pointer select-none transition-colors">
               <input
@@ -121,7 +161,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               />
               <span className="text-xs font-bold text-red-900 flex items-center">
                 <Sparkles className="w-3.5 h-3.5 mr-1 text-red-600" />
-                スタートアップのみ
+                SUのみ
               </span>
             </label>
 
@@ -131,7 +171,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               className="flex items-center space-x-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-200 rounded-xl transition-colors"
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>絞り込み詳細</span>
+              <span>絞り込み</span>
               {activeFilterCount > 0 && (
                 <span className="px-1.5 py-0.2 bg-red-600 text-white rounded-full text-[10px] font-bold">
                   {activeFilterCount}
@@ -335,7 +375,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                 社内検討ステータス (DHV)
               </span>
               <div className="flex flex-wrap gap-1.5">
-                {(['未対応', '注目・Watch', 'アプローチ済', '面談設定', '投資検討中', '見送り'] as DHVStatus[]).map((st) => {
+                {(['未対応', 'DHV投資済', '注目・Watch', 'アプローチ済', '面談設定', '投資検討中', '見送り'] as DHVStatus[]).map((st) => {
                   const isActive = filters.dhvStatus.includes(st);
                   return (
                     <button
@@ -348,7 +388,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                       }`}
                     >
-                      {st}
+                      {st === 'DHV投資済' ? '👑 DHV投資済' : st}
                     </button>
                   );
                 })}
