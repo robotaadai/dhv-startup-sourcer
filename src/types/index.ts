@@ -244,6 +244,7 @@ export interface ExhibitionEvent {
   startDate: string;
   endDate: string;
   officialUrl: string;
+  floorMapUrl?: string; // 会場フロアマップ・ブース配置図案内URL
   description: string;
   organizer: string;
   startupRelevanceScore: number; // 1-5

@@ -175,9 +175,16 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200/80">
             <div>
               <span className="text-[11px] text-slate-400 font-medium block">出展イベント</span>
-              <span className="text-xs font-bold text-slate-800 line-clamp-1" title={exhibitor.eventName}>
-                {exhibitor.eventName}
-              </span>
+              <a
+                href={exhibitor.eventUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold text-slate-800 hover:text-red-600 hover:underline line-clamp-1 inline-flex items-center gap-1 group/modalEvent"
+                title={`${exhibitor.eventName} 公式HPを開く`}
+              >
+                <span className="truncate">{exhibitor.eventName}</span>
+                <ExternalLink className="w-3 h-3 text-slate-400 group-hover/modalEvent:text-red-500 shrink-0" />
+              </a>
               {exhibitor.eventType && (
                 <span className="text-[10px] text-orange-600 font-bold block mt-0.5">
                   {exhibitor.eventType}

@@ -177,9 +177,17 @@ export const StartupCard: React.FC<StartupCardProps> = ({
               {exhibitor.boothNumber}
             </span>
             <span className="text-slate-300">|</span>
-            <span className="truncate max-w-[180px] font-medium text-slate-700" title={exhibitor.eventName}>
-              {exhibitor.eventName}
-            </span>
+            <a
+              href={exhibitor.eventUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="truncate max-w-[180px] font-medium text-slate-700 hover:text-red-600 hover:underline inline-flex items-center gap-0.5 group/eventLink"
+              title={`${exhibitor.eventName} 公式HPを開く`}
+            >
+              <span className="truncate">{exhibitor.eventName}</span>
+              <ExternalLink className="w-2.5 h-2.5 text-slate-400 group-hover/eventLink:text-red-500 shrink-0" />
+            </a>
             <span className="text-slate-300">|</span>
             <span>{exhibitor.eventVenue}</span>
           </div>

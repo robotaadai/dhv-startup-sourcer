@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { ExhibitionEvent } from '@/types';
-import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight } from 'lucide-react';
+import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight, Map } from 'lucide-react';
+import { getEventFloorMapUrl } from '@/utils/floorMap';
 
 interface EventTimelineProps {
   events: ExhibitionEvent[];
@@ -15,19 +16,43 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
   selectedEventId,
   onSelectEvent,
 }) => {
-  const getStatusBadge = (status: ExhibitionEvent['status']) => {
-    switch (status) {
+  const getStatusBadge = (event: ExhibitionEvent) => {
+    const floorMapUrl = getEventFloorMapUrl(event);
+
+    switch (event.status) {
       case 'ブース配置図公表':
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
-            <Check className="w-3 h-3 mr-0.5" /> レイアウト公表済
-          </span>
+          <a
+            href={floorMapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 hover:border-emerald-400 transition-all shadow-2xs group/map"
+            title={`${event.venue} の会場マップ・ブース配置図を開く`}
+          >
+            <Map className="w-3 h-3 mr-1 text-emerald-700 shrink-0" />
+            <span>レイアウト公表済</span>
+            <span className="ml-1 text-[9px] bg-emerald-200/90 text-emerald-950 px-1 rounded font-bold group-hover/map:bg-emerald-300">
+              会場マップ ↗
+            </span>
+          </a>
         );
       case '出展社公表済':
         return (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-800 border border-blue-300">
-            出展社リスト公表済
-          </span>
+          <a
+            href={floorMapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300 hover:border-blue-400 transition-all shadow-2xs group/map"
+            title={`${event.venue} の会場マップを開く`}
+          >
+            <Map className="w-3 h-3 mr-1 text-blue-700 shrink-0" />
+            <span>出展社リスト公表済</span>
+            <span className="ml-1 text-[9px] bg-blue-200/90 text-blue-950 px-1 rounded font-bold group-hover/map:bg-blue-300">
+              会場マップ ↗
+            </span>
+          </a>
         );
       case 'スケジュール確定':
         return (
@@ -38,7 +63,7 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
       default:
         return (
           <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700">
-            {status}
+            {event.status}
           </span>
         );
     }
@@ -162,13 +187,23 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
                     </span>
                   )}
                 </div>
-                {getStatusBadge(evt.status)}
+                {getStatusBadge(evt)}
               </div>
 
-              {/* Title */}
-              <h3 className="text-xs font-bold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-1 mb-1">
-                {evt.title}
-              </h3>
+              {/* Title: 展示会の名称をクリックしたら当該HPへ */}
+              <div className="mb-1">
+                <a
+                  href={evt.officialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-slate-900 hover:text-red-600 hover:underline transition-colors group/title"
+                  title={`${evt.title} 公式HPを開く`}
+                >
+                  <span className="line-clamp-1">{evt.title}</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover/title:text-red-500 shrink-0" />
+                </a>
+              </div>
 
               {/* Venue & Hall */}
               <div className="text-[11px] text-slate-600 mb-1.5 flex items-center">
