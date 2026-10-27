@@ -43,8 +43,8 @@ const INITIAL_FILTERS: FilterOptions = {
   takaichi17: [],
   industries: [],
   startupOnly: true, // デフォルトでスタートアップのみ表示
-  excludeDHVPortfolio: false, // ★ DHV投資先は非表示フラグ
-  portfolioFilter: 'all', // 'all' | 'portfolio_only' | 'uninvested_only'
+  excludeDHVPortfolio: true, // ★ デフォルトでDHV投資先は検索結果から除外
+  portfolioFilter: 'uninvested_only', // デフォルトで未投資先のみ
   maxYearsSinceEst: null,
   fundingStages: [],
   dhvStatus: [],
@@ -73,6 +73,7 @@ const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
   meetingRegions: [],
   meetingType: 'ALL',
   eventParticipation: 'ALL', // ★ デフォルトは出展予定なしも含む「全企業」
+  excludeDHVPortfolio: true, // ★ デフォルトでDHV投資先は検索結果から除外
   enabledSections: {
     expectation: true,
     quantitative: true,
@@ -345,9 +346,19 @@ export default function HomePage() {
     });
   }, [filteredExhibitors, sortBy, filters.excludeDHVPortfolio]);
 
+  // ★ 逆引きモード用母集団: 未終了イベントまたは出展なしの全スタートアップ
+  const upcomingAllStartups = useMemo(() => {
+    return allStartups.filter((e) => e.hasUpcomingEvent === false || !e.eventEndDate || e.eventEndDate >= todayStr);
+  }, [allStartups, todayStr]);
+
   // ★ 逆引きモード用: スタートアップの多角絞り込み
   const filteredReverseStartups = useMemo(() => {
-    return upcomingExhibitors.filter((item) => {
+    return upcomingAllStartups.filter((item) => {
+      // 0. DHV投資先の除外 (デフォルトON)
+      if (reverseFilters.excludeDHVPortfolio && item.isDHVPortfolio) {
+        return false;
+      }
+
       // 1. Search Query
       if (reverseFilters.searchQuery.trim()) {
         const q = reverseFilters.searchQuery.toLowerCase();
@@ -474,7 +485,7 @@ export default function HomePage() {
 
       return true;
     });
-  }, [allStartups, reverseFilters]);
+  }, [upcomingAllStartups, reverseFilters]);
 
   // ★ 逆引きモード用: ソート処理
   const sortedReverseStartups = useMemo(() => {

@@ -149,6 +149,7 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
       meetingRegions: [],
       meetingType: 'ALL',
       eventParticipation: 'ALL',
+      excludeDHVPortfolio: true, // ★ デフォルトでDHV投資先は除外
       enabledSections: {
         expectation: true,
         quantitative: true,
@@ -216,6 +217,31 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
               検索
             </button>
           </div>
+
+          {/* ★ デフォルトでDHV投資先は検索結果から除外（チェックボックス） */}
+          <div className="mt-2.5 flex items-center justify-between px-3 py-2 bg-amber-50/70 border border-amber-200/80 rounded-xl">
+            <label className="flex items-center space-x-2.5 cursor-pointer text-xs font-bold text-amber-950 select-none">
+              <input
+                type="checkbox"
+                checked={draft.excludeDHVPortfolio}
+                onChange={(e) => setDraft({ ...draft, excludeDHVPortfolio: e.target.checked })}
+                className="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-amber-300"
+              />
+              <span className="flex items-center gap-1.5">
+                <span>🏢 大和ハウス（DHV）出資先ポートフォリオ企業は除外する</span>
+                <span className="text-[10px] text-amber-800 font-normal">（チェックONで除外 / 未投資の新規ソーシング対象に集中）</span>
+              </span>
+            </label>
+            <span
+              className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                draft.excludeDHVPortfolio
+                  ? 'bg-amber-200 text-amber-900'
+                  : 'bg-slate-200 text-slate-600'
+              }`}
+            >
+              {draft.excludeDHVPortfolio ? '除外中 (デフォルト)' : '投資先も含める'}
+            </span>
+          </div>
         </div>
 
         {/* ========================================================================= */}
@@ -266,9 +292,9 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
               </div>
               <div className="flex flex-wrap gap-2">
                 {[
-                  { rank: 'S' as ExpectationRank, label: '★★★ Sランク (超注目モメンタム・34点以上)', color: 'border-amber-400 bg-amber-50 text-amber-900' },
-                  { rank: 'A' as ExpectationRank, label: '★★ Aランク (高トラクション有力株・26〜33点)', color: 'border-blue-300 bg-blue-50 text-blue-900' },
-                  { rank: 'B' as ExpectationRank, label: '★ Bランク (成長初期シード・25点以下)', color: 'border-emerald-300 bg-emerald-50 text-emerald-900' },
+                  { rank: 'S' as ExpectationRank, label: '★★★ Sランク (厳選トップ層・32点以上)', color: 'border-amber-400 bg-amber-50 text-amber-900' },
+                  { rank: 'A' as ExpectationRank, label: '★★ Aランク (有力候補・24〜31点)', color: 'border-blue-300 bg-blue-50 text-blue-900' },
+                  { rank: 'B' as ExpectationRank, label: '★ Bランク (観察・発展途上・23点以下)', color: 'border-emerald-300 bg-emerald-50 text-emerald-900' },
                 ].map(({ rank, label, color }) => {
                   const isChecked = draft.expectationRanks.includes(rank);
                   return (

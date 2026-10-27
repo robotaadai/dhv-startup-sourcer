@@ -361,6 +361,7 @@ export interface StartupReverseFilters {
   meetingRegions: EventRegion[];
   meetingType: 'ALL' | 'BOOTH_ONLY' | 'PITCH_ONLY';
   eventParticipation: 'ALL' | 'WITH_EVENTS' | 'WITHOUT_EVENTS'; // ★ イベント出展の有無（すべて / 出展予定あり / 出展予定なし）
+  excludeDHVPortfolio: boolean; // ★ デフォルトでDHV投資先は検索結果から除外（チェックボックス）
   enabledSections: EnabledReverseFilterSections;
 }
 

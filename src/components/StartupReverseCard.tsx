@@ -14,11 +14,9 @@ import {
   Crown,
   ChevronRight,
   Clock,
-  Map,
   Building,
   Newspaper,
 } from 'lucide-react';
-import { getEventFloorMapUrl } from '@/utils/floorMap';
 
 interface StartupReverseCardProps {
   startup: StartupExhibitor;
@@ -60,40 +58,19 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
 
   const expectation = startup.expectation || {
     scores: {
-      awards: startup.pitchInfo ? 5 : 3,
-      accelerator: startup.pitchInfo?.includes('Plug and Play') ? 5 : 4,
-      snsMomentum: 4,
-      fundraising: startup.fundingStage === 'シリーズB' ? 5 : startup.fundingStage === 'シリーズA' ? 4 : 3,
-      growthVelocity: (startup.yearsSinceEst || 5) <= 3 ? 5 : 4,
-      enterpriseTraction: 4,
-      deepTechIP: startup.industries.some((i) => i.includes('半導体') || i.includes('ロボット')) ? 5 : 4,
-      teamStrength: 4,
+      awards: startup.pitchInfo ? 3 : 2,
+      accelerator: startup.pitchInfo?.includes('Plug and Play') ? 3 : 2,
+      snsMomentum: 2,
+      fundraising: startup.fundingStage === 'シリーズB' ? 3 : startup.fundingStage === 'シリーズA' ? 3 : 2,
+      growthVelocity: (startup.yearsSinceEst || 5) <= 3 ? 3 : 2,
+      enterpriseTraction: 2,
+      deepTechIP: startup.industries.some((i) => i.includes('半導体') || i.includes('ロボット')) ? 3 : 2,
+      teamStrength: 3,
     },
-    totalScore: 33,
-    rank: 'A' as const,
-    highlights: ['有力トラクション', '現場適用可能性高'],
+    totalScore: 20,
+    rank: 'B' as const,
+    highlights: ['成長ポテンシャル'],
   };
-
-  // 会場マップURLの解決
-  const resolvedFloorMapUrl = getEventFloorMapUrl({
-    id: meetingEvent.eventId,
-    title: meetingEvent.eventName,
-    venue: meetingEvent.venue,
-    city: '東京',
-    region: meetingEvent.region,
-    eventType: meetingEvent.eventType,
-    startDate: meetingEvent.startDate,
-    endDate: meetingEvent.endDate,
-    officialUrl: meetingEvent.eventUrl,
-    floorMapUrl: meetingEvent.floorMapUrl,
-    description: '',
-    organizer: '',
-    startupRelevanceScore: 5,
-    status: '出展社公表済',
-    exhibitorCount: 100,
-    startupCount: 20,
-    lastCrawledAt: '',
-  });
 
   return (
     <div
@@ -252,27 +229,17 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
                 )}
               </div>
 
-              {/* アクションボタン: 会場マップ & イベント公式HP */}
+              {/* アクションボタン: イベント公式HP */}
               <div className="flex items-center gap-2">
-                <a
-                  href={resolvedFloorMapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex-1 inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-all shadow-2xs group/btn"
-                  title={`${meetingEvent.venue} のフロアマップ・小間位置を開く`}
-                >
-                  <Map className="w-3.5 h-3.5 mr-0.5 shrink-0" />
-                  <span>会場マップで小間を確認 ↗</span>
-                </a>
                 <a
                   href={meetingEvent.eventUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-all border border-slate-300"
+                  className="flex-1 inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-all shadow-2xs group/btn"
                 >
-                  <span>イベント公式 ↗</span>
+                  <ExternalLink className="w-3.5 h-3.5 mr-0.5 shrink-0" />
+                  <span>イベント公式案内を開く ↗</span>
                 </a>
               </div>
             </div>

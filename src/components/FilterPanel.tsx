@@ -180,25 +180,29 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
           {/* Quick Filters */}
           <div className="flex items-center flex-wrap gap-2">
-            {/* ★ 「DHV投資先は非表示」専用ボタン */}
-            <button
-              type="button"
-              onClick={() =>
-                setDraftFilters({
-                  ...draftFilters,
-                  excludeDHVPortfolio: !draftFilters.excludeDHVPortfolio,
-                  portfolioFilter: !draftFilters.excludeDHVPortfolio ? 'uninvested_only' : 'all',
-                })
-              }
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all shadow-xs border select-none ${
-                draftFilters.excludeDHVPortfolio
-                  ? 'bg-amber-600 hover:bg-amber-700 text-white border-amber-600 ring-2 ring-amber-500/30'
-                  : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-300'
-              }`}
-            >
-              <EyeOff className="w-3.5 h-3.5" />
-              <span>{draftFilters.excludeDHVPortfolio ? 'DHV投資先は非表示中' : 'DHV投資先は非表示'}</span>
-            </button>
+            {/* ★ 「DHV投資先は除外」チェックボックス */}
+            <label className={`flex items-center space-x-2 px-3 py-2 rounded-xl border cursor-pointer select-none transition-all shadow-xs ${
+              draftFilters.excludeDHVPortfolio
+                ? 'bg-amber-100 hover:bg-amber-200 border-amber-400 text-amber-950 font-bold ring-2 ring-amber-500/20'
+                : 'bg-white hover:bg-slate-100 border-slate-300 text-slate-700'
+            }`}>
+              <input
+                type="checkbox"
+                checked={draftFilters.excludeDHVPortfolio}
+                onChange={(e) =>
+                  setDraftFilters({
+                    ...draftFilters,
+                    excludeDHVPortfolio: e.target.checked,
+                    portfolioFilter: e.target.checked ? 'uninvested_only' : 'all',
+                  })
+                }
+                className="w-4 h-4 text-amber-600 rounded border-amber-400 focus:ring-amber-500"
+              />
+              <span className="text-xs font-bold flex items-center">
+                <EyeOff className="w-3.5 h-3.5 mr-1 text-amber-700" />
+                DHV投資先を除外
+              </span>
+            </label>
 
             {/* Startup Only Toggle */}
             <label className="flex items-center space-x-2 px-3 py-2 bg-red-50 hover:bg-red-100 rounded-xl border border-red-200 cursor-pointer select-none transition-colors">

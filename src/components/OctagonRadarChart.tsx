@@ -243,7 +243,7 @@ export const OctagonRadarChart: React.FC<OctagonRadarChartProps> = ({
         <span
           className={`px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide ${rankColors.badgeBg} shadow-2xs`}
         >
-          {rank === 'S' ? '★★★ Sランク (超注目)' : rank === 'A' ? '★★ Aランク (有力)' : '★ Bランク (成長初期)'}
+          {rank === 'S' ? '★★★ Sランク (厳選トップ)' : rank === 'A' ? '★★ Aランク (有力候補)' : '★ Bランク (観察・発展途上)'}
         </span>
         <span className="text-[11px] font-bold text-slate-700">
           期待スコア: <strong className="text-red-600 font-black">{calcTotal}</strong> / 40点
