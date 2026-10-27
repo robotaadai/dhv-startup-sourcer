@@ -447,6 +447,82 @@ export const INITIAL_EVENTS: ExhibitionEvent[] = [
     startupCount: 6,
     lastCrawledAt: '2026-10-23T04:30:00Z',
   },
+  {
+    id: 'evt-2026-ceatec',
+    title: 'CEATEC 2026 - Innovation for All',
+    venue: '幕張メッセ',
+    hall: '展示ホール1-8',
+    city: '千葉',
+    region: '関東',
+    eventType: '大型産業展示会',
+    startDate: '2026-10-27',
+    endDate: '2026-10-30',
+    officialUrl: 'https://www.ceatec.com/',
+    description: 'Society 5.0の実現を目指すアジア屈指のデジタルイノベーション総合展。エッジAI、スマートホーム・スマートビル、空間センシング、省エネ半導体技術が集結。',
+    organizer: '一般社団法人電子情報技術産業協会 (JEITA)',
+    startupRelevanceScore: 5,
+    status: '出展社公表済',
+    exhibitorCount: 680,
+    startupCount: 165,
+    lastCrawledAt: '2026-10-27T04:30:00Z',
+  },
+  {
+    id: 'evt-2026-aichi-day',
+    title: 'Aichi Startup Day 2026 / STATION Ai Autumn Summit',
+    venue: 'STATION Ai (名古屋・鶴舞)',
+    hall: 'メインアリーナ・ピッチステージ',
+    city: '名古屋',
+    region: '中部',
+    eventType: 'ピッチコンテスト・アクセラレーター',
+    startDate: '2026-11-26',
+    endDate: '2026-11-27',
+    officialUrl: 'https://stationai.co.jp/',
+    description: '日本最大級のオープンイノベーション拠点「STATION Ai」の成果発表会。ディープテック、モビリティ、スマートファクトリー、アグリテックSUが登壇。',
+    organizer: '愛知県 / STATION Ai 株式会社',
+    startupRelevanceScore: 5,
+    status: '出展社公表済',
+    exhibitorCount: 150,
+    startupCount: 95,
+    lastCrawledAt: '2026-10-27T04:30:00Z',
+  },
+  {
+    id: 'evt-2027-careshow',
+    title: 'Care Show Japan 2027 (メディカル・介護・ヘルスケア総合展)',
+    venue: '東京ビッグサイト',
+    hall: '東7-8ホール',
+    city: '東京',
+    region: '関東',
+    eventType: '大型産業展示会',
+    startDate: '2027-01-27',
+    endDate: '2027-01-29',
+    officialUrl: 'https://www.care-show.com/',
+    description: '介護現場のDX、見守りセンサー、訪問介護SaaS、リハビリロボット、シニア向けウェルネス住宅ソリューションが集結する国内最大級のヘルスケア展。',
+    organizer: 'インフォーマ マーケッツ ジャパン株式会社',
+    startupRelevanceScore: 5,
+    status: 'スケジュール確定',
+    exhibitorCount: 380,
+    startupCount: 88,
+    lastCrawledAt: '2026-10-27T04:30:00Z',
+  },
+  {
+    id: 'evt-2027-deeptech-summit',
+    title: '大学発ディープテック・ベンチャー・サミット 2027',
+    venue: '東京ミッドタウン八重洲 / イノベーションハブ',
+    hall: 'コンファレンスセンター',
+    city: '東京',
+    region: '関東',
+    eventType: 'スタートアップ特化サミット',
+    startDate: '2027-02-04',
+    endDate: '2027-02-05',
+    officialUrl: 'https://www.ut-ipc.co.jp/',
+    description: '東大IPC、京大iCAP、東北大ベンチャーパートナーズ、名大発ベンチャー等の支援先ディープテックSU（新エネルギー、素材、宇宙、ロボット）が結集するピッチサミット。',
+    organizer: '大学発イノベーション協議会 / 東京大学IPC',
+    startupRelevanceScore: 5,
+    status: 'スケジュール確定',
+    exhibitorCount: 120,
+    startupCount: 85,
+    lastCrawledAt: '2026-10-27T04:30:00Z',
+  },
 ];
 
 export const INITIAL_EXHIBITORS: StartupExhibitor[] = [
@@ -2995,6 +3071,432 @@ INITIAL_EXHIBITORS.push(
     dhvStatus: '未対応',
     memo: '【STATION Aiピッチ】AGVビジュアルSLAM技術のデモ視察。',
     updatedAt: '2026-10-23T04:30:00Z',
+  },
+  {
+    id: 'ex-aba',
+    companyName: '株式会社aba',
+    companyNameEn: 'aba Inc.',
+    boothNumber: '東8ホール CS-12',
+    eventName: 'Care Show Japan 2027 (メディカル・介護・ヘルスケア総合展)',
+    eventVenue: '東京ビッグサイト',
+    eventStartDate: '2027-01-27',
+    eventEndDate: '2027-01-29',
+    eventUrl: 'https://www.care-show.com/',
+    description: '介護現場向けにおいセンサー・超小型排泄予測システム「Helppad」を開発・提供。ベッドに敷くだけで排泄を自動検知・予測し、介護者の負担を大幅軽減。',
+    aiSummary: '大和ハウスの「福祉（フ）」「安心安全（ア）」重点領域。高齢者施設・サ高住でのスマート見守り・排泄ケア業務の劇的省力化。',
+    industries: ['ヘルスケア・医療テック', 'ロボティクス・自動化'],
+    asufukaketsu: ['フ', 'ア'],
+    takaichi17: ['創薬・先端医療', 'AI・半導体'],
+    isStartup: true,
+    startupScore: 92,
+    isDHVPortfolio: false,
+    establishedYear: 2011,
+    yearsSinceEst: 15,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '30億円',
+    totalFunding: '12億円',
+    officialUrl: 'https://www.aba-lab.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社aba'),
+      keppleUrl: generateKeppleUrl('株式会社aba'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社aba'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社aba'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社aba'),
+    },
+    dhvStatus: '未対応',
+    memo: '【介護テック】排泄検知センサーHelppadのサ高住導入ヒアリング。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-rehab-japan',
+    companyName: '株式会社Rehab for JAPAN',
+    companyNameEn: 'Rehab for JAPAN Inc.',
+    boothNumber: '東7ホール RE-05',
+    eventName: 'Care Show Japan 2027 (メディカル・介護・ヘルスケア総合展)',
+    eventVenue: '東京ビッグサイト',
+    eventStartDate: '2027-01-27',
+    eventEndDate: '2027-01-29',
+    eventUrl: 'https://www.care-show.com/',
+    description: 'デイサービス・通所介護向けリハビリ業務支援SaaS「Rehab Cloud」を展開。高齢者の運動機能向上と加算算定をAIで自動化し、全国数千事業所で稼働。',
+    aiSummary: '大和ハウスグループのリブネスタウン内デイサービスおよびシニアタウンでの健康寿命延伸プログラム連携。福祉（フ）×健康（ケ）。',
+    industries: ['ヘルスケア・医療テック', 'IT・エンタープライズSaaS'],
+    asufukaketsu: ['フ', 'ケ'],
+    takaichi17: ['創薬・先端医療'],
+    isStartup: true,
+    startupScore: 94,
+    isDHVPortfolio: false,
+    establishedYear: 2016,
+    yearsSinceEst: 10,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '45億円',
+    totalFunding: '18億円',
+    officialUrl: 'https://rehabforjapan.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Rehab for JAPAN'),
+      keppleUrl: generateKeppleUrl('株式会社Rehab for JAPAN'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Rehab for JAPAN'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Rehab for JAPAN'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Rehab for JAPAN'),
+    },
+    dhvStatus: '未対応',
+    memo: '【シニア向けSaaS】通所リハビリ支援クラウドの提携検討。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-enecoat',
+    companyName: '株式会社エネコートテクノロジーズ',
+    companyNameEn: 'EneCoat Technologies Co., Ltd.',
+    boothNumber: 'コンファレンスA ピッチ特設枠',
+    eventName: '大学発ディープテック・ベンチャー・サミット 2027',
+    eventVenue: '東京ミッドタウン八重洲 / イノベーションハブ',
+    eventStartDate: '2027-02-04',
+    eventEndDate: '2027-02-05',
+    eventUrl: 'https://www.ut-ipc.co.jp/',
+    pitchInfo: '大学発ディープテックピッチ クライメート部門 登壇',
+    description: '京都大学若宮研究室発のペロブスカイト太陽電池スタートアップ。曲面や壁面、屋内微弱光でも高効率発電が可能な次世代フレキシブル太陽電池の実用化をリード。',
+    aiSummary: '大和ハウスの住宅・商業施設・物流センターの外壁・窓面へのペロブスカイト太陽電池実装による究極のZEB/ZEH住宅・脱炭素ビル開発。環境（カ）最重点。',
+    industries: ['エネルギー・環境・GX', '宇宙・ディープテック'],
+    asufukaketsu: ['カ'],
+    takaichi17: ['資源・エネルギー安全保障・GX', 'マテリアル（重要鉱物・部素材）'],
+    isStartup: true,
+    startupScore: 98,
+    isDHVPortfolio: false,
+    establishedYear: 2018,
+    yearsSinceEst: 8,
+    fundingStage: 'シリーズC以降',
+    estimatedValuation: '180億円',
+    totalFunding: '55億円',
+    officialUrl: 'https://enecoat.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社エネコートテクノロジーズ'),
+      keppleUrl: generateKeppleUrl('株式会社エネコートテクノロジーズ'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社エネコートテクノロジーズ'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社エネコートテクノロジーズ'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社エネコートテクノロジーズ'),
+    },
+    dhvStatus: '注目・Watch',
+    memo: '【ペロブスカイト太陽電池】外壁建材一体型モジュールの共同PoC。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-bitkey',
+    companyName: '株式会社ビットキー',
+    companyNameEn: 'Bitkey Inc.',
+    boothNumber: 'ホール3 3H-108',
+    eventName: 'CEATEC 2026 - Innovation for All',
+    eventVenue: '幕張メッセ',
+    eventStartDate: '2026-10-27',
+    eventEndDate: '2026-10-30',
+    eventUrl: 'https://www.ceatec.com/',
+    description: 'スマートロック「homehub」「workhub」および空間と人・サービスを繋ぐコネクトOSを提供。住宅・オフィス・商業施設のキーレス入退室と設備連動を一元化。',
+    aiSummary: '大和ハウスの賃貸住宅「D-room」やスマートオフィスでの標準スマートロック・顔認証連動。通信（ツ）×スピード・ストック（ス）×安心安全（ア）。',
+    industries: ['建設・不動産テック', 'IT・エンタープライズSaaS'],
+    asufukaketsu: ['ツ', 'ス', 'ア'],
+    takaichi17: ['デジタル・サイバーセキュリティ', 'AI・半導体'],
+    isStartup: true,
+    startupScore: 97,
+    isDHVPortfolio: false,
+    establishedYear: 2018,
+    yearsSinceEst: 8,
+    fundingStage: 'シリーズC以降',
+    estimatedValuation: '550億円',
+    totalFunding: '170億円',
+    officialUrl: 'https://bitkey.co.jp/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社ビットキー'),
+      keppleUrl: generateKeppleUrl('株式会社ビットキー'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社ビットキー'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社ビットキー'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社ビットキー'),
+    },
+    dhvStatus: '未対応',
+    memo: '【スマートロック】賃貸住宅・分譲マンションへの全戸導入検討。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-connected-robotics',
+    companyName: 'コネクテッドロボティクス株式会社',
+    companyNameEn: 'Connected Robotics Inc.',
+    boothNumber: 'メインアリーナ CR-03',
+    eventName: 'Aichi Startup Day 2026 / STATION Ai Autumn Summit',
+    eventVenue: 'STATION Ai (名古屋・鶴舞)',
+    eventStartDate: '2026-11-26',
+    eventEndDate: '2026-11-27',
+    eventUrl: 'https://stationai.co.jp/',
+    pitchInfo: 'STATION Ai 食産業ロボティクスセッション 登壇',
+    description: '調理ロボットおよび食品工場・飲食チェーン向け自律ピッキング・自動盛付ロボットコントローラを開発。深刻な人手不足が続く食産業の自動化を牽引。',
+    aiSummary: '大和ハウスのロードサイド商業施設・フードコートおよび物流冷凍冷蔵倉庫内の食品加工ライン自動化。ノ（食・農業）×ス（省人化）。',
+    industries: ['ロボティクス・自動化', 'アグリ・フードテック'],
+    asufukaketsu: ['ノ', 'ス'],
+    takaichi17: ['フードテック'],
+    isStartup: true,
+    startupScore: 90,
+    isDHVPortfolio: false,
+    establishedYear: 2014,
+    yearsSinceEst: 12,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '40億円',
+    totalFunding: '15億円',
+    officialUrl: 'https://connected-robotics.com/',
+    links: {
+      initialUrl: generateInitialUrl('コネクテッドロボティクス株式会社'),
+      keppleUrl: generateKeppleUrl('コネクテッドロボティクス株式会社'),
+      googleSearchUrl: generateGoogleSearchUrl('コネクテッドロボティクス株式会社'),
+      googleNewsUrl: generateGoogleNewsUrl('コネクテッドロボティクス株式会社'),
+      corporateNumberUrl: generateCorporateNumberUrl('コネクテッドロボティクス株式会社'),
+    },
+    dhvStatus: '未対応',
+    memo: '【調理ロボット】商業施設テナント省人化ソリューション。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-paleblue',
+    companyName: '株式会社Pale Blue',
+    companyNameEn: 'Pale Blue Inc.',
+    boothNumber: 'イノベーションブース PB-01',
+    eventName: '大学発ディープテック・ベンチャー・サミット 2027',
+    eventVenue: '東京ミッドタウン八重洲 / イノベーションハブ',
+    eventStartDate: '2027-02-04',
+    eventEndDate: '2027-02-05',
+    eventUrl: 'https://www.ut-ipc.co.jp/',
+    pitchInfo: '東大発ディープテックピッチ 宇宙モビリティ部門 登壇',
+    description: '東京大学発。水を推進剤とした超小型衛星用エンジン（水イオンスラスタ）を開発。毒性のないクリーンで安価な水エンジンで世界宇宙インフラの機動性を向上。',
+    aiSummary: '大和ハウスの宇宙通信衛星インフラ・小型SAR衛星コンステレーション連携。安心安全（ア）×通信（ツ）。',
+    industries: ['宇宙・ディープテック'],
+    asufukaketsu: ['ツ', 'ア'],
+    takaichi17: ['航空・宇宙'],
+    isStartup: true,
+    startupScore: 96,
+    isDHVPortfolio: false,
+    establishedYear: 2020,
+    yearsSinceEst: 6,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '90億円',
+    totalFunding: '30億円',
+    officialUrl: 'https://pale-blue.co.jp/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Pale Blue'),
+      keppleUrl: generateKeppleUrl('株式会社Pale Blue'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Pale Blue'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Pale Blue'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Pale Blue'),
+    },
+    dhvStatus: '未対応',
+    memo: '【東大発宇宙推進機】小型衛星用推進エンジンのグローバル展開。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-cast-sensor',
+    companyName: '株式会社CAST',
+    companyNameEn: 'CAST, Inc.',
+    boothNumber: '半導体・インフラDXゾーン C-18',
+    eventName: '九州 次世代産業・地域創生DX展 2026',
+    eventVenue: '福岡国際会議場 / マリンメッセ福岡',
+    eventStartDate: '2026-11-18',
+    eventEndDate: '2026-11-19',
+    eventUrl: 'https://www.innovators-fukuoka.jp/',
+    pitchInfo: '九州オープンイノベーションピッチ 熊本半導体クラスター部門 登壇',
+    description: '熊本大学発。超音波技術を用いた厚さ数百ミクロンの超薄型耐熱センサーを開発。高温配管・構造物の内部腐食や肉厚を常時遠隔モニタリング。',
+    aiSummary: '大和ハウスの工場・プラント・大型物流倉庫・商業ビルの給排水・空調配管の老朽化予兆保全。安心安全（ア）×スピード・ストック（ス）。',
+    industries: ['ロボティクス・自動化', '製造・ファクトリーDX'],
+    asufukaketsu: ['ア', 'ス'],
+    takaichi17: ['防災・国土強靭化', 'AI・半導体'],
+    isStartup: true,
+    startupScore: 91,
+    isDHVPortfolio: false,
+    establishedYear: 2019,
+    yearsSinceEst: 7,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '22億円',
+    totalFunding: '6億円',
+    officialUrl: 'https://cast-inc.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社CAST'),
+      keppleUrl: generateKeppleUrl('株式会社CAST'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社CAST'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社CAST'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社CAST'),
+    },
+    dhvStatus: '未対応',
+    memo: '【配管予兆保全】工場・ビルのスマートメンテナンスPoC。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-towing',
+    companyName: '株式会社TOWING',
+    companyNameEn: 'TOWING Inc.',
+    boothNumber: 'アグリテックゾーン TW-02',
+    eventName: 'Aichi Startup Day 2026 / STATION Ai Autumn Summit',
+    eventVenue: 'STATION Ai (名古屋・鶴舞)',
+    eventStartDate: '2026-11-26',
+    eventEndDate: '2026-11-27',
+    eventUrl: 'https://stationai.co.jp/',
+    pitchInfo: 'STATION Ai アグリ・クライメートピッチ 登壇',
+    description: '名古屋大学発。未利用バイオマスを急速炭化し有用微生物を定着させた高機能バイオ炭「宙炭（そらたん）」を開発。農地での炭素固定と化学肥料削減を両立。',
+    aiSummary: '大和ハウスの住宅・都市開発における緑化土壌炭素固定・カーボンオフセットおよび農業施設での有機栽培ソリューション。環境（カ）×農業（ノ）。',
+    industries: ['アグリ・フードテック', 'エネルギー・環境・GX'],
+    asufukaketsu: ['カ', 'ノ'],
+    takaichi17: ['資源・エネルギー安全保障・GX', 'フードテック'],
+    isStartup: true,
+    startupScore: 94,
+    isDHVPortfolio: false,
+    establishedYear: 2020,
+    yearsSinceEst: 6,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '38億円',
+    totalFunding: '12億円',
+    officialUrl: 'https://towing.co.jp/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社TOWING'),
+      keppleUrl: generateKeppleUrl('株式会社TOWING'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社TOWING'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社TOWING'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社TOWING'),
+    },
+    dhvStatus: '未対応',
+    memo: '【高機能バイオ炭】緑化・農業カーボンクレジット創出。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-gaianixx',
+    companyName: '株式会社Gaianixx',
+    companyNameEn: 'Gaianixx Inc.',
+    boothNumber: 'ホール5 5S-44',
+    eventName: 'CEATEC 2026 - Innovation for All',
+    eventVenue: '幕張メッセ',
+    eventStartDate: '2026-10-27',
+    eventEndDate: '2026-10-30',
+    eventUrl: 'https://www.ceatec.com/',
+    description: '東京大学発。多機能中間膜技術による高品質単結晶エピタキシャル成長技術を開発。次世代パワー半導体や次世代太陽電池の大幅な低コスト・省エネルギー化を実現。',
+    aiSummary: '大和ハウスのパワーコンディショナ・スマートビル省エネデバイス・次世代直流給電システム連携。通信（ツ）×環境（カ）。',
+    industries: ['宇宙・ディープテック', 'エネルギー・環境・GX'],
+    asufukaketsu: ['ツ', 'カ'],
+    takaichi17: ['AI・半導体', 'マテリアル（重要鉱物・部素材）'],
+    isStartup: true,
+    startupScore: 93,
+    isDHVPortfolio: false,
+    establishedYear: 2021,
+    yearsSinceEst: 5,
+    fundingStage: 'シリーズB',
+    estimatedValuation: '50億円',
+    totalFunding: '18億円',
+    officialUrl: 'https://gaianixx.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Gaianixx'),
+      keppleUrl: generateKeppleUrl('株式会社Gaianixx'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Gaianixx'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Gaianixx'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Gaianixx'),
+    },
+    dhvStatus: '未対応',
+    memo: '【東大発半導体素材】パワー半導体向け中間膜技術。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-optim-agri',
+    companyName: '株式会社オプティム・アグリ・テクノロジーズ',
+    companyNameEn: 'OPTiM Agri Technologies Inc.',
+    boothNumber: '展示ホール10 A-15',
+    eventName: 'スマート農業・フードテック EXPO 2027',
+    eventVenue: '幕張メッセ',
+    eventStartDate: '2027-01-20',
+    eventEndDate: '2027-01-22',
+    eventUrl: 'https://www.agriexpo-tokyo.jp/',
+    description: 'AI×ドローン×ビッグデータによる「ピンポイント農薬散布テクノロジー」を開発。病害虫が発生した箇所のみに農薬を散布し、農薬使用量9割削減の減農薬・有機野菜を実現。',
+    aiSummary: '大和ハウスグループのアグリビジネスにおけるドローン生育管理・減農薬栽培実証。ノ（農業）×ア（安心安全）。',
+    industries: ['アグリ・フードテック', 'ロボティクス・自動化'],
+    asufukaketsu: ['ノ', 'ア'],
+    takaichi17: ['フードテック'],
+    isStartup: true,
+    startupScore: 89,
+    isDHVPortfolio: false,
+    establishedYear: 2019,
+    yearsSinceEst: 7,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '25億円',
+    totalFunding: '8億円',
+    officialUrl: 'https://www.optim.co.jp/agriculture/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社オプティム・アグリ・テクノロジーズ'),
+      keppleUrl: generateKeppleUrl('株式会社オプティム・アグリ・テクノロジーズ'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社オプティム・アグリ・テクノロジーズ'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社オプティム・アグリ・テクノロジーズ'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社オプティム・アグリ・テクノロジーズ'),
+    },
+    dhvStatus: '未対応',
+    memo: '【スマート農業】ドローン減農薬散布実証。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-photosynth',
+    companyName: '株式会社Photosynth',
+    companyNameEn: 'Photosynth Inc.',
+    boothNumber: 'ホール4 4H-82',
+    eventName: 'CEATEC 2026 - Innovation for All',
+    eventVenue: '幕張メッセ',
+    eventStartDate: '2026-10-27',
+    eventEndDate: '2026-10-30',
+    eventUrl: 'https://www.ceatec.com/',
+    description: 'クラウド入退室管理システム「Akerun」を開発・提供。既存のドアに後付け可能で、スマートフォンや社員証・交通系ICカードによる解錠、勤怠・入退室ログのクラウド連携を実現。',
+    aiSummary: '大和ハウスのサテライトオフィス、賃貸オフィスビル、マンション共用部での後付けスマートアクセス導入。通信（ツ）×安心安全（ア）。',
+    industries: ['建設・不動産テック', 'IT・エンタープライズSaaS'],
+    asufukaketsu: ['ツ', 'ア'],
+    takaichi17: ['デジタル・サイバーセキュリティ'],
+    isStartup: true,
+    startupScore: 92,
+    isDHVPortfolio: false,
+    establishedYear: 2014,
+    yearsSinceEst: 12,
+    fundingStage: 'シリーズC以降',
+    estimatedValuation: '120億円',
+    totalFunding: '50億円',
+    officialUrl: 'https://photosynth.co.jp/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社Photosynth'),
+      keppleUrl: generateKeppleUrl('株式会社Photosynth'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社Photosynth'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社Photosynth'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社Photosynth'),
+    },
+    dhvStatus: '未対応',
+    memo: '【Akerun】既存物件の後付けスマートロック展開。',
+    updatedAt: '2026-10-27T09:00:00Z',
+  },
+  {
+    id: 'ex-exfusion',
+    companyName: '株式会社EX-Fusion',
+    companyNameEn: 'EX-Fusion Inc.',
+    boothNumber: 'ピッチ特設枠 EF-01',
+    eventName: '大学発ディープテック・ベンチャー・サミット 2027',
+    eventVenue: '東京ミッドタウン八重洲 / イノベーションハブ',
+    eventStartDate: '2027-02-04',
+    eventEndDate: '2027-02-05',
+    eventUrl: 'https://www.ut-ipc.co.jp/',
+    pitchInfo: '大学発ディープテックサミット レーザー核融合セッション 登壇',
+    description: '大阪大学レーザー科学研究所発。高出力レーザー技術を用いたレーザー商用核融合炉の開発を行う日本初のレーザー核融合スタートアップ。',
+    aiSummary: '大和ハウスの将来的な究極のクリーンベースロード電源技術の共創・データセンター等への定常エネルギー供給検討。環境（カ）。',
+    industries: ['エネルギー・環境・GX', '宇宙・ディープテック'],
+    asufukaketsu: ['カ'],
+    takaichi17: ['フュージョンエネルギー（核融合）', 'AI・半導体'],
+    isStartup: true,
+    startupScore: 96,
+    isDHVPortfolio: false,
+    establishedYear: 2021,
+    yearsSinceEst: 5,
+    fundingStage: 'シリーズA',
+    estimatedValuation: '80億円',
+    totalFunding: '20億円',
+    officialUrl: 'https://ex-fusion.com/',
+    links: {
+      initialUrl: generateInitialUrl('株式会社EX-Fusion'),
+      keppleUrl: generateKeppleUrl('株式会社EX-Fusion'),
+      googleSearchUrl: generateGoogleSearchUrl('株式会社EX-Fusion'),
+      googleNewsUrl: generateGoogleNewsUrl('株式会社EX-Fusion'),
+      corporateNumberUrl: generateCorporateNumberUrl('株式会社EX-Fusion'),
+    },
+    dhvStatus: '未対応',
+    memo: '【レーザー核融合】阪大発クリーンエネルギー基盤。',
+    updatedAt: '2026-10-27T09:00:00Z',
   }
 );
 
@@ -3155,6 +3657,56 @@ const REAL_NEWS_MAP: Record<string, { title: string; date: string; source: strin
     date: '2026/04/09',
     source: 'PR TIMES',
   },
+  '株式会社aba': {
+    title: 'においセンサー排泄予測システム「Helppad」の特別養護老人ホーム全床導入が完了',
+    date: '2026/04/18',
+    source: '日経メディカル',
+  },
+  '株式会社Rehab for JAPAN': {
+    title: 'デイサービス向けリハビリSaaS「Rehab Cloud」の導入事業所数が3,500件を突破',
+    date: '2026/04/14',
+    source: 'PR TIMES',
+  },
+  '株式会社ビットキー': {
+    title: 'スマートロック連動OS「homehub」、累計導入戸数が30万戸を突破し分譲マンションへ拡大',
+    date: '2026/04/16',
+    source: '日経不動産マーケット情報',
+  },
+  'コネクテッドロボティクス株式会社': {
+    title: '飲食チェーン・食品工場向け自動盛付ロボットシステムの新型モデルを販売開始',
+    date: '2026/04/12',
+    source: 'ロボスタ',
+  },
+  '株式会社Pale Blue': {
+    title: '東大発、超小型衛星向け水推進エンジンの宇宙軌道上動作実証に成功',
+    date: '2026/04/11',
+    source: '日経産業新聞',
+  },
+  '株式会社CAST': {
+    title: '熊大発、配管内部腐食を常時監視する超薄型耐熱超音波センサーの量産出荷を開始',
+    date: '2026/04/13',
+    source: '化学工業日報',
+  },
+  '株式会社Gaianixx': {
+    title: '東大発、多機能中間膜技術によるGaNパワー半導体エピタキシャル基板のサンプル出荷開始',
+    date: '2026/04/17',
+    source: 'EE Times Japan',
+  },
+  '株式会社オプティム・アグリ・テクノロジーズ': {
+    title: 'ドローンAIピンポイント農薬散布技術により大豆・水稲圃場で農薬散布量90%削減実証',
+    date: '2026/04/08',
+    source: 'PR TIMES',
+  },
+  '株式会社Photosynth': {
+    title: 'スマートロック「Akerun」、オフィス・住宅向け新型顔認証リーダー端末を発表',
+    date: '2026/04/19',
+    source: 'マイナビニュース',
+  },
+  '株式会社EX-Fusion': {
+    title: '阪大発レーザー核融合スタートアップ、商用炉向け高繰り返し超高出力パルスレーザー照射実証に成功',
+    date: '2026/04/10',
+    source: '日本経済新聞',
+  },
 };
 
 // --- 8つの期待ポイント個別マスター (実態に即した高精度プロファイル) ---
@@ -3281,6 +3833,162 @@ const REAL_EXPECTATION_MAP: Record<
       teamStrength: 4,      // 東大発・宇宙ベンチャードリームチーム
     },
     highlights: ['小型SAR衛星コンステレーション', 'ミリ単位地盤沈下解析', '上場・グローバル展開'],
+  },
+  '株式会社aba': {
+    scores: {
+      awards: 4,            // ロボット大賞・文部科学大臣賞
+      accelerator: 4,       // 経産省・各種実証採択
+      snsMomentum: 3,       // 介護福祉テックのパイオニア
+      fundraising: 3,       // 累計12億円調達
+      growthVelocity: 3,    // 介護施設での定常運用拡大
+      enterpriseTraction: 4,// 特養・老健・サ高住で標準採用
+      deepTechIP: 4,        // においセンサー・排泄予測アルゴリズム特許
+      teamStrength: 4,      // 千葉工大発・女性起業家代表
+    },
+    highlights: ['におい排泄検知特許センサー', 'ロボット大賞受賞', '特養・サ高住導入多数'],
+  },
+  '株式会社Rehab for JAPAN': {
+    scores: {
+      awards: 3,            // デジタルヘルスアワード
+      accelerator: 3,       // ヘルスケアアクセラ採択
+      snsMomentum: 3,       // 介護業界メディアで定評
+      fundraising: 4,       // シリーズB 18億円
+      growthVelocity: 4,    // 導入事業所3,500件突破の急伸
+      enterpriseTraction: 4,// 全国デイサービスチェーンで標準化
+      deepTechIP: 2,        // リハビリ計画AI自動策定
+      teamStrength: 4,      // リハビリ専門職×メガベンチャーCXO
+    },
+    highlights: ['通所介護SaaS導入3,500件', 'リハビリAI自動化', '急成長シリーズB'],
+  },
+  '株式会社エネコートテクノロジーズ': {
+    scores: {
+      awards: 5,            // J-Startup選定・大学発ベンチャー大賞
+      accelerator: 4,       // NEDOグリーンイノベーション基金採択
+      snsMomentum: 4,       // 次世代太陽電池の筆頭として世界注目
+      fundraising: 5,       // トヨタ・三菱・大日本印刷等から55億円
+      growthVelocity: 4,    // 実証から商用モジュール量産へ加速
+      enterpriseTraction: 3,// 住宅メーカー・建材大手PoC中
+      deepTechIP: 5,        // 京大若宮研ペロブスカイト基本特許
+      teamStrength: 4,      // 京大教授・世界的研究チーム
+    },
+    highlights: ['京大発ペロブスカイト太陽電池', '建材・曲面発電モジュール', 'NEDO GI基金採択Sランク'],
+  },
+  '株式会社ビットキー': {
+    scores: {
+      awards: 4,            // PropTechアワード・グッドデザイン賞
+      accelerator: 4,       // 大手デベロッパーアクセラ多数
+      snsMomentum: 4,       // スマートロックで圧倒的知名度
+      fundraising: 5,       // 累計170億円の大規模調達
+      growthVelocity: 4,    // 導入30万戸突破の高速スケール
+      enterpriseTraction: 5,// 大手不動産・デベロッパー各社で標準採用
+      deepTechIP: 3,        // 独自認証プロトコル・ConnectOS
+      teamStrength: 4,      // リクルート・ワークス出身シリアル陣
+    },
+    highlights: ['スマートロック30万戸導入', 'ConnectOS基盤', '累計170億円調達Sランク'],
+  },
+  'コネクテッドロボティクス株式会社': {
+    scores: {
+      awards: 4,            // IVS LaunchPad入賞・ロボット大賞
+      accelerator: 4,       // STATION Ai・大手飲食アクセラ
+      snsMomentum: 3,       // 調理ロボット動画で話題
+      fundraising: 3,       // 累計15億円調達
+      growthVelocity: 3,    // 駅そば・外食チェーン・食品工場へ展開
+      enterpriseTraction: 4,// JR東日本・大手食品工場等で実稼働
+      deepTechIP: 4,        // ロボットビジョン・自動盛付コントローラ特許
+      teamStrength: 4,      // 東大・ロボット開発ベテラン陣
+    },
+    highlights: ['調理・盛付ロボット自動化', '食産業人手不足解決', '大手飲食・食品工場導入'],
+  },
+  '株式会社Pale Blue': {
+    scores: {
+      awards: 5,            // 内閣府宇宙開発利用大賞
+      accelerator: 4,       // 東大IPC・JAXA協業
+      snsMomentum: 4,       // 世界初の水エンジン実証で話題
+      fundraising: 4,       // 累計30億円調達
+      growthVelocity: 4,    // 宇宙軌道上実証を完了し量産へ
+      enterpriseTraction: 3,// 海外民間衛星事業者・JAXA案件
+      deepTechIP: 5,        // 東大発・水イオンスラスタ独自特許
+      teamStrength: 4,      // 東大航空宇宙工学トップ研究者
+    },
+    highlights: ['世界初・超小型水エンジン', '内閣府宇宙大賞受賞', '東大発ディープテックSランク'],
+  },
+  '株式会社CAST': {
+    scores: {
+      awards: 4,            // 熊本テックプラングランプリ
+      accelerator: 4,       // J-Startup KYUSHU選定
+      snsMomentum: 2,       // ディープB2Bインフラセンシング
+      fundraising: 3,       // 累計6億円 (シリーズA)
+      growthVelocity: 3,    // プラント・半導体工場導入拡大
+      enterpriseTraction: 3,// 熊本TSMCサプライチェーン・石油化学
+      deepTechIP: 4,        // 熊大発・極薄耐熱超音波センサー特許
+      teamStrength: 3,      // 熊大教授・センサー専門エンジニア
+    },
+    highlights: ['極薄耐熱超音波センサー', '配管腐食常時監視', 'J-Startup KYUSHU選定'],
+  },
+  '株式会社TOWING': {
+    scores: {
+      awards: 4,            // アグリテックグランプリ・ICCカタパルト
+      accelerator: 4,       // 農水省実証・STATION Ai採択
+      snsMomentum: 4,       // クライメートテックで注目
+      fundraising: 3,       // 累計12億円 (シリーズA)
+      growthVelocity: 4,    // J-クレジット認証・全国圃場展開
+      enterpriseTraction: 3,// 大手農業法人・商社協業
+      deepTechIP: 4,        // 名大発バイオ炭微生物定着特許
+      teamStrength: 4,      // 名大・農水省出身チーム
+    },
+    highlights: ['名大発高機能バイオ炭「宙炭」', 'J-クレジット認証取得', '土壌炭素固定アグリテック'],
+  },
+  '株式会社Gaianixx': {
+    scores: {
+      awards: 4,            // 東大アントレプレナー道場最優秀
+      accelerator: 4,       // JST START・NEDOディープテック支援
+      snsMomentum: 2,       // 先端半導体基盤
+      fundraising: 4,       // 累計18億円調達
+      growthVelocity: 4,    // サンプル出荷・量産プロセス開発
+      enterpriseTraction: 3,// 国内外半導体デバイスメーカー協業
+      deepTechIP: 5,        // 多機能中間膜・単結晶成長基本特許
+      teamStrength: 4,      // 東大新領域創成科学研究科発
+    },
+    highlights: ['東大発次世代半導体中間膜', 'GaNパワー半導体低コスト化', '省エネ社会実装'],
+  },
+  '株式会社オプティム・アグリ・テクノロジーズ': {
+    scores: {
+      awards: 3,            // 日本農業賞イノベーション賞
+      accelerator: 3,       // 自治体スマート農業推進協定
+      snsMomentum: 3,       // ピンポイント農薬散布で認知
+      fundraising: 3,       // OPTiMグループ支援
+      growthVelocity: 3,    // 全国水稲・大豆圃場での展開
+      enterpriseTraction: 4,// JA・全国自治体での実証運用
+      deepTechIP: 4,        // ドローン画像病害虫解析・散布特許
+      teamStrength: 3,      // OPTiM AI画像解析エンジニア陣
+    },
+    highlights: ['ドローンAIピンポイント農薬散布', '農薬9割削減有機栽培', 'JA・自治体連携'],
+  },
+  '株式会社Photosynth': {
+    scores: {
+      awards: 4,            // グッドデザイン賞・ASPIC大賞
+      accelerator: 4,       // 各種実証採択
+      snsMomentum: 4,       // Akerunのブランド力
+      fundraising: 4,       // 上場済・安定資本基盤
+      growthVelocity: 3,    // オフィスから住宅・共用部へ拡大
+      enterpriseTraction: 5,// 大手企業・ビル管理会社で導入多数
+      deepTechIP: 3,        // 後付けスマートロック通信制御特許
+      teamStrength: 4,      // 筑波大発シリアル経営陣
+    },
+    highlights: ['Akerun累計導入多数', '後付けスマートロック先駆者', '上場済安定基盤'],
+  },
+  '株式会社EX-Fusion': {
+    scores: {
+      awards: 5,            // ICCリアルテックカタパルト優勝
+      accelerator: 4,       // J-Startupディープテック採択
+      snsMomentum: 4,       // 日本発レーザー核融合で国際的注目
+      fundraising: 4,       // 累計20億円調達
+      growthVelocity: 4,    // 豪州拠点設立・国際実証プロジェクト
+      enterpriseTraction: 2,// 商用炉前の超先行開発
+      deepTechIP: 5,        // 阪大発高出力レーザー照射制御特許
+      teamStrength: 4,      // 阪大レーザー科学研究所研究者陣
+    },
+    highlights: ['阪大発レーザー商用核融合', 'ICCカタパルト優勝', '究極のクリーンベースロード電源'],
   },
 };
 
