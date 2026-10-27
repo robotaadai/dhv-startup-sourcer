@@ -17,6 +17,7 @@ import {
   Check,
   Crown,
   Newspaper,
+  Building,
 } from 'lucide-react';
 import { CompanyLogo } from '@/components/CompanyLogo';
 
@@ -205,6 +206,19 @@ export const StartupCard: React.FC<StartupCardProps> = ({
             </div>
           )}
         </div>
+
+        {/* ★ 事業内容 (Business Description) */}
+        {exhibitor.description && (
+          <div className="mb-3 p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/90 text-xs shadow-2xs">
+            <div className="flex items-center space-x-1.5 font-bold text-slate-800 text-[11px] mb-1">
+              <Building className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+              <span>事業内容</span>
+            </div>
+            <p className="text-slate-700 leading-relaxed text-xs font-medium line-clamp-3">
+              {exhibitor.description}
+            </p>
+          </div>
+        )}
 
         {/* AI Summary / Synergies */}
         <div

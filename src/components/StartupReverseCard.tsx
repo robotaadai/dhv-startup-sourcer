@@ -166,6 +166,17 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
         </div>
       </div>
 
+      {/* ★ 事業内容 (Business Description) */}
+      <div className="mb-3.5 p-3 rounded-xl bg-slate-50/80 border border-slate-200/90 text-xs shadow-2xs">
+        <div className="flex items-center space-x-1.5 font-bold text-slate-800 text-[11px] mb-1">
+          <Building className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+          <span>事業内容</span>
+        </div>
+        <p className="text-slate-700 leading-relaxed text-xs font-medium">
+          {startup.description}
+        </p>
+      </div>
+
       {/* Main Body: 2 Columns (Left: 会える展示会, Right: 八角形レーダーチャート) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4">
         {/* Left Column: 直近で会える展示会 (lg: 7 cols) */}
@@ -293,21 +304,18 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
             </div>
           )}
 
-          {/* 事業概要 & 大和ハウスシナジー */}
-          <div className="p-3 bg-slate-50/70 rounded-xl border border-slate-200/70 text-xs">
-            <div className="flex items-center font-bold text-slate-800 text-[11px] mb-1">
-              <Sparkles className="w-3.5 h-3.5 mr-1 text-red-600" />
-              <span>事業概要 ＆ 大和ハウスグループ協業シナジー:</span>
-            </div>
-            <p className="text-slate-600 leading-relaxed text-[11px] mb-1.5">
-              {startup.description}
-            </p>
-            {startup.aiSummary && (
-              <div className="p-2 bg-white rounded-lg border border-red-100 text-[11px] text-red-950 font-medium">
-                🎯 <strong>協業仮説:</strong> {startup.aiSummary}
+          {/* 大和ハウスグループ協業シナジー */}
+          {startup.aiSummary && (
+            <div className="p-3 bg-gradient-to-r from-red-50/60 via-orange-50/30 to-white rounded-xl border border-red-200/70 text-xs shadow-2xs">
+              <div className="flex items-center font-bold text-red-900 text-[11px] mb-1">
+                <Sparkles className="w-3.5 h-3.5 mr-1 text-red-600 shrink-0" />
+                <span>大和ハウスグループ協業シナジー・仮説:</span>
               </div>
-            )}
-          </div>
+              <p className="text-red-950 font-medium text-[11px] leading-relaxed">
+                🎯 {startup.aiSummary}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Right Column: 八角形レーダーチャート (lg: 5 cols) */}

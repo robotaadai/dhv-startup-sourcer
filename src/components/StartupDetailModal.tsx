@@ -357,6 +357,17 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
             </div>
           )}
 
+          {/* 事業内容・提供ソリューション */}
+          <div>
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2 flex items-center">
+              <Building2 className="w-4 h-4 mr-1.5 text-blue-600" />
+              事業内容・提供ソリューション
+            </h3>
+            <div className="bg-slate-50/80 p-4 rounded-xl border border-slate-200 text-sm text-slate-800 leading-relaxed font-medium">
+              {exhibitor.description}
+            </div>
+          </div>
+
           {/* AI Synergy & Summary */}
           <div className="bg-gradient-to-br from-red-50/70 via-orange-50/40 to-white p-4 sm:p-5 rounded-2xl border border-red-200">
             <div className="flex items-center text-red-900 font-bold text-sm mb-2">
@@ -366,17 +377,6 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
             <p className="text-sm text-slate-800 leading-relaxed font-medium">
               {exhibitor.aiSummary}
             </p>
-          </div>
-
-          {/* 出展製品・技術概要 */}
-          <div>
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2 flex items-center">
-              <FileText className="w-4 h-4 mr-1.5 text-slate-500" />
-              出展技術・ソリューション概要
-            </h3>
-            <div className="bg-white p-4 rounded-xl border border-slate-200 text-sm text-slate-700 leading-relaxed">
-              {exhibitor.description}
-            </div>
           </div>
 
           {/* 分類タグ */}
