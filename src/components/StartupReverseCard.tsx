@@ -185,11 +185,18 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
           {hasEvent ? (
             <div className="p-2.5 sm:p-3 rounded-lg border border-red-200/90 bg-gradient-to-br from-red-50/40 via-orange-50/20 to-white relative overflow-hidden shadow-2xs">
               <div className="flex items-center justify-between gap-1 mb-1.5">
-                <span className="inline-flex items-center gap-1 text-[11px] font-black px-1.5 py-0.5 rounded bg-red-600 text-white shadow-2xs">
-                  <Calendar className="w-3 h-3" />
-                  <span>直近で会えるイベント</span>
-                </span>
-                <span className="inline-flex items-center text-[10px] font-bold text-red-700 bg-red-100/90 px-1.5 py-0.2 rounded-full border border-red-200">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="inline-flex items-center gap-1 text-[11px] font-black px-1.5 py-0.5 rounded bg-red-600 text-white shadow-2xs">
+                    <Calendar className="w-3 h-3" />
+                    <span>直近で会えるイベント</span>
+                  </span>
+                  {startup.upcomingMeetingEvents && startup.upcomingMeetingEvents.length > 1 && (
+                    <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-black bg-blue-100 text-blue-800 border border-blue-200">
+                      全{startup.upcomingMeetingEvents.length}件出展
+                    </span>
+                  )}
+                </div>
+                <span className="inline-flex items-center text-[10px] font-bold text-red-700 bg-red-100/90 px-1.5 py-0.2 rounded-full border border-red-200 shrink-0">
                   <Clock className="w-3 h-3 mr-0.5" />
                   あと {meetingEvent.daysUntil} 日後
                 </span>
@@ -254,6 +261,43 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
                   <span>イベントHP ↗</span>
                 </a>
               </div>
+
+              {/* ★ 複数イベントに出展する場合: その他の会えるイベント一覧 */}
+              {startup.upcomingMeetingEvents && startup.upcomingMeetingEvents.length > 1 && (
+                <div className="mt-2 pt-1.5 border-t border-red-200/60">
+                  <div className="text-[10px] font-bold text-slate-500 mb-1 flex items-center gap-1">
+                    <span className="text-blue-600">📅</span>
+                    <span>他 {startup.upcomingMeetingEvents.length - 1} 件の出展・登壇予定:</span>
+                  </div>
+                  <div className="space-y-1">
+                    {startup.upcomingMeetingEvents.slice(1).map((ev, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center justify-between text-[11px] bg-white/70 px-2 py-0.5 rounded border border-slate-200/60"
+                      >
+                        <div className="flex items-center gap-1.5 truncate">
+                          <span className="font-bold text-slate-800 truncate">{ev.eventName}</span>
+                          <span className="text-[10px] text-slate-500 shrink-0">({ev.startDate}〜)</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 shrink-0 ml-1">
+                          <span className="text-[10px] text-slate-600 font-medium">{ev.venue}</span>
+                          {ev.eventUrl && (
+                            <a
+                              href={ev.eventUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-[10px] font-bold text-blue-600 hover:underline inline-flex items-center"
+                            >
+                              HP ↗
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <div className="p-2.5 sm:p-3 rounded-lg border border-slate-200 bg-gradient-to-br from-slate-50 via-slate-100/40 to-white relative overflow-hidden shadow-2xs">

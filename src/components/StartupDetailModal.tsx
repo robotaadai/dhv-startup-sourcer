@@ -215,6 +215,47 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
             </div>
           </div>
 
+          {/* 出展・登壇予定イベント一覧（複数出展時） */}
+          {exhibitor.upcomingMeetingEvents && exhibitor.upcomingMeetingEvents.length > 1 && (
+            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-blue-600" />
+                  <span>出展・登壇予定イベント一覧 (全{exhibitor.upcomingMeetingEvents.length}件)</span>
+                </span>
+                <span className="text-[10px] text-slate-500 font-medium">開催日順</span>
+              </div>
+              <div className="space-y-1.5">
+                {exhibitor.upcomingMeetingEvents.map((ev, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col sm:flex-row sm:items-center justify-between p-2 rounded-lg bg-white border border-slate-200/80 gap-1.5 text-xs shadow-2xs"
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 shrink-0">
+                        第{idx + 1}弾
+                      </span>
+                      <a
+                        href={ev.eventUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold text-slate-900 hover:text-red-600 truncate hover:underline inline-flex items-center gap-1"
+                      >
+                        <span className="truncate">{ev.eventName}</span>
+                        <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" />
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-[11px] text-slate-600 shrink-0">
+                      <span>📅 {ev.startDate}〜{ev.endDate}</span>
+                      <span>📍 {ev.venue}</span>
+                      <span className="font-bold text-red-600">ブース: {ev.boothNumber}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* 8軸 独自「期待ポイント」八角形レーダーチャート評価 */}
           {exhibitor.expectation && (
             <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50/70 via-white to-red-50/20 shadow-xs">

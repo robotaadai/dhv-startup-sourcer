@@ -9,6 +9,7 @@ import {
   DHVStatus,
 } from '@/types';
 import { INITIAL_EVENTS, INITIAL_EXHIBITORS, ALL_STARTUPS } from '@/data/mockData';
+import { mergeAndDeduplicateStartups } from '@/utils/startupMerger';
 import { Header } from '@/components/Header';
 import { StatsSummary } from '@/components/StatsSummary';
 import { EventTimeline } from '@/components/EventTimeline';
@@ -346,9 +347,10 @@ export default function HomePage() {
     });
   }, [filteredExhibitors, sortBy, filters.excludeDHVPortfolio]);
 
-  // ★ 逆引きモード用母集団: 未終了イベントまたは出展なしの全スタートアップ
+  // ★ 逆引きモード用母集団: 未終了イベントまたは出展なしの全スタートアップ（複数イベント出展は1社に集約・統合）
   const upcomingAllStartups = useMemo(() => {
-    return allStartups.filter((e) => e.hasUpcomingEvent === false || !e.eventEndDate || e.eventEndDate >= todayStr);
+    const raw = allStartups.filter((e) => e.hasUpcomingEvent === false || !e.eventEndDate || e.eventEndDate >= todayStr);
+    return mergeAndDeduplicateStartups(raw, todayStr);
   }, [allStartups, todayStr]);
 
   // ★ 逆引きモード用: スタートアップの多角絞り込み
@@ -593,7 +595,7 @@ export default function HomePage() {
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
         onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
         filteredCount={searchMode === 'startups' ? sortedReverseStartups.length : sortedExhibitors.length}
-        totalCount={searchMode === 'startups' ? allStartups.length : upcomingExhibitors.length}
+        totalCount={searchMode === 'startups' ? upcomingAllStartups.length : upcomingExhibitors.length}
         lastUpdated={lastUpdated}
       />
 
@@ -648,7 +650,7 @@ export default function HomePage() {
             <StartupFilterPanel
               filters={reverseFilters}
               onApplyFilters={setReverseFilters}
-              totalStartupsCount={allStartups.length}
+              totalStartupsCount={upcomingAllStartups.length}
               matchedCount={sortedReverseStartups.length}
             />
 

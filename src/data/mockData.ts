@@ -1,4 +1,5 @@
 import { ExhibitionEvent, StartupExhibitor } from '@/types';
+import { mergeAndDeduplicateStartups } from '@/utils/startupMerger';
 
 export function cleanCompanyName(name: string): string {
   return name.replace(/(株式会社|合同会社|有限会社|Inc\.|Co\.,\s*Ltd\.|LLC)/g, '').trim();
@@ -3945,11 +3946,11 @@ export const NON_EVENT_STARTUPS: StartupExhibitor[] = [
   }
 ];
 
-// 全スタートアップ統合マスター (展示会出展企業 ＋ イベントに出ない注目企業)
-export const ALL_STARTUPS: StartupExhibitor[] = [
+// 全スタートアップ統合マスター (展示会出展企業 ＋ イベントに出ない注目企業を一意に名寄せ・イベント統合)
+export const ALL_STARTUPS: StartupExhibitor[] = mergeAndDeduplicateStartups([
   ...INITIAL_EXHIBITORS,
   ...NON_EVENT_STARTUPS,
-];
+]);
 
 export * from './dhvPortfolioMaster';
 
