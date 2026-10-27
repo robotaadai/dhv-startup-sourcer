@@ -29,20 +29,33 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
   startup,
   onSelect,
 }) => {
+  // 出展予定の有無
+  const hasEvent =
+    startup.hasUpcomingEvent !== false &&
+    Boolean(startup.upcomingMeetingEvents && startup.upcomingMeetingEvents.length > 0 && startup.upcomingMeetingEvents[0]?.startDate);
+
   // 会えるイベントの算出 (配列にあれば優先、なければ現在の出展イベント情報から生成)
   const meetingEvent: UpcomingMeetingEvent = (startup.upcomingMeetingEvents && startup.upcomingMeetingEvents[0]) || {
     eventId: 'current',
-    eventName: startup.eventName,
-    eventUrl: startup.eventUrl,
-    venue: startup.eventVenue,
-    boothNumber: startup.boothNumber,
-    floorMapUrl: startup.eventUrl,
-    startDate: startup.eventStartDate,
-    endDate: startup.eventEndDate,
+    eventName: startup.eventName || '直近の出展予定なし',
+    eventUrl: startup.eventUrl || '',
+    venue: startup.eventVenue || '次回未定',
+    boothNumber: startup.boothNumber || '—',
+    floorMapUrl: startup.eventUrl || '',
+    startDate: startup.eventStartDate || '',
+    endDate: startup.eventEndDate || '',
     region: startup.region || '関東',
     eventType: startup.eventType || '大型産業展示会',
     pitchSession: startup.pitchInfo,
-    daysUntil: Math.max(1, Math.ceil((new Date(startup.eventStartDate).getTime() - new Date('2026-10-27').getTime()) / (1000 * 60 * 60 * 24))),
+    daysUntil: startup.eventStartDate
+      ? Math.max(
+          1,
+          Math.ceil(
+            (new Date(startup.eventStartDate).getTime() - new Date('2026-10-27').getTime()) /
+              (1000 * 60 * 60 * 24)
+          )
+        )
+      : 999,
   };
 
   const expectation = startup.expectation || {
@@ -180,88 +193,138 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4">
         {/* Left Column: 直近で会える展示会 (lg: 7 cols) */}
         <div className="lg:col-span-7 flex flex-col justify-between space-y-3">
-          {/* 会えるイベントハイライトボックス */}
-          <div className="p-3.5 rounded-xl border border-red-200/90 bg-gradient-to-br from-red-50/40 via-orange-50/20 to-white relative overflow-hidden shadow-2xs">
-            <div className="flex items-center justify-between gap-1 mb-2">
-              <span className="inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded-md bg-red-600 text-white shadow-2xs">
-                <Calendar className="w-3 h-3" />
-                <span>直近で会えるイベント (次回予定)</span>
-              </span>
-              <span className="inline-flex items-center text-[10px] font-bold text-red-700 bg-red-100/90 px-2 py-0.5 rounded-full border border-red-200">
-                <Clock className="w-3 h-3 mr-0.5" />
-                あと {meetingEvent.daysUntil} 日後
-              </span>
-            </div>
+          {/* 会えるイベントハイライトボックス / 出展予定なしボックス */}
+          {hasEvent ? (
+            <div className="p-3.5 rounded-xl border border-red-200/90 bg-gradient-to-br from-red-50/40 via-orange-50/20 to-white relative overflow-hidden shadow-2xs">
+              <div className="flex items-center justify-between gap-1 mb-2">
+                <span className="inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded-md bg-red-600 text-white shadow-2xs">
+                  <Calendar className="w-3 h-3" />
+                  <span>直近で会えるイベント (次回予定)</span>
+                </span>
+                <span className="inline-flex items-center text-[10px] font-bold text-red-700 bg-red-100/90 px-2 py-0.5 rounded-full border border-red-200">
+                  <Clock className="w-3 h-3 mr-0.5" />
+                  あと {meetingEvent.daysUntil} 日後
+                </span>
+              </div>
 
-            {/* イベント名 */}
-            <div className="mb-2">
-              <a
-                href={meetingEvent.eventUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="text-sm font-bold text-slate-900 hover:text-red-600 hover:underline inline-flex items-center gap-1 group/evt"
-              >
-                <span>{meetingEvent.eventName}</span>
-                <ExternalLink className="w-3 h-3 text-slate-400 group-hover/evt:text-red-500 shrink-0" />
-              </a>
-            </div>
+              {/* イベント名 */}
+              <div className="mb-2">
+                <a
+                  href={meetingEvent.eventUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-sm font-bold text-slate-900 hover:text-red-600 hover:underline inline-flex items-center gap-1 group/evt"
+                >
+                  <span>{meetingEvent.eventName}</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover/evt:text-red-500 shrink-0" />
+                </a>
+              </div>
 
-            {/* 日程・場所・ブース */}
-            <div className="space-y-1 text-xs text-slate-700 mb-3 bg-white/70 p-2.5 rounded-lg border border-slate-200/70">
-              <div className="flex items-center">
-                <span className="w-14 text-slate-400 text-[11px] font-semibold">会期:</span>
-                <span className="font-bold text-slate-800">
-                  {meetingEvent.startDate} 〜 {meetingEvent.endDate}
-                </span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-14 text-slate-400 text-[11px] font-semibold">会場:</span>
-                <span className="font-medium text-slate-800 truncate">
-                  {meetingEvent.venue} {meetingEvent.hall ? `(${meetingEvent.hall})` : ''}
-                </span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-14 text-slate-400 text-[11px] font-semibold">ブース枠:</span>
-                <span className="font-bold text-red-700 flex items-center">
-                  <MapPin className="w-3.5 h-3.5 mr-0.5 text-red-500" />
-                  {meetingEvent.boothNumber}
-                </span>
-              </div>
-              {meetingEvent.pitchSession && (
-                <div className="flex items-center pt-1 border-t border-slate-100">
-                  <span className="w-14 text-slate-400 text-[11px] font-semibold">ピッチ登壇:</span>
-                  <span className="font-bold text-amber-900 bg-amber-100/70 px-1.5 py-0.2 rounded text-[11px]">
-                    🏆 {meetingEvent.pitchSession}
+              {/* 日程・場所・ブース */}
+              <div className="space-y-1 text-xs text-slate-700 mb-3 bg-white/70 p-2.5 rounded-lg border border-slate-200/70">
+                <div className="flex items-center">
+                  <span className="w-14 text-slate-400 text-[11px] font-semibold">会期:</span>
+                  <span className="font-bold text-slate-800">
+                    {meetingEvent.startDate} 〜 {meetingEvent.endDate}
                   </span>
                 </div>
-              )}
-            </div>
+                <div className="flex items-center">
+                  <span className="w-14 text-slate-400 text-[11px] font-semibold">会場:</span>
+                  <span className="font-medium text-slate-800 truncate">
+                    {meetingEvent.venue} {meetingEvent.hall ? `(${meetingEvent.hall})` : ''}
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-14 text-slate-400 text-[11px] font-semibold">ブース枠:</span>
+                  <span className="font-bold text-red-700 flex items-center">
+                    <MapPin className="w-3.5 h-3.5 mr-0.5 text-red-500" />
+                    {meetingEvent.boothNumber}
+                  </span>
+                </div>
+                {meetingEvent.pitchSession && (
+                  <div className="flex items-center pt-1 border-t border-slate-100">
+                    <span className="w-14 text-slate-400 text-[11px] font-semibold">ピッチ登壇:</span>
+                    <span className="font-bold text-amber-900 bg-amber-100/70 px-1.5 py-0.2 rounded text-[11px]">
+                      🏆 {meetingEvent.pitchSession}
+                    </span>
+                  </div>
+                )}
+              </div>
 
-            {/* アクションボタン: 会場マップ & イベント公式HP */}
-            <div className="flex items-center gap-2">
-              <a
-                href={resolvedFloorMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="flex-1 inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-all shadow-2xs group/btn"
-                title={`${meetingEvent.venue} のフロアマップ・小間位置を開く`}
-              >
-                <Map className="w-3.5 h-3.5 mr-0.5 shrink-0" />
-                <span>会場マップで小間を確認 ↗</span>
-              </a>
-              <a
-                href={meetingEvent.eventUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-all border border-slate-300"
-              >
-                <span>イベント公式 ↗</span>
-              </a>
+              {/* アクションボタン: 会場マップ & イベント公式HP */}
+              <div className="flex items-center gap-2">
+                <a
+                  href={resolvedFloorMapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-all shadow-2xs group/btn"
+                  title={`${meetingEvent.venue} のフロアマップ・小間位置を開く`}
+                >
+                  <Map className="w-3.5 h-3.5 mr-0.5 shrink-0" />
+                  <span>会場マップで小間を確認 ↗</span>
+                </a>
+                <a
+                  href={meetingEvent.eventUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-all border border-slate-300"
+                >
+                  <span>イベント公式 ↗</span>
+                </a>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="p-3.5 rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 via-slate-100/50 to-white relative overflow-hidden shadow-2xs">
+              <div className="flex items-center justify-between gap-1 mb-2">
+                <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-200 text-slate-700">
+                  <Calendar className="w-3 h-3 text-slate-400" />
+                  <span>直近のイベント出展予定なし (次回未定)</span>
+                </span>
+                <span className="text-[10px] text-slate-400 font-medium">
+                  オフラインイベント未出展
+                </span>
+              </div>
+
+              <div className="p-3 bg-white rounded-lg border border-slate-200/80 mb-3 space-y-1">
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                  現在、直近の展示会やピッチイベントへの出展・登壇予定は公表されていません。
+                </p>
+                <p className="text-[11px] text-slate-500 flex items-center gap-1">
+                  <span>💡</span>
+                  <span>直接の協業検討・面談打診は公式HP窓口または紹介経由でのコンタクトを推奨します。</span>
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {startup.officialUrl && (
+                  <a
+                    href={startup.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex-1 inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold transition-all shadow-2xs"
+                  >
+                    <Globe className="w-3.5 h-3.5 mr-1" />
+                    <span>公式HPから直接問い合わせ ↗</span>
+                  </a>
+                )}
+                {startup.links?.initialUrl && (
+                  <a
+                    href={startup.links.initialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center justify-center space-x-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-all border border-slate-300"
+                  >
+                    <span>INITIALで調べる ↗</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* 事業概要 & 大和ハウスシナジー */}
           <div className="p-3 bg-slate-50/70 rounded-xl border border-slate-200/70 text-xs">

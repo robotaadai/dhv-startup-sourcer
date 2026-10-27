@@ -8,7 +8,7 @@ import {
   StartupReverseFilters,
   DHVStatus,
 } from '@/types';
-import { INITIAL_EVENTS, INITIAL_EXHIBITORS } from '@/data/mockData';
+import { INITIAL_EVENTS, INITIAL_EXHIBITORS, ALL_STARTUPS } from '@/data/mockData';
 import { Header } from '@/components/Header';
 import { StatsSummary } from '@/components/StatsSummary';
 import { EventTimeline } from '@/components/EventTimeline';
@@ -72,6 +72,7 @@ const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
   meetingTimeframe: 'ALL',
   meetingRegions: [],
   meetingType: 'ALL',
+  eventParticipation: 'ALL', // ★ デフォルトは出展予定なしも含む「全企業」
   enabledSections: {
     expectation: true,
     quantitative: true,
@@ -85,10 +86,11 @@ const DEFAULT_BASE_DATE = '2026-10-23';
 
 export default function HomePage() {
   // 探索モード切替: 'events' (展示会から探す) | 'startups' (スタートアップ逆引き: 八角形評価×会える展示会)
-  const [searchMode, setSearchMode] = useState<'events' | 'startups'>('startups');
+  const [searchMode, setSearchMode] = useState<'startups' | 'events'>('startups');
   const [todayStr, setTodayStr] = useState<string>(DEFAULT_BASE_DATE);
   const [events, setEvents] = useState<ExhibitionEvent[]>(INITIAL_EVENTS);
   const [exhibitors, setExhibitors] = useState<StartupExhibitor[]>(INITIAL_EXHIBITORS);
+  const [allStartups, setAllStartups] = useState<StartupExhibitor[]>(ALL_STARTUPS); // ★ イベントに出ない企業も含む全スタートアップ
   const [filters, setFilters] = useState<FilterOptions>(INITIAL_FILTERS);
   const [reverseFilters, setReverseFilters] = useState<StartupReverseFilters>(INITIAL_REVERSE_FILTERS);
   const [reverseSortBy, setReverseSortBy] = useState<'totalScore' | 'daysUntil' | 'established' | 'name'>('totalScore');
@@ -139,6 +141,18 @@ export default function HomePage() {
             return item;
           })
         );
+        setAllStartups((prev) =>
+          prev.map((item) => {
+            if (parsed[item.id]) {
+              return {
+                ...item,
+                dhvStatus: parsed[item.id].status || item.dhvStatus,
+                memo: parsed[item.id].memo ?? item.memo,
+              };
+            }
+            return item;
+          })
+        );
       }
     } catch (e) {
       console.error('Failed to load local storage status', e);
@@ -155,6 +169,10 @@ export default function HomePage() {
       return updated;
     });
 
+    setAllStartups((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, dhvStatus: status } : item))
+    );
+
     if (selectedExhibitor && selectedExhibitor.id === id) {
       setSelectedExhibitor((prev) => (prev ? { ...prev, dhvStatus: status } : null));
     }
@@ -169,6 +187,10 @@ export default function HomePage() {
       saveToLocalStorage(updated);
       return updated;
     });
+
+    setAllStartups((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, memo, dhvStatus: status } : item))
+    );
 
     if (selectedExhibitor && selectedExhibitor.id === id) {
       setSelectedExhibitor((prev) =>
@@ -403,31 +425,56 @@ export default function HomePage() {
 
       // 5. Meeting Event Section (いつ・どこで会えるか)
       if (reverseFilters.enabledSections.meetingEvent) {
-        const nextEvt = item.upcomingMeetingEvents?.[0];
-        const days = nextEvt ? nextEvt.daysUntil : 999;
-
-        if (reverseFilters.meetingTimeframe === 'WITHIN_1_MONTH' && days > 30) return false;
-        if (reverseFilters.meetingTimeframe === 'WITHIN_3_MONTHS' && days > 90) return false;
-        if (reverseFilters.meetingTimeframe === 'WITHIN_2026' && (nextEvt?.startDate || '') > '2026-12-31') return false;
-
-        if (
-          reverseFilters.meetingRegions.length > 0 &&
-          item.region &&
-          !reverseFilters.meetingRegions.includes(item.region)
-        ) {
+        // 出展状況フィルター (ALL / WITH_EVENTS / WITHOUT_EVENTS)
+        if (reverseFilters.eventParticipation === 'WITH_EVENTS' && !item.hasUpcomingEvent) {
+          return false;
+        }
+        if (reverseFilters.eventParticipation === 'WITHOUT_EVENTS' && item.hasUpcomingEvent) {
           return false;
         }
 
-        if (reverseFilters.meetingType === 'PITCH_ONLY') {
-          if (!item.pitchInfo && item.eventType !== '小規模ピッチ・デモデイ') return false;
-        } else if (reverseFilters.meetingType === 'BOOTH_ONLY') {
-          if (item.eventType === '小規模ピッチ・デモデイ' && !item.boothNumber.includes('ブース')) return false;
+        // 直近出展がある企業に対する時期・地域・出展形式の判定
+        if (item.hasUpcomingEvent) {
+          const nextEvt = item.upcomingMeetingEvents?.[0];
+          const days = nextEvt ? nextEvt.daysUntil : 999;
+
+          if (reverseFilters.meetingTimeframe === 'WITHIN_1_MONTH' && days > 30) return false;
+          if (reverseFilters.meetingTimeframe === 'WITHIN_3_MONTHS' && days > 90) return false;
+          if (reverseFilters.meetingTimeframe === 'WITHIN_2026' && (nextEvt?.startDate || '') > '2026-12-31') return false;
+
+          if (
+            reverseFilters.meetingRegions.length > 0 &&
+            item.region &&
+            !reverseFilters.meetingRegions.includes(item.region)
+          ) {
+            return false;
+          }
+
+          if (reverseFilters.meetingType === 'PITCH_ONLY') {
+            if (!item.pitchInfo && item.eventType !== '小規模ピッチ・デモデイ') return false;
+          } else if (reverseFilters.meetingType === 'BOOTH_ONLY') {
+            if (item.eventType === '小規模ピッチ・デモデイ' && !item.boothNumber.includes('ブース')) return false;
+          }
+        } else {
+          // 出展予定がない企業の場合:
+          // 会期指定やブース/ピッチ指定がある場合は除外
+          if (reverseFilters.meetingTimeframe !== 'ALL') return false;
+          if (reverseFilters.meetingType !== 'ALL') return false;
+
+          // 地域指定がある場合は所在地で判定
+          if (
+            reverseFilters.meetingRegions.length > 0 &&
+            item.region &&
+            !reverseFilters.meetingRegions.includes(item.region)
+          ) {
+            return false;
+          }
         }
       }
 
       return true;
     });
-  }, [upcomingExhibitors, reverseFilters]);
+  }, [allStartups, reverseFilters]);
 
   // ★ 逆引きモード用: ソート処理
   const sortedReverseStartups = useMemo(() => {
@@ -535,7 +582,7 @@ export default function HomePage() {
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
         onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
         filteredCount={searchMode === 'startups' ? sortedReverseStartups.length : sortedExhibitors.length}
-        totalCount={upcomingExhibitors.length}
+        totalCount={searchMode === 'startups' ? allStartups.length : upcomingExhibitors.length}
         lastUpdated={lastUpdated}
       />
 
@@ -590,7 +637,7 @@ export default function HomePage() {
             <StartupFilterPanel
               filters={reverseFilters}
               onApplyFilters={setReverseFilters}
-              totalStartupsCount={upcomingExhibitors.length}
+              totalStartupsCount={allStartups.length}
               matchedCount={sortedReverseStartups.length}
             />
 

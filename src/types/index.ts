@@ -217,6 +217,7 @@ export interface StartupExhibitor {
   latestNews?: StartupNewsItem; // 最新ニュースリリース
   expectation?: StartupExpectationProfile; // ★ 8つの期待ポイント評価 (八角形レーダーチャート用)
   upcomingMeetingEvents?: UpcomingMeetingEvent[]; // ★ これから会える展示会・ピッチ一覧
+  hasUpcomingEvent?: boolean; // ★ 直近展示会・イベント出展予定の有無
 }
 
 // --- 8つの期待ポイント（八角形レーダーチャートの8軸） ---
@@ -359,6 +360,7 @@ export interface StartupReverseFilters {
   meetingTimeframe: 'ALL' | 'WITHIN_1_MONTH' | 'WITHIN_3_MONTHS' | 'WITHIN_2026' | 'FUTURE';
   meetingRegions: EventRegion[];
   meetingType: 'ALL' | 'BOOTH_ONLY' | 'PITCH_ONLY';
+  eventParticipation: 'ALL' | 'WITH_EVENTS' | 'WITHOUT_EVENTS'; // ★ イベント出展の有無（すべて / 出展予定あり / 出展予定なし）
   enabledSections: EnabledReverseFilterSections;
 }
 

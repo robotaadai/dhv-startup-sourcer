@@ -148,6 +148,7 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
       meetingTimeframe: 'ALL',
       meetingRegions: [],
       meetingType: 'ALL',
+      eventParticipation: 'ALL',
       enabledSections: {
         expectation: true,
         quantitative: true,
@@ -659,6 +660,33 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
                     className={`px-2 py-1 rounded-md text-xs font-medium border transition-all ${
                       draft.meetingType === item.id
                         ? 'bg-purple-600 text-white border-purple-600 shadow-2xs'
+                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* イベント出展状況 (出展あり / 出展予定なし) */}
+            <div>
+              <label className="block text-[11px] font-bold text-slate-700 mb-1.5">
+                展示会・イベント出展状況:
+              </label>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  { id: 'ALL', label: '全企業 (出展なし含む)' },
+                  { id: 'WITH_EVENTS', label: '🎪 直近出展あり' },
+                  { id: 'WITHOUT_EVENTS', label: '⚪ 直近出展なしのみ' },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => setDraft({ ...draft, eventParticipation: item.id as any })}
+                    className={`px-2 py-1 rounded-md text-xs font-medium border transition-all ${
+                      draft.eventParticipation === item.id
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-2xs'
                         : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                     }`}
                   >
