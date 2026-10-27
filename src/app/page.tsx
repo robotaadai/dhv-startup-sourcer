@@ -653,7 +653,7 @@ export default function HomePage() {
             />
 
             {/* 結果バー */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2.5 sm:mb-3 gap-2">
               <div className="flex items-center flex-wrap gap-2">
                 <h2 className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
                   <span>逆引き検索結果 (スタートアップ一覧)</span>
@@ -685,7 +685,7 @@ export default function HomePage() {
 
             {/* スタートアップ逆引きカード一覧 */}
             {sortedReverseStartups.length > 0 ? (
-              <div className="space-y-4">
+              <div className="space-y-2.5 sm:space-y-3">
                 {sortedReverseStartups.map((st) => (
                   <StartupReverseCard
                     key={st.id}
@@ -782,7 +782,7 @@ export default function HomePage() {
 
             {/* Exhibitor Cards Grid */}
             {sortedExhibitors.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
                 {sortedExhibitors.map((ex) => (
                   <StartupCard
                     key={ex.id}
