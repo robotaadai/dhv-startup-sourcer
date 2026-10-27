@@ -22,6 +22,7 @@ import {
   Newspaper,
 } from 'lucide-react';
 import { CompanyLogo } from '@/components/CompanyLogo';
+import { OctagonRadarChart, RADAR_AXES } from '@/components/OctagonRadarChart';
 
 interface StartupDetailModalProps {
   exhibitor: StartupExhibitor | null;
@@ -213,6 +214,106 @@ export const StartupDetailModal: React.FC<StartupDetailModalProps> = ({
               </span>
             </div>
           </div>
+
+          {/* 8軸 独自「期待ポイント」八角形レーダーチャート評価 */}
+          {exhibitor.expectation && (
+            <div className="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50/70 via-white to-red-50/20 shadow-xs">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                <div className="flex items-center space-x-2">
+                  <span className="text-lg">🎯</span>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-900">
+                      独自8大「期待ポイント」八角形評価（モメンタム＆ポテンシャル）
+                    </h3>
+                    <p className="text-[11px] text-slate-500">
+                      VC・CVC視点で成長スピード・現場トラクション・技術防壁・発信力を総合評価
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs font-bold text-slate-700">総合スコア:</span>
+                  <span className="text-base font-black text-red-600">
+                    {exhibitor.expectation.totalScore}
+                    <span className="text-xs text-slate-400 font-normal"> / 40点</span>
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+                {/* 左側: 八角形チャート */}
+                <div className="md:col-span-5 flex flex-col items-center justify-center py-2">
+                  <OctagonRadarChart
+                    scores={exhibitor.expectation.scores}
+                    rank={exhibitor.expectation.rank}
+                    totalScore={exhibitor.expectation.totalScore}
+                    size="md"
+                  />
+                </div>
+
+                {/* 右側: 8軸のスコアブレイクダウン */}
+                <div className="md:col-span-7 space-y-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {RADAR_AXES.map((axis) => {
+                      const score = exhibitor.expectation!.scores[axis.key] || 1;
+                      return (
+                        <div
+                          key={axis.key}
+                          className="p-2 rounded-lg bg-white border border-slate-200/80 shadow-2xs flex items-center justify-between"
+                        >
+                          <div className="flex items-center space-x-1.5 truncate pr-1">
+                            <span className="text-xs">{axis.icon}</span>
+                            <span className="text-xs font-bold text-slate-800 truncate">
+                              {axis.label}
+                            </span>
+                          </div>
+                          <div className="flex items-center space-x-1 shrink-0">
+                            <div className="flex space-x-0.5">
+                              {[1, 2, 3, 4, 5].map((dot) => (
+                                <span
+                                  key={dot}
+                                  className={`w-1.5 h-3 rounded-2xs ${
+                                    dot <= score
+                                      ? score >= 5
+                                        ? 'bg-red-600'
+                                        : score >= 4
+                                        ? 'bg-orange-500'
+                                        : 'bg-blue-500'
+                                      : 'bg-slate-200'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <span
+                              className={`text-xs font-black w-4 text-right ${
+                                score >= 4 ? 'text-red-600' : 'text-slate-600'
+                              }`}
+                            >
+                              {score}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* 代表ハイライト */}
+                  {exhibitor.expectation.highlights.length > 0 && (
+                    <div className="pt-2 flex flex-wrap items-center gap-1.5">
+                      <span className="text-[11px] font-bold text-slate-500">主要強み:</span>
+                      {exhibitor.expectation.highlights.map((h) => (
+                        <span
+                          key={h}
+                          className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100/80 text-amber-950 border border-amber-300 shadow-2xs"
+                        >
+                          ✓ {h}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* ピッチ登壇・受賞実績 */}
           {exhibitor.pitchInfo && (

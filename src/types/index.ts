@@ -133,6 +133,16 @@ export type FundingStage =
   | '自己資本・ブートストラップ'
   | '未特定';
 
+export const FUNDING_STAGES: FundingStage[] = [
+  'プレシード',
+  'シード',
+  'シリーズA',
+  'シリーズB',
+  'シリーズC以降',
+  'プレIPO',
+  '自己資本・ブートストラップ',
+];
+
 export type DHVStatus =
   | '未対応'
   | 'DHV投資済'
@@ -205,6 +215,45 @@ export interface StartupExhibitor {
   pitchInfo?: string; // 例: "IVS LaunchPad 2026 入賞", "ICCリアルテックカタパルト登壇"
   logoUrl?: string; // 会社ロゴ画像URL (任意)
   latestNews?: StartupNewsItem; // 最新ニュースリリース
+  expectation?: StartupExpectationProfile; // ★ 8つの期待ポイント評価 (八角形レーダーチャート用)
+  upcomingMeetingEvents?: UpcomingMeetingEvent[]; // ★ これから会える展示会・ピッチ一覧
+}
+
+// --- 8つの期待ポイント（八角形レーダーチャートの8軸） ---
+export interface ExpectationRadarScores {
+  awards: number; // ① 🏆 ピッチ入賞・受賞歴 (Awards & Pitch)
+  accelerator: number; // ② 🚀 著名アクセラ・実証採択 (Accelerators)
+  snsMomentum: number; // ③ 📣 SNS・情報発信力 (SNS & Momentum)
+  fundraising: number; // ④ 💰 調達モメンタム (Fundraising)
+  growthVelocity: number; // ⑤ ⚡ 急成長スピード (Growth Velocity)
+  enterpriseTraction: number; // ⑥ 🏗️ 大手現場導入・PoC実績 (Enterprise Traction)
+  deepTechIP: number; // ⑦ 🔬 大学発・特許ディープテック (DeepTech & IP)
+  teamStrength: number; // ⑧ 👑 連続起業家・注目CXO陣営 (Serial & Team)
+}
+
+export type ExpectationRank = 'S' | 'A' | 'B';
+
+export interface StartupExpectationProfile {
+  scores: ExpectationRadarScores;
+  totalScore: number; // 合計点 (8〜40点)
+  rank: ExpectationRank; // S: 34点以上, A: 26〜33点, B: 25点以下
+  highlights: string[]; // 代表的な期待ポイントタグ (例: ["ゼネコン3社導入", "ICCカタパルト優勝", "特許出願済"])
+}
+
+export interface UpcomingMeetingEvent {
+  eventId: string;
+  eventName: string;
+  eventUrl: string;
+  venue: string;
+  hall?: string;
+  boothNumber: string;
+  floorMapUrl?: string;
+  startDate: string;
+  endDate: string;
+  region: EventRegion;
+  eventType: EventType;
+  pitchSession?: string; // 例: "11/5 14:00〜 ピッチ登壇"
+  daysUntil: number; // 開催までの残り日数
 }
 
 export interface StartupNewsItem {
@@ -288,6 +337,29 @@ export interface FilterOptions {
   fundingStages: FundingStage[];
   dhvStatus: DHVStatus[];
   enabledSections: EnabledFilterSections; // ★ 各検索項目を検索条件に入れるかのトグル（デフォルト全ON）
+}
+
+// --- スタートアップ逆引き専用フィルター型 ---
+export interface EnabledReverseFilterSections {
+  expectation: boolean; // 8つの期待ポイント・八角形
+  quantitative: boolean; // 定量基準 (ステージ、創業年、調達額)
+  asufukaketsu: boolean; // アスフカケツノ・高市17
+  meetingEvent: boolean; // いつ・どこで会えるか (時期・地域・出展形式)
+}
+
+export interface StartupReverseFilters {
+  searchQuery: string;
+  expectationRanks: ExpectationRank[];
+  expectationTraits: (keyof ExpectationRadarScores)[]; // 8軸の特定強みで絞り込み
+  fundingStages: FundingStage[];
+  maxYearsSinceEst: number | null;
+  totalFundingRange: 'ALL' | 'UNDER_100M' | '100M_500M' | '500M_1500M' | 'OVER_1500M';
+  asufukaketsu: AsufukaketsuKey[];
+  takaichi17: TakaichiField[];
+  meetingTimeframe: 'ALL' | 'WITHIN_1_MONTH' | 'WITHIN_3_MONTHS' | 'WITHIN_2026' | 'FUTURE';
+  meetingRegions: EventRegion[];
+  meetingType: 'ALL' | 'BOOTH_ONLY' | 'PITCH_ONLY';
+  enabledSections: EnabledReverseFilterSections;
 }
 
 

@@ -1,7 +1,13 @@
 'use client';
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { ExhibitionEvent, StartupExhibitor, FilterOptions, DHVStatus } from '@/types';
+import {
+  ExhibitionEvent,
+  StartupExhibitor,
+  FilterOptions,
+  StartupReverseFilters,
+  DHVStatus,
+} from '@/types';
 import { INITIAL_EVENTS, INITIAL_EXHIBITORS } from '@/data/mockData';
 import { Header } from '@/components/Header';
 import { StatsSummary } from '@/components/StatsSummary';
@@ -11,7 +17,21 @@ import { StartupCard } from '@/components/StartupCard';
 import { StartupDetailModal } from '@/components/StartupDetailModal';
 import { CrawlerStatusModal } from '@/components/CrawlerStatusModal';
 import { PortfolioModal } from '@/components/PortfolioModal';
-import { Filter, Grid, ListFilter, AlertCircle, ArrowUpDown, Crown, EyeOff } from 'lucide-react';
+import { StartupFilterPanel } from '@/components/StartupFilterPanel';
+import { StartupReverseCard } from '@/components/StartupReverseCard';
+import {
+  Filter,
+  Grid,
+  ListFilter,
+  AlertCircle,
+  ArrowUpDown,
+  Crown,
+  EyeOff,
+  Calendar,
+  Building2,
+  Sparkles,
+  Trophy,
+} from 'lucide-react';
 
 const INITIAL_FILTERS: FilterOptions = {
   searchQuery: '',
@@ -40,14 +60,38 @@ const INITIAL_FILTERS: FilterOptions = {
   },
 };
 
+const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
+  searchQuery: '',
+  expectationRanks: [],
+  expectationTraits: [],
+  fundingStages: [],
+  maxYearsSinceEst: null,
+  totalFundingRange: 'ALL',
+  asufukaketsu: [],
+  takaichi17: [],
+  meetingTimeframe: 'ALL',
+  meetingRegions: [],
+  meetingType: 'ALL',
+  enabledSections: {
+    expectation: true,
+    quantitative: true,
+    asufukaketsu: true,
+    meetingEvent: true,
+  },
+};
+
 // デフォルト基準日（ビルド時の静的プレレンダリングでも安定）
 const DEFAULT_BASE_DATE = '2026-10-23';
 
 export default function HomePage() {
+  // 探索モード切替: 'events' (展示会から探す) | 'startups' (スタートアップ逆引き: 八角形評価×会える展示会)
+  const [searchMode, setSearchMode] = useState<'events' | 'startups'>('startups');
   const [todayStr, setTodayStr] = useState<string>(DEFAULT_BASE_DATE);
   const [events, setEvents] = useState<ExhibitionEvent[]>(INITIAL_EVENTS);
   const [exhibitors, setExhibitors] = useState<StartupExhibitor[]>(INITIAL_EXHIBITORS);
   const [filters, setFilters] = useState<FilterOptions>(INITIAL_FILTERS);
+  const [reverseFilters, setReverseFilters] = useState<StartupReverseFilters>(INITIAL_REVERSE_FILTERS);
+  const [reverseSortBy, setReverseSortBy] = useState<'totalScore' | 'daysUntil' | 'established' | 'name'>('totalScore');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [selectedExhibitor, setSelectedExhibitor] = useState<StartupExhibitor | null>(null);
   const [isCrawlerModalOpen, setIsCrawlerModalOpen] = useState<boolean>(false);
@@ -279,6 +323,135 @@ export default function HomePage() {
     });
   }, [filteredExhibitors, sortBy, filters.excludeDHVPortfolio]);
 
+  // ★ 逆引きモード用: スタートアップの多角絞り込み
+  const filteredReverseStartups = useMemo(() => {
+    return upcomingExhibitors.filter((item) => {
+      // 1. Search Query
+      if (reverseFilters.searchQuery.trim()) {
+        const q = reverseFilters.searchQuery.toLowerCase();
+        const matchName = item.companyName.toLowerCase().includes(q);
+        const matchEn = (item.companyNameEn || '').toLowerCase().includes(q);
+        const matchDesc = item.description.toLowerCase().includes(q);
+        const matchAi = item.aiSummary.toLowerCase().includes(q);
+        const matchNews = (item.latestNews?.title || '').toLowerCase().includes(q);
+        if (!matchName && !matchEn && !matchDesc && !matchAi && !matchNews) {
+          return false;
+        }
+      }
+
+      // 2. Expectation Section (八角形 期待ポイント)
+      if (reverseFilters.enabledSections.expectation) {
+        if (
+          reverseFilters.expectationRanks.length > 0 &&
+          item.expectation &&
+          !reverseFilters.expectationRanks.includes(item.expectation.rank)
+        ) {
+          return false;
+        }
+
+        if (reverseFilters.expectationTraits.length > 0 && item.expectation) {
+          const hasAllTraits = reverseFilters.expectationTraits.every((trait) => {
+            const score = item.expectation!.scores[trait] || 1;
+            return score >= 4;
+          });
+          if (!hasAllTraits) return false;
+        }
+      }
+
+      // 3. Quantitative Section
+      if (reverseFilters.enabledSections.quantitative) {
+        if (
+          reverseFilters.fundingStages.length > 0 &&
+          !reverseFilters.fundingStages.includes(item.fundingStage)
+        ) {
+          return false;
+        }
+
+        if (
+          reverseFilters.maxYearsSinceEst !== null &&
+          (!item.yearsSinceEst || item.yearsSinceEst > reverseFilters.maxYearsSinceEst)
+        ) {
+          return false;
+        }
+
+        if (reverseFilters.totalFundingRange !== 'ALL') {
+          const tf = item.totalFunding || '';
+          if (reverseFilters.totalFundingRange === 'UNDER_100M') {
+            if (tf.includes('億円') && !tf.includes('0.')) return false;
+          } else if (reverseFilters.totalFundingRange === 'OVER_1500M') {
+            if (!tf.includes('15億円') && !tf.includes('20億円') && !tf.includes('200億円') && !tf.includes('100億円')) return false;
+          }
+        }
+      }
+
+      // 4. Asufukaketsu Section
+      if (reverseFilters.enabledSections.asufukaketsu) {
+        if (reverseFilters.asufukaketsu.length > 0) {
+          const hasAnyAsu = reverseFilters.asufukaketsu.some((k) =>
+            item.asufukaketsu.includes(k)
+          );
+          if (!hasAnyAsu) return false;
+        }
+
+        if (reverseFilters.takaichi17.length > 0) {
+          const hasAnyTaka = reverseFilters.takaichi17.some((f) =>
+            item.takaichi17.includes(f)
+          );
+          if (!hasAnyTaka) return false;
+        }
+      }
+
+      // 5. Meeting Event Section (いつ・どこで会えるか)
+      if (reverseFilters.enabledSections.meetingEvent) {
+        const nextEvt = item.upcomingMeetingEvents?.[0];
+        const days = nextEvt ? nextEvt.daysUntil : 999;
+
+        if (reverseFilters.meetingTimeframe === 'WITHIN_1_MONTH' && days > 30) return false;
+        if (reverseFilters.meetingTimeframe === 'WITHIN_3_MONTHS' && days > 90) return false;
+        if (reverseFilters.meetingTimeframe === 'WITHIN_2026' && (nextEvt?.startDate || '') > '2026-12-31') return false;
+
+        if (
+          reverseFilters.meetingRegions.length > 0 &&
+          item.region &&
+          !reverseFilters.meetingRegions.includes(item.region)
+        ) {
+          return false;
+        }
+
+        if (reverseFilters.meetingType === 'PITCH_ONLY') {
+          if (!item.pitchInfo && item.eventType !== '小規模ピッチ・デモデイ') return false;
+        } else if (reverseFilters.meetingType === 'BOOTH_ONLY') {
+          if (item.eventType === '小規模ピッチ・デモデイ' && !item.boothNumber.includes('ブース')) return false;
+        }
+      }
+
+      return true;
+    });
+  }, [upcomingExhibitors, reverseFilters]);
+
+  // ★ 逆引きモード用: ソート処理
+  const sortedReverseStartups = useMemo(() => {
+    return [...filteredReverseStartups].sort((a, b) => {
+      if (reverseSortBy === 'totalScore') {
+        const scoreA = a.expectation?.totalScore || 0;
+        const scoreB = b.expectation?.totalScore || 0;
+        return scoreB - scoreA;
+      }
+      if (reverseSortBy === 'daysUntil') {
+        const daysA = a.upcomingMeetingEvents?.[0]?.daysUntil ?? 999;
+        const daysB = b.upcomingMeetingEvents?.[0]?.daysUntil ?? 999;
+        return daysA - daysB;
+      }
+      if (reverseSortBy === 'established') {
+        return (b.establishedYear || 0) - (a.establishedYear || 0);
+      }
+      if (reverseSortBy === 'name') {
+        return a.companyName.localeCompare(b.companyName, 'ja');
+      }
+      return 0;
+    });
+  }, [filteredReverseStartups, reverseSortBy]);
+
   // CSV Export Handler
   const handleExportCsv = () => {
     const headers = [
@@ -361,7 +534,7 @@ export default function HomePage() {
         onExportCsv={handleExportCsv}
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
         onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
-        filteredCount={sortedExhibitors.length}
+        filteredCount={searchMode === 'startups' ? sortedReverseStartups.length : sortedExhibitors.length}
         totalCount={upcomingExhibitors.length}
         lastUpdated={lastUpdated}
       />
@@ -370,97 +543,217 @@ export default function HomePage() {
         {/* Top Metric Cards */}
         <StatsSummary events={upcomingEvents} exhibitors={upcomingExhibitors} />
 
-        {/* Upcoming Event Timeline */}
-        <EventTimeline
-          events={upcomingEvents}
-          selectedEventId={selectedEventId}
-          onSelectEvent={setSelectedEventId}
-        />
-
-        {/* Multi-axis Search & Filter Panel */}
-        <FilterPanel
-          filters={filters}
-          onChangeFilters={setFilters}
-          onResetFilters={() => setFilters(INITIAL_FILTERS)}
-          totalFiltered={sortedExhibitors.length}
-        />
-
-        {/* Results Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-          <div className="flex items-center flex-wrap gap-2">
-            <h2 className="text-sm font-bold text-slate-800">
-              抽出スタートアップ一覧
-            </h2>
-            <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold">
-              {sortedExhibitors.length}件
-            </span>
-
-            {/* DHV投資先非表示中バッジ */}
-            {filters.excludeDHVPortfolio && (
-              <button
-                type="button"
-                onClick={() => setFilters({ ...filters, excludeDHVPortfolio: false })}
-                className="text-xs text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-2 py-0.5 rounded-md font-bold flex items-center transition-colors shadow-2xs"
-                title="クリックで解除して全件表示"
-              >
-                <EyeOff className="w-3 h-3 mr-1" />
-                <span>DHV投資先は非表示中 (解除✕)</span>
-              </button>
-            )}
-
-            {selectedEventId && (
-              <span className="text-xs text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md font-medium">
-                展示会絞り込み中
-              </span>
-            )}
-          </div>
-
-          <div className="flex items-center space-x-2 text-xs">
-            <span className="text-slate-500 font-medium flex items-center">
-              <ArrowUpDown className="w-3.5 h-3.5 mr-1" /> 並び順:
-            </span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-medium outline-none cursor-pointer"
+        {/* ★ 探索モード切替タブ (大和ハウスソーシング デュアルモード) */}
+        <div className="mb-6 bg-white p-2 rounded-2xl border border-slate-200/90 shadow-xs flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setSearchMode('startups')}
+            className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              searchMode === 'startups'
+                ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+            }`}
+          >
+            <Trophy className="w-4 h-4 text-amber-300" />
+            <span>🏢 スタートアップから探す（逆引き：八角形評価 × 会える展示会）</span>
+            <span
+              className={`text-[10px] font-black px-2 py-0.5 rounded-full ${
+                searchMode === 'startups'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-red-100 text-red-700'
+              }`}
             >
-              <option value="score">スタートアップ注目度順</option>
-              <option value="established">設立年の新しい順</option>
-              <option value="name">社名五十音順</option>
-            </select>
-          </div>
+              新機能
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setSearchMode('events')}
+            className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              searchMode === 'events'
+                ? 'bg-slate-900 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+            }`}
+          >
+            <Calendar className="w-4 h-4 text-slate-300" />
+            <span>🎪 展示会・イベントから探す（タイムライン＆出展社）</span>
+          </button>
         </div>
 
-        {/* Exhibitor Cards Grid */}
-        {sortedExhibitors.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sortedExhibitors.map((ex) => (
-              <StartupCard
-                key={ex.id}
-                exhibitor={ex}
-                onOpenDetail={setSelectedExhibitor}
-                onChangeStatus={handleChangeStatus}
-              />
-            ))}
+        {/* ========================================================================= */}
+        {/* モード1: スタートアップから探す（逆引き：八角形レーダー評価 × 会える展示会） */}
+        {/* ========================================================================= */}
+        {searchMode === 'startups' && (
+          <div>
+            {/* スタートアップ逆引き リッチフィルターパネル */}
+            <StartupFilterPanel
+              filters={reverseFilters}
+              onApplyFilters={setReverseFilters}
+              totalStartupsCount={upcomingExhibitors.length}
+              matchedCount={sortedReverseStartups.length}
+            />
+
+            {/* 結果バー */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+              <div className="flex items-center flex-wrap gap-2">
+                <h2 className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
+                  <span>逆引き検索結果 (スタートアップ一覧)</span>
+                </h2>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-red-600 text-white font-bold shadow-2xs">
+                  {sortedReverseStartups.length}社
+                </span>
+                <span className="text-xs text-slate-500 font-medium">
+                  八角形の8大期待ポイント評価と、次回会える展示会・ブース番号・マップ直行リンク
+                </span>
+              </div>
+
+              <div className="flex items-center space-x-2 text-xs">
+                <span className="text-slate-500 font-medium flex items-center">
+                  <ArrowUpDown className="w-3.5 h-3.5 mr-1" /> 並び順:
+                </span>
+                <select
+                  value={reverseSortBy}
+                  onChange={(e) => setReverseSortBy(e.target.value as any)}
+                  className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-medium outline-none cursor-pointer"
+                >
+                  <option value="totalScore">八角形 総合期待スコア順</option>
+                  <option value="daysUntil">直近で会える順（残り日数）</option>
+                  <option value="established">設立年の新しい順</option>
+                  <option value="name">社名五十音順</option>
+                </select>
+              </div>
+            </div>
+
+            {/* スタートアップ逆引きカード一覧 */}
+            {sortedReverseStartups.length > 0 ? (
+              <div className="space-y-4">
+                {sortedReverseStartups.map((st) => (
+                  <StartupReverseCard
+                    key={st.id}
+                    startup={st}
+                    onSelect={setSelectedExhibitor}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-xs">
+                <AlertCircle className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+                <h3 className="text-base font-bold text-slate-800 mb-1">
+                  該当するスタートアップが見つかりませんでした
+                </h3>
+                <p className="text-xs text-slate-500 mb-4">
+                  期待ポイントやステージ、会える時期のフィルター条件を緩和してください。
+                </p>
+                <button
+                  onClick={() => setReverseFilters(INITIAL_REVERSE_FILTERS)}
+                  className="px-4 py-2 bg-red-600 text-white rounded-xl text-xs font-semibold hover:bg-red-700 transition-all"
+                >
+                  条件をリセット
+                </button>
+              </div>
+            )}
           </div>
-        ) : (
-          <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-xs">
-            <AlertCircle className="w-10 h-10 text-slate-400 mx-auto mb-3" />
-            <h3 className="text-base font-bold text-slate-800 mb-1">
-              該当するスタートアップが見つかりませんでした
-            </h3>
-            <p className="text-xs text-slate-500 mb-4">
-              検索キーワードを変更するか、フィルター条件を緩和してください。
-            </p>
-            <button
-              onClick={() => {
-                setFilters(INITIAL_FILTERS);
-                setSelectedEventId(null);
-              }}
-              className="px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800"
-            >
-              すべてのフィルターをクリア
-            </button>
+        )}
+
+        {/* ========================================================================= */}
+        {/* モード2: 展示会・イベントから探す（従来のタイムライン＆ブース出展社ビュー） */}
+        {/* ========================================================================= */}
+        {searchMode === 'events' && (
+          <div>
+            {/* Upcoming Event Timeline */}
+            <EventTimeline
+              events={upcomingEvents}
+              selectedEventId={selectedEventId}
+              onSelectEvent={setSelectedEventId}
+            />
+
+            {/* Multi-axis Search & Filter Panel */}
+            <FilterPanel
+              filters={filters}
+              onChangeFilters={setFilters}
+              onResetFilters={() => setFilters(INITIAL_FILTERS)}
+              totalFiltered={sortedExhibitors.length}
+            />
+
+            {/* Results Bar */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+              <div className="flex items-center flex-wrap gap-2">
+                <h2 className="text-sm font-bold text-slate-800">
+                  抽出スタートアップ一覧
+                </h2>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-bold">
+                  {sortedExhibitors.length}件
+                </span>
+
+                {/* DHV投資先非表示中バッジ */}
+                {filters.excludeDHVPortfolio && (
+                  <button
+                    type="button"
+                    onClick={() => setFilters({ ...filters, excludeDHVPortfolio: false })}
+                    className="text-xs text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-2 py-0.5 rounded-md font-bold flex items-center transition-colors shadow-2xs"
+                    title="クリックで解除して全件表示"
+                  >
+                    <EyeOff className="w-3 h-3 mr-1" />
+                    <span>DHV投資先は非表示中 (解除✕)</span>
+                  </button>
+                )}
+
+                {selectedEventId && (
+                  <span className="text-xs text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md font-medium">
+                    展示会絞り込み中
+                  </span>
+                )}
+              </div>
+
+              <div className="flex items-center space-x-2 text-xs">
+                <span className="text-slate-500 font-medium flex items-center">
+                  <ArrowUpDown className="w-3.5 h-3.5 mr-1" /> 並び順:
+                </span>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as any)}
+                  className="px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-800 font-medium outline-none cursor-pointer"
+                >
+                  <option value="score">スタートアップ注目度順</option>
+                  <option value="established">設立年の新しい順</option>
+                  <option value="name">社名五十音順</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Exhibitor Cards Grid */}
+            {sortedExhibitors.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {sortedExhibitors.map((ex) => (
+                  <StartupCard
+                    key={ex.id}
+                    exhibitor={ex}
+                    onOpenDetail={setSelectedExhibitor}
+                    onChangeStatus={handleChangeStatus}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-xs">
+                <AlertCircle className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+                <h3 className="text-base font-bold text-slate-800 mb-1">
+                  該当するスタートアップが見つかりませんでした
+                </h3>
+                <p className="text-xs text-slate-500 mb-4">
+                  検索キーワードを変更するか、フィルター条件を緩和してください。
+                </p>
+                <button
+                  onClick={() => {
+                    setFilters(INITIAL_FILTERS);
+                    setSelectedEventId(null);
+                  }}
+                  className="px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800"
+                >
+                  すべてのフィルターをクリア
+                </button>
+              </div>
+            )}
           </div>
         )}
       </main>
