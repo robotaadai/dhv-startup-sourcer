@@ -20,6 +20,13 @@ import { CrawlerStatusModal } from '@/components/CrawlerStatusModal';
 import { PortfolioModal } from '@/components/PortfolioModal';
 import { StartupFilterPanel } from '@/components/StartupFilterPanel';
 import { StartupReverseCard } from '@/components/StartupReverseCard';
+import { AddEventModal } from '@/components/AddEventModal';
+import {
+  loadCustomEventsFromStorage,
+  saveCustomEventsToStorage,
+  loadCustomStartupsFromStorage,
+  saveCustomStartupsToStorage,
+} from '@/utils/customEventHelper';
 import {
   Filter,
   Grid,
@@ -100,8 +107,62 @@ export default function HomePage() {
   const [selectedExhibitor, setSelectedExhibitor] = useState<StartupExhibitor | null>(null);
   const [isCrawlerModalOpen, setIsCrawlerModalOpen] = useState<boolean>(false);
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState<boolean>(false);
+  const [isAddEventModalOpen, setIsAddEventModalOpen] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<string>('本日 04:30');
   const [sortBy, setSortBy] = useState<'score' | 'established' | 'name'>('score');
+
+  // Load custom user added events and startups from localStorage
+  useEffect(() => {
+    try {
+      const customEvents = loadCustomEventsFromStorage();
+      if (customEvents.length > 0) {
+        setEvents((prev) => {
+          const existingIds = new Set(prev.map((e) => e.id));
+          const newEvents = customEvents.filter((ce) => !existingIds.has(ce.id));
+          return [...newEvents, ...prev];
+        });
+      }
+
+      const customStartups = loadCustomStartupsFromStorage();
+      if (customStartups.length > 0) {
+        setExhibitors((prev) => {
+          const existingIds = new Set(prev.map((s) => s.id));
+          const newStartups = customStartups.filter((cs) => !existingIds.has(cs.id));
+          return [...newStartups, ...prev];
+        });
+        setAllStartups((prev) => {
+          const existingIds = new Set(prev.map((s) => s.id));
+          const newStartups = customStartups.filter((cs) => !existingIds.has(cs.id));
+          return [...newStartups, ...prev];
+        });
+      }
+    } catch (e) {
+      console.error('Failed to load custom events/startups from storage', e);
+    }
+  }, []);
+
+  const handleAddCustomEvent = (event: ExhibitionEvent, newStartups: StartupExhibitor[]) => {
+    setEvents((prev) => [event, ...prev]);
+    const storedEvents = loadCustomEventsFromStorage();
+    saveCustomEventsToStorage([event, ...storedEvents]);
+
+    if (newStartups.length > 0) {
+      setExhibitors((prev) => [...newStartups, ...prev]);
+      setAllStartups((prev) => [...newStartups, ...prev]);
+      const storedStartups = loadCustomStartupsFromStorage();
+      saveCustomStartupsToStorage([...newStartups, ...storedStartups]);
+    }
+  };
+
+  const handleDeleteCustomEvent = (eventId: string) => {
+    setEvents((prev) => prev.filter((e) => e.id !== eventId));
+    const storedEvents = loadCustomEventsFromStorage();
+    saveCustomEventsToStorage(storedEvents.filter((e) => e.id !== eventId));
+
+    if (selectedEventId === eventId) {
+      setSelectedEventId(null);
+    }
+  };
 
   // クライアントマウント後に最新日付へ安全に同期
   useEffect(() => {
@@ -594,6 +655,7 @@ export default function HomePage() {
         onExportCsv={handleExportCsv}
         onOpenCrawlerModal={() => setIsCrawlerModalOpen(true)}
         onOpenPortfolioModal={() => setIsPortfolioModalOpen(true)}
+        onOpenAddEventModal={() => setIsAddEventModalOpen(true)}
         filteredCount={searchMode === 'startups' ? sortedReverseStartups.length : sortedExhibitors.length}
         totalCount={searchMode === 'startups' ? upcomingAllStartups.length : upcomingExhibitors.length}
         lastUpdated={lastUpdated}
@@ -726,6 +788,8 @@ export default function HomePage() {
               events={upcomingEvents}
               selectedEventId={selectedEventId}
               onSelectEvent={setSelectedEventId}
+              onOpenAddEventModal={() => setIsAddEventModalOpen(true)}
+              onDeleteCustomEvent={handleDeleteCustomEvent}
             />
 
             {/* Multi-axis Search & Filter Panel */}
@@ -836,6 +900,13 @@ export default function HomePage() {
       <PortfolioModal
         isOpen={isPortfolioModalOpen}
         onClose={() => setIsPortfolioModalOpen(false)}
+      />
+
+      {/* Add Custom Event & Startups Modal */}
+      <AddEventModal
+        isOpen={isAddEventModalOpen}
+        onClose={() => setIsAddEventModalOpen(false)}
+        onAddEvent={handleAddCustomEvent}
       />
     </div>
   );

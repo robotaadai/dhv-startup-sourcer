@@ -2,19 +2,23 @@
 
 import React from 'react';
 import { ExhibitionEvent } from '@/types';
-import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight, Map } from 'lucide-react';
+import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight, Map, PlusCircle, Trash2 } from 'lucide-react';
 import { getEventFloorMapUrl } from '@/utils/floorMap';
 
 interface EventTimelineProps {
   events: ExhibitionEvent[];
   selectedEventId: string | null;
   onSelectEvent: (eventId: string | null) => void;
+  onOpenAddEventModal?: () => void;
+  onDeleteCustomEvent?: (eventId: string) => void;
 }
 
 export const EventTimeline: React.FC<EventTimelineProps> = ({
   events,
   selectedEventId,
   onSelectEvent,
+  onOpenAddEventModal,
+  onDeleteCustomEvent,
 }) => {
   const getStatusBadge = (event: ExhibitionEvent) => {
     const floorMapUrl = getEventFloorMapUrl(event);
@@ -119,14 +123,25 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
           </div>
         </div>
 
-        {selectedEventId && (
-          <button
-            onClick={() => onSelectEvent(null)}
-            className="text-xs text-red-600 hover:text-red-800 font-semibold px-2.5 py-1 rounded-md bg-red-50 hover:bg-red-100 transition-colors self-start sm:self-auto"
-          >
-            展示会選択を解除（全件表示）
-          </button>
-        )}
+        <div className="flex items-center space-x-2 self-start sm:self-auto">
+          {onOpenAddEventModal && (
+            <button
+              onClick={onOpenAddEventModal}
+              className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:scale-95 rounded-lg shadow-2xs transition-all"
+            >
+              <PlusCircle className="w-3.5 h-3.5" />
+              <span>＋ イベントを追加</span>
+            </button>
+          )}
+          {selectedEventId && (
+            <button
+              onClick={() => onSelectEvent(null)}
+              className="text-xs text-red-600 hover:text-red-800 font-semibold px-2.5 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 transition-colors"
+            >
+              展示会選択を解除
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Region Tabs */}
@@ -198,6 +213,11 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
                       サミット
                     </span>
                   )}
+                  {evt.isCustomUserAdded && (
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200">
+                      👤 手動登録
+                    </span>
+                  )}
                 </div>
                 {getStatusBadge(evt)}
               </div>
@@ -230,7 +250,7 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
                 </span>
               </div>
 
-              {/* Counts & Score */}
+              {/* Counts & Score & Delete Action */}
               <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px]">
                 <div className="flex items-center space-x-2">
                   <span className="text-slate-600">
@@ -241,9 +261,26 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
                   </span>
                 </div>
 
-                <div className="flex items-center text-amber-500 font-bold" title="スタートアップ注目度">
-                  <Sparkles className="w-3 h-3 mr-0.5 fill-current" />
-                  <span>★{evt.startupRelevanceScore}.0</span>
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center text-amber-500 font-bold" title="スタートアップ注目度">
+                    <Sparkles className="w-3 h-3 mr-0.5 fill-current" />
+                    <span>★{evt.startupRelevanceScore}.0</span>
+                  </div>
+
+                  {evt.isCustomUserAdded && onDeleteCustomEvent && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (confirm(`イベント「${evt.title}」を削除しますか？`)) {
+                          onDeleteCustomEvent(evt.id);
+                        }
+                      }}
+                      className="p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                      title="この手動追加イベントを削除"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
 

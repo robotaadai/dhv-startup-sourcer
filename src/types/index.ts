@@ -309,6 +309,7 @@ export interface ExhibitionEvent {
   exhibitorCount: number;
   startupCount: number;
   lastCrawledAt: string;
+  isCustomUserAdded?: boolean;
 }
 
 export interface EnabledFilterSections {

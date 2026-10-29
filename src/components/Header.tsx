@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import { Download, RefreshCw, Sparkles, Building2, ExternalLink, Crown } from 'lucide-react';
+import { Download, RefreshCw, Sparkles, Building2, ExternalLink, Crown, PlusCircle } from 'lucide-react';
 import { StartupExhibitor } from '@/types';
 
 interface HeaderProps {
   onExportCsv: () => void;
   onOpenCrawlerModal: () => void;
   onOpenPortfolioModal: () => void;
+  onOpenAddEventModal?: () => void;
   filteredCount: number;
   totalCount: number;
   lastUpdated: string;
@@ -17,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
   onExportCsv,
   onOpenCrawlerModal,
   onOpenPortfolioModal,
+  onOpenAddEventModal,
   filteredCount,
   totalCount,
   lastUpdated,
@@ -46,6 +48,18 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Action Buttons & Status */}
           <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* Add Event Button */}
+            {onOpenAddEventModal && (
+              <button
+                onClick={onOpenAddEventModal}
+                className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 rounded-lg shadow-xs transition-all active:scale-95"
+                title="新しい展示会やサミット、ピッチイベントを直接追加"
+              >
+                <PlusCircle className="w-3.5 h-3.5" />
+                <span>＋ イベント追加</span>
+              </button>
+            )}
+
             {/* DHV Official Portfolio Modal Button */}
             <button
               onClick={onOpenPortfolioModal}
