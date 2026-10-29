@@ -187,6 +187,25 @@ STARTUP_CONFERENCES_MASTER = [
         "exhibitorCount": 120,
         "startupCount": 85,
     },
+    {
+        "id": "conf-ils-2026",
+        "title": "ILS2026 - Innovation Leaders Summit (イノベーションリーダーズサミット)",
+        "venue": "虎ノ門ヒルズ森タワー",
+        "city": "東京",
+        "region": "関東",
+        "eventType": "スタートアップ特化サミット",
+        "hall": "虎ノ門ヒルズフォーラム / 特設ブース会場",
+        "startDate": "2026-11-30",
+        "endDate": "2026-12-03",
+        "officialUrl": "https://app.ils.tokyo/summit/programs?c=booth",
+        "floorMapUrl": "https://app.ils.tokyo/summit/programs?c=booth",
+        "description": "アジア最大級のオープンイノベーションサミット。大手企業と有望スタートアップの事業共創・マッチングの場。NEDO注目イノベーション、農水省SBIR、日本公庫厳選、海外（韓国・台湾・豪州）成長スタートアップ等174社がブース出展。",
+        "organizer": "ILS実行委員会 (プロジェクトニッポン)",
+        "startupRelevanceScore": 5,
+        "status": "出展社公表済",
+        "exhibitorCount": 174,
+        "startupCount": 174,
+    },
 ]
 
 def scrape_startup_conferences() -> List[Dict[str, Any]]:

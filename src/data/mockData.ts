@@ -1,32 +1,26 @@
 import { ExhibitionEvent, StartupExhibitor } from '@/types';
 import { mergeAndDeduplicateStartups } from '@/utils/startupMerger';
+import { ILS_EXHIBITORS, ILS_EXPECTATION_MAP, ILS_NEWS_MAP } from './ilsStartupsData';
 
-export function cleanCompanyName(name: string): string {
-  return name.replace(/(株式会社|合同会社|有限会社|Inc\.|Co\.,\s*Ltd\.|LLC)/g, '').trim();
-}
+import {
+  cleanCompanyName,
+  generateInitialUrl,
+  generateKeppleUrl,
+  generateGoogleSearchUrl,
+  generateGoogleNewsUrl,
+  generateCorporateNumberUrl,
+} from '@/utils/linkGenerator';
 
-export function generateInitialUrl(companyName: string): string {
-  const clean = cleanCompanyName(companyName);
-  return `https://www.google.com/search?q=${encodeURIComponent(`site:initial.inc "${clean}"`)}`;
-}
+export {
+  cleanCompanyName,
+  generateInitialUrl,
+  generateKeppleUrl,
+  generateGoogleSearchUrl,
+  generateGoogleNewsUrl,
+  generateCorporateNumberUrl,
+};
 
-export function generateKeppleUrl(companyName: string): string {
-  const clean = cleanCompanyName(companyName);
-  return `https://www.google.com/search?q=${encodeURIComponent(`site:kepple.co.jp OR site:kepple-db.com "${clean}"`)}`;
-}
 
-export function generateGoogleSearchUrl(companyName: string): string {
-  return `https://www.google.com/search?q=${encodeURIComponent(`"${companyName}" スタートアップ 資金調達`)}`;
-}
-
-export function generateGoogleNewsUrl(companyName: string): string {
-  return `https://www.google.com/search?q=${encodeURIComponent(companyName)}&tbm=nws`;
-}
-
-export function generateCorporateNumberUrl(companyName: string): string {
-  const clean = cleanCompanyName(companyName);
-  return `https://www.houjin-bangou.nta.go.jp/kensaku-kekka.html?nm=${encodeURIComponent(clean)}`;
-}
 
 export const INITIAL_EVENTS: ExhibitionEvent[] = [
   {
@@ -522,6 +516,26 @@ export const INITIAL_EVENTS: ExhibitionEvent[] = [
     exhibitorCount: 120,
     startupCount: 85,
     lastCrawledAt: '2026-10-27T04:30:00Z',
+  },
+  {
+    id: 'evt-2026-ils',
+    title: 'ILS2026 - Innovation Leaders Summit (イノベーションリーダーズサミット)',
+    venue: '虎ノ門ヒルズ森タワー',
+    hall: '虎ノ門ヒルズフォーラム / 特設ブース会場',
+    city: '東京',
+    region: '関東',
+    eventType: 'スタートアップ特化サミット',
+    startDate: '2026-11-30',
+    endDate: '2026-12-03',
+    officialUrl: 'https://app.ils.tokyo/summit/programs?c=booth',
+    floorMapUrl: 'https://app.ils.tokyo/summit/programs?c=booth',
+    description: 'アジア最大級のオープンイノベーションサミット。大手企業と有望スタートアップの事業共創・マッチングの場。NEDO注目イノベーション、農水省SBIR、日本公庫厳選、海外（韓国・台湾・豪州）成長スタートアップ等174社がブース出展。',
+    organizer: 'ILS実行委員会 (プロジェクトニッポン)',
+    startupRelevanceScore: 5,
+    status: '出展社公表済',
+    exhibitorCount: 174,
+    startupCount: 174,
+    lastCrawledAt: '2026-10-29T04:30:00Z',
   },
 ];
 
@@ -3707,6 +3721,7 @@ const REAL_NEWS_MAP: Record<string, { title: string; date: string; source: strin
     date: '2026/04/10',
     source: '日本経済新聞',
   },
+  ...ILS_NEWS_MAP,
 };
 
 // --- 8つの期待ポイント個別マスター (実態に即した高精度プロファイル) ---
@@ -3990,7 +4005,10 @@ const REAL_EXPECTATION_MAP: Record<
     },
     highlights: ['阪大発レーザー商用核融合', 'ICCカタパルト優勝', '究極のクリーンベースロード電源'],
   },
+  ...ILS_EXPECTATION_MAP,
 };
+
+INITIAL_EXHIBITORS.push(...ILS_EXHIBITORS);
 
 // 全データに最新ニュース、8つの期待ポイント評価、直近会えるイベント情報をマージ・自動算出
 INITIAL_EXHIBITORS.forEach((item, idx) => {

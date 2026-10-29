@@ -1,0 +1,1394 @@
+[
+  {
+    "id": "ils-001",
+    "name": "株式会社ニューラルポート",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "VR脳疲労測定&マネジメントシステム「ZEN EYE Pro」",
+    "description": "大阪関西万博2025にも展示されていたわずか1分で脳疲労（中枢性疲労）を測定できるVR「ZEN EYE Pro」を開発。スポーツ、エッセンシャルワーカー、デュアルユース、企業のメンタルケア領域で活用。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119252.png"
+  },
+  {
+    "id": "ils-002",
+    "name": "株式会社NAGARA",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "介護しながら事務作業を終わらせる、会話特化 AI「ながらかいご」",
+    "description": "介護士が話した言葉から、会議録・ケア記録・計画・請求までが自動でできる介護の基幹ソフト。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119253.png"
+  },
+  {
+    "id": "ils-003",
+    "name": "株式会社AQSim",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "AI供給予測で養殖水産業の構造改革と安定供給を実現するプラットフォーム",
+    "description": "養殖水産業向けに高精度な供給予測ソリューションを提供。出荷時期と量の最適化により買い叩きを防止し、生産者の収益性向上と流通の効率化を同時に実現。養殖業の持続可能な成長と価値最大化に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119254.png"
+  },
+  {
+    "id": "ils-004",
+    "name": "Epsilon Molecular Engineering",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "機能ある抗体をデザインします",
+    "description": "VHH抗体をはじめIgG抗体デザインのためのscFvライブラリも作製中。様々な機能抗体のデザインを可能にする抗体スクリーニングをしています。再生医療に必須な細胞増殖因子代替品もその一つです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/18104516.png"
+  },
+  {
+    "id": "ils-005",
+    "name": "株式会社リピドームラボ",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "脂質解析技術に特化した伴走型研究開発支援と素材機能探索サービス",
+    "description": "脂質という生命の根幹にある物質を通じてモノの価値、健康のあり方を再設計すべく独自技術にて脂質の可能性を最大限に引き出すことが可能。社会に新たな価値軸を提供する脂質ビジネスモデルに取り組んでいる。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118629.png"
+  },
+  {
+    "id": "ils-006",
+    "name": "USTATION",
+    "category": "韓国有望スタートアップブース",
+    "product": "携帯型心電図(ECG)",
+    "description": "ER-2000 PLUSは、ユーザーがいつでもどこでも簡単に自分の心電図(ECG)を測定できるようにします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119427.png"
+  },
+  {
+    "id": "ils-007",
+    "name": "REFIND",
+    "category": "韓国有望スタートアップブース",
+    "product": "障害者や高齢者向けの身体増強技術ロボット",
+    "description": "主な事業は、障害者や高齢者の上肢と下肢の身体的補助ロボットです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119428.png"
+  },
+  {
+    "id": "ils-008",
+    "name": "NEO ABLE",
+    "category": "韓国有望スタートアップブース",
+    "product": "AIベースの個別AirCell自動圧力分配技術",
+    "description": "私たちは、体圧を感知し、必要な反応を決定し、褥瘡を予防し繰り返しのケア作業を減らすために動きを自動的に制御する物理AIケアソリューションを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119429.png"
+  },
+  {
+    "id": "ils-009",
+    "name": "LH HEALTHYLIFE",
+    "category": "韓国有望スタートアップブース",
+    "product": "末梢血流の改善による脳活動の誘導",
+    "description": "指先の末梢血管を刺激することで脳が活性化され、認知機能の向上と認知症の予防に役立ちます。私たちはこれらの血管を刺激する技術を持っています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119430.png"
+  },
+  {
+    "id": "ils-010",
+    "name": "BIOBYTES",
+    "category": "韓国有望スタートアップブース",
+    "product": "肉減少症に対するヒトデータ駆動型の薬剤発見",
+    "description": "Biobytesは、深層臨床表現型、筋肉組織、ゲノミクス、マルチオミクスデータを統合した独自の縦断バイオバンクを用いて、サーコペニア治療薬を開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119431.png"
+  },
+  {
+    "id": "ils-011",
+    "name": "TROUND INC.",
+    "category": "韓国有望スタートアップブース",
+    "product": "補聴器に頼らない新しい聴覚・認知ケア「SoundXR Chair」",
+    "description": "TROUNDは非装着型聴覚・認知ケア機器「SoundXR Chair」を開発。30cm近接音響と脊椎振動(S2T)で補聴器拒絶層80%の聴取疲労を低減。日米等で特許30件以上保有",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119432.png"
+  },
+  {
+    "id": "ils-012",
+    "name": "CONNECTEDIN",
+    "category": "韓国有望スタートアップブース",
+    "product": "病院接続型糖尿病足部在宅モニタリングソリューション",
+    "description": "この在宅ケアソリューションは、糖尿病性足の手術後の創傷をモニタリングし、二次壊死を防ぎ、患者の状態が悪化した場合に迅速な病院介入を可能にします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119433.png"
+  },
+  {
+    "id": "ils-013",
+    "name": "WOODANG NETWORK",
+    "category": "韓国有望スタートアップブース",
+    "product": "肌診断と韓国美容製品分析サービス『ヘピック』",
+    "description": "HAEPICKはAIと専門家データによって機能するパーソナライズされたスキンケアプラットフォームです。ユーザーは化粧品をスキャンして成分のルーティンとの矛盾を確認し、Kビューティー製品を受け取ります。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119434.png"
+  },
+  {
+    "id": "ils-014",
+    "name": "BeNatureBioLab",
+    "category": "韓国有望スタートアップブース",
+    "product": "食品、美容、製薬のための溶剤フリー製剤プラットフォーム",
+    "description": "BNBLはHME-DDS™を用いて、溶解度が低く、不安定で味の悪い有効成分を、ニュートラシューティカル、機能性食品、化粧品、医薬品向けのスケーラブルな処方に変えています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119435.png"
+  },
+  {
+    "id": "ils-015",
+    "name": "FDTECH",
+    "category": "韓国有望スタートアップブース",
+    "product": "橋、ダム、建物の精密検査のためのAIロボット",
+    "description": "FDTECHのAI点検ロボットは、橋梁・ダム・建築物に密着走行して精密データを収集し、ひび割れやその他の表面損傷を検出・定量化して、安全で客観的な点検を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119436.png"
+  },
+  {
+    "id": "ils-016",
+    "name": "Smart Ageing Tech Co., LTD.",
+    "category": "台湾有望スタートアップブース",
+    "product": "より良いケア、高齢者の尊厳、そして家族の安心感を力づけること。",
+    "description": "Juboは高齢化社会向けのエンタープライズケアOSです。IoT、EHR、モバイルベッドサイドワークフローを統合し、世界中の2,800+施設でシニアケアを手軽に、データ駆動型かつ尊厳あるものにします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/19104752.png"
+  },
+  {
+    "id": "ils-017",
+    "name": "Aiello",
+    "category": "台湾有望スタートアップブース",
+    "product": "すべての会話をAIで支える。エンタープライズ音声AIを、簡単に。",
+    "description": "Aielloは、調整済みのオープンソースモデルとCSPサービスを活用した音声AIエージェントプラットフォームを提供し、クラウドとオンプレミス双方で、業界を問わず柔軟な音声インタラクションを実現します",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116600.png"
+  },
+  {
+    "id": "ils-018",
+    "name": "Butlr Technologies Inc.",
+    "category": "台湾有望スタートアップブース",
+    "product": "AIデータセンターのための、ラック単位の熱インテリジェンス",
+    "description": "ラック列、PDU、電気室に64画素の熱センサーを設置し、熱を常時データ化します。ホットスポットや異常、火災リスクを早期に検知。MITメディアラボ発、カメラ不使用。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118445.png"
+  },
+  {
+    "id": "ils-019",
+    "name": "Qinvicta",
+    "category": "台湾有望スタートアップブース",
+    "product": "半導体からGPUまでを支える、次世代暗号エンジン",
+    "description": "Qinvictaは、半導体、組込みソフトウェア、GPU向けに、NIST認証PQCを基盤とした次世代暗号エンジンを開発するディープテック・セキュリティ企業です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119183.png"
+  },
+  {
+    "id": "ils-020",
+    "name": "IsCoolLab Co., Ltd.",
+    "category": "台湾有望スタートアップブース",
+    "product": "体験をクールにしよう",
+    "description": "AI駆動の自動化を通じて製造業のイノベーションを推進し、インテリジェント産業システムの未来を形作り、デジタルトランスフォーメーションを加速させています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119184.png"
+  },
+  {
+    "id": "ils-021",
+    "name": "Authme Co., Ltd.",
+    "category": "台湾有望スタートアップブース",
+    "product": "使い慣れたAI・コラボツールで企業業務を自動化",
+    "description": "AI OSは文書・案件処理とシステム連携を自動化し、人の承認を組み込みます。Claude Code、ChatGPT、Codex、Slack、Microsoft Teamsから利用できます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119185.png"
+  },
+  {
+    "id": "ils-022",
+    "name": "Crescendo Lab",
+    "category": "台湾有望スタートアップブース",
+    "product": "顧客接点を動かす企業向けAIエージェント",
+    "description": "顧客文脈・企業データ・業務ツールをつなぎ、マーケティング、営業、顧客対応を実行するAI Communication Cloudです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119186.png"
+  },
+  {
+    "id": "ils-023",
+    "name": "Health2Sync シンクヘルス",
+    "category": "台湾有望スタートアップブース",
+    "product": "最大のデジタル慢性疾患予防・管理プラットフォーム",
+    "description": "私たちは世界有数の慢性疾患管理プラットフォームを構築しました。アプリストアでのユーザー評価、接続されたクリニックや病院の数、そしてケンポーが達成した成果によって定義されています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119187.png"
+  },
+  {
+    "id": "ils-024",
+    "name": "JelloX Biotech Inc.",
+    "category": "台湾有望スタートアップブース",
+    "product": "臨床応用のための世界初の3D病理学。",
+    "description": "JelloX Biotechは、組織クリアリング、蛍光染色、共焦点イメージング、AIを統合することで、3D病理学を通じて精密医療を進化させ、患者の治療成果を改善し医療業務負担を軽減します",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119188.png"
+  },
+  {
+    "id": "ils-025",
+    "name": "OmniEyes Corporation Limited.",
+    "category": "台湾有望スタートアップブース",
+    "product": "より安全でスマートな商業モビリティのためのAIフリートインテリジェンス",
+    "description": "OmniEyesはエッジAI、ビデオテレマティクス、クラウドエージェントAI、データ分析を通じて、商用フリートの安全性、ドライバーのパフォーマンス、運用効率の向上を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119189.png"
+  },
+  {
+    "id": "ils-026",
+    "name": "Taiwan Ruomei Technology Corp",
+    "category": "台湾有望スタートアップブース",
+    "product": "次世代熱管理のための先進材料×AIへ",
+    "description": "台湾若梅は、先進的な熱材料、AIシミュレーション、冷却システムを統合し、AIサーバー、半導体、EV、5G、次世代電子機器の熱問題を解決しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119190.png"
+  },
+  {
+    "id": "ils-027",
+    "name": "エスディーテック株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "企画発想から実装までUXの高いモノ・コトづくりをデザイン思考により実現",
+    "description": "人間中心設計によるアプローチでアイデア創出・デザイン設計を行うデザインコンサルティングと、その設計を具現化（PoC・開発・実装）できるエンジニアリングにより、UXの高い製品・サービス開発を実現します",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117017.png"
+  },
+  {
+    "id": "ils-028",
+    "name": "Crosshub Inc",
+    "category": "分野別スタートアップブース",
+    "product": "統合された本人認証とシンプルな支払いソリューション",
+    "description": "グローバルなID認証とシンプルな決済統合ソリューションを通じてあらゆる業界に適用でき、貴社のグローバル展開を容易にします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118600.png"
+  },
+  {
+    "id": "ils-029",
+    "name": "キャスレーディープイノベーションズ株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "furehako：フィジカル・ソブリンAI・無人機のプラットフォーム",
+    "description": "ソブリンAI・データ信頼・分散ストレージを組み合わせたプラットフォーム。M2Mによるデータ主権、超大容量データのエッジストレージ、量子耐性データ保存による高セキュリティ基盤。AI運用の必須技術。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118608.png"
+  },
+  {
+    "id": "ils-030",
+    "name": "ソルビファイ株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "上流工程ドキュメントを自社仕様で生成・レビューするSaaS",
+    "description": "上流工程ドキュメントをAIが生成・レビューするSaaS。議事録や過去資料を入れるだけで、自社のひな型・記載ルールに沿った企画書・要件定義書・テストケースを担当者のスキルによらず高品質に作成できます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118870.png"
+  },
+  {
+    "id": "ils-031",
+    "name": "AudAi Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "AIエージェント向けオーディオネイティブ基盤モデル",
+    "description": "AudAiは、AIエージェントに「耳」をもたらす音声理解基盤モデルを開発しています。文字起こしでは捨てられてしまう情報までを聴き取り、そこで検出した欠陥を修復します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118915.png"
+  },
+  {
+    "id": "ils-032",
+    "name": "PILLSANG Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "クリック前に危険URLを遮断するオンデバイスAI",
+    "description": "悪性URLを実時間で遮断するオンデバイスAIを開発。CatchAllは韓国Android版で累計50万DL、2026年8月iOS版開始。B2Bエンジンで金融・通信・公共向けフィッシングサイトを遮断。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119104.png"
+  },
+  {
+    "id": "ils-033",
+    "name": "TheBrant Co.,LTD",
+    "category": "分野別スタートアップブース",
+    "product": "TrustCycle:信頼できる中古電話検査と交換",
+    "description": "THE BRANTは、電話流通事業を基に、中古電話の検査、格付け、価格推奨、取引管理を統合するB2Bソフトウェア「TrustCycle」を開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119106.png"
+  },
+  {
+    "id": "ils-034",
+    "name": "クオルガ株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "デジタル社会の信頼を最初の1bitから支える、検証可能な物理乱数基盤",
+    "description": "暗号鍵の材料となる物理乱数＝エントロピーを生成するQRUを開発中。予測不能性の評価、生成源の監視、運用証跡を一体化し、既存の鍵管理・認証基盤を補完。製品組込み・共同サービス化のパートナーを募集します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119127.png"
+  },
+  {
+    "id": "ils-035",
+    "name": "addfarm Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "AIoT施設園芸モニタリング・意思決定支援",
+    "description": "ADDFARMは施設園芸向けにAIoTモニタリングとAIサービスを提供し、リアルタイムの環境・土壌データを農場運営に活用できる実践的な判断情報へ変換します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119406.png"
+  },
+  {
+    "id": "ils-036",
+    "name": "Fairy Devices株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "コネクテッドワーカーと音声AIによる産業現場DXソリューション",
+    "description": "産業現場のDXを実現するコネクテッドワーカーソリューションを提供し、日本発の「熟練工AI」を世界に発信します。フィールドワークの現場効率化や音声AIを活用した業務自動記録等、幅広い用途に活用可能です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/21025977.png"
+  },
+  {
+    "id": "ils-037",
+    "name": "株式会社Genics",
+    "category": "分野別スタートアップブース",
+    "product": "口腔ケアロボットg.eNで拓く未病改善と健康長寿社会",
+    "description": "世界初の口腔ケアロボットg.eNを展開し、“くわえるだけ”で誰もが確実な口腔ケアを実現し、健康寿命の延伸に繋げます。介護負担軽減・医療費抑制・新産業創出を通じて世界的に波及可能な事業展開を目指します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/18104550.png"
+  },
+  {
+    "id": "ils-038",
+    "name": "H&S BioLab",
+    "category": "分野別スタートアップブース",
+    "product": "マルチオミクスおよびオンデバイスAIプラットフォームによる早期腎臓ケア",
+    "description": "H&S BIOLABは、バイオマーカーIVDとAIを統合し、腎臓病のスクリーニング、診断、ケアを行います。尿オミクスとオンデバイスAIを活用し、POC向け予防医療プラットフォームを提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118880.png"
+  },
+  {
+    "id": "ils-039",
+    "name": "Sleepwave Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "AIバイオシグナル駆動の光、音、IoT睡眠制御プラットフォーム",
+    "description": "SLEEPWAVE INC.は、センサーパッド、音響、概日リズム照明などのAI搭載ソリューションで高齢者ケアとウェルビーイングを向上させる睡眠技術のリーダーです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118900.png"
+  },
+  {
+    "id": "ils-040",
+    "name": "INOCO LAB JAPAN株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "PCR不要、現場でRNAを検出するACEzyme",
+    "description": "独自の核酸反応ACEzymeにより、PCR装置を使わずRNA等を簡便・迅速に検出。小型・低コスト装置化し、医療・動物・食品・農業等の現場検査を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118930.png"
+  },
+  {
+    "id": "ils-041",
+    "name": "issin株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "無意識の健康になるソリューションの提供",
+    "description": "スマートバスマットを始めハードを軸にアプリとAIで習慣化と伴走。継続率90％以上のソリューションを提供。さらにストレスチェック、健診データ取り込みをワンタッチでできるダッシュボードなど健康経営も提供。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118936.png"
+  },
+  {
+    "id": "ils-042",
+    "name": "奈良先端科学技術大学院大学　情報科学領域　生体画像知能研究室",
+    "category": "分野別スタートアップブース",
+    "product": "レントゲン1枚で骨と筋肉の健康を見える化",
+    "description": "既存のX線・CT画像をAIで解析し、骨密度・筋肉量・筋質を自動定量。骨粗鬆症、サルコペニア、骨折リスクの早期発見と継続モニタリングを可能にする医用画像AI事業です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118949.png"
+  },
+  {
+    "id": "ils-043",
+    "name": "Webmob Software Solutions Pvt Ltd",
+    "category": "分野別スタートアップブース",
+    "product": "パーキンソン病診断から330機関の取引基盤まで。次は御社と。",
+    "description": "規制産業の関係者が集まる基盤レイヤーを構築・運用しています:臨床データ、本人確認、監査証跡、決済。機関投資家向け取引基盤を9年間運用。日本では臨床グレードの計測を構築しました。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118996.png"
+  },
+  {
+    "id": "ils-044",
+    "name": "COMPLEXION Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "Manolin — 介護のアセスメントをデジタル化するCES受賞AI",
+    "description": "AIヘルスケア企業です。「Manolin」は介護の紙の評価を、専用機器の要らないAI測定に置き換えます。CES 2025革新賞受賞。筑波大学との共同研究を進め、日本市場への参入を加速しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119437.png"
+  },
+  {
+    "id": "ils-045",
+    "name": "株式会社ファルネックス",
+    "category": "分野別スタートアップブース",
+    "product": "「届けるを変え、医療の未来を変える。」唯一無二の製剤技術",
+    "description": "医薬品、高度管理医療機器の革新的な開発パイプラインを同時に併せ持つ弊社は、「3D幾何学液晶プラットフォーム」によるこれらの製品とともに、まだ見ぬ顧客オリジナルの製品の社会実装に貢献いたします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116421.png"
+  },
+  {
+    "id": "ils-046",
+    "name": "北海道大学 循環器内科学 心不全研究グループ",
+    "category": "分野別スタートアップブース",
+    "product": "フレイル判定をAIで標準化：心不全患者の客観的なフレイル判定プログラム",
+    "description": "心不全患者の歩行動画をAI解析し、主観的でばらつきが大きかったフレイル評価を客観的かつ自動で行うスマホアプリを開発。治療方針決定やリハビリ介入を支援し、医療の質向上を目指す世界初の医療機器プログラム。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118472.png"
+  },
+  {
+    "id": "ils-047",
+    "name": "フィジオロガス・テクノロジーズ株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "給水不要の在宅用血液透析装置",
+    "description": "透析液再循環技術により給排水を不要とした小型の次世代在宅血液透析装置を開発。リアルタイム分析機能で治療を制御することが可能で、在宅治療の高い安全性を担保。透析患者のQOL向上と社会復帰を実現する。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118790.png"
+  },
+  {
+    "id": "ils-048",
+    "name": "DSLAB, Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "光・冷却・AI・IoTで、ペットと人の肌・傷跡ケアを革新する",
+    "description": "DSLABは、PBM、冷却、AIサービス、IoTを統合し、ペットヘルスケアおよび人間の肌・傷跡ウェルネス向けのBio-OLEDライトケアデバイスおよびヘルスケアプラットフォームを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118883.png"
+  },
+  {
+    "id": "ils-049",
+    "name": "Labinno",
+    "category": "分野別スタートアップブース",
+    "product": "ShoTrack",
+    "description": "屋外ドライビングレンジの新たな基準",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118885.png"
+  },
+  {
+    "id": "ils-050",
+    "name": "iBoda",
+    "category": "分野別スタートアップブース",
+    "product": "AIを活用した美術学習分析プラットフォーム「iboda」",
+    "description": "AI美術学習プラットフォーム。AAT(美術適性テスト)は芸術的適性を評価し、AAC(美術分析批評)は美術作品を分析します。ADE(美術記述評価)は学生の記録作成を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118886.png"
+  },
+  {
+    "id": "ils-051",
+    "name": "Immortal Brain Co., Ltd",
+    "category": "分野別スタートアップブース",
+    "product": "RealMe:客観的な自己理解のためのEEG+AI",
+    "description": "RealMeはEEGベースの人間感知とAIを組み合わせて個々の特性、強み、行動パターンを分析し、教育、キャリア、人事向けにパーソナライズされたレポートやコーチングを提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118902.png"
+  },
+  {
+    "id": "ils-052",
+    "name": "Mango Creative",
+    "category": "分野別スタートアップブース",
+    "product": "AIキャラクター制作者をIPオーナーへ育てる制作スタジオ",
+    "description": "UUMMAIはAIエージェント基盤のキャラクターチャットボット統合制作スタジオです。制作・公開・検証・精算までを一つの環境で提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118917.png"
+  },
+  {
+    "id": "ils-053",
+    "name": "SODALIVE INC.",
+    "category": "分野別スタートアップブース",
+    "product": "IPキャラクター＆クリエイター向けAIエンタメプラットフォーム",
+    "description": "SODALIVEは、Webtoon・Web小説などのIPキャラクターを、AIコンテンツ・チャット・ライブを通じてAIクリエイターへと展開するAIエンタメプラットフォームです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118919.png"
+  },
+  {
+    "id": "ils-054",
+    "name": "FluentT Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "保険営業の対話を磨くAIコーチ",
+    "description": "保険営業チーム向けに、AIロールプレイ、実際の通話・面談分析、管理者コーチングを一つの流れで提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118901.png"
+  },
+  {
+    "id": "ils-055",
+    "name": "bulls research",
+    "category": "分野別スタートアップブース",
+    "product": "全NASDAQ銘柄のAI企業分析を、コーヒー1杯の価格で",
+    "description": "biteは、NASDAQ上場6,800社超を対象に、1分要約・事業モデル・成長見通し・財務の要点・チャート分析をまとめたAI企業分析レポートを約3ドルで即時PDF提供するサービスです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119105.png"
+  },
+  {
+    "id": "ils-056",
+    "name": "Neurofusion Incorporation",
+    "category": "分野別スタートアップブース",
+    "product": "投資家を導く金融リサーチ基盤（Financial Engine提供）",
+    "description": "個人投資家向けにAIが分析から投資判断・ポートフォリオ管理までガイドする投資プラットフォームを運営する一方、証券・資産運用会社にはそのAIエンジンをライセンス提供するB2C/B2B事業を展開",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119107.png"
+  },
+  {
+    "id": "ils-057",
+    "name": "株式会社VCAT AI",
+    "category": "分野別スタートアップブース",
+    "product": "分析・制作・広告運用・AI検索最適化をつなぐマーケティングAI",
+    "description": "競合・市場分析、ブランドに沿った動画・画像生成、広告運用、AI検索最適化。マーケティングの「調べる・作る・届ける・見つけられる」を、AIソリューションで支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118206.png"
+  },
+  {
+    "id": "ils-058",
+    "name": "Indent Corporation",
+    "category": "分野別スタートアップブース",
+    "product": "日本事業総括",
+    "description": "AI搭載のマーケティング代理店サービスで、データ駆動型の洞察と戦略、クリエイター発見、コンテンツ実行、パフォーマンス最適化を結びつけます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118401.png"
+  },
+  {
+    "id": "ils-059",
+    "name": "Grinda AI Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "海外バイヤーを発掘し輸出商談まで導くAI営業エージェント",
+    "description": "RINDAは輸出のためのAI営業エージェントです。8億社超のデータから適合バイヤーを抽出し、17言語で現地向けの文面を作成、初回接触から商談までを運用します。900社以上が利用。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119103.png"
+  },
+  {
+    "id": "ils-060",
+    "name": "BORNLAKE Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "AI搭載のインテリジェント対ドローンソリューションJARA C-UAS",
+    "description": "AI搭載C-UASは、RF信号を検知し、プロトコルベースのCyber Takeoverで対象ドローンを無力化します。AI・SDR技術により、未知信号や周波数ホッピングに対応し、干渉を最小限に抑えます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118881.png"
+  },
+  {
+    "id": "ils-061",
+    "name": "合同会社WeeFeeS",
+    "category": "分野別スタートアップブース",
+    "product": "ドローンを「飛ぶ機械」から「働く機械」へ",
+    "description": "ドローンに清掃・消火などの実作業を担わせる後付けユニットを開発。独自の反力抑制技術により、高所作業の省人化・安全化を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118928.png"
+  },
+  {
+    "id": "ils-062",
+    "name": "九州大学大学院　工学研究院　松本研究室",
+    "category": "分野別スタートアップブース",
+    "product": "メタンの部分酸化によるメタノール生成と発電を同時に行う光駆動燃料電池",
+    "description": "非活用のメタンガスを有効利用する環境に優しい小規模分散型メタノール生成技術。メタノール生成と同時に発電を行う省エネ、経済的燃料電池。別途、バイオマスからメタノール、水素、NH3を生成する技術も研究中。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118940.png"
+  },
+  {
+    "id": "ils-063",
+    "name": "MAZE Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "RIZE:売却前に何が起こるかを明らかにする知覚AI",
+    "description": "RIZEはCCTVをプライバシー優先の小売インテリジェンスに変えています。Edge AIは、販売前の顧客構成の変化(訪問、滞在、返品)を追跡・分析し、店舗運営の改善を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118882.png"
+  },
+  {
+    "id": "ils-064",
+    "name": "FUST Lab.",
+    "category": "分野別スタートアップブース",
+    "product": "分散・分解技術",
+    "description": "360°集束超音波により、界面活性剤を使用せずにPFASの分解と均一なナノ分散が可能になります。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23116975.png"
+  },
+  {
+    "id": "ils-065",
+    "name": "株式会社LumillioBio",
+    "category": "分野別スタートアップブース",
+    "product": "あらゆる生物に適用可能なリアルタイム・マルチモニタリング化学センサ",
+    "description": "製薬・CDMO、食品・化成品などバイオものづくり企業向けに、培養・発酵工程の糖・乳酸等の変動を常時可視化。HPLC等の精密分析を補完し、工程判断の迅速化、品質安定化、条件最適化、省人化を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117125.png"
+  },
+  {
+    "id": "ils-066",
+    "name": "株式会社ZeroOne",
+    "category": "分野別スタートアップブース",
+    "product": "デジタルツインの新しい活用",
+    "description": "デジタルツインを活用し様々な産業向けのソリューションを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117259.png"
+  },
+  {
+    "id": "ils-067",
+    "name": "株式会社エイゾス",
+    "category": "分野別スタートアップブース",
+    "product": "研究開発用の数値解析AI解析プラットフォーム",
+    "description": "最小限の実験データから深層学習モデルを生成し、超高精度予測・要因分析・多目的最適化・AI連鎖解析が可能。材料探索や機器設計支援、シミュレーションサロゲートモデリングも可能で、研究開発DXを強力に支援。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118188.png"
+  },
+  {
+    "id": "ils-068",
+    "name": "株式会社パンタレイ",
+    "category": "分野別スタートアップブース",
+    "product": "流体・レオロジーの専門知で、企業R&Dの難題を解き、社会実装へ",
+    "description": "流体・レオロジーを核に、実験・計測・数値解析・設計を組み合わせ、企業R&Dの未解決課題を解決。食品・化学・機械・空調・環境・エネルギーまで展開する大学発ディープテック企業です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118585.png"
+  },
+  {
+    "id": "ils-069",
+    "name": "Aidee Studio Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "B2B製品開発コンサルティング＆ビジネスマッチングソリューション",
+    "description": "AIDEEは、戦略・デザイン・エンジニアリング・マーケティングに特化したAI専門家チームを自由に構成し、実務知識をもとに製品アイデアを多角的に検討・発展させるソリューションです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118878.png"
+  },
+  {
+    "id": "ils-070",
+    "name": "HDATF Co.",
+    "category": "分野別スタートアップブース",
+    "product": "より速く、より広く、より深く探索し、より良い研究へ。",
+    "description": "私たちのプラットフォームは、研究者が洞察を得て、明確な研究方向性を設定し、事務作業を軽減することで、最も重要な仕事に集中できるようにします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118916.png"
+  },
+  {
+    "id": "ils-071",
+    "name": "MY LINK",
+    "category": "分野別スタートアップブース",
+    "product": "納期・生産日程・資源管理のための製造DXプラットフォーム",
+    "description": "LinkBizは、受注型製造企業向けに、受注から出荷までの生産日程・資源・協業を統合管理するプロジェクト基盤の製造DXプラットフォームです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118958.png"
+  },
+  {
+    "id": "ils-072",
+    "name": "Groundup.ai Pte Ltd",
+    "category": "分野別スタートアップブース",
+    "product": "世界は機械で動いている その機械を絶対止まらないようにする。",
+    "description": "当社は、自律型機械知能を活用したコグニティブメンテナンスのパイオニアとして、ミッションクリティカルな資産をダウンタイムゼロで最高のパフォーマンスで稼働させ続けます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118964.png"
+  },
+  {
+    "id": "ils-073",
+    "name": "GFI JAPAN 株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "消火マイクロカプセルの提案",
+    "description": "GFIは熱感知マイクロカプセル技術を用いた革新的な消火ソリューションを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119331.png"
+  },
+  {
+    "id": "ils-074",
+    "name": "株式会社LINK-US",
+    "category": "分野別スタートアップブース",
+    "product": "「溶かさず接合」超音波複合振動が起こす製造業の接合イノベーション",
+    "description": "特許技術「超音波複合振動」を用い、金属同士を溶かさずに常温で強固に接合する技術・装置を提供する事業です。はんだレスで熱ダメージやバリを抑制し、次世代半導体や電池の製造革新に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116522.png"
+  },
+  {
+    "id": "ils-075",
+    "name": "Vault optics Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "TGV(Through-Glass Via)エッチングプロセス",
+    "description": "微細エッチング技術による多様な産業分野への展開\n- TGV(スルーグラス・ビア)エッチングプロセス、FMM（Fine Metal Mask）の製造工程および検査",
+    "image": "https://ils.tokyo/event_2026/summit_image/23116973.png"
+  },
+  {
+    "id": "ils-076",
+    "name": "JK Technology Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "使用済みEVバッテリーの統合制御ソリューション",
+    "description": "• M-BMSは中古のEVパックで元のBMSを置き換え、分解せずに内部データアクセスと制御を可能にします\n・AI-PDCSは日本におけるHEVのローカライズデータを監視、保存、分析します",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118879.png"
+  },
+  {
+    "id": "ils-077",
+    "name": "株式会社グリーンマテリアルラボ",
+    "category": "分野別スタートアップブース",
+    "product": "東大発の次世代エレクトロニクス材料「ε酸化鉄」と「λ型五酸化三チタン」",
+    "description": "高周波吸収・ノイズ抑制機能や巨大保磁力を有するナノ粒子磁性材料「ε酸化鉄」、光スイッチング機能や蓄熱性能を有する「λ型五酸化三チタン」等、次世代エレクトロニクス向け材料の開発・販売をしています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118948.png"
+  },
+  {
+    "id": "ils-078",
+    "name": "WATT",
+    "category": "分野別スタートアップブース",
+    "product": "高層ビル向け配送ロボット",
+    "description": "入居者の利便性と差別化されたプレミアムブランディングのためのロボット配送サービス",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118959.png"
+  },
+  {
+    "id": "ils-079",
+    "name": "PEDI JAPAN合同会社",
+    "category": "分野別スタートアップブース",
+    "product": "時空間キューブによる施工進捗可視化",
+    "description": "「時間×空間」の時空間キューブに、位置・工種・作業別の進捗と証拠写真・検査・承認プロセスを統合。信頼性の高い施工進捗を可視化し、計画との差や停滞を分析して、遅延・手戻りを防ぐプラットフォームです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119318.png"
+  },
+  {
+    "id": "ils-080",
+    "name": "hai semo",
+    "category": "分野別スタートアップブース",
+    "product": "すべての購入を監査に対応できる証拠に変えるAI",
+    "description": "SEMOはすべての購入を監査対応の記録に変換します:依頼、見積もり、価格確認、ベンダーの理由付け、証拠資料。250の公共機関で証明済み。日本のR&D、PoCパートナーを探しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119108.png"
+  },
+  {
+    "id": "ils-081",
+    "name": "株式会社Greenphard Energy",
+    "category": "分野別スタートアップブース",
+    "product": "電力を使う設備を、電力を生み出す設備に変える",
+    "description": "工場や倉庫の冷凍・冷蔵・空調を非改造で制御し、電気を減らしながら、電力市場に出せる調整力を作る事業です。加えて電力契約やデータ活用まで提案し、お客様の電力の使い方を丸ごと良くします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119124.png"
+  },
+  {
+    "id": "ils-082",
+    "name": "SYU Co., Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "企業のサプライチェーン業務を自動化するAIエージェント",
+    "description": "AI搭載MROが購買依頼を解析し、発注から入荷・精算まで自動化します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119405.png"
+  },
+  {
+    "id": "ils-083",
+    "name": "ＥＵＶフォトン株式会社",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "極端紫外EUV光の照射・評価・解析で先端半導体用材料開発を短ＴＡＴ化",
+    "description": "自社保有のEUV光源と照射・解析装置群で、先端半導体用材料の特性変化を詳細に計測・分析するサービスを短納期で提供。フォトレジスト、ペリクル、マスクなどの開発加速。九州大学と連携した共同研究も推進。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118788.png"
+  },
+  {
+    "id": "ils-084",
+    "name": "株式会社Asobica",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "「顧客の声」を起点に、 企業と顧客の関係性を変革する",
+    "description": "ゼロパーティーデータ（顧客の本音データ）とAIを起点に、あらゆるCXを改善するプラットフォーム・BtoB SaaS「coorum」で、企業の顧客中心経営を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/21026229.png"
+  },
+  {
+    "id": "ils-085",
+    "name": "株式会社DATAFLUCT",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "高度な「データ基盤・モデル開発・AIエージェント開発」をフル支援",
+    "description": "「Airlake」はあらゆるデータを価値に変え、複雑な業務課題の解決に役立てるマルチモーダルAIプラットフォーム。データ基盤、AIモデル、AIエージェント開発を一括支援し、安全・高速なDXを実現します",
+    "image": "https://ils.tokyo/event_2026/summit_image/21026050.png"
+  },
+  {
+    "id": "ils-086",
+    "name": "ストックマーク株式会社",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "企業に眠る暗黙知やデータを構造化を支援するAIサービスの提供",
+    "description": "独自の生成AI・LLMで企業に眠る暗黙知や非構造データを構造化し、日本企業の意思決定と価値創造を変えるエンタープライズ向けAIサービスを提供しています",
+    "image": "https://ils.tokyo/event_2026/summit_image/16103722.png"
+  },
+  {
+    "id": "ils-087",
+    "name": "GREEN OFFSHORE株式会社",
+    "category": "日本公庫厳選│成長企業ブース",
+    "product": "既存設備を即座にAI知能化する、農業・エネルギー統合クラウド制御OS",
+    "description": "既存の農業・エネルギー設備へクラウドから高度な先回り制御を付与する統合OS事業です。ハードを持たないアセットライト構造で高粗利SaaSを実現し、設備最適化と脱炭素データの二次利活用を推進します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119255.png"
+  },
+  {
+    "id": "ils-088",
+    "name": "株式会社ファームシップ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "希少化作物・バイオ設計作物の植物工場生産ソリューション",
+    "description": "露地で不安定な希少化作物や成分・香味を設計制御した作物を、植物工場で生産するソリューションを提供します。静岡茶やブルゴーニュのテロワールを再現で、輸出抹茶・ワインぶどう等が実現できます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/14090378.png"
+  },
+  {
+    "id": "ils-089",
+    "name": "株式会社キノテック",
+    "category": "NEDO注目イノベーションブース",
+    "product": "アルカリ浸出法による電炉ダストからの亜鉛リサイクル脱炭素プロセスの開発",
+    "description": "特別管理廃棄物である電炉ダスト中の亜鉛分を高純度金属亜鉛にて回収する新技術の開発。既存技術であるコークスを使うウェルツキルン法と比べ、安価・省エネ・脱炭素効果が高い環境にやさしいビジネスとなる",
+    "image": "https://ils.tokyo/event_2026/summit_image/23116940.png"
+  },
+  {
+    "id": "ils-090",
+    "name": "産業技術総合研究所　エレクトロニクス基盤技術研究部門",
+    "category": "NEDO注目イノベーションブース",
+    "product": "超高速電子線半導体検査装置のための平面型マルチ電子ビーム源",
+    "description": "AI向け先端半導体デバイス製造における検査の課題を解決するマルチ電子ビーム超高速半導体検査装置のキーデバイスである、マルチ電子ビーム源の開発・製造・販売を行うスタートアップの設立を目指しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24118047.png"
+  },
+  {
+    "id": "ils-091",
+    "name": "産業技術総合研究所　省エネルギー技術研究部門",
+    "category": "NEDO注目イノベーションブース",
+    "product": "未利用熱を用いた発電〜従来型モジュールの課題を解決する新型モジュール〜",
+    "description": "未利用熱を用いた発電（熱電発電）を行います。特に、従来の未解決課題を抜本的に解決す\nる「横型熱電モジュール」を実現する革新的な新材料を開発し、将来のカーボンニュートラル実現に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24118049.png"
+  },
+  {
+    "id": "ils-092",
+    "name": "一橋大学大学院ソーシャル・データサイエンス研究科・本武研究室",
+    "category": "NEDO注目イノベーションブース",
+    "product": "予測するAIから、原理を発見するAIへ",
+    "description": "科学者の推論と物理知識をAIに組み込み、少数・複雑データから「なぜ」を説明できる知識を抽出。材料・計測・製造などの研究開発で、現象理解、条件最適化、法則発見を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24118051.png"
+  },
+  {
+    "id": "ils-093",
+    "name": "物質・材料研究機構　超ワイドギャップ半導体グループ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "ダイヤモンド電界効果トランジスタの高性能化に向けた研究開発",
+    "description": "パワーデバイス材料として極めて優れた半導体特性を有するダイヤモンドを活用し、高性能電界効果トランジスタの開発に取り組んでいます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118254.png"
+  },
+  {
+    "id": "ils-094",
+    "name": "学校法人早稲田大学　高分子化学研究室　硫黄ポリマーグループ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "接着しにくい材料同士をくっつける接着剤",
+    "description": "硫黄を含む機能性高分子を合成しています。最近、スーパーエンプラと分子レベルで混合する高分子を発見し、金属との異種界面接着剤として応用しました。現在は接着性能向上のほか、この材料の用途を探索しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118525.png"
+  },
+  {
+    "id": "ils-095",
+    "name": "早稲田大学　材料力学・材料強度学研究グループ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "極限環境でも壊れない。強度と靭性を両立する異種接合技術",
+    "description": "異種材料の界面を高強度かつ高靭性に接合し、高温・低温などの極限環境でも高い信頼性を維持する接合技術です。航空宇宙、モビリティー、エネルギー、電子デバイスなど次世代製品への展開を目指します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118890.png"
+  },
+  {
+    "id": "ils-096",
+    "name": "株式会社岐阜多田精機",
+    "category": "NEDO注目イノベーションブース",
+    "product": "カーボンプライシングを見据えた省エネ射出成形システムの開発",
+    "description": "NEDOプロジェクト「カーボンプライシングに向けた省エネ射出成形法の開発」。樹脂射出成形の消費電力を約30%削減する技術を、開発3年＋実証2年で進め、その後にコンソーシアム設立し、社会実装を目指す。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118891.png"
+  },
+  {
+    "id": "ils-097",
+    "name": "静岡大学 水嶋研究室",
+    "category": "NEDO注目イノベーションブース",
+    "product": "低環境負荷な物質分離技術の新開発　～グリーン泡沫分離～",
+    "description": "環境残留性汚染物質の処理課題と規制リスクに対し、大量の汚染水を迅速に減容化する初期対応が急務である。本提案は、高効率・低環境負荷・導入容易性を備えた「グリーン泡沫分離」を開発し、製造業等の重要産業における迅速な浄化対応と持続可能な事業継続を支援する。",
+    "image": ""
+  },
+  {
+    "id": "ils-098",
+    "name": "株式会社エアメンブレン",
+    "category": "NEDO注目イノベーションブース",
+    "product": "半導体から創薬まで支える、グラフェン膜の量産技術",
+    "description": "産総研発の合成・転写技術で、大面積・高品質のグラフェンを量産します。半導体・創薬・計測ではすでに製品として供給し、センサー、光学、エネルギーなど新たな用途を事業会社と共同で開拓しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/19104729.png"
+  },
+  {
+    "id": "ils-099",
+    "name": "株式会社ミーバイオ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "脱ナフサ・バイオ芳香族化合物（半導体原料）の製造",
+    "description": "微生物とバイオマスからバイオ芳香族化合物を製造。特に高機能化学品（スパーエンジニアリングプラスチックなど）や半導体原材料・製造材料に使用される化学品のバイオ化ソリューションを提供。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119234.png"
+  },
+  {
+    "id": "ils-100",
+    "name": "LEBO ROBOTICS株式会社",
+    "category": "NEDO注目イノベーションブース",
+    "product": "風力発電機メンテナンスロボット　高所作業を安全安価に！",
+    "description": "再生可能エネルギーの普及は待った無し。温暖化ガスの排出を減らし、安価に、安定した電源となることが必要となります。ロボットを活用することで予防保全を実現し、再生可能エネルギーの普及に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117621.png"
+  },
+  {
+    "id": "ils-101",
+    "name": "TopoLogic株式会社",
+    "category": "NEDO注目イノベーションブース",
+    "product": "トポロジカル物質で世界の産業課題を解決する",
+    "description": "世界に先駆けて、トポロジカル物質を用いた熱流センサ（TL-SENSING™）と磁気メモリ（TL-RAM™）の開発を通じ、新たなデバイス、サービスを社会実装する東京大学発の研究開発型スタートアップ企業",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117820.png"
+  },
+  {
+    "id": "ils-102",
+    "name": "LiSTie株式会社",
+    "category": "NEDO注目イノベーションブース",
+    "product": "世界初の超高純度リチウム回収技術LiSMIC",
+    "description": "塩湖、使用済リチウムイオン電池、鉱石、海水等様々なリチウム源から99.99％の超高純度リチウムをワンパス（膜１枚を通すのみ）で回収する独自技術LiSMICの実装",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116458.png"
+  },
+  {
+    "id": "ils-103",
+    "name": "株式会社グリーンケミカル",
+    "category": "NEDO注目イノベーションブース",
+    "product": "非可食バイオマスから、次世代の高機能素材の製造",
+    "description": "非可食バイオマス由来の糖から、独自の触媒技術でHMF・FDCA等の高機能化学品を製造。PEFをはじめとする次世代素材への展開と、化学・素材メーカーとの共同開発・事業化を目指します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/18104312.png"
+  },
+  {
+    "id": "ils-104",
+    "name": "株式会社DigitalArchi",
+    "category": "NEDO注目イノベーションブース",
+    "product": "3Dプリンタで建築をつくる",
+    "description": "大型3Dプリンタによる廃プラ製型枠を独自展開。従来型枠に代わる「デジタル型枠」を通じ、建築表現の拡張と施工の省人化を両立します。使用後の型枠は現場から回収・再資源化し、資源循環型社会にも貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/21025831.png"
+  },
+  {
+    "id": "ils-105",
+    "name": "株式会社マテリアルゲート",
+    "category": "NEDO注目イノベーションブース",
+    "product": "単分子誘電体で実現する超小型・低消費電力の次世代メモリ",
+    "description": "AIやビッグデータの発展により、データ処理に伴う莫大な消費電力の削減は喫緊の社会課題である。我々は単分子誘電体を組み込んだ高速・高密度・低消費電力を実現した次世代メモリを開発し上記課題の解決を目指す。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118627.png"
+  },
+  {
+    "id": "ils-106",
+    "name": "株式会社ＯＯＹＯＯ",
+    "category": "NEDO注目イノベーションブース",
+    "product": "CO₂を回収することが、あらゆる産業であたりまえに行われる社会を目指す",
+    "description": "排気ガスまたは空気から低エネルギーかつコンパクトにCO2を分離する膜を開発し、ネットゼロの実現を加速します",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118466.png"
+  },
+  {
+    "id": "ils-107",
+    "name": "ＡＭＰＨＩＣＯ ＪＡＰＡＮ株式会社",
+    "category": "NEDO注目イノベーションブース",
+    "product": "水も有害な薬剤も使わずに、機能と色を量産するテキスタイル技術",
+    "description": "無水着色のAMPHICOLORと、PFASを使わない透湿防水のAMPHITEX。ともに既存の紡糸機・織機・ラミネート設備に載り、工場に設備投資を求めません。織布工場へライセンスし収益化します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118231.png"
+  },
+  {
+    "id": "ils-108",
+    "name": "株式会社ファーメンステーション",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "微生物発酵による未利用バイオマスのアップサイクルと資源循環事業",
+    "description": "未利用バイオマスを原料として、食経験がある微生物を駆使した独自の発酵技術を利用して、食品素材を中心としたアップサイクルの研究開発と事業化を行っております。",
+    "image": "https://ils.tokyo/event_2026/summit_image/14090738.png"
+  },
+  {
+    "id": "ils-109",
+    "name": "株式会社セツロテック",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "ゲノム編集技術により畜産や農業そして医薬品開発を高効率化させます",
+    "description": "ゲノム編集は動物や植物の遺伝情報を自在に改変させ、進化を促進させることができます。この技術を活用し、畜産や農業分野で高速の品種改良、高付加価値商品開発を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/17104151.png"
+  },
+  {
+    "id": "ils-110",
+    "name": "グランドグリーン株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "ゲノム編集などの新作物品種技術を基盤としたアグリバイオテク企業",
+    "description": "遺伝子組換えによらずあらゆる作物・品種に適用可能な独自のゲノム編集法Gene Appにより、新たな種苗を短期間で作出し、農業と食のバリューチェーンに種苗の分野から新たな価値を提供。",
+    "image": "https://ils.tokyo/event_2026/summit_image/18104234.png"
+  },
+  {
+    "id": "ils-111",
+    "name": "プラチナバイオ株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "データ駆動型の育種/機能性材料開発",
+    "description": "持続可能な原料調達に向けたデータ駆動型育種や、動物実験回避でアニマルウェルフェアな材料開発に向け、生物の遺伝子発現変動パターン等を分析するバイオインフォマティクス解析（ゲノム解析）環境を提供",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116563.png"
+  },
+  {
+    "id": "ils-112",
+    "name": "株式会社TOWING",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "サステナブルかつ高効率な農業システム“宙農”の普及",
+    "description": "超良質土壌環境を”創る”世界初のアグリテックを活用。農地へ炭素固定可能なバイオ炭をベースに微生物培養を行い、有機肥料高速無機化や耐病性向上等の機能付加。土壌改良材や苗、栽培システムとして展開中です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116696.png"
+  },
+  {
+    "id": "ils-113",
+    "name": "TechMagic株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "食産業の人手不足を解決する調理ロボットと業務ロボット事業",
+    "description": "厨房を自動化する調理ロボットと食品工場を自動化する業務ロボットの開発",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117011.png"
+  },
+  {
+    "id": "ils-114",
+    "name": "UMAMI UNITED JAPAN株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "卵の機能を植物で再設計する、次世代フードインフラ",
+    "description": "卵の複雑な機能を植物由来で再現し、食品メーカーのアレルギー対応と鶏卵の価格・供給リスクを解決するBtoB向け代替卵原料です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117110.png"
+  },
+  {
+    "id": "ils-115",
+    "name": "ファーメランタ株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "合成生物学による天然由来機能性成分の微生物発酵生産",
+    "description": "合成生物学を利用して大腸菌に多段階の新規生合成経路を構築することにより、人類の健康増進に有用な天然由来の希少成分を、高効率に発酵生産することを可能にする。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23117112.png"
+  },
+  {
+    "id": "ils-116",
+    "name": "株式会社ノベルジェン",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "生物の力で地球と共生する新世代の社会を構築する",
+    "description": "微細藻類由来の脱炭素・水浄化技術で地球温暖化や水・食糧問題を解決するGXを実現。\n生物由来高機能接着剤を開発し、医療・製薬分野へ応用展開を目指す。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117652.png"
+  },
+  {
+    "id": "ils-117",
+    "name": "株式会社マプリィ",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "地球の現場を、計測可能にする。",
+    "description": "自然資本/社会資本の現場データ計測・計画・モニタリング・評価までAIとロボティクスによるフィジカル・デジタル作業の自動化",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118610.png"
+  },
+  {
+    "id": "ils-118",
+    "name": "トレ食株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "「価値なきモノ」を、「価値ある素材」へ。",
+    "description": "籾殻を起点に、未利用植物資源を独自技術で産業素材へ転換。農業・物流・建築資材での量産採用を進め、電子機器・家電・自動車内装への展開と、石油由来原料の削減、農業・地域への利益還元を目指します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119267.png"
+  },
+  {
+    "id": "ils-119",
+    "name": "株式会社CO2資源化研究所",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "微生物の力でCO₂を資源へ変えるバイオものづくり",
+    "description": "独自のUCDI®水素菌とコリネ菌ATCC13032を技術基盤に、CO₂や非可食バイオマス由来糖から、燃料・高付加価値化学品・タンパク質等を生み出すバイオものづくり技術の研究開発・事業化を進めています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119268.png"
+  },
+  {
+    "id": "ils-120",
+    "name": "ディーツフードプランニング株式会社",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "おから×こんにゃくの新食材「ディーツ」で拓く未来の食の選択肢",
+    "description": "未利用資源に新たな価値を与え、独自技術でおいしい食へとアップサイクル。環境や食資源の課題解決に貢献しながら、肉・魚に続く“第3の選択肢”として「ディーツ」を世界へ広げます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119269.png"
+  },
+  {
+    "id": "ils-121",
+    "name": "株式会社フィット&リカバリー",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "加工性を高め食味と栄養を保ち、硬い原料を微粉末化する乾式低温爆砕技術",
+    "description": "独自の乾式低温爆砕技術で、茶葉・玄米・昆布など硬い食品原料を熱変性を抑え微粉末化し、販売する事業。添加物なしで結着し風味と栄養を保つうえ、既存の製麺・製パン設備でそのまま加工可能。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119270.png"
+  },
+  {
+    "id": "ils-122",
+    "name": "smart breedコンソーシアム",
+    "category": "農水省SBIR│注目技術ブース",
+    "product": "計測から選抜まで、勘と経験の育種をデータとAIで加速する",
+    "description": "画像AIによる表現型計測とゲノム予測を統合し、計測から交配・選抜の判断までをつなぐ育種SaaS「smart breed」。10年以上かかる品種開発を、専門人材や設備の壁を越えて加速します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119271.png"
+  },
+  {
+    "id": "ils-123",
+    "name": "ClueMetic Inc.",
+    "category": "韓国有望スタートアップブース",
+    "product": "Kビューティ体験とリアルレビュープラットフォーム",
+    "description": "クルメティックはAI基盤のKビューティ体験及びリアルレビュー収集プラットフォームを提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119395.png"
+  },
+  {
+    "id": "ils-124",
+    "name": "GRASSMEDI Co., Ltd.",
+    "category": "韓国有望スタートアップブース",
+    "product": "動物を中心とした抗炎症バイオテクノロジー企業。",
+    "description": "JAYU PETはAmazonの米国トップ4犬用歯ブラシブランドであり、Chewyで初めての韓国ペットブランドです。当社の研究開発パイプラインでは新しい獣医用医薬品の開発も行っています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119396.png"
+  },
+  {
+    "id": "ils-125",
+    "name": "NINETY PRODUCTION Inc.",
+    "category": "韓国有望スタートアップブース",
+    "product": "ESOMI:クリニック品質 + 毎日のエレガンス",
+    "description": "ESOMIは、合理的で持続可能かつ美しい新しい美容ルーティンを提案し、クリニック品質のスキンケアを誰でも手軽に受けられるようにします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119397.png"
+  },
+  {
+    "id": "ils-126",
+    "name": "Mewolmejoo Co., Ltd.",
+    "category": "韓国有望スタートアップブース",
+    "product": "アルコールブランドのカスタマイズのためのAI搭載B2Bプラットフォーム",
+    "description": "MewolmejooはAI搭載のB2Bプラットフォームを運営しており、企業やブランドが自社でカスタマイズされたアルコール飲料を開発できるようにします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119398.png"
+  },
+  {
+    "id": "ils-127",
+    "name": "TAEGEUK SAGYE",
+    "category": "韓国有望スタートアップブース",
+    "product": "韓国医学の健康ブランド、韓国医学の医師向け",
+    "description": "韓国医学の医師と大学が研究開発を行っています。\n私たちは伝統的なハーブ成分を用いた機能性食品や美容製品を製造しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119399.png"
+  },
+  {
+    "id": "ils-128",
+    "name": "BrownSkin co. Ltd.",
+    "category": "韓国有望スタートアップブース",
+    "product": "農業廃棄物や革廃棄物から作られた高性能レザー",
+    "description": "BROWNSKINは農食副産物の高級アップサイクルバイオレザー、ESGデータ基盤『ByOrbit』、持続可能な供給網向けエコ助言を提供。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119400.png"
+  },
+  {
+    "id": "ils-129",
+    "name": "RGO KOREA",
+    "category": "韓国有望スタートアップブース",
+    "product": "先進のアンチシワ技術で、肌の未来を切り拓く",
+    "description": "RGO Koreaは、先進的なアンチシワソリューションを専門とする一流の化粧品メーカーです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119401.png"
+  },
+  {
+    "id": "ils-130",
+    "name": "H2SEK",
+    "category": "韓国有望スタートアップブース",
+    "product": "H2ESK – PEM電解装置ソリューションのOEMパートナー",
+    "description": "H2ESKはPEM水電解装置スタックを開発し、水電解水素発生器の開発・製造を目指す企業との提携を歓迎します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119402.png"
+  },
+  {
+    "id": "ils-131",
+    "name": "KNL Information Systems",
+    "category": "韓国有望スタートアップブース",
+    "product": "多数傷病者救急対応システム",
+    "description": "これは、複数の死傷者が発生した場合、設計図や状況ボード上で複数事故シナリオを作成し、重症度の分類を検証する訓練です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119403.png"
+  },
+  {
+    "id": "ils-132",
+    "name": "NANOTECH Co.,Ltd",
+    "category": "韓国有望スタートアップブース",
+    "product": "CLEANER, COSMETIC, SOLDER WIRE",
+    "description": "1. 高毒性物質に代わる環境配慮型クリーナー\n2. イライトと小麦ふすまを配合した高品質な韓国スキンケア製品\n3. 高精度・低スパッタのはんだワイヤー",
+    "image": "https://ils.tokyo/event_2026/summit_image/NANOTECH_ロゴ.png"
+  },
+  {
+    "id": "ils-133",
+    "name": "Bering Lab Inc.",
+    "category": "韓国有望スタートアップブース",
+    "product": "建設現場の安全を守るAIリアルタイム多言語音声通訳",
+    "description": "日本語から多言語へ同時通訳するBeringAI Voiceを、建設現場の騒音を再現した環境で実機デモします。専門用語集による正確な訳や通訳履歴の管理もご紹介。日本の建設・製造・物流企業との共同PoCや、販売・SIパートナーとの出会いを求めています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118595.png"
+  },
+  {
+    "id": "ils-134",
+    "name": "AidALL Inc.",
+    "category": "韓国有望スタートアップブース",
+    "product": "世界初の生体模倣AI搭載 視覚障がい者向け誘導ロボット",
+    "description": "CES 2026革新賞を受賞した視覚障がい者向け誘導ロボット「Bedivere」の実機デモを実施します。学習データ不要で安全性を事前証明できるAI安全推論技術もご紹介。鉄道・モビリティ・介護・福祉機器企業やロボットメーカーとの実証・ライセンス連携を希望します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119460.png"
+  },
+  {
+    "id": "ils-135",
+    "name": "YOUTH BIO GLOBAL Co., Ltd.",
+    "category": "韓国有望スタートアップブース",
+    "product": "血管再生細胞治療薬XEPCと創傷被覆材の日本展開",
+    "description": "創傷被覆材YOUTH CELLACTIONの実物と、血管再生細胞治療薬XEPCの非臨床データをパネルで展示します。製薬・ヘルスケア企業やVCとの共同研究・ライセンス・資本提携、創傷被覆材の販売・流通パートナーとの出会いを求めています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119461.png"
+  },
+  {
+    "id": "ils-136",
+    "name": "aeacbio Co., Ltd.",
+    "category": "韓国有望スタートアップブース",
+    "product": "AIoTで作るリアルタイム・パーソナライズド・スキンケア",
+    "description": "AI肌分析に基づきスキンケアをその場で調合・吐出するスマートデバイス「BeautIT」とアプリをご紹介します。ホテル・スパ・フィットネスでのパイロット導入や、化粧品・美容機器メーカー、CVCとのPoC・資本提携を希望します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119462.png"
+  },
+  {
+    "id": "ils-137",
+    "name": "Biobytes Inc.",
+    "category": "韓国有望スタートアップブース",
+    "product": "スマホ動画でサルコペニアを評価するAI「MyoTest」",
+    "description": "スマートフォン動画でサルコペニアのリスクを評価するAI「MyoTest」をデモでご体験いただけます。800名超の臨床バイオバンクもご紹介。日本の製薬・ヘルスケア企業や医療機関との実証・販売、創薬ターゲットの共同開発を求めています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119431.png"
+  },
+  {
+    "id": "ils-138",
+    "name": "Neara",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "インフラストラクチャのインテリジェンス",
+    "description": "Nearaのプラットフォームは、大規模なネットワークのデジタル化を自動化し、モデリングと解析を可能にして、インフラストラクチャの最大の課題を大規模に解決します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117915.png"
+  },
+  {
+    "id": "ils-139",
+    "name": "MCi Carbon Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "ミネラルカーボネーションによる産業の脱炭素化",
+    "description": "私たちの使命はシンプルです。恒久的な炭素除去のための経済的道筋を創出すること。\n私たちのビジョンは明確です。炭素は価値あるものとなり、産業は持続可能になります。産業の脱炭素化は遅すぎます。今までは",
+    "image": "https://ils.tokyo/event_2026/summit_image/24118061.png"
+  },
+  {
+    "id": "ils-140",
+    "name": "MGA Thermal Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "産業熱の未来 - コスト削減。炭素削減。高温を維持しましょう。",
+    "description": "熱エネルギー貯蔵は低コストで信頼性の高い再生可能熱を24時間365日供給し、産業が操業を妨げることなくエネルギーコストと炭素を削減できるようにし、産業の脱炭素化を加速させます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24118170.png"
+  },
+  {
+    "id": "ils-141",
+    "name": "HydGene Renewables",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "化学・エネルギー用のカーボンネガティブ水素の新しい製造方法",
+    "description": "HydGeneは、糖から炭素負の水素を生成します。現在、現場でのパイロットを展開しており、ファインケミカル、エネルギー、分散型アンモニア合成の製造において市場で牽引力を持っています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118759.png"
+  },
+  {
+    "id": "ils-142",
+    "name": "Crest Robotics Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "より良く、より安全な仕事。生産性が3倍。",
+    "description": "私たちのビジョンは、建設、エネルギー、商業産業の職人たちに人間の能力と価値を増幅させる機械で、ブルーカラー労働を変革することです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119378.png"
+  },
+  {
+    "id": "ils-143",
+    "name": "Fugu Carbon Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "空気と電気から燃料を生み出す「AirRefinery」",
+    "description": "フグは、空気と電気だけから燃料をつくります。私たちの装置「AirRefinery（エア・リファイナリー）」は、燃料の原料を空気中から直接取り出し、メタノールや航空燃料に変換します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119379.png"
+  },
+  {
+    "id": "ils-144",
+    "name": "MotionLogic Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "産業生産性と安全性のための物理的AI",
+    "description": "造船所や鉄道製造施設では、生産の「動詞」(持ち上げ、交差、再配置、再装填)を視覚的に解釈し、時空を超えた手作業の生産イベントを理解します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119382.png"
+  },
+  {
+    "id": "ils-145",
+    "name": "Rux Energy Pty Ltd",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "エネルギー貯蔵の変革",
+    "description": "Rux Energyは特許取得済みの先進的なナノ多孔性MOF材料を用いて、輸送、建設、オフグリッド分野の水素およびバイオメタン貯蔵の安全性、効率性、コストを向上させています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119384.png"
+  },
+  {
+    "id": "ils-146",
+    "name": "Vixia Proprietary Limited",
+    "category": "オーストラリア有望スタートアップブース",
+    "product": "製造現場向けプラグアンドプレイAIビジョン",
+    "description": "簡単に展開でき、スケールも容易なAIビジョンシステムを構築します。当社のシステムは最新のAIを活用し、あらゆる種類の製造製品やプロセスにおいてエージェント主導のセットアップを可能にします。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119385.png"
+  },
+  {
+    "id": "ils-147",
+    "name": "株式会社iPX",
+    "category": "分野別スタートアップブース",
+    "product": "望む未来から逆算し、最適解ではなく、選択可能な未来を描き出す",
+    "description": "目標と制約条件から「実現するための打ち手」を逆算する意思決定エンジン。\n製造・物流の最適化から、将来は経営戦略まで、人と企業の複雑な意思決定を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/23116983.png"
+  },
+  {
+    "id": "ils-148",
+    "name": "Apicoo Robotics., JSC",
+    "category": "分野別スタートアップブース",
+    "product": "コボット/ヒューマノイド用のスマートグリッパー",
+    "description": "Apicoo Roboticsは、コボットやヒューマノイドを用いた高混合・低量生産向けのスマートグリッパーを設計しています。当社のグリッパーは現在、住友重工業ベトナム工場で継続的に稼働しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119022.png"
+  },
+  {
+    "id": "ils-149",
+    "name": "国立大学法人　東京科学大学",
+    "category": "分野別スタートアップブース",
+    "product": "世界初、細菌・ウイルスをその場で瞬時に可視化するモバイル微生物センサ",
+    "description": "見えない微生物を、見える安心へ。細菌・ウイルスを誰もがその場で迅速測定。モバイル微生物センサーの販売とクラウドサービスで食品衛生・医療のDXを推進し、食中毒・感染症の予防と早期発見に貢献する。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117856.png"
+  },
+  {
+    "id": "ils-150",
+    "name": "ヴェルヌクリスタル株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "水から非水系まで、狙ったイオンを除去する無機結晶材料",
+    "description": "信州大学発の無機イオン交換・吸着材料「信大クリスタル®」。水系・非水系の液体から特定イオンや微量不純物を除去し、水処理から製造工程液・高純度化まで新たな用途を開拓します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117625.png"
+  },
+  {
+    "id": "ils-151",
+    "name": "GREENGRIM Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "バイオプラスチック向け微生物ソリューション＆分解システム",
+    "description": "従来の石油系プラスチックを生分解性プラスチックPLAに代替し、自社開発の堆肥化機と微生物を活用して分解・処理を行うソーシャルベンチャー。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117914.png"
+  },
+  {
+    "id": "ils-152",
+    "name": "国立大学法人茨城大学 半導体研究室",
+    "category": "分野別スタートアップブース",
+    "product": "豊富な元素を使った半導体結晶を軸に赤外検知から熱発電・冷却まで",
+    "description": "・資源が豊富なシリコンとマグネシウムで直径２インチのMg2Si単結晶を開発した。\n・Mg2Si単結晶基板を上に短波赤外（波長2.1μm）の赤外センサをイメージセンサ、熱光発電素子を開発した。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118327.png"
+  },
+  {
+    "id": "ils-153",
+    "name": "東京農工大学大学院グローバルイノベーション研究院　山本研究室",
+    "category": "分野別スタートアップブース",
+    "product": "ネオジムフリー、高温超伝導永久磁石",
+    "description": "希少元素不要、ナノ多結晶バルクにてテスラクラスの磁力を持つ鉄系高温超伝導体の磁石化に初成功。データ駆動にて磁力を世界記録の2倍超。セラミックス製造プロセスでスケールアップ可。ヘリウム不要の作動温度。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118939.png"
+  },
+  {
+    "id": "ils-154",
+    "name": "Resenvi Technologies and Laboratory pvt ltd",
+    "category": "分野別スタートアップブース",
+    "product": "持続可能な明日のためのイノベーション",
+    "description": "ResEnviは、産業用および自動車用排気ガス用のパッシブデュアルステージレトロフィットフィルター(セラミックモノリス+バイオメンブレン)AeroVaultを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119047.png"
+  },
+  {
+    "id": "ils-155",
+    "name": "株式会社JIRCASドリームバイオマスソリューションズ",
+    "category": "分野別スタートアップブース",
+    "product": "未利用バイオマスから新しいエネルギー産業を創る。",
+    "description": "未利用バイオマスを高効率に再エネ化し、地域循環型の新しいエネルギー産業を創出する技術と事業モデルを開発しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119101.png"
+  },
+  {
+    "id": "ils-156",
+    "name": "サンリット・シードリングス株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "生物多様性の科学で持続可能な地球生態系を実現する",
+    "description": "＜環境＞お客様の事業の生態系・生物多様性への影響評価設計改良支援。土地開発での行政住民説明向けデータ提供、森林/都市設計等。\n＜農業＞新規な土壌分析技術等に基づく営農支援、農薬・肥料開発支援等。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119116.png"
+  },
+  {
+    "id": "ils-157",
+    "name": "国立研究開発法人　産業技術総合研究所　材料基盤研究部門",
+    "category": "分野別スタートアップブース",
+    "product": "ソフトロボットハンドに触覚を導入～労働力不足を支援～",
+    "description": "イオンを含む高分子で構成される柔らかいセンサを搭載した触覚ソフトハンドにより、把持状態や滑り、重量、大きさをリアルタイムに把握。食品・物流分野の深刻化する労働力不足の解決に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118924.png"
+  },
+  {
+    "id": "ils-158",
+    "name": "Quickwork Technologies Private Limited",
+    "category": "分野別スタートアップブース",
+    "product": "統合・自動化・AIのエンタープライズ基盤",
+    "description": "Quickworkは、セキュリティ、プライバシー、コンプライアンスを損なうことなく、アプリケーションを接続し、自動化されたワークフローを構築するためのコード不要の統合プラットフォームを提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116747.png"
+  },
+  {
+    "id": "ils-159",
+    "name": "Boostorder",
+    "category": "分野別スタートアップブース",
+    "product": "AIで、B2B営業を加速させる。",
+    "description": "Boostorderは、AIを活用したB2B営業ソリューションで、ブランドと販売代理店をマーケットリーダーへと導きます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117702.png"
+  },
+  {
+    "id": "ils-160",
+    "name": "Work:O | DongApm",
+    "category": "分野別スタートアップブース",
+    "product": "WORK:O｜行きたくなる場所のための空間OS",
+    "description": "WORK:Oは、行きたくなる場所のための空間OSです。本社・サテライト・ワーケーションを一つの仕組みで運営します。160組織超、16.1万席で利用されています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118399.png"
+  },
+  {
+    "id": "ils-161",
+    "name": "ドットデータインク",
+    "category": "分野別スタートアップブース",
+    "product": "独自のコア技術、特徴量自動設計を用いたAIプラットフォームの提供",
+    "description": "dotDataは、データ分析で最も難しい「特徴量設計」を自動化するシリコンバレー発のAIプラットフォームです。生成AIとの掛け合わせにより、業務部門自らがデータから洞察を得てビジネス成長を実現します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118871.png"
+  },
+  {
+    "id": "ils-162",
+    "name": "Sherpas",
+    "category": "分野別スタートアップブース",
+    "product": "企業のIT資産管理をシンプルに。",
+    "description": "SHERPASは、ソフトウェア、デバイス、ライセンス、コスト、ITリスクを一元管理するB2B SaaS「SMPLY」を提供しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118899.png"
+  },
+  {
+    "id": "ils-163",
+    "name": "SELLEASE Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "有形・IT・無形資産を一元管理するAI資産OS",
+    "description": "セリーズは写真一枚で有形・IT・無形資産を登録し、ソフトウェア費用を最大40%削減、ERPとワンクリック連携するAI企業資産OSです。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118918.png"
+  },
+  {
+    "id": "ils-164",
+    "name": "株式会社SIGQ",
+    "category": "分野別スタートアップブース",
+    "product": "障害対応を指揮するAIインシデントコマンダー",
+    "description": "セキュリティインシデント・システム障害に対応するAgentic AI「Incident Lake」。散在する情報を統合し、状況整理から意思決定までを支援。対応ログと判断を蓄積し、使うほど精度が育つ。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119349.png"
+  },
+  {
+    "id": "ils-165",
+    "name": "SCOPE",
+    "category": "分野別スタートアップブース",
+    "product": "気候・海洋データを、船舶と港湾の意思決定に変える。",
+    "description": "SCOPEは気象・海洋・気候・AIS(船舶)データを解析し、入出港時刻の予測と接岸・港湾オペレーションのシミュレーションを提供します。港湾・海運の遅延・燃料・CO2削減を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119407.png"
+  },
+  {
+    "id": "ils-166",
+    "name": "イーセップ株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "ナノセラミック分離膜技術でカーボンニュートラル社会の実現に貢献します",
+    "description": "当該技術は1nm未満の膜孔径を利用して物質を分子レベルで分離する技術です。現在はこの膜技術を活用した廃溶剤のリサイクル事業とCO2とH2を原料としたグリーン燃料合成事業を展開しています。",
+    "image": "https://ils.tokyo/event_2026/summit_image/16103723.png"
+  },
+  {
+    "id": "ils-167",
+    "name": "ケイワート・サイエンス株式会社",
+    "category": "分野別スタートアップブース",
+    "product": "未活用資源「もみ殻」を、次世代の工業原料へ。",
+    "description": "もみ殻特有の高純度・高反応性を有するケイ素とセルロースに着目し、既存技術を応用して高機能新素材へ。半導体・ガラス・樹脂・化学品向けの次世代工業原料を生み出し、サプライチェーンを構築する事業です。",
+    "image": "https://ils.tokyo/event_2026/summit_image/22116836.png"
+  },
+  {
+    "id": "ils-168",
+    "name": "大阪大学　神原研究室",
+    "category": "分野別スタートアップブース",
+    "product": "革新的プラズマスプレー技術によるナノ粒子・球状粒子の大量製造技術の開発",
+    "description": "独自のプラズマ技術で多様な粒子を高効率製造。次世代電池材料の供給や廃棄材の再資源化を通じ、カーボンニュートラル実現に貢献します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117811.png"
+  },
+  {
+    "id": "ils-169",
+    "name": "Lithiway Co. Ltd.",
+    "category": "分野別スタートアップブース",
+    "product": "E-Elixir:電池用「Just-Add Solution」",
+    "description": "既存の製品を置き換えることなく、商用材料の性能を向上させることができるバッテリー/EVメーカーに「ジャストアディッドソリューション」を提供し、お客様とのWin-Winのビジネスモデルを提供します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/24117986.png"
+  },
+  {
+    "id": "ils-170",
+    "name": "株式会社illuminus",
+    "category": "分野別スタートアップブース",
+    "product": "光の力で世界を照らす新素材を創造 「完全固溶合金ナノ粒子」が未来を拓く",
+    "description": "完全固溶合金・複合物等新ナノ材料を常温・大気中で連続合成するレーザープロセス技術、AI・MIが描く仮想材料のリアル化も拓き、脱炭素・エネルギー、電子部品や半導体パッケージの革新、新薬開発等を促進します",
+    "image": "https://ils.tokyo/event_2026/summit_image/25118201.png"
+  },
+  {
+    "id": "ils-171",
+    "name": "NexPhoton Inc.",
+    "category": "分野別スタートアップブース",
+    "product": "スポーツ、安全、構造のためのバッテリーフリー機械発光",
+    "description": "NexPhotonは、動作とストレスによって駆動されるバッテリー不要の照明ソリューションを提供し、スポーツ、ファッション、建設、造園、構造監視の視認性と安全性を向上させます。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118887.png"
+  },
+  {
+    "id": "ils-172",
+    "name": "京都大学　大学院理学研究科　化学専攻　無機物質化学研究室",
+    "category": "分野別スタートアップブース",
+    "product": "省溶媒・高速精製を実現するモノリスカラム",
+    "description": "京都大学発のシリカモノリス技術を用い、低圧・高性能分離・高流量・再利用を両立する精製カラムを開発・製造。研究現場では従来法比で廃溶媒74％、廃シリカ95％削減、精製時間40％短縮を実証している。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26118933.png"
+  },
+  {
+    "id": "ils-173",
+    "name": "eChemicles",
+    "category": "分野別スタートアップブース",
+    "product": "CO₂を価値に変える",
+    "description": "回収されたCO₂を、スケーラブルな電気分解技術によって価値ある化学物質に転換し、産業の収益性の高い脱炭素化を支援します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119004.png"
+  },
+  {
+    "id": "ils-174",
+    "name": "名古屋大学　山内・朝倉研究室",
+    "category": "分野別スタートアップブース",
+    "product": "多様な活性点を集積した次世代メソポーラス合金触媒",
+    "description": "独自のメソポーラス化技術と多元合金化を融合し、高表面積かつ多様な活性点を持つ次世代触媒材料を開発。アンモニア燃焼排ガス浄化を起点に幅広い触媒用途への展開を目指します。",
+    "image": "https://ils.tokyo/event_2026/summit_image/26119069.png"
+  }
+]
