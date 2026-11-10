@@ -1,9 +1,8 @@
-'use client';
-
-import React from 'react';
+import React, { useState } from 'react';
 import { ExhibitionEvent } from '@/types';
-import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight, Map, PlusCircle, Trash2 } from 'lucide-react';
+import { Calendar, MapPin, Building, ExternalLink, Users, Sparkles, Check, ChevronRight, Map, PlusCircle, Trash2, LayoutGrid } from 'lucide-react';
 import { getEventFloorMapUrl } from '@/utils/floorMap';
+import { EventCalendarView } from './EventCalendarView';
 
 interface EventTimelineProps {
   events: ExhibitionEvent[];
@@ -11,6 +10,7 @@ interface EventTimelineProps {
   onSelectEvent: (eventId: string | null) => void;
   onOpenAddEventModal?: () => void;
   onDeleteCustomEvent?: (eventId: string) => void;
+  initialViewMode?: 'calendar' | 'timeline';
 }
 
 export const EventTimeline: React.FC<EventTimelineProps> = ({
@@ -19,7 +19,9 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
   onSelectEvent,
   onOpenAddEventModal,
   onDeleteCustomEvent,
+  initialViewMode = 'calendar',
 }) => {
+  const [viewMode, setViewMode] = useState<'calendar' | 'timeline'>(initialViewMode);
   const getStatusBadge = (event: ExhibitionEvent) => {
     const floorMapUrl = getEventFloorMapUrl(event);
 
@@ -103,202 +105,241 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({
 
   return (
     <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-xs mb-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-2">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-3 mb-4 border-b border-slate-100 gap-3">
         <div className="flex items-center space-x-2">
-          <div className="p-1.5 rounded-lg bg-red-50 text-red-600">
-            <Calendar className="w-4 h-4" />
+          <div className="p-2 rounded-xl bg-red-50 text-red-600">
+            <Calendar className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <h2 className="text-sm font-bold text-slate-900 tracking-tight">
-                これから開催される展示会＆サミット＆ピッチ タイムライン
+              <h2 className="text-sm sm:text-base font-extrabold text-slate-900 tracking-tight">
+                これから開催される展示会＆サミット＆ピッチ カレンダー
               </h2>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
-                次回開催・未来予定 {events.length} 件（終了済は除外）
+                次回開催 {events.length} 件（終了済除外）
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
-              終了イベントを除外し、次回開催予定のサミット（IVS等）＆ 産業展示会 ＆ スタートアップカレンダーの小規模ピッチに限定中
+              終了イベントを除外し、次回開催予定のサミット（IVS等）＆ 産業展示会 ＆ 小規模ピッチの日程をカレンダー表示中
             </p>
           </div>
         </div>
 
-        <div className="flex items-center space-x-2 self-start sm:self-auto">
+        <div className="flex items-center flex-wrap gap-2 self-start lg:self-auto">
+          {/* View Mode Toggle: カレンダー表示 vs カード一覧表示 */}
+          <div className="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 shadow-2xs">
+            <button
+              onClick={() => setViewMode('calendar')}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                viewMode === 'calendar'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Calendar className="w-3.5 h-3.5 text-red-600" />
+              <span>📅 月間カレンダー</span>
+            </button>
+            <button
+              onClick={() => setViewMode('timeline')}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                viewMode === 'timeline'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <LayoutGrid className="w-3.5 h-3.5 text-slate-600" />
+              <span>🗂️ カード一覧</span>
+            </button>
+          </div>
+
           {onOpenAddEventModal && (
             <button
               onClick={onOpenAddEventModal}
               className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:scale-95 rounded-lg shadow-2xs transition-all"
             >
               <PlusCircle className="w-3.5 h-3.5" />
-              <span>＋ イベントを追加</span>
+              <span>＋ イベント追加</span>
             </button>
           )}
+
           {selectedEventId && (
             <button
               onClick={() => onSelectEvent(null)}
               className="text-xs text-red-600 hover:text-red-800 font-semibold px-2.5 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 transition-colors"
             >
-              展示会選択を解除
+              選択解除✕
             </button>
           )}
         </div>
       </div>
 
-      {/* Region Tabs */}
-      <div className="flex flex-wrap items-center gap-1.5 mb-4 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
-        {[
-          { id: 'ALL', label: '全国すべて', count: events.length },
-          { id: 'SUMMIT', label: '🔥 大型サミット', count: events.filter((e) => e.eventType === 'スタートアップ特化サミット' || e.eventType === 'ピッチコンテスト・アクセラレーター').length },
-          { id: 'PITCH', label: '🎤 小規模ピッチ (カレンダー連携)', count: events.filter((e) => e.eventType === '小規模ピッチ・デモデイ' || e.isSmallPitch || e.sourceType === 'スタートアップカレンダー').length },
-          { id: '関東', label: '関東 (東京・横浜・幕張)', count: events.filter((e) => e.region === '関東').length },
-          { id: '関西', label: '関西 (京都・大阪)', count: events.filter((e) => e.region === '関西').length },
-          { id: '中部', label: '中部 (名古屋)', count: events.filter((e) => e.region === '中部').length },
-          { id: '九州', label: '九州 (福岡)', count: events.filter((e) => e.region === '九州').length },
-        ].map((tab) => {
-          const isActive = activeRegionTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveRegionTab(tab.id as any)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                isActive
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white'
-              }`}
-            >
-              {tab.label} ({tab.count})
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {filteredEvents.map((evt) => {
-          const isSelected = selectedEventId === evt.id;
-          const isSmallPitch = evt.eventType === '小規模ピッチ・デモデイ' || evt.isSmallPitch || evt.sourceType === 'スタートアップカレンダー';
-          const isSummit = !isSmallPitch && evt.eventType !== '大型産業展示会';
-
-          return (
-            <div
-              key={evt.id}
-              onClick={() => onSelectEvent(isSelected ? null : evt.id)}
-              className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer relative overflow-hidden group ${
-                isSelected
-                  ? 'border-red-500 bg-red-50/40 shadow-sm ring-2 ring-red-500/20'
-                  : isSmallPitch
-                  ? 'border-indigo-200/90 bg-gradient-to-b from-indigo-50/30 to-white hover:border-indigo-400'
-                  : isSummit
-                  ? 'border-red-200/90 bg-gradient-to-b from-red-50/20 to-white hover:border-red-300'
-                  : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/70 bg-white'
-              }`}
-            >
-              {/* Top Venue, City, Status */}
-              <div className="flex items-center justify-between gap-1 mb-2">
-                <div className="flex items-center space-x-1.5">
-                  <span
-                    className={`inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-md ${getRegionBadgeColor(
-                      evt.region
-                    )}`}
-                  >
-                    <MapPin className="w-3 h-3 mr-0.5" />
-                    {evt.region} / {evt.city}
-                  </span>
-                  {isSmallPitch && (
-                    <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 border border-indigo-200" title="スタートアップカレンダー掲載・定期ピッチ">
-                      🎤 カレンダーピッチ
-                    </span>
-                  )}
-                  {isSummit && (
-                    <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-red-100 text-red-700">
-                      サミット
-                    </span>
-                  )}
-                  {evt.isCustomUserAdded && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200">
-                      👤 手動登録
-                    </span>
-                  )}
-                </div>
-                {getStatusBadge(evt)}
-              </div>
-
-              {/* Title: 展示会の名称をクリックしたら当該HPへ */}
-              <div className="mb-1">
-                <a
-                  href={evt.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-slate-900 hover:text-red-600 hover:underline transition-colors group/title"
-                  title={`${evt.title} 公式HPを開く`}
+      {/* View Mode Switching: Calendar vs Timeline Grid */}
+      {viewMode === 'calendar' ? (
+        <EventCalendarView
+          events={events}
+          selectedEventId={selectedEventId}
+          onSelectEvent={onSelectEvent}
+          onDeleteCustomEvent={onDeleteCustomEvent}
+        />
+      ) : (
+        <>
+          {/* Region Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5 mb-4 bg-slate-50 p-1.5 rounded-xl border border-slate-200">
+            {[
+              { id: 'ALL', label: '全国すべて', count: events.length },
+              { id: 'SUMMIT', label: '🔥 大型サミット', count: events.filter((e) => e.eventType === 'スタートアップ特化サミット' || e.eventType === 'ピッチコンテスト・アクセラレーター').length },
+              { id: 'PITCH', label: '🎤 小規模ピッチ (カレンダー連携)', count: events.filter((e) => e.eventType === '小規模ピッチ・デモデイ' || e.isSmallPitch || e.sourceType === 'スタートアップカレンダー').length },
+              { id: '関東', label: '関東 (東京・横浜・幕張)', count: events.filter((e) => e.region === '関東').length },
+              { id: '関西', label: '関西 (京都・大阪)', count: events.filter((e) => e.region === '関西').length },
+              { id: '中部', label: '中部 (名古屋)', count: events.filter((e) => e.region === '中部').length },
+              { id: '九州', label: '九州 (福岡)', count: events.filter((e) => e.region === '九州').length },
+            ].map((tab) => {
+              const isActive = activeRegionTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveRegionTab(tab.id as any)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+                  }`}
                 >
-                  <span className="line-clamp-1">{evt.title}</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400 group-hover/title:text-red-500 shrink-0" />
-                </a>
-              </div>
+                  {tab.label} ({tab.count})
+                </button>
+              );
+            })}
+          </div>
 
-              {/* Venue & Hall */}
-              <div className="text-[11px] text-slate-600 mb-1.5 flex items-center">
-                <Building className="w-3 h-3 mr-1 text-slate-400 shrink-0" />
-                <span className="truncate">{evt.venue} {evt.hall ? `(${evt.hall})` : ''}</span>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {filteredEvents.map((evt) => {
+              const isSelected = selectedEventId === evt.id;
+              const isSmallPitch = evt.eventType === '小規模ピッチ・デモデイ' || evt.isSmallPitch || evt.sourceType === 'スタートアップカレンダー';
+              const isSummit = !isSmallPitch && evt.eventType !== '大型産業展示会';
 
-              {/* Date */}
-              <div className="flex items-center text-[11px] text-slate-500 space-x-2 mb-2">
-                <span className="font-medium text-slate-700">
-                  {evt.startDate} 〜 {evt.endDate}
-                </span>
-              </div>
-
-              {/* Counts & Score & Delete Action */}
-              <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px]">
-                <div className="flex items-center space-x-2">
-                  <span className="text-slate-600">
-                    出展: <strong className="text-slate-800">{evt.exhibitorCount}</strong>
-                  </span>
-                  <span className="text-red-600 font-semibold bg-red-50 px-1.5 py-0.5 rounded">
-                    SU: {evt.startupCount}社
-                  </span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <div className="flex items-center text-amber-500 font-bold" title="スタートアップ注目度">
-                    <Sparkles className="w-3 h-3 mr-0.5 fill-current" />
-                    <span>★{evt.startupRelevanceScore}.0</span>
+              return (
+                <div
+                  key={evt.id}
+                  onClick={() => onSelectEvent(isSelected ? null : evt.id)}
+                  className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer relative overflow-hidden group ${
+                    isSelected
+                      ? 'border-red-500 bg-red-50/40 shadow-sm ring-2 ring-red-500/20'
+                      : isSmallPitch
+                      ? 'border-indigo-200/90 bg-gradient-to-b from-indigo-50/30 to-white hover:border-indigo-400'
+                      : isSummit
+                      ? 'border-red-200/90 bg-gradient-to-b from-red-50/20 to-white hover:border-red-300'
+                      : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/70 bg-white'
+                  }`}
+                >
+                  {/* Top Venue, City, Status */}
+                  <div className="flex items-center justify-between gap-1 mb-2">
+                    <div className="flex items-center space-x-1.5">
+                      <span
+                        className={`inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-md ${getRegionBadgeColor(
+                          evt.region
+                        )}`}
+                      >
+                        <MapPin className="w-3 h-3 mr-0.5" />
+                        {evt.region} / {evt.city}
+                      </span>
+                      {isSmallPitch && (
+                        <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 border border-indigo-200" title="スタートアップカレンダー掲載・定期ピッチ">
+                          🎤 カレンダーピッチ
+                        </span>
+                      )}
+                      {isSummit && (
+                        <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-red-100 text-red-700">
+                          サミット
+                        </span>
+                      )}
+                      {evt.isCustomUserAdded && (
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200">
+                          👤 手動登録
+                        </span>
+                      )}
+                    </div>
+                    {getStatusBadge(evt)}
                   </div>
 
-                  {evt.isCustomUserAdded && onDeleteCustomEvent && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (confirm(`イベント「${evt.title}」を削除しますか？`)) {
-                          onDeleteCustomEvent(evt.id);
-                        }
-                      }}
-                      className="p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
-                      title="この手動追加イベントを削除"
+                  {/* Title: 展示会の名称をクリックしたら当該HPへ */}
+                  <div className="mb-1">
+                    <a
+                      href={evt.officialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-slate-900 hover:text-red-600 hover:underline transition-colors group/title"
+                      title={`${evt.title} 公式HPを開く`}
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  )}
-                </div>
-              </div>
+                      <span className="line-clamp-1">{evt.title}</span>
+                      <ExternalLink className="w-3 h-3 text-slate-400 group-hover/title:text-red-500 shrink-0" />
+                    </a>
+                  </div>
 
-              {/* Official Link */}
-              <a
-                href={evt.officialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="absolute top-3.5 right-2 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-slate-200 rounded text-slate-500"
-                title="オフィシャルHPを開く"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          );
-        })}
-      </div>
+                  {/* Venue & Hall */}
+                  <div className="text-[11px] text-slate-600 mb-1.5 flex items-center">
+                    <Building className="w-3 h-3 mr-1 text-slate-400 shrink-0" />
+                    <span className="truncate">{evt.venue} {evt.hall ? `(${evt.hall})` : ''}</span>
+                  </div>
+
+                  {/* Date */}
+                  <div className="flex items-center text-[11px] text-slate-500 space-x-2 mb-2">
+                    <span className="font-medium text-slate-700">
+                      {evt.startDate} 〜 {evt.endDate}
+                    </span>
+                  </div>
+
+                  {/* Counts & Score & Delete Action */}
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px]">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-slate-600">
+                        出展: <strong className="text-slate-800">{evt.exhibitorCount}</strong>
+                      </span>
+                      <span className="text-red-600 font-semibold bg-red-50 px-1.5 py-0.5 rounded">
+                        SU: {evt.startupCount}社
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2">
+                      <div className="flex items-center text-amber-500 font-bold" title="スタートアップ注目度">
+                        <Sparkles className="w-3 h-3 mr-0.5 fill-current" />
+                        <span>★{evt.startupRelevanceScore}.0</span>
+                      </div>
+
+                      {evt.isCustomUserAdded && onDeleteCustomEvent && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (confirm(`イベント「${evt.title}」を削除しますか？`)) {
+                              onDeleteCustomEvent(evt.id);
+                            }
+                          }}
+                          className="p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                          title="この手動追加イベントを削除"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Official Link */}
+                  <a
+                    href={evt.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute top-3.5 right-2 opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-slate-200 rounded text-slate-500"
+                    title="オフィシャルHPを開く"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
     </div>
   );
 };

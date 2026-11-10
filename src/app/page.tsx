@@ -94,8 +94,8 @@ const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
 const DEFAULT_BASE_DATE = '2026-10-23';
 
 export default function HomePage() {
-  // 探索モード切替: 'events' (展示会から探す) | 'startups' (スタートアップ逆引き: 八角形評価×会える展示会)
-  const [searchMode, setSearchMode] = useState<'startups' | 'events'>('startups');
+  // 探索モード切替: 'events' (イベントカレンダー・展示会から探す) | 'startups' (スタートアップ逆引き: 八角形評価×会える展示会)
+  const [searchMode, setSearchMode] = useState<'startups' | 'events'>('events');
   const [todayStr, setTodayStr] = useState<string>(DEFAULT_BASE_DATE);
   const [events, setEvents] = useState<ExhibitionEvent[]>(INITIAL_EVENTS);
   const [exhibitors, setExhibitors] = useState<StartupExhibitor[]>(INITIAL_EXHIBITORS);
@@ -699,7 +699,7 @@ export default function HomePage() {
             }`}
           >
             <Calendar className="w-4 h-4 text-slate-300" />
-            <span>🎪 展示会・イベントから探す（タイムライン＆出展社）</span>
+            <span>📅 イベントカレンダー＆展示会（月間カレンダー＆出展社）</span>
           </button>
         </div>
 
