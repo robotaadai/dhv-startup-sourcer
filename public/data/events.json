@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-deeptech-venture-summit-2027",
@@ -92,7 +92,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 120,
     "startupCount": 85,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-care-show-japan-2027",
@@ -111,7 +111,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 380,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "tbs-japan-build",
@@ -127,7 +127,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-14T22:49:48.940058+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.986364+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -146,7 +146,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "tbs-robot-week",
@@ -162,7 +162,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-11-14T22:49:48.940056+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.986361+00:00"
   },
   {
     "id": "conf-ils-2026",
@@ -182,7 +182,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 174,
     "startupCount": 174,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "conf-aichi-startup-day-2026",
@@ -201,7 +201,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 95,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "cal-tib-sandbox-pitch-vol14",
@@ -223,7 +223,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 8,
     "startupCount": 8,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "tbs-smart-factory",
@@ -239,7 +239,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 64,
-    "lastCrawledAt": "2026-11-14T22:49:48.940037+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.986346+00:00"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -258,7 +258,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -277,7 +277,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "cal-station-ai-monthly-pitch-2027",
@@ -299,7 +299,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "cal-quintbridge-kansai-demo-2026",
@@ -321,7 +321,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 7,
     "startupCount": 7,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "cal-shibuya-qws-pitch-2026",
@@ -343,7 +343,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
   },
   {
     "id": "venue-fukuoka-kyushu-dx-2026",
@@ -362,7 +362,37 @@
     "status": "スケジュール確定",
     "exhibitorCount": 320,
     "startupCount": 75,
-    "lastCrawledAt": "2026-11-14 22:49:48"
+    "lastCrawledAt": "2026-11-15 23:17:20"
+  },
+  {
+    "id": "mkm-8943",
+    "title": "第54回バトントワーリング全国大会",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-09",
+    "endDate": "2027-01-10",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8943",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-15T23:17:20.311000+00:00"
+  },
+  {
+    "id": "mkm-8946",
+    "title": "COUNTDOWN JAPAN 26/27 supported by au",
+    "venue": "幕張メッセ",
+    "startDate": "2026-12-26",
+    "endDate": "2026-12-31",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8946",
+    "description": "幕張メッセ開催イベント（区分: 音楽イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-15T23:17:20.310980+00:00"
   },
   {
     "id": "mkm-8933",
@@ -377,7 +407,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395643+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310963+00:00"
   },
   {
     "id": "mkm-8959",
@@ -392,7 +422,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395615+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310917+00:00"
   },
   {
     "id": "mkm-8968",
@@ -407,7 +437,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395630+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310939+00:00"
   },
   {
     "id": "mkm-8911",
@@ -422,7 +452,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395589+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310880+00:00"
   },
   {
     "id": "mkm-8922",
@@ -437,7 +467,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395602+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310899+00:00"
   },
   {
     "id": "mkm-8923",
@@ -452,7 +482,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395575+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310858+00:00"
   },
   {
     "id": "mkm-8924",
@@ -467,7 +497,22 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395563+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310840+00:00"
+  },
+  {
+    "id": "mkm-8961",
+    "title": "家具メッセバザールin幕張メッセ",
+    "venue": "幕張メッセ",
+    "startDate": "2026-12-04",
+    "endDate": "2026-12-06",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8961",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-15T23:17:20.310813+00:00"
   },
   {
     "id": "mkm-8921",
@@ -482,7 +527,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395551+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310794+00:00"
   },
   {
     "id": "mkm-8963",
@@ -497,7 +542,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395523+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310750+00:00"
   },
   {
     "id": "mkm-8905",
@@ -512,7 +557,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395537+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310769+00:00"
   },
   {
     "id": "mkm-8912",
@@ -527,7 +572,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395454+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310648+00:00"
   },
   {
     "id": "mkm-8900",
@@ -542,7 +587,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395471+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310673+00:00"
   },
   {
     "id": "mkm-8901",
@@ -557,7 +602,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395487+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310694+00:00"
   },
   {
     "id": "mkm-8938",
@@ -572,7 +617,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395499+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310713+00:00"
   },
   {
     "id": "mkm-8937",
@@ -587,7 +632,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395512+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310732+00:00"
   },
   {
     "id": "mkm-8917",
@@ -602,52 +647,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395427+00:00"
-  },
-  {
-    "id": "mkm-8939",
-    "title": "新しい学校選びフェア",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-15",
-    "endDate": "2026-11-15",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8939",
-    "description": "幕張メッセ開催イベント（区分: イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395395+00:00"
-  },
-  {
-    "id": "mkm-8927",
-    "title": "11月15日 サステナブルFUKUSHIインターンシップ&amp;キャリア発見フェア 千葉会場",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-15",
-    "endDate": "2026-11-15",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8927",
-    "description": "幕張メッセ開催イベント（区分: イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395412+00:00"
-  },
-  {
-    "id": "mkm-8925",
-    "title": "家具メッセバザールin幕張メッセ",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-13",
-    "endDate": "2026-11-15",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8925",
-    "description": "幕張メッセ開催イベント（区分: イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395341+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310603+00:00"
   },
   {
     "id": "mkm-8956",
@@ -662,6 +662,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-14T22:49:48.395378+00:00"
+    "lastCrawledAt": "2026-11-15T23:17:20.310560+00:00"
   }
 ]
