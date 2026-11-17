@@ -11,6 +11,8 @@ import {
   ASUFUKAKETSU_CONFIG,
   TakaichiField,
   TAKAICHI_17_FIELDS,
+  IndustryCategory,
+  INDUSTRY_CATEGORIES,
   EventRegion,
   EVENT_REGIONS,
 } from '@/types';
@@ -24,6 +26,7 @@ import {
   Calendar,
   ShieldCheck,
   Building,
+  Briefcase,
   CheckSquare,
   Square,
   HelpCircle,
@@ -121,6 +124,19 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
     });
   };
 
+  // 産業・バーティカルカテゴリ
+  const toggleIndustry = (ind: IndustryCategory) => {
+    setDraft((prev) => {
+      const exists = prev.industries.includes(ind);
+      return {
+        ...prev,
+        industries: exists
+          ? prev.industries.filter((i) => i !== ind)
+          : [...prev.industries, ind],
+      };
+    });
+  };
+
   // 会える地域
   const toggleRegion = (reg: EventRegion) => {
     setDraft((prev) => {
@@ -143,6 +159,7 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
       fundingStages: [],
       maxYearsSinceEst: null,
       totalFundingRange: 'ALL',
+      industries: [],
       asufukaketsu: [],
       takaichi17: [],
       meetingTimeframe: 'ALL',
@@ -153,6 +170,7 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
       enabledSections: {
         expectation: true,
         quantitative: true,
+        industries: true,
         asufukaketsu: true,
         meetingEvent: true,
       },
@@ -483,7 +501,76 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
         </div>
 
         {/* ========================================================================= */}
-        {/* Section 3: 大和ハウス重要戦略（アスフカケツノ・高市17） */}
+        {/* Section 3: 産業・バーティカルカテゴリ（全12分野） */}
+        {/* ========================================================================= */}
+        <div className="p-3.5 rounded-xl border border-slate-200/80 bg-slate-50/50">
+          <div className="flex items-center justify-between mb-2.5 pb-2 border-b border-slate-200/60">
+            <button
+              type="button"
+              onClick={() => toggleSection('industries')}
+              className="flex items-center space-x-2 text-left group"
+            >
+              {draft.enabledSections.industries ? (
+                <CheckSquare className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform" />
+              ) : (
+                <Square className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform" />
+              )}
+              <div className="flex items-center gap-1.5">
+                <Briefcase className="w-4 h-4 text-blue-600" />
+                <span className="text-xs font-bold text-slate-900">
+                  産業・バーティカルカテゴリ（建設・物流・製造・ロボティクス・GX等）
+                </span>
+                <span
+                  className={`text-[10px] font-bold px-1.5 py-0.2 rounded ${
+                    draft.enabledSections.industries
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'bg-slate-200 text-slate-500'
+                  }`}
+                >
+                  {draft.enabledSections.industries ? '検索条件に適用中' : '条件から除外中'}
+                </span>
+              </div>
+            </button>
+            {draft.industries.length > 0 && draft.enabledSections.industries && (
+              <button
+                type="button"
+                onClick={() => setDraft({ ...draft, industries: [] })}
+                className="text-[11px] text-slate-500 hover:text-red-600 font-medium transition-colors"
+              >
+                選択解除 ({draft.industries.length}件)
+              </button>
+            )}
+          </div>
+
+          <div
+            className={`transition-opacity ${
+              draft.enabledSections.industries ? 'opacity-100' : 'opacity-35 pointer-events-none'
+            }`}
+          >
+            <div className="flex flex-wrap gap-1.5">
+              {INDUSTRY_CATEGORIES.map((ind) => {
+                const isChecked = draft.industries.includes(ind);
+                return (
+                  <button
+                    key={ind}
+                    type="button"
+                    onClick={() => toggleIndustry(ind)}
+                    className={`px-2.5 py-1 rounded-md text-xs font-semibold border transition-all ${
+                      isChecked
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-xs ring-1 ring-slate-700'
+                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
+                    }`}
+                  >
+                    {ind}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* Section 4: 大和ハウス重要戦略（アスフカケツノ・高市17） */}
         {/* ========================================================================= */}
         <div className="p-3.5 rounded-xl border border-slate-200/80 bg-slate-50/50">
           <div className="flex items-center justify-between mb-2.5 pb-2 border-b border-slate-200/60">
@@ -577,7 +664,7 @@ export const StartupFilterPanel: React.FC<StartupFilterPanelProps> = ({
         </div>
 
         {/* ========================================================================= */}
-        {/* Section 4: いつ・どこで会えるか（展示会・ピッチ予定） */}
+        {/* Section 5: いつ・どこで会えるか（展示会・ピッチ予定） */}
         {/* ========================================================================= */}
         <div className="p-3.5 rounded-xl border border-slate-200/80 bg-slate-50/50">
           <div className="flex items-center justify-between mb-2.5 pb-2 border-b border-slate-200/60">

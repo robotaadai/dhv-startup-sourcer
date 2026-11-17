@@ -75,6 +75,7 @@ const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
   fundingStages: [],
   maxYearsSinceEst: null,
   totalFundingRange: 'ALL',
+  industries: [],
   asufukaketsu: [],
   takaichi17: [],
   meetingTimeframe: 'ALL',
@@ -85,6 +86,7 @@ const INITIAL_REVERSE_FILTERS: StartupReverseFilters = {
   enabledSections: {
     expectation: true,
     quantitative: true,
+    industries: true,
     asufukaketsu: true,
     meetingEvent: true,
   },
@@ -477,6 +479,16 @@ export default function HomePage() {
           } else if (reverseFilters.totalFundingRange === 'OVER_1500M') {
             if (!tf.includes('15億円') && !tf.includes('20億円') && !tf.includes('200億円') && !tf.includes('100億円')) return false;
           }
+        }
+      }
+
+      // 3. Industry Vertical Section (産業・バーティカルカテゴリ)
+      if (reverseFilters.enabledSections.industries) {
+        if (reverseFilters.industries.length > 0) {
+          const hasAnyInd = reverseFilters.industries.some((ind) =>
+            item.industries && item.industries.includes(ind)
+          );
+          if (!hasAnyInd) return false;
         }
       }
 

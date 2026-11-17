@@ -345,6 +345,7 @@ export interface FilterOptions {
 export interface EnabledReverseFilterSections {
   expectation: boolean; // 8つの期待ポイント・八角形
   quantitative: boolean; // 定量基準 (ステージ、創業年、調達額)
+  industries: boolean; // 産業・バーティカルカテゴリ (建設、物流、製造、ロボティクス等)
   asufukaketsu: boolean; // アスフカケツノ・高市17
   meetingEvent: boolean; // いつ・どこで会えるか (時期・地域・出展形式)
 }
@@ -356,6 +357,7 @@ export interface StartupReverseFilters {
   fundingStages: FundingStage[];
   maxYearsSinceEst: number | null;
   totalFundingRange: 'ALL' | 'UNDER_100M' | '100M_500M' | '500M_1500M' | 'OVER_1500M';
+  industries: IndustryCategory[]; // ★ 産業バーティカルカテゴリ
   asufukaketsu: AsufukaketsuKey[];
   takaichi17: TakaichiField[];
   meetingTimeframe: 'ALL' | 'WITHIN_1_MONTH' | 'WITHIN_3_MONTHS' | 'WITHIN_2026' | 'FUTURE';

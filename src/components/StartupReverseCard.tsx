@@ -127,8 +127,8 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
               </span>
             )}
 
-            {/* アスフカケツノ 1文字バッジ */}
-            <div className="flex items-center gap-1 mt-1">
+            {/* アスフカケツノ 1文字バッジ & 高市17 & 産業カテゴリ */}
+            <div className="flex items-center flex-wrap gap-1 mt-1">
               <span className="text-[10px] font-bold text-slate-400 mr-0.5">大和ハウス領域:</span>
               {startup.asufukaketsu.map((k) => (
                 <span
@@ -148,6 +148,20 @@ export const StartupReverseCard: React.FC<StartupReverseCardProps> = ({
                   {f}
                 </span>
               ))}
+              {startup.industries && startup.industries.length > 0 && (
+                <>
+                  <span className="text-[10px] text-slate-300 mx-0.5">|</span>
+                  <span className="text-[10px] font-bold text-slate-400">産業:</span>
+                  {startup.industries.map((ind) => (
+                    <span
+                      key={ind}
+                      className="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-slate-100 text-slate-700 border border-slate-200"
+                    >
+                      {ind}
+                    </span>
+                  ))}
+                </>
+              )}
             </div>
           </div>
         </div>
