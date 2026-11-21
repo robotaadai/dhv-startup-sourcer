@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-deeptech-venture-summit-2027",
@@ -92,7 +92,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 120,
     "startupCount": 85,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-care-show-japan-2027",
@@ -111,7 +111,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 380,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "tbs-japan-build",
@@ -127,7 +127,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-20T00:58:46.486065+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:01.464836+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -146,7 +146,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "tbs-robot-week",
@@ -162,7 +162,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-11-20T00:58:46.486062+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:01.464833+00:00"
   },
   {
     "id": "conf-ils-2026",
@@ -182,7 +182,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 174,
     "startupCount": 174,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "conf-aichi-startup-day-2026",
@@ -201,7 +201,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 95,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "cal-tib-sandbox-pitch-vol14",
@@ -223,23 +223,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 8,
     "startupCount": 8,
-    "lastCrawledAt": "2026-11-20 00:58:46"
-  },
-  {
-    "id": "tbs-smart-factory",
-    "title": "スマートファクトリー Japan 2026 / ロボット開発展",
-    "venue": "東京ビッグサイト",
-    "hall": "東1-3ホール",
-    "startDate": "2026-11-18",
-    "endDate": "2026-11-20",
-    "officialUrl": "https://biz.nikkan.co.jp/eve/smart-factory/",
-    "description": "製造現場のDX、スマートロボティクス、フィジカルAI、予兆保全センシング等の最新ソリューションが集結する産業展示会。",
-    "organizer": "日刊工業新聞社",
-    "startupRelevanceScore": 5,
-    "status": "出展社公表済",
-    "exhibitorCount": 380,
-    "startupCount": 64,
-    "lastCrawledAt": "2026-11-20T00:58:46.486043+00:00"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -258,7 +242,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -277,7 +261,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "cal-station-ai-monthly-pitch-2027",
@@ -299,7 +283,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "cal-quintbridge-kansai-demo-2026",
@@ -321,7 +305,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 7,
     "startupCount": 7,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
   },
   {
     "id": "cal-shibuya-qws-pitch-2026",
@@ -343,7 +327,22 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-20 00:58:46"
+    "lastCrawledAt": "2026-11-21 00:32:01"
+  },
+  {
+    "id": "mkm-8913",
+    "title": "Devil ANTHEM. 12th Anniversary TOUR 2026 FINAL ONE MAN LIVE &quot;Winter Mirage of Sonic&quot;",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-11",
+    "endDate": "2027-01-11",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8913",
+    "description": "幕張メッセ開催イベント（区分: 音楽イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-21T00:32:00.690773+00:00"
   },
   {
     "id": "mkm-8943",
@@ -358,7 +357,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678687+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690752+00:00"
   },
   {
     "id": "mkm-8946",
@@ -373,7 +372,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678674+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690734+00:00"
   },
   {
     "id": "mkm-8933",
@@ -388,7 +387,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678663+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690715+00:00"
   },
   {
     "id": "mkm-8959",
@@ -403,7 +402,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678636+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690672+00:00"
   },
   {
     "id": "mkm-8968",
@@ -418,7 +417,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678650+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690695+00:00"
   },
   {
     "id": "mkm-8911",
@@ -433,7 +432,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678612+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690634+00:00"
   },
   {
     "id": "mkm-8922",
@@ -448,7 +447,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678624+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690653+00:00"
   },
   {
     "id": "mkm-8923",
@@ -463,7 +462,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678599+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690612+00:00"
   },
   {
     "id": "mkm-8924",
@@ -478,7 +477,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678587+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690589+00:00"
   },
   {
     "id": "mkm-8961",
@@ -493,7 +492,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678574+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690566+00:00"
   },
   {
     "id": "mkm-8921",
@@ -508,7 +507,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678561+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690547+00:00"
   },
   {
     "id": "mkm-8963",
@@ -523,7 +522,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678533+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690505+00:00"
   },
   {
     "id": "mkm-8905",
@@ -538,7 +537,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678546+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690526+00:00"
   },
   {
     "id": "mkm-8912",
@@ -553,7 +552,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678469+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690373+00:00"
   },
   {
     "id": "mkm-8900",
@@ -568,7 +567,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678484+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690402+00:00"
   },
   {
     "id": "mkm-8901",
@@ -583,7 +582,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678498+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690426+00:00"
   },
   {
     "id": "mkm-8938",
@@ -598,7 +597,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678509+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690463+00:00"
   },
   {
     "id": "mkm-8937",
@@ -613,22 +612,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678522+00:00"
-  },
-  {
-    "id": "mkm-8917",
-    "title": "Inter BEE 2026",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-18",
-    "endDate": "2026-11-20",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8917",
-    "description": "幕張メッセ開催イベント（区分: 展示会・見本市）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678452+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690485+00:00"
   },
   {
     "id": "mkm-8956",
@@ -643,6 +627,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-20T00:58:45.678415+00:00"
+    "lastCrawledAt": "2026-11-21T00:32:00.690328+00:00"
   }
 ]
