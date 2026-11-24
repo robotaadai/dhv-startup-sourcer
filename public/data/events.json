@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-deeptech-venture-summit-2027",
@@ -92,7 +92,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 120,
     "startupCount": 85,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-care-show-japan-2027",
@@ -111,7 +111,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 380,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "tbs-japan-build",
@@ -127,7 +127,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-22T23:56:56.985289+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.684297+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -146,7 +146,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "tbs-robot-week",
@@ -162,7 +162,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-11-22T23:56:56.985286+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.684294+00:00"
   },
   {
     "id": "conf-ils-2026",
@@ -182,7 +182,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 174,
     "startupCount": 174,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "conf-aichi-startup-day-2026",
@@ -201,7 +201,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 95,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "cal-tib-sandbox-pitch-vol14",
@@ -223,7 +223,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 8,
     "startupCount": 8,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -242,7 +242,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -261,7 +261,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "cal-station-ai-monthly-pitch-2027",
@@ -283,7 +283,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "cal-quintbridge-kansai-demo-2026",
@@ -305,7 +305,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 7,
     "startupCount": 7,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
   },
   {
     "id": "cal-shibuya-qws-pitch-2026",
@@ -327,7 +327,52 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-22 23:56:56"
+    "lastCrawledAt": "2026-11-24 04:08:57"
+  },
+  {
+    "id": "mkm-8953",
+    "title": "市川中学校 第1回入学試験",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-20",
+    "endDate": "2027-01-20",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8953",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-24T04:08:57.080829+00:00"
+  },
+  {
+    "id": "mkm-8990",
+    "title": "令和8年度クリーニング師試験",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-19",
+    "endDate": "2027-01-19",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8990",
+    "description": "幕張メッセ開催イベント（区分: その他）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-24T04:08:57.080817+00:00"
+  },
+  {
+    "id": "mkm-8977",
+    "title": "東京オートサロン2027",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-15",
+    "endDate": "2027-01-17",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8977",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-24T04:08:57.080804+00:00"
   },
   {
     "id": "mkm-8913",
@@ -342,7 +387,37 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179758+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080765+00:00"
+  },
+  {
+    "id": "mkm-8981",
+    "title": "古着メッセ by OCB UNDER ¥10,000",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-11",
+    "endDate": "2027-01-11",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8981",
+    "description": "幕張メッセ開催イベント（区分: 即売会）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-24T04:08:57.080779+00:00"
+  },
+  {
+    "id": "mkm-8942",
+    "title": "令和9年習志野市二十歳の門出式",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-11",
+    "endDate": "2027-01-11",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8942",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-24T04:08:57.080792+00:00"
   },
   {
     "id": "mkm-8943",
@@ -357,7 +432,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179740+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080751+00:00"
   },
   {
     "id": "mkm-8946",
@@ -372,7 +447,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179724+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080738+00:00"
   },
   {
     "id": "mkm-8933",
@@ -387,7 +462,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179709+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080724+00:00"
   },
   {
     "id": "mkm-8959",
@@ -402,7 +477,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179674+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080687+00:00"
   },
   {
     "id": "mkm-8968",
@@ -417,7 +492,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179692+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080706+00:00"
   },
   {
     "id": "mkm-8911",
@@ -432,7 +507,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179642+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080659+00:00"
   },
   {
     "id": "mkm-8922",
@@ -447,7 +522,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179658+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080673+00:00"
   },
   {
     "id": "mkm-8923",
@@ -462,7 +537,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179622+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080643+00:00"
   },
   {
     "id": "mkm-8924",
@@ -477,7 +552,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179597+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080628+00:00"
   },
   {
     "id": "mkm-8961",
@@ -492,7 +567,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179582+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080613+00:00"
   },
   {
     "id": "mkm-8921",
@@ -507,7 +582,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179566+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080597+00:00"
   },
   {
     "id": "mkm-8963",
@@ -522,7 +597,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179531+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080542+00:00"
   },
   {
     "id": "mkm-8905",
@@ -537,82 +612,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179548+00:00"
-  },
-  {
-    "id": "mkm-8912",
-    "title": "CHILL CLASSIC CONCERT -Winter Illumination-",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-23",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8912",
-    "description": "幕張メッセ開催イベント（区分: 音楽イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179436+00:00"
-  },
-  {
-    "id": "mkm-8900",
-    "title": "ポケモンカードゲーム チャンピオンズリーグ2027千葉",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-23",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8900",
-    "description": "幕張メッセ開催イベント（区分: イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179463+00:00"
-  },
-  {
-    "id": "mkm-8901",
-    "title": "第65回日本臨床細胞学会秋期大会",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-23",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8901",
-    "description": "幕張メッセ開催イベント（区分: 学会・会議）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179482+00:00"
-  },
-  {
-    "id": "mkm-8938",
-    "title": "Mrs &amp; Mr of the year  2026 JAPAN FINAL",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-23",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8938",
-    "description": "幕張メッセ開催イベント（区分: イベント）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179498+00:00"
-  },
-  {
-    "id": "mkm-8937",
-    "title": "楽天超ふるさと納税祭",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-22",
-    "endDate": "2026-11-23",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8937",
-    "description": "幕張メッセ開催イベント（区分: 展示会・見本市）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179515+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080579+00:00"
   },
   {
     "id": "mkm-8956",
@@ -627,6 +627,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-22T23:56:56.179396+00:00"
+    "lastCrawledAt": "2026-11-24T04:08:57.080507+00:00"
   }
 ]
