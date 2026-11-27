@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-deeptech-venture-summit-2027",
@@ -92,7 +92,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 120,
     "startupCount": 85,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-care-show-japan-2027",
@@ -111,7 +111,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 380,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "tbs-japan-build",
@@ -127,7 +127,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-26T01:59:46.417882+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.864345+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -146,7 +146,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "tbs-robot-week",
@@ -162,7 +162,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-11-26T01:59:46.417879+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.864342+00:00"
   },
   {
     "id": "conf-ils-2026",
@@ -182,7 +182,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 174,
     "startupCount": 174,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "conf-aichi-startup-day-2026",
@@ -201,29 +201,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 150,
     "startupCount": 95,
-    "lastCrawledAt": "2026-11-26 01:59:46"
-  },
-  {
-    "id": "cal-tib-sandbox-pitch-vol14",
-    "title": "Tokyo Innovation Base (TIB) SANDBOX PITCH NIGHT vol.14",
-    "venue": "Tokyo Innovation Base (有楽町)",
-    "city": "東京",
-    "region": "関東",
-    "eventType": "小規模ピッチ・デモデイ",
-    "sourceType": "スタートアップカレンダー",
-    "isSmallPitch": true,
-    "hall": "TIB 2F イベントスペース",
-    "startDate": "2026-11-26",
-    "endDate": "2026-11-26",
-    "officialUrl": "https://tib.metro.tokyo.lg.jp/",
-    "floorMapUrl": "https://tib.metro.tokyo.lg.jp/",
-    "description": "東京都が運営する国際スタートアップハブ「TIB」の月例ピッチ。創業初期・大学発シードスタートアップが、事業会社・エンジェル投資家に向けて共創アイデアをプレゼン。",
-    "organizer": "東京都スタートアップ・国際金融都市戦略室 / TIB",
-    "startupRelevanceScore": 5,
-    "status": "出展社公表済",
-    "exhibitorCount": 8,
-    "startupCount": 8,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -242,7 +220,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -261,7 +239,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "cal-station-ai-monthly-pitch-2027",
@@ -283,7 +261,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "cal-quintbridge-kansai-demo-2026",
@@ -305,7 +283,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 7,
     "startupCount": 7,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
   },
   {
     "id": "cal-shibuya-qws-pitch-2026",
@@ -327,7 +305,22 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-26 01:59:46"
+    "lastCrawledAt": "2026-11-27 01:59:59"
+  },
+  {
+    "id": "mkm-8953",
+    "title": "市川中学校 第1回入学試験",
+    "venue": "幕張メッセ",
+    "startDate": "2027-01-20",
+    "endDate": "2027-01-20",
+    "officialUrl": "https://www.m-messe.co.jp/event/detail/8953",
+    "description": "幕張メッセ開催イベント（区分: イベント）",
+    "organizer": "幕張メッセ出展者",
+    "startupRelevanceScore": 2,
+    "status": "スケジュール確定",
+    "exhibitorCount": 50,
+    "startupCount": 5,
+    "lastCrawledAt": "2026-11-27T01:59:59.175820+00:00"
   },
   {
     "id": "mkm-8941",
@@ -342,7 +335,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714562+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175795+00:00"
   },
   {
     "id": "mkm-8990",
@@ -357,7 +350,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714576+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175808+00:00"
   },
   {
     "id": "mkm-8977",
@@ -372,7 +365,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714548+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175783+00:00"
   },
   {
     "id": "mkm-8913",
@@ -387,7 +380,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714502+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175744+00:00"
   },
   {
     "id": "mkm-8981",
@@ -402,7 +395,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714518+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175758+00:00"
   },
   {
     "id": "mkm-8942",
@@ -417,7 +410,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714533+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175770+00:00"
   },
   {
     "id": "mkm-8949",
@@ -432,7 +425,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714487+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175731+00:00"
   },
   {
     "id": "mkm-8943",
@@ -447,7 +440,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714468+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175715+00:00"
   },
   {
     "id": "mkm-8946",
@@ -462,7 +455,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714453+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175699+00:00"
   },
   {
     "id": "mkm-8933",
@@ -477,7 +470,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714433+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175684+00:00"
   },
   {
     "id": "mkm-8959",
@@ -492,7 +485,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714398+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175652+00:00"
   },
   {
     "id": "mkm-8968",
@@ -507,7 +500,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714417+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175669+00:00"
   },
   {
     "id": "mkm-8911",
@@ -522,7 +515,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714366+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175623+00:00"
   },
   {
     "id": "mkm-8922",
@@ -537,7 +530,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714382+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175638+00:00"
   },
   {
     "id": "mkm-8923",
@@ -552,7 +545,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714347+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175593+00:00"
   },
   {
     "id": "mkm-8924",
@@ -567,7 +560,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714331+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175579+00:00"
   },
   {
     "id": "mkm-8961",
@@ -582,7 +575,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714314+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175562+00:00"
   },
   {
     "id": "mkm-8921",
@@ -597,22 +590,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714294+00:00"
-  },
-  {
-    "id": "mkm-8905",
-    "title": "2026いずみ住まいのグランドフェア",
-    "venue": "幕張メッセ",
-    "startDate": "2026-11-25",
-    "endDate": "2026-11-26",
-    "officialUrl": "https://www.m-messe.co.jp/event/detail/8905",
-    "description": "幕張メッセ開催イベント（区分: 展示会・見本市）",
-    "organizer": "幕張メッセ出展者",
-    "startupRelevanceScore": 2,
-    "status": "スケジュール確定",
-    "exhibitorCount": 50,
-    "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714268+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175542+00:00"
   },
   {
     "id": "mkm-8956",
@@ -627,6 +605,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-26T01:59:45.714215+00:00"
+    "lastCrawledAt": "2026-11-27T01:59:59.175506+00:00"
   }
 ]
