@@ -16,7 +16,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 190,
     "startupCount": 170,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "conf-ivs-kyoto-2027",
@@ -35,7 +35,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 380,
     "startupCount": 350,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "conf-sushi-tech-2027",
@@ -54,7 +54,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 550,
     "startupCount": 500,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "conf-icc-fukuoka-2027",
@@ -73,7 +73,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 160,
     "startupCount": 150,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "conf-deeptech-venture-summit-2027",
@@ -92,7 +92,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 120,
     "startupCount": 85,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "conf-care-show-japan-2027",
@@ -111,7 +111,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 380,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "tbs-japan-build",
@@ -127,7 +127,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 650,
     "startupCount": 88,
-    "lastCrawledAt": "2026-11-27T01:59:59.864345+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:28.702377+00:00"
   },
   {
     "id": "conf-plug-and-play-japan-2026-winter",
@@ -146,7 +146,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 110,
     "startupCount": 105,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "tbs-robot-week",
@@ -162,7 +162,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 290,
     "startupCount": 78,
-    "lastCrawledAt": "2026-11-27T01:59:59.864342+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:28.702375+00:00"
   },
   {
     "id": "conf-ils-2026",
@@ -182,26 +182,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 174,
     "startupCount": 174,
-    "lastCrawledAt": "2026-11-27 01:59:59"
-  },
-  {
-    "id": "conf-aichi-startup-day-2026",
-    "title": "Aichi Startup Day 2026 / STATION Ai Autumn Summit",
-    "venue": "STATION Ai (名古屋・鶴舞)",
-    "city": "名古屋",
-    "region": "中部",
-    "eventType": "ピッチコンテスト・アクセラレーター",
-    "hall": "メインアリーナ・ピッチステージ",
-    "startDate": "2026-11-26",
-    "endDate": "2026-11-27",
-    "officialUrl": "https://stationai.co.jp/",
-    "description": "日本最大級のオープンイノベーション拠点「STATION Ai」の成果発表会。ディープテック、モビリティ、スマートファクトリー、アグリテックSUが登壇。",
-    "organizer": "愛知県 / STATION Ai 株式会社",
-    "startupRelevanceScore": 5,
-    "status": "出展社公表済",
-    "exhibitorCount": 150,
-    "startupCount": 95,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "venue-pacifico-smart-energy-2027",
@@ -220,7 +201,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 850,
     "startupCount": 125,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "venue-intex-monodukuri-2027",
@@ -239,7 +220,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 1100,
     "startupCount": 140,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "cal-station-ai-monthly-pitch-2027",
@@ -261,7 +242,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "cal-quintbridge-kansai-demo-2026",
@@ -283,7 +264,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 7,
     "startupCount": 7,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "cal-shibuya-qws-pitch-2026",
@@ -305,7 +286,7 @@
     "status": "出展社公表済",
     "exhibitorCount": 6,
     "startupCount": 6,
-    "lastCrawledAt": "2026-11-27 01:59:59"
+    "lastCrawledAt": "2026-11-28 01:44:28"
   },
   {
     "id": "mkm-8953",
@@ -320,7 +301,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175820+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739066+00:00"
   },
   {
     "id": "mkm-8941",
@@ -335,7 +316,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175795+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739043+00:00"
   },
   {
     "id": "mkm-8990",
@@ -350,7 +331,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175808+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739055+00:00"
   },
   {
     "id": "mkm-8977",
@@ -365,7 +346,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175783+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739031+00:00"
   },
   {
     "id": "mkm-8913",
@@ -380,7 +361,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175744+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738993+00:00"
   },
   {
     "id": "mkm-8981",
@@ -395,7 +376,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175758+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739006+00:00"
   },
   {
     "id": "mkm-8942",
@@ -410,7 +391,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175770+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.739018+00:00"
   },
   {
     "id": "mkm-8949",
@@ -425,7 +406,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175731+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738980+00:00"
   },
   {
     "id": "mkm-8943",
@@ -440,7 +421,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175715+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738965+00:00"
   },
   {
     "id": "mkm-8946",
@@ -455,7 +436,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175699+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738950+00:00"
   },
   {
     "id": "mkm-8933",
@@ -470,7 +451,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175684+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738935+00:00"
   },
   {
     "id": "mkm-8959",
@@ -485,7 +466,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175652+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738903+00:00"
   },
   {
     "id": "mkm-8968",
@@ -500,7 +481,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175669+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738921+00:00"
   },
   {
     "id": "mkm-8911",
@@ -515,7 +496,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175623+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738876+00:00"
   },
   {
     "id": "mkm-8922",
@@ -530,7 +511,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175638+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738890+00:00"
   },
   {
     "id": "mkm-8923",
@@ -545,7 +526,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175593+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738860+00:00"
   },
   {
     "id": "mkm-8924",
@@ -560,7 +541,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175579+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738847+00:00"
   },
   {
     "id": "mkm-8961",
@@ -575,7 +556,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175562+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738832+00:00"
   },
   {
     "id": "mkm-8921",
@@ -590,7 +571,7 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175542+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738812+00:00"
   },
   {
     "id": "mkm-8956",
@@ -605,6 +586,6 @@
     "status": "スケジュール確定",
     "exhibitorCount": 50,
     "startupCount": 5,
-    "lastCrawledAt": "2026-11-27T01:59:59.175506+00:00"
+    "lastCrawledAt": "2026-11-28T01:44:27.738775+00:00"
   }
 ]
